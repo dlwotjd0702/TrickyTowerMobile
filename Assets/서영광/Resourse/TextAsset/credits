@@ -1,0 +1,153 @@
+[
+	{
+		"nameFirst": true,
+		"names": ["Niels Monshouwer"],
+		"titles": ["CREDITS_PROJECT_DIRECTOR"]
+	},
+	{
+		"nameFirst": true,
+		"names": ["Joram Rafalowicz"],
+		"titles": ["CREDITS_CREATIVE_AND_TECHNICAL_DIRECTOR"]
+	},
+	{
+		"nameFirst": true,
+		"names": ["Samar Louwe"],
+		"titles": ["CREDITS_GAME_DIRECTOR_AND_ART"]
+	},
+	{
+		"nameFirst": true,
+		"names": ["Jonathan van Woudenberg"],
+		"titles": ["CREDITS_LEAD_PROGRAMMER"]
+	},
+	{
+		"nameFirst": true,
+		"names": ["Joran de Raaff"],
+		"titles": ["CREDITS_PROGRAMMER"]
+	},
+	{
+		"nameFirst": true,
+		"names": ["Rebecca Fernandez O'Shea"],
+		"titles": ["CREDITS_PROGRAMMER"]
+	},
+	{
+		"names": ["Jonathan van den Wijngaarden"],
+		"titles": ["CREDITS_MUSIC_AND_AUDIO"]
+	},
+	{
+		"titles": ["CREDITS_TESTERS"],
+		"names": [
+			"Aron Abbo",
+			"Roan Albers",
+			"Christian Bakker",
+			"Ellis Bartholomeus",
+			"Davey van den Berg",
+			"Thijmen Bink",
+			"Danil Bonnet",
+			"Tom van den boogaart",
+			"Zuraida Buter",
+			"Nadia Colombo",
+			"Pim Coumans",
+			"Lex Decrauw",
+			"Matthijs Dierckx ",
+			"Marit van Dijk",
+			"Roel Ezendam",
+			"Daphne Fontijn",
+			"Tim Haerkens",
+			"Zuzanna Hofman",
+			"Djego Ibanez",
+			"Lucas de Jong",
+			"Adriaan de Jongh",
+			"Isolde Kalse",
+			"Mathijs Konings",
+			"Aaron Ligthart",
+			"Simon van der Linden",
+			"Jochen Meischke",
+			"Rens van Mierlo",
+			"Oskar Moleman",
+			"Roy van de Mortel",
+			"Geert Nellen",
+			"Alessandra van Otterlo",
+			"Emil Pabon",
+			"Mauro Palumbo",
+			"Hannah Kay Piche",
+			"Mia Prins",
+			"Zus Prins",
+			"Tim Remmers",
+			"Machteld Schoolenberg",
+			"Nina Schoolenberg",
+			"Rob Schuddeboom",
+			"Joel Sjouke",
+			"Remko Spruyt",
+			"Tim Stobo",
+			"Gert-Jan Stolk",
+			"Tijmen Tio",
+			"Maxine van Tongeren",
+			"Niels Uiterwijk",
+			"Naomi Vogelpoel",
+			"Brenda van Vugt",
+			"Danny Wagenaar",
+			"Ton Wessling",
+			"Alex Zapata"
+		]
+	},
+	{
+		"titles": ["CREDITS_SCEE"],
+		"names": [
+			"Spencer Low",
+			"Natalie Gausden",
+			"Lorenzo Grimaldi",
+			"Ben Andac",
+			"Fred Dutton",
+			"Otisha Sealy"
+		]
+	},
+	{
+		"titles": ["CREDITS_SCEA"],
+		"names": [
+			"Alisa Faber",
+			"Steve Groll",
+			"Nick Suttner",
+			"Brian Silva",
+			"Andrew Wong",
+			"Ryan Clements"
+		]
+	},
+	{
+		"titles": ["CREDITS_SIEJA"],
+		"names": [
+			"Kondo Haruhiko",
+			"Risa Yokoi",
+			"Sari Kosteleva"
+		]
+	},
+	{
+		"titles": ["CREDITS_SPECIAL_THANKS"],
+		"names": [
+			"Spencer Low",
+			"Krista van der Wilk",
+			"Alessandra van Otterlo",
+			"Dick Grinwis",
+			"Maarten Brands",
+			"Joost van Dongen",
+			"Rick van Beem",
+			"Rami Ismail",
+			"Anna Rembold",
+			"Paul Vollebregt",
+			"Hans Schoolenberg",
+			"Amnon Rafalowicz",
+			"Dylan van Riel",
+			"Derek Lieu",
+			"Play Dev Club",
+			"Local Heroes",
+			"Stephanie van Geel",
+			"Bram van Lith",
+			"Joshua Cauller",
+			"Team Reptile",
+			"Ronimo Games",
+			"Matt Makes Games",
+			"League of Geeks",
+			"Vlambeer",
+			"Young Horses"
+		]
+	}
+]

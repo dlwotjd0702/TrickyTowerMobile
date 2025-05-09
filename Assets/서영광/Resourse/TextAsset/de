@@ -1,0 +1,1087 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<lookup>
+		<key>DIFFICULTY_EASY</key>
+		<translation>Einfach</translation>
+	</lookup>
+	<lookup>
+		<key>DIFFICULTY_NORMAL</key>
+		<translation>Normal</translation>
+	</lookup>
+	<lookup>
+		<key>DIFFICULTY_PRO</key>
+		<translation>Spezial</translation>
+	</lookup>
+	<lookup>
+		<key>DIFFICULTY_ANY</key>
+		<translation>Zufällig</translation>
+	</lookup>
+	<lookup>
+		<key>MODE_RACE</key>
+		<translation>Rennen</translation>
+	</lookup>
+	<lookup>
+		<key>MODE_SURVIVAL</key>
+		<translation>Überleben</translation>
+	</lookup>
+	<lookup>
+		<key>MODE_PUZZLE</key>
+		<translation>Rätsel</translation>
+	</lookup>
+	<lookup>
+		<key>MODE_ANY</key>
+		<translation>Zufällig</translation>
+	</lookup>
+	<lookup>
+		<key>MODE_TITLE_OVERTIME</key>
+		<translation>Überstunden</translation>
+	</lookup>
+	<lookup>
+		<key>CUP_TINY</key>
+		<translation>Kleiner Pokal</translation>
+	</lookup>
+	<lookup>
+		<key>CUP_BIG</key>
+		<translation>Großer Pokal</translation>
+	</lookup>
+	<lookup>
+		<key>CUP_SUPER</key>
+		<translation>Superpokal</translation>
+	</lookup>
+	<lookup>
+		<key>CUP_QUICK_MATCH</key>
+		<translation>Einzelnes Spiel</translation>
+	</lookup>
+	<lookup>
+		<key>CUP_ONLINE</key>
+		<translation>Online-Pokal</translation>
+	</lookup>
+	<lookup>
+		<key>START_GAME_MESSAGE</key>
+		<translation>Zum Starten [continue] drücken</translation>
+	</lookup>
+	<lookup>
+		<key>CONTINUE_GAME_MESSAGE</key>
+		<translation>Weiter [continue] drücken</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_LOCAL</key>
+		<translation>Kampf vor Ort</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_ONLINE</key>
+		<translation>Online-Kampf</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_SINGLE_PLAYER</key>
+		<translation>Einzelspieler</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_TRIALS</key>
+		<translation>Prüfungen</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_SHOP</key>
+		<translation>Shop</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_LEADERBOARD</key>
+		<translation>Endlos</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_LEADERBOARD_HIGHSCORE_TITLE</key>
+		<translation>Highscore</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_LEADERBOARD_MEDALS_TITLE</key>
+		<translation>Auszeichnungen</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_HELP</key>
+		<translation>Hilfe</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_SETTINGS</key>
+		<translation>Einstellungen</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_QUIT</key>
+		<translation>Spiel verlassen</translation>
+	</lookup>
+	<lookup>
+		<key>QUIT_POPUP_TITLE</key>
+		<translation>Spiel verlassen</translation>
+	</lookup>
+	<lookup>
+		<key>QUIT_POPUP_MESSAGE</key>
+		<translation>Möchtest du das Spiel wirklich verlassen?</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATIONS_DISABLE</key>
+		<translation>[invite] Alle Erklärungen deaktivieren</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_CONTINUE</key>
+		<translation>Weiter [continue]</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_NEXT</key>
+		<translation>Weiter [continue]</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_CONTINUE_LOBBY</key>
+		<translation>Los geht's! [continue]</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_INVITE_FRIEND</key>
+		<translation>Freund einladen [invite]</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_BACK</key>
+		<translation>Zurück [back]</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_SELECT</key>
+		<translation>Auswählen [continue]</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_START_GAME</key>
+		<translation>Spiel starten [continue]</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_MORE_WIZARDS</key>
+		<translation>[store] Shop</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_PLAYER_SELECT</key>
+		<translation>Spieler auswählen</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_SINGLE_PLAYER</key>
+		<translation>Einzelspieler</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_ONLINE_BATTLE</key>
+		<translation>Onlinekampf</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_MODE_SELECT</key>
+		<translation>Modus auswählen</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_LEADERBOARD</key>
+		<translation>Endlos</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_SETTINGS</key>
+		<translation>Einstellungen</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_LOBBY</key>
+		<translation>Spieler suchen</translation>
+	</lookup>
+	<lookup>
+		<key>MEDALS_TITLE</key>
+		<translation>Auszeichnungen:</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_SELECT_DEFAULT_PLAYER_NAME</key>
+		<translation>Spieler {playerIndex}</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_SELECT_CONNECT_CONTROLLER</key>
+		<translation>[controller]\nanschließen</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_TITLE_COUNTDOWN</key>
+		<translation>Start in:</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_TITLE_MODE</key>
+		<translation>Startmodus:</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_READY</key>
+		<translation>Los geht's!</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_GAME_CLOSED</key>
+		<translation>Spiel geschlossen</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_WAITING_FOR_PLAYERS</key>
+		<translation>Warten auf\nSpieler</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_LOOKING_FOR_GAMES</key>
+		<translation>Suche nach\nSpielen</translation>
+	</lookup>
+	<lookup>
+		<key>SINGLE_PLAYER_LEVEL_LOCKED_TITLE</key>
+		<translation>Gesperrt</translation>
+	</lookup>
+	<lookup>
+		<key>SINGLE_PLAYER_LEVEL_UNLOCK_TARGET</key>
+		<translation>Zum Freischalten \n{medalCount} einsammeln</translation>
+	</lookup>
+	<lookup>
+		<key>SINGLE_PLAYER_LEVEL_BRICKS_TITLE</key>
+		<translation>Ziegel</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_SLOT_SIGN_IN</key>
+		<translation>Anmelden</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_SLOT_JOIN</key>
+		<translation>[continue]\num beizutreten</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_GLOBAL_TITLE</key>
+		<translation>Global</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_FRIENDS_TITLE</key>
+		<translation>Freunde</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_WEEKLY_TITLE</key>
+		<translation>Wöchentlich</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_MONTHLY_TITLE</key>
+		<translation>Monatlich</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_HIGHSCORE_TITLE</key>
+		<translation>Bestleistung</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_ERROR_NOT_LOGGED_INTO_PSN</key>
+		<translation>Du bist nicht bei einem Sony Entertainment Network-Konto angemeldet.\n\nDu musst angemeldet sein, um die Bestenlisten anzusehen.</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_ERROR_GENERAL_PSN</key>
+		<translation>Beim Laden der Bestenlisten ist ein Fehler aufgetreten.\n\nBitte versuche es später noch einmal.</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_NO_ENTRIES</key>
+		<translation>Die Bestenliste ist leer. Platziere dich als Erste(r) mit einer Wertung!</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_GRAPHICS</key>
+		<translation>Grafik</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_SFX</key>
+		<translation>Soundeffekte</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_CONTROLLER_SFX</key>
+		<translation>[controller]-Soundeffekte</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_APPLY</key>
+		<translation>Anwenden</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_MUSIC</key>
+		<translation>Musik</translation>
+	</lookup>
+	<lookup>
+		<key>SETTINGS_STATS</key>
+		<translation>Statistik</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_CREDITS</key>
+		<translation>Das Team</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_KEYBINDING</key>
+		<translation>Tastenzuordnung</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_EXPLANATIONS</key>
+		<translation>Erklärungen aktiviert</translation>
+	</lookup>
+	<lookup>
+		<key>SETTINGS_RESOLUTION</key>
+		<translation>Auflösung</translation>
+	</lookup>
+	<lookup>
+		<key>SETTINGS_VSYNC</key>
+		<translation>V-Sync</translation>
+	</lookup>
+	<lookup>
+		<key>SETTINGS_QUALITY</key>
+		<translation>Qualität</translation>
+	</lookup>
+	<lookup>
+		<key>SETTINGS_FULLSCREEN</key>
+		<translation>Vollbild</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_QUALITY_LOW</key>
+		<translation>Leistung</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_QUALITY_NORMAL</key>
+		<translation>Normal</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_QUALITY_HIGH</key>
+		<translation>Magisch</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_LANGUAGE</key>
+		<translation>Sprache</translation>
+	</lookup>
+	<lookup>
+		<key>PAUSE_TITLE</key>
+		<translation>PAUSE</translation>
+	</lookup>
+	<lookup>
+		<key>PAUSE_ITEM_RESUME</key>
+		<translation>Weiterspielen</translation>
+	</lookup>
+	<lookup>
+		<key>PAUSE_ITEM_RETRY</key>
+		<translation>Noch mal</translation>
+	</lookup>
+	<lookup>
+		<key>PAUSE_ITEM_QUIT</key>
+		<translation>Beenden</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_NEXT</key>
+		<translation>Weiter</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_NEXT_LOCAL_MULTIPLAYER</key>
+		<translation>Nächstes Spiel</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_RETRY</key>
+		<translation>Noch mal</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_REMATCH</key>
+		<translation>Rückspiel</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_QUIT_SINGLE_PLAYER</key>
+		<translation>Prüfung auswählen</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_QUIT_LOCAL_MULTIPLAYER</key>
+		<translation>Hauptmenü</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_QUIT_LEADERBOARD</key>
+		<translation>Zurück zum Menü</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_MODE_SELECT</key>
+		<translation>Modus auswählen</translation>
+	</lookup>
+	<lookup>
+		<key>CONTROLS_TITLE</key>
+		<translation>Steuerung</translation>
+	</lookup>
+	<lookup>
+		<key>CONTROLS_MOVE</key>
+		<translation>Ziegel bewegen</translation>
+	</lookup>
+	<lookup>
+		<key>CONTROLS_ROTATE</key>
+		<translation>Ziegel drehen</translation>
+	</lookup>
+	<lookup>
+		<key>CONTROLS_NUDGE</key>
+		<translation>Ziegel anstoßen</translation>
+	</lookup>
+	<lookup>
+		<key>CONTROLS_LIGHT_MAGIC</key>
+		<translation>Weiße Magie</translation>
+	</lookup>
+	<lookup>
+		<key>CONTROLS_DARK_MAGIC</key>
+		<translation>Schwarze Magie</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_TITLE_MULTIPLAYER_RACE</key>
+		<translation>Rennen-Kampf</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_TITLE_MULTIPLAYER_SURVIVAL</key>
+		<translation>Überleben-Kampf</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_TITLE_MULTIPLAYER_PUZZLE</key>
+		<translation>Rätsel-Kampf</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_TITLE_SINGLE_PLAYER_RACE</key>
+		<translation>Rennen-Prüfungen</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_TITLE_SINGLE_PLAYER_SURVIVAL</key>
+		<translation>Überleben-Prüfungen</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_TITLE_SINGLE_PLAYER_PUZZLE</key>
+		<translation>Rätsel-Prüfungen</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_MULTIPLAYER_RACE</key>
+		<translation>Der Erste im Ziel gewinnt.</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_MULTIPLAYER_SURVIVAL</key>
+		<translation>Staple alle Ziegel, ohne sie fallen zu lassen.</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_MULTIPLAYER_PUZZLE</key>
+		<translation>Wer die meisten Ziegel stapelt, gewinnt.</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_SINGLE_PLAYER_RACE</key>
+		<translation>Erreiche das Ziel, bevor die Zeit abläuft.</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_SINGLE_PLAYER_SURVIVAL</key>
+		<translation>Staple alle Ziegel, ohne sie fallen zu lassen.</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_SINGLE_PLAYER_PUZZLE</key>
+		<translation>Staple alle Ziegel unter dem Laser.</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_MULTIPLAYER_RACE_PRO_SUBTITLE</key>
+		<translation>Böser Sturm!</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_MULTIPLAYER_SURVIVAL_PRO_SUBTITLE</key>
+		<translation>Magische Wellen!</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_MULTIPLAYER_PUZZLE_PRO_SUBTITLE</key>
+		<translation>Das braucht einen Schubs!</translation>
+	</lookup>
+	<lookup>
+		<key>HUD_PERSONAL_BEST</key>
+		<translation>Persönlicher Rekord:</translation>
+	</lookup>
+	<lookup>
+		<key>HUD_NEW_HIGHSCORE</key>
+		<translation>Neuer Highscore!</translation>
+	</lookup>
+	<lookup>
+		<key>HUD_SCORE</key>
+		<translation>Punkte:</translation>
+	</lookup>
+	<lookup>
+		<key>COUNTDOWN_RACE</key>
+		<translation>Rennen</translation>
+	</lookup>
+	<lookup>
+		<key>MESSAGE_WINNER</key>
+		<translation>Gewinner!</translation>
+	</lookup>
+	<lookup>
+		<key>MESSAGE_WAVE</key>
+		<translation>Welle</translation>
+	</lookup>
+	<lookup>
+		<key>MESSAGE_DRAW</key>
+		<translation>Remis</translation>
+	</lookup>
+	<lookup>
+		<key>MESSAGE_WIZARD_OUT</key>
+		<translation>Zauberer aus!</translation>
+	</lookup>
+	<lookup>
+		<key>CHALLENGE_FAILED_MESSAGE</key>
+		<translation>Nicht geschafft</translation>
+	</lookup>
+	<lookup>
+		<key>CHALLENGE_FINISH_MESSAGE</key>
+		<translation>Geschafft</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_QUIT_TITLE</key>
+		<translation>Beenden</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_QUIT_MESSAGE</key>
+		<translation>Möchtest du dieses Onlinespiel wirklich verlassen?</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_NOT_SIGNED_IN_TITLE</key>
+		<translation>Du musst angemeldet sein.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_NOT_SIGNED_IN_MESSAGE</key>
+		<translation>Du musst angemeldet sein mit einem Sony Entertainment Network-Konto.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_CONNECTION_PROBLEM_TITLE</key>
+		<translation>Verbindungsproblem</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_CONNECTION_PROBLEM_MESSAGE</key>
+		<translation>Im Zusammenhang mit deiner Verbindung ist ein Problem aufgetreten. Bist du mit dem Internet verbunden?\n\nBitte versuche es später noch einmal.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_GENERAL_PSN_ERROR_TITLE</key>
+		<translation>Playstation Network - Fehler</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_GENERAL_PSN_ERROR_SUBTITLE</key>
+		<translation>Es tut uns sehr leid.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_GENERAL_PSN_ERROR_MESSAGE</key>
+		<translation>Beim Senden deiner Daten ist ein Fehler aufgetreten.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_BUTTON_CONFIRM</key>
+		<translation>Bestätigen</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_BUTTON_CONTINUE</key>
+		<translation>Weiterspielen</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_BUTTON_CLOSE</key>
+		<translation>Schließen</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_NETWORK_ERROR_TITLE</key>
+		<translation>Netzwerkfehler</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_NETWORK_ERROR_MESSAGE</key>
+		<translation>Im Zusammenhang mit deiner Verbindung ist ein Problem aufgetreten.\nEs wird zum Menü zurückgeschaltet.</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_PREFS_TITLE</key>
+		<translation>Tricky Towers-Spielstand</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_PREFS_SUBTITLE</key>
+		<translation>Fortschritt</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_PREFS_MESSAGE</key>
+		<translation>Wird für den Hauptbenutzer geladen.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_SAVE_GAME_TITLE</key>
+		<translation>Spielstandfehler</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_SAVE_GAME_MESSAGE</key>
+		<translation>Es tut uns sehr leid.\nDein Spiel konnte nicht gespeichert werden.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_LOAD_GAME_TITLE</key>
+		<translation>Spielstandfehler</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_LOAD_GAME_MESSAGE</key>
+		<translation>Es tut uns sehr leid.\nAnscheinend ist dein Spielstand beschädigt.\nEs wird ein neuer Spielstand angelegt.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_STEAM_OVERLAY_AVAILABLE_TITLE</key>
+		<translation>Steam-Overlay erforderlich</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_STEAM_OVERLAY_AVAILABLE_MESSAGE</key>
+		<translation>Das Steam-Overlay muss aktiviert sein, damit du auf den Store zurückgreifen kannst.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_NO_STEAM_TITLE</key>
+		<translation>Verbindung mit Stean nicht möglich.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_NO_STEAM_MESSAGE</key>
+		<translation>Stelle sicher, dass Steam läuft, oder starte Steam neu.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_CONTROLLER_DISCONNECTED_TITLE</key>
+		<translation>[controller] nicht mehr verbunden.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_CONTROLLER_DISCONNECTED_MESSAGE</key>
+		<translation>Die {controllerName}-Verbindung wurde getrennt. Bitte [controller] wieder anschließen.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_BUTTON_RETRY</key>
+		<translation>Noch mal</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_BUTTON_CANCEL</key>
+		<translation>Abbrechen</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_MODE_SURVIVAL_TITLE</key>
+		<translation>Überleben-Herausforderung</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_MODE_PUZZLE_TITLE</key>
+		<translation>Rätsel-Herausforderung</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_MODE_RACE_TITLE</key>
+		<translation>Rennen-Herausforderung</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_MODE_DESCRIPTION</key>
+		<translation>Wie viele Ziegel kannst du stapeln?</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_THANKS_FOR_PLAYING</key>
+		<translation>Danke fürs Spielen!</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_PROJECT_DIRECTOR</key>
+		<translation>Allg. Projektleitung</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_CREATIVE_AND_TECHNICAL_DIRECTOR</key>
+		<translation>Kreative und technische Leitung</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_GAME_DIRECTOR_AND_ART</key>
+		<translation>Allgemeine Leitung und Grafik</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_LEAD_PROGRAMMER</key>
+		<translation>Programmierung (Leitung)</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_PROGRAMMER</key>
+		<translation>Programmierung</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_MUSIC_AND_AUDIO</key>
+		<translation>Musik und Sound</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_TESTERS</key>
+		<translation>Test</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_SCEE</key>
+		<translation>SCEE</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_SCEA</key>
+		<translation>SCEA</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_SIEJA</key>
+		<translation>SIEJA</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_SPECIAL_THANKS</key>
+		<translation>Besonderer Dank</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_SWITCH_USER_TITLE</key>
+		<translation>Benutzer wechseln</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_SWITCH_USER_MESSAGE</key>
+		<translation>Nur der Spieler, der das Spiel gestartet hat, ({userName}) kann diesen Modus spielen.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_HOST_MIGRATION_HOST_DROPPED</key>
+		<translation>Host verloren!</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_HOST_MIGRATION_SWAPPING_HOST</key>
+		<translation>Host wird gewechselt ...</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_OTHER_USER_SIGNED_IN_TITLE</key>
+		<translation>Anderer Benutzer an- oder abgemeldet</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_OTHER_USER_SIGNED_IN_MESSAGE</key>
+		<translation>Du bist wieder im Hauptmenü, weil sich ein anderer Benutzer an- oder abgemeldet hat.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_ROOM_FULL_TITLE</key>
+		<translation>Spiel voll</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_ROOM_FULL_MESSAGE</key>
+		<translation>Es scheint, als wäre das Spiel bereits voll.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_GAME_STARTED_TITLE</key>
+		<translation>Spiel gestartet</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_GAME_STARTED_MESSAGE</key>
+		<translation>Es scheint, als hätte das Spiel bereits angefangen.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_GAME_DOESNT_EXIST_TITLE</key>
+		<translation>Spiel angehalten</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_GAME_DOESNT_EXIST_MESSAGE</key>
+		<translation>Es scheint, als hätte das Spiel bereits aufgehört.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_NON_PRIMARY_USER_TITLE</key>
+		<translation>Einladung kann nicht angenommen werden</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_NON_PRIMARY_USER_MESSAGE</key>
+		<translation>Nur der Spieler, der das Spiel gestartet hat, ({userName}) kann Einladungen annehmen.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_HOST_LEFT_TITLE</key>
+		<translation>Host hat Spiel verlassen</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_HOST_LEFT_MESSAGE</key>
+		<translation>Der Host hat das Spiel verlassen. Du kehrst zurück ins Hauptmenü.</translation>
+	</lookup>
+	<lookup>
+		<key>GAME_INFO_POPUP_TITLE</key>
+		<translation>Spiel-Info</translation>
+	</lookup>
+	<lookup>
+		<key>GAME_INFO_GAME_MODE</key>
+		<translation>Spielmodus:</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_INFO_ITEM_PLAYER_OFFLINE</key>
+		<translation>{username} Hat das Spiel verlassen.</translation>
+	</lookup>
+	<lookup>
+		<key>GAME_INFO_BUTTON_MESSAGE</key>
+		<translation>Spiel-Info [gameInfo]</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_TITLE</key>
+		<translation>Onlinewerte</translation>
+	</lookup>
+	<lookup>
+		<key>OTHER_STATS_TITLE</key>
+		<translation>Andere Werte</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_GAMES_WON</key>
+		<translation>Gewonnene Spiele</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_GAMES_LOST</key>
+		<translation>Verlorene Spiele</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_GAMES_DRAW</key>
+		<translation>Unentschiedene Spiele</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_GAMES_RATIO</key>
+		<translation>Sieg-/Niederlagen</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_TIME_PLAYED</key>
+		<translation>Spielzeit</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_MEDAL_COUNT</key>
+		<translation>Auszeichnungen</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_LOCAL_MATCHES</key>
+		<translation>Lokal gestartete Spiele</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_HIGHSCORE_SURVIVAL</key>
+		<translation>Endlos-Überleben-Wertung</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_HIGHSCORE_PUZZLE</key>
+		<translation>Endlos-Rätsel-Wertung</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_TIME_FORMAT</key>
+		<translation>%h%h %mm%m</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_BUBBLES_STABILIZED</key>
+		<translation>Zerstampfte Blasen</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_SPELLS_USED</key>
+		<translation>Verwendete Zauber</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_BRICKS_PLACED</key>
+		<translation>Platzierte Ziegel</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_HIGHEST_WAVE</key>
+		<translation>Höchste Welle</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_FASTEST_NORMAL_RACE</key>
+		<translation>Schnellstes normales Rennen</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_CUP</key>
+		<translation>Online-Pokale</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_CUP_WON</key>
+		<translation>Gewonnen</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_CUP_LOST</key>
+		<translation>Verloren</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_CUP_RATIO</key>
+		<translation>Verhältnis</translation>
+	</lookup>
+	<lookup>
+		<key>ONLINE_PLAYER_SELECT_JOIN</key>
+		<translation>Spiel suchen</translation>
+	</lookup>
+	<lookup>
+		<key>ONLINE_PLAYER_SELECT_CUP</key>
+		<translation>Online-Pokal suchen</translation>
+	</lookup>
+	<lookup>
+		<key>ONLINE_PLAYER_SELECT_FRIENDS</key>
+		<translation>Freunde einladen</translation>
+	</lookup>
+	<lookup>
+		<key>ONLINE_PLAYER_ACCEPT_INVITE</key>
+		<translation>Am Spiel teilnehmen</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_POPUP_TITLE</key>
+		<translation>Spiel abgeschlossen</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_LEVEL_UP</key>
+		<translation>Aufstieg!</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_EXPERIENCE</key>
+		<translation>{xp} EP</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_LEVEL_DOWN</key>
+		<translation>Abstieg!</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_0</key>
+		<translation>Magieeinsteiger</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_1</key>
+		<translation>Magielehrling</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_2</key>
+		<translation>Magier</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_3</key>
+		<translation>Zaubereinsteiger</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_4</key>
+		<translation>Zauberlehrling</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_5</key>
+		<translation>Zauberer</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_6</key>
+		<translation>Hexeneinsteiger</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_7</key>
+		<translation>Hexenlehrling</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_8</key>
+		<translation>Hexer</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_9</key>
+		<translation>Hexenmeister</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_MAX</key>
+		<translation>Hexenmeister Stufe {subLevel}</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_RANK_1ST</key>
+		<translation>1. Platz</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_RANK_2ND</key>
+		<translation>2. Platz</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_RANK_3RD</key>
+		<translation>3. Platz</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_RANK_4TH</key>
+		<translation>4. Platz</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_FORFEIT</key>
+		<translation>Verloren!</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_LEFT_GAME</key>
+		<translation>Spiel verlassen</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_WORLD_NAME_1</key>
+		<translation>Einsteigerprüfungen</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_WORLD_NAME_2</key>
+		<translation>Lehrlingsprüfungen</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_WORLD_NAME_3</key>
+		<translation>Profiprüfungen</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_WORLD_NAME_4</key>
+		<translation>Expertenprüfungen</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_WORLD_NAME_5</key>
+		<translation>Meisterprüfungen</translation>
+	</lookup>
+	<lookup>
+		<key>STEAM_USER_OFFLINE_ERROR_POPUP_TITLE</key>
+		<translation>Offline-Modus</translation>
+	</lookup>
+	<lookup>
+		<key>STEAM_USER_OFFLINE_ERROR_POPUP_MESSAGE</key>
+		<translation>Du bist derzeit offline. Erfolge werden erst wieder registriert, wenn das Spiel mit einer Internetverbindung neu gestartet worden ist.</translation>
+	</lookup>
+	<lookup>
+		<key>INVITE_FRIENDS_DEFAULT_MESSAGE</key>
+		<translation>Zeit, ein paar Tricky Towers zu spielen</translation>
+	</lookup>
+	<lookup>
+		<key>INVITE_FRIENDS_STATUS</key>
+		<translation>Warten auf Spieler</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_CREATING_GAME</key>
+		<translation>Spiel wird erstellt ...</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_JOINING_GAME</key>
+		<translation>Beitritt zum Spiel ...</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_WAITING_FOR_FRIENDS</key>
+		<translation>Warten auf Freunde ...</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_HEADER_INVITE_FRIENDS</key>
+		<translation>Freunde einladen</translation>
+	</lookup>
+	<lookup>
+		<key>ACCEPTING_INVITE</key>
+		<translation>Einladung prüfen ...</translation>
+	</lookup>
+	<lookup>
+		<key>PLAY_TOGETHER</key>
+		<translation>Zusammen spielen</translation>
+	</lookup>
+	<lookup>
+		<key>TOURNAMENT_RESULTS_POPUP_TITLE</key>
+		<translation>Spiel abgeschlossen</translation>
+	</lookup>
+	<lookup>
+		<key>CUP_TARGET</key>
+		<translation>Erster mit {targetScore} Punkten</translation>
+	</lookup>
+	<lookup>
+		<key>CUP_EXPERIENCE_BONUS</key>
+		<translation>+{xp} EP Siegbonus</translation>
+	</lookup>
+	<lookup>
+		<key>DEFAULT_WIN</key>
+		<translation>Sieger durch Aufgabe</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_TOURNAMENT_WINNER_TITLE</key>
+		<translation>{cupType} Sieger!</translation>
+	</lookup>
+	<lookup>
+		<key>MOVE_LEFT</key>
+		<translation>Nach links</translation>
+	</lookup>
+	<lookup>
+		<key>MOVE_RIGHT</key>
+		<translation>Nach rechts</translation>
+	</lookup>
+	<lookup>
+		<key>DROP_DOWN</key>
+		<translation>Fallen lassen</translation>
+	</lookup>
+	<lookup>
+		<key>ROTATE_RIGHT</key>
+		<translation>Nach rechts drehen</translation>
+	</lookup>
+	<lookup>
+		<key>ROTATE_LEFT</key>
+		<translation>Nach links drehen</translation>
+	</lookup>
+	<lookup>
+		<key>NUDGE_LEFT</key>
+		<translation>Nach links stupsen</translation>
+	</lookup>
+	<lookup>
+		<key>NUDGE_RIGHT</key>
+		<translation>Nach rechts stupsen</translation>
+	</lookup>
+	<lookup>
+		<key>ACTIVATE_SPELL</key>
+		<translation>Weiße Magie</translation>
+	</lookup>
+	<lookup>
+		<key>ACTIVATE_SPELL_DARK</key>
+		<translation>Schwarze Magie</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_OVERVIEW</key>
+		<translation>Onlinespielerinfo</translation>
+	</lookup>
+	<lookup>
+		<key>KEYBINDING_TITLE_ACTION</key>
+		<translation>Aktion</translation>
+	</lookup>
+	<lookup>
+		<key>KEYBINDING_TITLE_RESET</key>
+		<translation>Auf Standard zurücksetzen</translation>
+	</lookup>
+	<lookup>
+		<key>KEYBINDING_TITLE_KEY</key>
+		<translation>Taste</translation>
+	</lookup>
+</language>
