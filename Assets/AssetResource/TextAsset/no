@@ -1,0 +1,1087 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<lookup>
+		<key>DIFFICULTY_EASY</key>
+		<translation>Lett</translation>
+	</lookup>
+	<lookup>
+		<key>DIFFICULTY_NORMAL</key>
+		<translation>Vanlig</translation>
+	</lookup>
+	<lookup>
+		<key>DIFFICULTY_PRO</key>
+		<translation>Spesial</translation>
+	</lookup>
+	<lookup>
+		<key>DIFFICULTY_ANY</key>
+		<translation>Tilfeldig</translation>
+	</lookup>
+	<lookup>
+		<key>MODE_RACE</key>
+		<translation>Race</translation>
+	</lookup>
+	<lookup>
+		<key>MODE_SURVIVAL</key>
+		<translation>Overlevelse</translation>
+	</lookup>
+	<lookup>
+		<key>MODE_PUZZLE</key>
+		<translation>Hjernetrim</translation>
+	</lookup>
+	<lookup>
+		<key>MODE_ANY</key>
+		<translation>Tilfeldeig</translation>
+	</lookup>
+	<lookup>
+		<key>MODE_TITLE_OVERTIME</key>
+		<translation>Overtid</translation>
+	</lookup>
+	<lookup>
+		<key>CUP_TINY</key>
+		<translation>Liten Cup</translation>
+	</lookup>
+	<lookup>
+		<key>CUP_BIG</key>
+		<translation>Stor Cup</translation>
+	</lookup>
+	<lookup>
+		<key>CUP_SUPER</key>
+		<translation>Super Cup</translation>
+	</lookup>
+	<lookup>
+		<key>CUP_QUICK_MATCH</key>
+		<translation>Enkel kamp</translation>
+	</lookup>
+	<lookup>
+		<key>CUP_ONLINE</key>
+		<translation>Nettbasert cup</translation>
+	</lookup>
+	<lookup>
+		<key>START_GAME_MESSAGE</key>
+		<translation>Trykk på [continue] for å begynne</translation>
+	</lookup>
+	<lookup>
+		<key>CONTINUE_GAME_MESSAGE</key>
+		<translation>Trykk på [continue] for å fortsette</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_LOCAL</key>
+		<translation>Lokal kamp</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_ONLINE</key>
+		<translation>Nettbasert kamp</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_SINGLE_PLAYER</key>
+		<translation>Enspiller</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_TRIALS</key>
+		<translation>Prøvelser</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_SHOP</key>
+		<translation>Butikk</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_LEADERBOARD</key>
+		<translation>Uendelig</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_LEADERBOARD_HIGHSCORE_TITLE</key>
+		<translation>Rekord</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_LEADERBOARD_MEDALS_TITLE</key>
+		<translation>Medaljer</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_HELP</key>
+		<translation>Hjelp</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_SETTINGS</key>
+		<translation>Innstillinger</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_QUIT</key>
+		<translation>Avslutt spill</translation>
+	</lookup>
+	<lookup>
+		<key>QUIT_POPUP_TITLE</key>
+		<translation>Avslutt spill</translation>
+	</lookup>
+	<lookup>
+		<key>QUIT_POPUP_MESSAGE</key>
+		<translation>Er du sikker på at du vil avslutte spillet?</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATIONS_DISABLE</key>
+		<translation>[invite] Skru av alle forklaringer</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_CONTINUE</key>
+		<translation>Fortsett [continue]</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_NEXT</key>
+		<translation>Neste [continue]</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_CONTINUE_LOBBY</key>
+		<translation>Kom igjen! [continue]</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_INVITE_FRIEND</key>
+		<translation>Inviter venn [invite]</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_BACK</key>
+		<translation>Tilbake [back]</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_SELECT</key>
+		<translation>Velg [continue]</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_START_GAME</key>
+		<translation>Start spill [continue]</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_MORE_WIZARDS</key>
+		<translation>[store] Butikk</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_PLAYER_SELECT</key>
+		<translation>Velg spillere</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_SINGLE_PLAYER</key>
+		<translation>Enspiller</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_ONLINE_BATTLE</key>
+		<translation>Nettbasert kamp</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_MODE_SELECT</key>
+		<translation>Velg modus</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_LEADERBOARD</key>
+		<translation>Uendelig</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_SETTINGS</key>
+		<translation>Innstillinger</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_LOBBY</key>
+		<translation>Finn spillere</translation>
+	</lookup>
+	<lookup>
+		<key>MEDALS_TITLE</key>
+		<translation>Medaljer:</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_SELECT_DEFAULT_PLAYER_NAME</key>
+		<translation>Spiller {playerindex}</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_SELECT_CONNECT_CONTROLLER</key>
+		<translation>Koble til\n[controller]</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_TITLE_COUNTDOWN</key>
+		<translation>Starter om:</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_TITLE_MODE</key>
+		<translation>Starter:</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_READY</key>
+		<translation>Kom igjen!</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_GAME_CLOSED</key>
+		<translation>Spill lukket</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_WAITING_FOR_PLAYERS</key>
+		<translation>Venter på\nspillere</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_LOOKING_FOR_GAMES</key>
+		<translation>Ser etter\nspill</translation>
+	</lookup>
+	<lookup>
+		<key>SINGLE_PLAYER_LEVEL_LOCKED_TITLE</key>
+		<translation>Låst</translation>
+	</lookup>
+	<lookup>
+		<key>SINGLE_PLAYER_LEVEL_UNLOCK_TARGET</key>
+		<translation>Opptjen {medalCount}\nfor å låse opp</translation>
+	</lookup>
+	<lookup>
+		<key>SINGLE_PLAYER_LEVEL_BRICKS_TITLE</key>
+		<translation>Klosser</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_SLOT_SIGN_IN</key>
+		<translation>Logg inn</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_SLOT_JOIN</key>
+		<translation>[continue]\nFor å bli med</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_GLOBAL_TITLE</key>
+		<translation>Globalt</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_FRIENDS_TITLE</key>
+		<translation>Venner</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_WEEKLY_TITLE</key>
+		<translation>Ukentlig</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_MONTHLY_TITLE</key>
+		<translation>Månedlig</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_HIGHSCORE_TITLE</key>
+		<translation>Ditt beste</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_ERROR_NOT_LOGGED_INTO_PSN</key>
+		<translation>Du er ikke logget inn med en Sony Entertainment Network-konto.\n\nDu må logge inn for å se resultatlistene.</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_ERROR_GENERAL_PSN</key>
+		<translation>Noe gikk galt ved innlastingen av resultatlistene.\n\nPrøv igjen senere.</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_NO_ENTRIES</key>
+		<translation>Disse resultatlistene er tomme. Bli den første til å få en plass på dem!</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_GRAPHICS</key>
+		<translation>Grafikk</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_SFX</key>
+		<translation>Lydeffekter</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_CONTROLLER_SFX</key>
+		<translation>[controller] lydeffekter</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_APPLY</key>
+		<translation>Bruk</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_MUSIC</key>
+		<translation>Musikk</translation>
+	</lookup>
+	<lookup>
+		<key>SETTINGS_STATS</key>
+		<translation>Statistikk</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_CREDITS</key>
+		<translation>Medvirkende</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_KEYBINDING</key>
+		<translation>Tastaturoppsett</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_EXPLANATIONS</key>
+		<translation>Forklaringer aktivert</translation>
+	</lookup>
+	<lookup>
+		<key>SETTINGS_RESOLUTION</key>
+		<translation>Oppløsning</translation>
+	</lookup>
+	<lookup>
+		<key>SETTINGS_VSYNC</key>
+		<translation>V-Sync</translation>
+	</lookup>
+	<lookup>
+		<key>SETTINGS_QUALITY</key>
+		<translation>Kvalitet</translation>
+	</lookup>
+	<lookup>
+		<key>SETTINGS_FULLSCREEN</key>
+		<translation>Fullskjerm</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_QUALITY_LOW</key>
+		<translation>Lav</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_QUALITY_NORMAL</key>
+		<translation>Middels</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_QUALITY_HIGH</key>
+		<translation>Magisk</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_LANGUAGE</key>
+		<translation>Språk</translation>
+	</lookup>
+	<lookup>
+		<key>PAUSE_TITLE</key>
+		<translation>Spill satt i pause</translation>
+	</lookup>
+	<lookup>
+		<key>PAUSE_ITEM_RESUME</key>
+		<translation>Fortsett</translation>
+	</lookup>
+	<lookup>
+		<key>PAUSE_ITEM_RETRY</key>
+		<translation>Prøv igjen</translation>
+	</lookup>
+	<lookup>
+		<key>PAUSE_ITEM_QUIT</key>
+		<translation>Avslutt</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_NEXT</key>
+		<translation>Neste</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_NEXT_LOCAL_MULTIPLAYER</key>
+		<translation>Neste kamp</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_RETRY</key>
+		<translation>Prøv igjen</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_REMATCH</key>
+		<translation>Omkamp</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_QUIT_SINGLE_PLAYER</key>
+		<translation>Velg prøvelse</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_QUIT_LOCAL_MULTIPLAYER</key>
+		<translation>Hovedmeny</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_QUIT_LEADERBOARD</key>
+		<translation>Tilbake til meny</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_MODE_SELECT</key>
+		<translation>Velg modus</translation>
+	</lookup>
+	<lookup>
+		<key>CONTROLS_TITLE</key>
+		<translation>Kontroll</translation>
+	</lookup>
+	<lookup>
+		<key>CONTROLS_MOVE</key>
+		<translation>Flytt kloss</translation>
+	</lookup>
+	<lookup>
+		<key>CONTROLS_ROTATE</key>
+		<translation>Roter kloss</translation>
+	</lookup>
+	<lookup>
+		<key>CONTROLS_NUDGE</key>
+		<translation>Dytt kloss</translation>
+	</lookup>
+	<lookup>
+		<key>CONTROLS_LIGHT_MAGIC</key>
+		<translation>Lys magi</translation>
+	</lookup>
+	<lookup>
+		<key>CONTROLS_DARK_MAGIC</key>
+		<translation>Mørk magi</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_TITLE_MULTIPLAYER_RACE</key>
+		<translation>Racingkamp</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_TITLE_MULTIPLAYER_SURVIVAL</key>
+		<translation>Overlevelseskamp</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_TITLE_MULTIPLAYER_PUZZLE</key>
+		<translation>Hjernetrimkamp</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_TITLE_SINGLE_PLAYER_RACE</key>
+		<translation>Racingprøvelse</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_TITLE_SINGLE_PLAYER_SURVIVAL</key>
+		<translation>Overlevelsesprøvelse</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_TITLE_SINGLE_PLAYER_PUZZLE</key>
+		<translation>Hjernetrimprøvelse</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_MULTIPLAYER_RACE</key>
+		<translation>Den første som fullfører vinner.</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_MULTIPLAYER_SURVIVAL</key>
+		<translation>Stable alle klossene uten å droppe dem.</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_MULTIPLAYER_PUZZLE</key>
+		<translation>Flest klosser stablet under laseren vinner.</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_SINGLE_PLAYER_RACE</key>
+		<translation>Kom i mål før tiden renner ut.</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_SINGLE_PLAYER_SURVIVAL</key>
+		<translation>Stable alle klossene uten å droppe dem.</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_SINGLE_PLAYER_PUZZLE</key>
+		<translation>Stable alle klossene under laseren.</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_MULTIPLAYER_RACE_PRO_SUBTITLE</key>
+		<translation>Storm!</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_MULTIPLAYER_SURVIVAL_PRO_SUBTITLE</key>
+		<translation>Magiske puljer!</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_MULTIPLAYER_PUZZLE_PRO_SUBTITLE</key>
+		<translation>Dylt påkrevd!</translation>
+	</lookup>
+	<lookup>
+		<key>HUD_PERSONAL_BEST</key>
+		<translation>Personlig rekord:</translation>
+	</lookup>
+	<lookup>
+		<key>HUD_NEW_HIGHSCORE</key>
+		<translation>Ny rekord!</translation>
+	</lookup>
+	<lookup>
+		<key>HUD_SCORE</key>
+		<translation>Poengsum:</translation>
+	</lookup>
+	<lookup>
+		<key>COUNTDOWN_RACE</key>
+		<translation>Race</translation>
+	</lookup>
+	<lookup>
+		<key>MESSAGE_WINNER</key>
+		<translation>Vinner!</translation>
+	</lookup>
+	<lookup>
+		<key>MESSAGE_WAVE</key>
+		<translation>Pulje</translation>
+	</lookup>
+	<lookup>
+		<key>MESSAGE_DRAW</key>
+		<translation>Uavgjort</translation>
+	</lookup>
+	<lookup>
+		<key>MESSAGE_WIZARD_OUT</key>
+		<translation>Trollmann ut!</translation>
+	</lookup>
+	<lookup>
+		<key>CHALLENGE_FAILED_MESSAGE</key>
+		<translation>Mislykket</translation>
+	</lookup>
+	<lookup>
+		<key>CHALLENGE_FINISH_MESSAGE</key>
+		<translation>Ferdig</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_QUIT_TITLE</key>
+		<translation>Avslutt</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_QUIT_MESSAGE</key>
+		<translation>Er du sikker på at du vil forlate dette nettbaserte spillet?</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_NOT_SIGNED_IN_TITLE</key>
+		<translation>Du må være logget inn</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_NOT_SIGNED_IN_MESSAGE</key>
+		<translation>Du må være logget inn med en Sony Entertainment Network-konto.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_CONNECTION_PROBLEM_TITLE</key>
+		<translation>Tilkoblingsproblem</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_CONNECTION_PROBLEM_MESSAGE</key>
+		<translation>Det oppstod et problem med tilkoblingen din, er du tilkoblet Internett?\n\nPrøv igjen senere.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_GENERAL_PSN_ERROR_TITLE</key>
+		<translation>Feil på PlayStation Network</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_GENERAL_PSN_ERROR_SUBTITLE</key>
+		<translation>Vi beklager</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_GENERAL_PSN_ERROR_MESSAGE</key>
+		<translation>Noe gikk galt ved sendingen av data.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_BUTTON_CONFIRM</key>
+		<translation>Bekreft</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_BUTTON_CONTINUE</key>
+		<translation>Fortsett</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_BUTTON_CLOSE</key>
+		<translation>Lukk</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_NETWORK_ERROR_TITLE</key>
+		<translation>Nettverksfeil</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_NETWORK_ERROR_MESSAGE</key>
+		<translation>Det oppstod et problem med tilkoblingen din.\nDu vil nå bli bragt tilbake til menyen.</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_PREFS_TITLE</key>
+		<translation>Lagret data for Tricky Towers</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_PREFS_SUBTITLE</key>
+		<translation>Fremgang</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_PREFS_MESSAGE</key>
+		<translation>Vil bli lastet for primærbruker.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_SAVE_GAME_TITLE</key>
+		<translation>Feil ved lagring av spill</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_SAVE_GAME_MESSAGE</key>
+		<translation>Beklager.\nVi kunne ikke lagre spillet ditt.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_LOAD_GAME_TITLE</key>
+		<translation>Feil ved lagret spill</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_LOAD_GAME_MESSAGE</key>
+		<translation>Beklager.\nDin lagringsdata ser ut til å være ødelagt.\nEn ny lagringsfil vil bli opprettet.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_STEAM_OVERLAY_AVAILABLE_TITLE</key>
+		<translation>Steam-overlegg påkrevd</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_STEAM_OVERLAY_AVAILABLE_MESSAGE</key>
+		<translation>For å få tilgang på butikken, må Steam-overlegget være aktivert.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_NO_STEAM_TITLE</key>
+		<translation>Kan ikke koble til Steam.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_NO_STEAM_MESSAGE</key>
+		<translation>Påse at Steam kjører, eller start Steam på nytt.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_CONTROLLER_DISCONNECTED_TITLE</key>
+		<translation>[controller] frakoblet</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_CONTROLLER_DISCONNECTED_MESSAGE</key>
+		<translation>{controllerName} ble frakoblet. Koble til [controller] igjen.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_BUTTON_RETRY</key>
+		<translation>Prøv igjen</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_BUTTON_CANCEL</key>
+		<translation>Avbryt</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_MODE_SURVIVAL_TITLE</key>
+		<translation>Oeverlevelsesutfordring</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_MODE_PUZZLE_TITLE</key>
+		<translation>Hjernetrimutfordring</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_MODE_RACE_TITLE</key>
+		<translation>Raceutfordring</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_MODE_DESCRIPTION</key>
+		<translation>Hvor mange klosser klarer du å stable?</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_THANKS_FOR_PLAYING</key>
+		<translation>Takk for at du spiller!</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_PROJECT_DIRECTOR</key>
+		<translation>Prosjektregissør</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_CREATIVE_AND_TECHNICAL_DIRECTOR</key>
+		<translation>Krativt og teknisk ansvarlig</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_GAME_DIRECTOR_AND_ART</key>
+		<translation>Spillregissør og grafisk ansvarlig</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_LEAD_PROGRAMMER</key>
+		<translation>Hovedprogrammør</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_PROGRAMMER</key>
+		<translation>Programmør</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_MUSIC_AND_AUDIO</key>
+		<translation>Musikk komponert av</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_TESTERS</key>
+		<translation>Testere</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_SCEE</key>
+		<translation>SCEE</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_SCEA</key>
+		<translation>SCEA</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_SIEJA</key>
+		<translation>SIEJA</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_SPECIAL_THANKS</key>
+		<translation>Spesiell takk til</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_SWITCH_USER_TITLE</key>
+		<translation>Bytt bruker</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_SWITCH_USER_MESSAGE</key>
+		<translation>Kun brukeren som startet spillet ({userName}) kan spille dette modi.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_HOST_MIGRATION_HOST_DROPPED</key>
+		<translation>Verten droppet!</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_HOST_MIGRATION_SWAPPING_HOST</key>
+		<translation>Bytter vert ...</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_OTHER_USER_SIGNED_IN_TITLE</key>
+		<translation>Annen bruker logget inn eller ut</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_OTHER_USER_SIGNED_IN_MESSAGE</key>
+		<translation>Du ble returnet til hovedmenyen fordi en annen bruker logget inn eller ut.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_ROOM_FULL_TITLE</key>
+		<translation>Spillet er fullt</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_ROOM_FULL_MESSAGE</key>
+		<translation>Det ser ut til at spillet allerede er fullt.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_GAME_STARTED_TITLE</key>
+		<translation>Spill startet</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_GAME_STARTED_MESSAGE</key>
+		<translation>Det ser ut til at spillet allerede har startet.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_GAME_DOESNT_EXIST_TITLE</key>
+		<translation>Spill stoppet</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_GAME_DOESNT_EXIST_MESSAGE</key>
+		<translation>Det ser ut til at spillet allerede har stoppet.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_NON_PRIMARY_USER_TITLE</key>
+		<translation>Kan ikke godta invitasjonen</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_NON_PRIMARY_USER_MESSAGE</key>
+		<translation>Kun brukeren som startet spillet ({userName}) kan godta invitasjoner.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_HOST_LEFT_TITLE</key>
+		<translation>Verten forlot spillet</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_HOST_LEFT_MESSAGE</key>
+		<translation>Verten forlot spillet. Du blir nå returnert til hovedmenyen.</translation>
+	</lookup>
+	<lookup>
+		<key>GAME_INFO_POPUP_TITLE</key>
+		<translation>Spillinformasjon</translation>
+	</lookup>
+	<lookup>
+		<key>GAME_INFO_GAME_MODE</key>
+		<translation>Spillmodi:</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_INFO_ITEM_PLAYER_OFFLINE</key>
+		<translation>{username} forlot spillet</translation>
+	</lookup>
+	<lookup>
+		<key>GAME_INFO_BUTTON_MESSAGE</key>
+		<translation>Spillinformasjon [gameInfo]</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_TITLE</key>
+		<translation>Nettbasert statistikk</translation>
+	</lookup>
+	<lookup>
+		<key>OTHER_STATS_TITLE</key>
+		<translation>Annen statistikk</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_GAMES_WON</key>
+		<translation>Spill vunnet</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_GAMES_LOST</key>
+		<translation>Spill tapt</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_GAMES_DRAW</key>
+		<translation>Spill uavgjort</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_GAMES_RATIO</key>
+		<translation>Vinn-/Tap-balanse</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_TIME_PLAYED</key>
+		<translation>Tid spilt</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_MEDAL_COUNT</key>
+		<translation>Medaljer</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_LOCAL_MATCHES</key>
+		<translation>Lokale kamper påbegynt</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_HIGHSCORE_SURVIVAL</key>
+		<translation>Poengsum i uendelig overlevelse</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_HIGHSCORE_PUZZLE</key>
+		<translation>Poengsum i uendelig hjernetrim</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_TIME_FORMAT</key>
+		<translation>%h%h %mm%m</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_BUBBLES_STABILIZED</key>
+		<translation>Bobler trampet på</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_SPELLS_USED</key>
+		<translation>Trylleformler brukt</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_BRICKS_PLACED</key>
+		<translation>Klosser plassert</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_HIGHEST_WAVE</key>
+		<translation>Høyeste pulje</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_FASTEST_NORMAL_RACE</key>
+		<translation>Raskeste vanlige race</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_CUP</key>
+		<translation>Nettbasert cup</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_CUP_WON</key>
+		<translation>Vunnet</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_CUP_LOST</key>
+		<translation>Tapt</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_CUP_RATIO</key>
+		<translation>Forhold</translation>
+	</lookup>
+	<lookup>
+		<key>ONLINE_PLAYER_SELECT_JOIN</key>
+		<translation>Finn nettbasert spill</translation>
+	</lookup>
+	<lookup>
+		<key>ONLINE_PLAYER_SELECT_CUP</key>
+		<translation>Finn nettbasert cup</translation>
+	</lookup>
+	<lookup>
+		<key>ONLINE_PLAYER_SELECT_FRIENDS</key>
+		<translation>Spill med venner</translation>
+	</lookup>
+	<lookup>
+		<key>ONLINE_PLAYER_ACCEPT_INVITE</key>
+		<translation>Bli med i spill</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_POPUP_TITLE</key>
+		<translation>Spill fullført</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_LEVEL_UP</key>
+		<translation>Nivå økt!</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_EXPERIENCE</key>
+		<translation>{xp} XP</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_LEVEL_DOWN</key>
+		<translation>Nivå senket!</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_0</key>
+		<translation>Trylleamatør</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_1</key>
+		<translation>Tryllelærling</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_2</key>
+		<translation>Tryllekunstner</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_3</key>
+		<translation>Magiamatør</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_4</key>
+		<translation>Magilærling</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_5</key>
+		<translation>Magiker</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_6</key>
+		<translation>Amatørtrollmann</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_7</key>
+		<translation>Trollmannlærling</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_8</key>
+		<translation>Trollmann</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_9</key>
+		<translation>Erfaren trollmann</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_MAX</key>
+		<translation>Mestertrollmann nivå {subLevel}</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_RANK_1ST</key>
+		<translation>1.-plass</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_RANK_2ND</key>
+		<translation>2.-plass</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_RANK_3RD</key>
+		<translation>3.-plass</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_RANK_4TH</key>
+		<translation>4.-plass</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_FORFEIT</key>
+		<translation>Gi opp!</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_LEFT_GAME</key>
+		<translation>Forlot spillet</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_WORLD_NAME_1</key>
+		<translation>Nykommerprøvelser</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_WORLD_NAME_2</key>
+		<translation>Lærlingprøvelser</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_WORLD_NAME_3</key>
+		<translation>Proffprøvelser</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_WORLD_NAME_4</key>
+		<translation>Ekspertprøvelser</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_WORLD_NAME_5</key>
+		<translation>Mesterprøvelser</translation>
+	</lookup>
+	<lookup>
+		<key>STEAM_USER_OFFLINE_ERROR_POPUP_TITLE</key>
+		<translation>Frakoblet modus</translation>
+	</lookup>
+	<lookup>
+		<key>STEAM_USER_OFFLINE_ERROR_POPUP_MESSAGE</key>
+		<translation>Du er for øyeblikket frakoblet. Prestasjoner vil ikke bli registrert frem til spillet har blitt startet på nytt med en tilkobling til Internett.</translation>
+	</lookup>
+	<lookup>
+		<key>INVITE_FRIENDS_DEFAULT_MESSAGE</key>
+		<translation>Det er påtide å bygge litt med Tricky Towers!</translation>
+	</lookup>
+	<lookup>
+		<key>INVITE_FRIENDS_STATUS</key>
+		<translation>Venter på spillere</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_CREATING_GAME</key>
+		<translation>Oppretter spill</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_JOINING_GAME</key>
+		<translation>Blir med i spill</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_WAITING_FOR_FRIENDS</key>
+		<translation>Venter på venner</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_HEADER_INVITE_FRIENDS</key>
+		<translation>Inviter venner</translation>
+	</lookup>
+	<lookup>
+		<key>ACCEPTING_INVITE</key>
+		<translation>Sjekker invitasjon ...</translation>
+	</lookup>
+	<lookup>
+		<key>PLAY_TOGETHER</key>
+		<translation>Spill sammen</translation>
+	</lookup>
+	<lookup>
+		<key>TOURNAMENT_RESULTS_POPUP_TITLE</key>
+		<translation>Spill fullført</translation>
+	</lookup>
+	<lookup>
+		<key>CUP_TARGET</key>
+		<translation>Førstemann til {targetScore} poeng</translation>
+	</lookup>
+	<lookup>
+		<key>CUP_EXPERIENCE_BONUS</key>
+		<translation>+{xp} XP i seiersbonus</translation>
+	</lookup>
+	<lookup>
+		<key>DEFAULT_WIN</key>
+		<translation>Motstanderen gav opp</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_TOURNAMENT_WINNER_TITLE</key>
+		<translation>Vinner av {cupType}!</translation>
+	</lookup>
+	<lookup>
+		<key>MOVE_LEFT</key>
+		<translation>Flytt til venstre</translation>
+	</lookup>
+	<lookup>
+		<key>MOVE_RIGHT</key>
+		<translation>Flytt til høyre</translation>
+	</lookup>
+	<lookup>
+		<key>DROP_DOWN</key>
+		<translation>Dropp ned</translation>
+	</lookup>
+	<lookup>
+		<key>ROTATE_RIGHT</key>
+		<translation>Roter mot høyre</translation>
+	</lookup>
+	<lookup>
+		<key>ROTATE_LEFT</key>
+		<translation>Roter mot venstre</translation>
+	</lookup>
+	<lookup>
+		<key>NUDGE_LEFT</key>
+		<translation>Dylt mot venstre</translation>
+	</lookup>
+	<lookup>
+		<key>NUDGE_RIGHT</key>
+		<translation>Dylt mot høyre</translation>
+	</lookup>
+	<lookup>
+		<key>ACTIVATE_SPELL</key>
+		<translation>Lys magi</translation>
+	</lookup>
+	<lookup>
+		<key>ACTIVATE_SPELL_DARK</key>
+		<translation>Mørk magi</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_OVERVIEW</key>
+		<translation>Nettbasert spillerinfo</translation>
+	</lookup>
+	<lookup>
+		<key>KEYBINDING_TITLE_ACTION</key>
+		<translation>Handling</translation>
+	</lookup>
+	<lookup>
+		<key>KEYBINDING_TITLE_RESET</key>
+		<translation>Tilbakestill til standardoppsett</translation>
+	</lookup>
+	<lookup>
+		<key>KEYBINDING_TITLE_KEY</key>
+		<translation>Tast</translation>
+	</lookup>
+</language>

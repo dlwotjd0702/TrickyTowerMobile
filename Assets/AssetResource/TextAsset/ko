@@ -1,0 +1,1087 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<lookup>
+		<key>DIFFICULTY_EASY</key>
+		<translation>이지</translation>
+	</lookup>
+	<lookup>
+		<key>DIFFICULTY_NORMAL</key>
+		<translation>노멀</translation>
+	</lookup>
+	<lookup>
+		<key>DIFFICULTY_PRO</key>
+		<translation>스페셜</translation>
+	</lookup>
+	<lookup>
+		<key>DIFFICULTY_ANY</key>
+		<translation>랜덤</translation>
+	</lookup>
+	<lookup>
+		<key>MODE_RACE</key>
+		<translation>레이스</translation>
+	</lookup>
+	<lookup>
+		<key>MODE_SURVIVAL</key>
+		<translation>서바이벌</translation>
+	</lookup>
+	<lookup>
+		<key>MODE_PUZZLE</key>
+		<translation>퍼즐</translation>
+	</lookup>
+	<lookup>
+		<key>MODE_ANY</key>
+		<translation>랜덤</translation>
+	</lookup>
+	<lookup>
+		<key>MODE_TITLE_OVERTIME</key>
+		<translation>시간 초과</translation>
+	</lookup>
+	<lookup>
+		<key>CUP_TINY</key>
+		<translation>타이니 컵</translation>
+	</lookup>
+	<lookup>
+		<key>CUP_BIG</key>
+		<translation>빅 컵</translation>
+	</lookup>
+	<lookup>
+		<key>CUP_SUPER</key>
+		<translation>슈퍼 컵</translation>
+	</lookup>
+	<lookup>
+		<key>CUP_QUICK_MATCH</key>
+		<translation>싱글 매치</translation>
+	</lookup>
+	<lookup>
+		<key>CUP_ONLINE</key>
+		<translation>온라인 컵</translation>
+	</lookup>
+	<lookup>
+		<key>START_GAME_MESSAGE</key>
+		<translation>[continue]을 눌러 시작</translation>
+	</lookup>
+	<lookup>
+		<key>CONTINUE_GAME_MESSAGE</key>
+		<translation>[continue]을 눌러 계속</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_LOCAL</key>
+		<translation>로컬 배틀</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_ONLINE</key>
+		<translation>온라인 배틀</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_SINGLE_PLAYER</key>
+		<translation>싱글 플레이어</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_TRIALS</key>
+		<translation>시험</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_SHOP</key>
+		<translation>가게</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_LEADERBOARD</key>
+		<translation>무한</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_LEADERBOARD_HIGHSCORE_TITLE</key>
+		<translation>고득점</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_LEADERBOARD_MEDALS_TITLE</key>
+		<translation>메달</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_HELP</key>
+		<translation>도움말</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_SETTINGS</key>
+		<translation>설정</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_QUIT</key>
+		<translation>게임 종료</translation>
+	</lookup>
+	<lookup>
+		<key>QUIT_POPUP_TITLE</key>
+		<translation>게임 종료</translation>
+	</lookup>
+	<lookup>
+		<key>QUIT_POPUP_MESSAGE</key>
+		<translation>게임을 종료하시겠습니까?</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATIONS_DISABLE</key>
+		<translation>[invite] 모든 설명 비활성화</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_CONTINUE</key>
+		<translation>계속 [continue]</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_NEXT</key>
+		<translation>다음 [continue]</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_CONTINUE_LOBBY</key>
+		<translation>가자! [continue]</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_INVITE_FRIEND</key>
+		<translation>친구 초대 [invite]</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_BACK</key>
+		<translation>돌아가기 [back]</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_SELECT</key>
+		<translation>선택 [continue]</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_START_GAME</key>
+		<translation>게임 시작 [continue]</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_MORE_WIZARDS</key>
+		<translation>[store] 가게</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_PLAYER_SELECT</key>
+		<translation>플레이어 선택</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_SINGLE_PLAYER</key>
+		<translation>싱글 플레이어</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_ONLINE_BATTLE</key>
+		<translation>온라인 배틀</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_MODE_SELECT</key>
+		<translation>모드 선택</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_LEADERBOARD</key>
+		<translation>무한</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_SETTINGS</key>
+		<translation>설정</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_LOBBY</key>
+		<translation>플레이어 찾기</translation>
+	</lookup>
+	<lookup>
+		<key>MEDALS_TITLE</key>
+		<translation>메달:</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_SELECT_DEFAULT_PLAYER_NAME</key>
+		<translation>플레이어 {playerIndex}</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_SELECT_CONNECT_CONTROLLER</key>
+		<translation>[controller]\n연결</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_TITLE_COUNTDOWN</key>
+		<translation>시작:</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_TITLE_MODE</key>
+		<translation>시작:</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_READY</key>
+		<translation>가자!</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_GAME_CLOSED</key>
+		<translation>게임 종료됨</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_WAITING_FOR_PLAYERS</key>
+		<translation>플레이어\n기다리는 중</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_LOOKING_FOR_GAMES</key>
+		<translation>게임\n찾는 중</translation>
+	</lookup>
+	<lookup>
+		<key>SINGLE_PLAYER_LEVEL_LOCKED_TITLE</key>
+		<translation>잠김</translation>
+	</lookup>
+	<lookup>
+		<key>SINGLE_PLAYER_LEVEL_UNLOCK_TARGET</key>
+		<translation>잠금을 해제하려면\n{medalCount}을 획득하세요</translation>
+	</lookup>
+	<lookup>
+		<key>SINGLE_PLAYER_LEVEL_BRICKS_TITLE</key>
+		<translation>벽돌</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_SLOT_SIGN_IN</key>
+		<translation>로그인</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_SLOT_JOIN</key>
+		<translation>[continue]하여\n가입</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_GLOBAL_TITLE</key>
+		<translation>글로벌</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_FRIENDS_TITLE</key>
+		<translation>친구</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_WEEKLY_TITLE</key>
+		<translation>주간</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_MONTHLY_TITLE</key>
+		<translation>월간</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_HIGHSCORE_TITLE</key>
+		<translation>최고 득점</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_ERROR_NOT_LOGGED_INTO_PSN</key>
+		<translation>Sony Entertainment Network 계정에 로그인하지 않았습니다.\n\n로그인해야만 순위표를 확인할 수 있습니다.</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_ERROR_GENERAL_PSN</key>
+		<translation>순위표를 불러오는 중 오류가 발생했습니다.\n\n나중에 다시 시도하십시오.</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_NO_ENTRIES</key>
+		<translation>순위표가 비어있습니다. 먼저 점수를 올려보세요!</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_GRAPHICS</key>
+		<translation>그래픽</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_SFX</key>
+		<translation>사운드 효과</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_CONTROLLER_SFX</key>
+		<translation>[controller] 사운드 효과</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_APPLY</key>
+		<translation>적용</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_MUSIC</key>
+		<translation>음악</translation>
+	</lookup>
+	<lookup>
+		<key>SETTINGS_STATS</key>
+		<translation>통계</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_CREDITS</key>
+		<translation>크레딧</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_KEYBINDING</key>
+		<translation>키 바인딩</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_EXPLANATIONS</key>
+		<translation>설명 보기</translation>
+	</lookup>
+	<lookup>
+		<key>SETTINGS_RESOLUTION</key>
+		<translation>해상도</translation>
+	</lookup>
+	<lookup>
+		<key>SETTINGS_VSYNC</key>
+		<translation>V-Sync</translation>
+	</lookup>
+	<lookup>
+		<key>SETTINGS_QUALITY</key>
+		<translation>퀄리티</translation>
+	</lookup>
+	<lookup>
+		<key>SETTINGS_FULLSCREEN</key>
+		<translation>전체 화면</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_QUALITY_LOW</key>
+		<translation>낮음</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_QUALITY_NORMAL</key>
+		<translation>보통</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_QUALITY_HIGH</key>
+		<translation>높음</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_LANGUAGE</key>
+		<translation>언어</translation>
+	</lookup>
+	<lookup>
+		<key>PAUSE_TITLE</key>
+		<translation>게임 일시중지</translation>
+	</lookup>
+	<lookup>
+		<key>PAUSE_ITEM_RESUME</key>
+		<translation>다시 시작</translation>
+	</lookup>
+	<lookup>
+		<key>PAUSE_ITEM_RETRY</key>
+		<translation>다시 시도</translation>
+	</lookup>
+	<lookup>
+		<key>PAUSE_ITEM_QUIT</key>
+		<translation>종료</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_NEXT</key>
+		<translation>다음</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_NEXT_LOCAL_MULTIPLAYER</key>
+		<translation>다음 매치</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_RETRY</key>
+		<translation>다시 시도</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_REMATCH</key>
+		<translation>다시 도전</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_QUIT_SINGLE_PLAYER</key>
+		<translation>시험 선택</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_QUIT_LOCAL_MULTIPLAYER</key>
+		<translation>메인 메뉴</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_QUIT_LEADERBOARD</key>
+		<translation>메뉴로 돌아가기</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_MODE_SELECT</key>
+		<translation>모드 선택</translation>
+	</lookup>
+	<lookup>
+		<key>CONTROLS_TITLE</key>
+		<translation>컨트롤</translation>
+	</lookup>
+	<lookup>
+		<key>CONTROLS_MOVE</key>
+		<translation>벽돌 이동</translation>
+	</lookup>
+	<lookup>
+		<key>CONTROLS_ROTATE</key>
+		<translation>벽돌 회전</translation>
+	</lookup>
+	<lookup>
+		<key>CONTROLS_NUDGE</key>
+		<translation>벽돌 밀기</translation>
+	</lookup>
+	<lookup>
+		<key>CONTROLS_LIGHT_MAGIC</key>
+		<translation>백마법</translation>
+	</lookup>
+	<lookup>
+		<key>CONTROLS_DARK_MAGIC</key>
+		<translation>흑마법</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_TITLE_MULTIPLAYER_RACE</key>
+		<translation>레이스 배틀</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_TITLE_MULTIPLAYER_SURVIVAL</key>
+		<translation>서바이벌 배틀</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_TITLE_MULTIPLAYER_PUZZLE</key>
+		<translation>퍼즐 배틀</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_TITLE_SINGLE_PLAYER_RACE</key>
+		<translation>레이스 시험</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_TITLE_SINGLE_PLAYER_SURVIVAL</key>
+		<translation>서바이벌 시험</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_TITLE_SINGLE_PLAYER_PUZZLE</key>
+		<translation>퍼즐 시험</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_MULTIPLAYER_RACE</key>
+		<translation>제일 먼저 승리를 달성하세요.</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_MULTIPLAYER_SURVIVAL</key>
+		<translation>벽돌을 떨어뜨리지 말고 모두 쌓으세요.</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_MULTIPLAYER_PUZZLE</key>
+		<translation>대부분의 벽돌이 레이저 아래 쌓여있으면 승리합니다.</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_SINGLE_PLAYER_RACE</key>
+		<translation>시간이 다 가기 전에 피니시에 도달하세요.</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_SINGLE_PLAYER_SURVIVAL</key>
+		<translation>벽돌을 떨어뜨리지 말고 모두 쌓으세요.</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_SINGLE_PLAYER_PUZZLE</key>
+		<translation>레이저 아래의 모든 벽돌을 쌓으세요.</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_MULTIPLAYER_RACE_PRO_SUBTITLE</key>
+		<translation>폭풍우!</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_MULTIPLAYER_SURVIVAL_PRO_SUBTITLE</key>
+		<translation>마법의 파도!</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_MULTIPLAYER_PUZZLE_PRO_SUBTITLE</key>
+		<translation>밀어야 합니다!</translation>
+	</lookup>
+	<lookup>
+		<key>HUD_PERSONAL_BEST</key>
+		<translation>개인 최고점수:</translation>
+	</lookup>
+	<lookup>
+		<key>HUD_NEW_HIGHSCORE</key>
+		<translation>새 최고점수!</translation>
+	</lookup>
+	<lookup>
+		<key>HUD_SCORE</key>
+		<translation>점수:</translation>
+	</lookup>
+	<lookup>
+		<key>COUNTDOWN_RACE</key>
+		<translation>레이스</translation>
+	</lookup>
+	<lookup>
+		<key>MESSAGE_WINNER</key>
+		<translation>승리!</translation>
+	</lookup>
+	<lookup>
+		<key>MESSAGE_WAVE</key>
+		<translation>파도</translation>
+	</lookup>
+	<lookup>
+		<key>MESSAGE_DRAW</key>
+		<translation>무승부</translation>
+	</lookup>
+	<lookup>
+		<key>MESSAGE_WIZARD_OUT</key>
+		<translation>위저드 아웃!</translation>
+	</lookup>
+	<lookup>
+		<key>CHALLENGE_FAILED_MESSAGE</key>
+		<translation>실패</translation>
+	</lookup>
+	<lookup>
+		<key>CHALLENGE_FINISH_MESSAGE</key>
+		<translation>피니시</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_QUIT_TITLE</key>
+		<translation>종료</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_QUIT_MESSAGE</key>
+		<translation>이 온라인 게임을 종료하시겠습니까?</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_NOT_SIGNED_IN_TITLE</key>
+		<translation>로그인해야 합니다.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_NOT_SIGNED_IN_MESSAGE</key>
+		<translation>Sony Entertainment Network 계정으로 로그인해야 합니다.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_CONNECTION_PROBLEM_TITLE</key>
+		<translation>연결 문제</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_CONNECTION_PROBLEM_MESSAGE</key>
+		<translation>연결 문제가 발생했습니다. 인터넷에 연결되어 있습니까?\n\n나중에 다시 시도하십시오.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_GENERAL_PSN_ERROR_TITLE</key>
+		<translation>Playstation Network 오류</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_GENERAL_PSN_ERROR_SUBTITLE</key>
+		<translation>죄송합니다.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_GENERAL_PSN_ERROR_MESSAGE</key>
+		<translation>데이터를 전송 중 문제가 발생했습니다.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_BUTTON_CONFIRM</key>
+		<translation>확인</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_BUTTON_CONTINUE</key>
+		<translation>계속</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_BUTTON_CLOSE</key>
+		<translation>닫기</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_NETWORK_ERROR_TITLE</key>
+		<translation>네트워크 오류</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_NETWORK_ERROR_MESSAGE</key>
+		<translation>연결 문제가 발생했습니다.\n메뉴로 돌아갑니다.</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_PREFS_TITLE</key>
+		<translation>Tricky Towers 저장 데이터</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_PREFS_SUBTITLE</key>
+		<translation>진행 사항을</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_PREFS_MESSAGE</key>
+		<translation>기본 사용자에게 불러옵니다.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_SAVE_GAME_TITLE</key>
+		<translation>게임 저장 오류</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_SAVE_GAME_MESSAGE</key>
+		<translation>죄송합니다.\n이 게임을 저장할 수 없습니다.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_LOAD_GAME_TITLE</key>
+		<translation>게임 저장 오류</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_LOAD_GAME_MESSAGE</key>
+		<translation>매우 죄송합니다.\n저장 데이터가 손상된 것 같습니다.\n새로운 저장 파일이 생성됩니다.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_STEAM_OVERLAY_AVAILABLE_TITLE</key>
+		<translation>Steam 오버레이 필요</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_STEAM_OVERLAY_AVAILABLE_MESSAGE</key>
+		<translation>상점에 접속하려면 Steam 오버레이를 사용하도록 설정해야 합니다.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_NO_STEAM_TITLE</key>
+		<translation>Steam에 접속할 수 없습니다.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_NO_STEAM_MESSAGE</key>
+		<translation>Steam이 실행중이거나 다시 시작해야 합니다.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_CONTROLLER_DISCONNECTED_TITLE</key>
+		<translation>[controller] 접속이 해제되었습니다.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_CONTROLLER_DISCONNECTED_MESSAGE</key>
+		<translation>{controllerName} 접속이 해제되었습니다. [controller]를 다시 연결하십시오.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_BUTTON_RETRY</key>
+		<translation>다시 시도</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_BUTTON_CANCEL</key>
+		<translation>취소</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_MODE_SURVIVAL_TITLE</key>
+		<translation>서바이벌 챌린지</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_MODE_PUZZLE_TITLE</key>
+		<translation>퍼즐 챌린지</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_MODE_RACE_TITLE</key>
+		<translation>레이스 챌린지</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_MODE_DESCRIPTION</key>
+		<translation>얼마나 많은 벽돌을 쌓을 수 있나요?</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_THANKS_FOR_PLAYING</key>
+		<translation>플레이 감사합니다!</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_PROJECT_DIRECTOR</key>
+		<translation>프로젝트 디렉터</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_CREATIVE_AND_TECHNICAL_DIRECTOR</key>
+		<translation>크리에이티브 및 기술 이사</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_GAME_DIRECTOR_AND_ART</key>
+		<translation>게임 디렉터 및 아트</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_LEAD_PROGRAMMER</key>
+		<translation>리드 프로그래머</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_PROGRAMMER</key>
+		<translation>프로그래머</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_MUSIC_AND_AUDIO</key>
+		<translation>원곡:</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_TESTERS</key>
+		<translation>테스터</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_SCEE</key>
+		<translation>SCEE</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_SCEA</key>
+		<translation>SCEA</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_SIEJA</key>
+		<translation>SIEJA</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_SPECIAL_THANKS</key>
+		<translation>감사의 말씀</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_SWITCH_USER_TITLE</key>
+		<translation>사용자 전환</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_SWITCH_USER_MESSAGE</key>
+		<translation>게임을 시작한 사용자({userName})만 이 모드를 플레이할 수 있습니다.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_HOST_MIGRATION_HOST_DROPPED</key>
+		<translation>방장을 찾을 수 없습니다!</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_HOST_MIGRATION_SWAPPING_HOST</key>
+		<translation>방장 전환 중...</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_OTHER_USER_SIGNED_IN_TITLE</key>
+		<translation>다른 사용자가 로그인 또는 로그아웃했습니다</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_OTHER_USER_SIGNED_IN_MESSAGE</key>
+		<translation>다른 사용자가 로그인 또는 로그아웃하여 메인 메뉴로 복귀했습니다.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_ROOM_FULL_TITLE</key>
+		<translation>인원 가득함</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_ROOM_FULL_MESSAGE</key>
+		<translation>이미 인원이 다 찬 것 같습니다.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_GAME_STARTED_TITLE</key>
+		<translation>게임 시작됨</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_GAME_STARTED_MESSAGE</key>
+		<translation>게임이 이미 시작된 것 같습니다.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_GAME_DOESNT_EXIST_TITLE</key>
+		<translation>게임 정지됨</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_GAME_DOESNT_EXIST_MESSAGE</key>
+		<translation>게임이 이미 정지된 것 같습니다.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_NON_PRIMARY_USER_TITLE</key>
+		<translation>초대를 수락할 수 없습니다</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_NON_PRIMARY_USER_MESSAGE</key>
+		<translation>게임을 시작한 사용자({userName})만 초대를 수락할 수 있습니다.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_HOST_LEFT_TITLE</key>
+		<translation>방장 게임 종료</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_HOST_LEFT_MESSAGE</key>
+		<translation>방장이 게임을 종료했습니다. 메인 메뉴로 돌아갑니다.</translation>
+	</lookup>
+	<lookup>
+		<key>GAME_INFO_POPUP_TITLE</key>
+		<translation>게임 정보</translation>
+	</lookup>
+	<lookup>
+		<key>GAME_INFO_GAME_MODE</key>
+		<translation>게임 모드:</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_INFO_ITEM_PLAYER_OFFLINE</key>
+		<translation>{username} 님이 게임을 종료했습니다</translation>
+	</lookup>
+	<lookup>
+		<key>GAME_INFO_BUTTON_MESSAGE</key>
+		<translation>게임 정보 [gameInfo]</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_TITLE</key>
+		<translation>온라인 통계</translation>
+	</lookup>
+	<lookup>
+		<key>OTHER_STATS_TITLE</key>
+		<translation>기타 통계</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_GAMES_WON</key>
+		<translation>게임 승리</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_GAMES_LOST</key>
+		<translation>게임 패배</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_GAMES_DRAW</key>
+		<translation>게임 무승부</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_GAMES_RATIO</key>
+		<translation>승패 비율</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_TIME_PLAYED</key>
+		<translation>플레이 시간</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_MEDAL_COUNT</key>
+		<translation>메달</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_LOCAL_MATCHES</key>
+		<translation>로컬 매치 시작</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_HIGHSCORE_SURVIVAL</key>
+		<translation>무한 서바이벌 점수</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_HIGHSCORE_PUZZLE</key>
+		<translation>무한 퍼즐 점수</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_TIME_FORMAT</key>
+		<translation>%h%h %mm%m</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_BUBBLES_STABILIZED</key>
+		<translation>밞은 거품</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_SPELLS_USED</key>
+		<translation>마법 사용</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_BRICKS_PLACED</key>
+		<translation>놓은 벽돌</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_HIGHEST_WAVE</key>
+		<translation>최고 웨이브</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_FASTEST_NORMAL_RACE</key>
+		<translation>가장 빠른 노멀 레이스</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_CUP</key>
+		<translation>온라인 컵</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_CUP_WON</key>
+		<translation>승리</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_CUP_LOST</key>
+		<translation>패배</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_CUP_RATIO</key>
+		<translation>비율</translation>
+	</lookup>
+	<lookup>
+		<key>ONLINE_PLAYER_SELECT_JOIN</key>
+		<translation>온라인 게임 찾기</translation>
+	</lookup>
+	<lookup>
+		<key>ONLINE_PLAYER_SELECT_CUP</key>
+		<translation>온라인 컵 찾기</translation>
+	</lookup>
+	<lookup>
+		<key>ONLINE_PLAYER_SELECT_FRIENDS</key>
+		<translation>친구와 플레이하기</translation>
+	</lookup>
+	<lookup>
+		<key>ONLINE_PLAYER_ACCEPT_INVITE</key>
+		<translation>게임 참여</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_POPUP_TITLE</key>
+		<translation>게임 완료</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_LEVEL_UP</key>
+		<translation>레벨 업!</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_EXPERIENCE</key>
+		<translation>{xp} XP</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_LEVEL_DOWN</key>
+		<translation>레벨 다운!</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_0</key>
+		<translation>신인 매지션</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_1</key>
+		<translation>견습 매지션</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_2</key>
+		<translation>매지션</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_3</key>
+		<translation>신인 소서러</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_4</key>
+		<translation>견습 소서러</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_5</key>
+		<translation>소서러</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_6</key>
+		<translation>신인 위저드</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_7</key>
+		<translation>견습 위저드</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_8</key>
+		<translation>위저드</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_9</key>
+		<translation>전문 위저드</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_MAX</key>
+		<translation>마스터 위저드 레벨 {subLevel}</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_RANK_1ST</key>
+		<translation>1위</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_RANK_2ND</key>
+		<translation>2위</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_RANK_3RD</key>
+		<translation>3위</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_RANK_4TH</key>
+		<translation>4위</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_FORFEIT</key>
+		<translation>박탈!</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_LEFT_GAME</key>
+		<translation>게임 떠남</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_WORLD_NAME_1</key>
+		<translation>신인 시험</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_WORLD_NAME_2</key>
+		<translation>견습 시험</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_WORLD_NAME_3</key>
+		<translation>프로 시험</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_WORLD_NAME_4</key>
+		<translation>전문 시험</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_WORLD_NAME_5</key>
+		<translation>마스터 시험</translation>
+	</lookup>
+	<lookup>
+		<key>STEAM_USER_OFFLINE_ERROR_POPUP_TITLE</key>
+		<translation>오프라인 모드</translation>
+	</lookup>
+	<lookup>
+		<key>STEAM_USER_OFFLINE_ERROR_POPUP_MESSAGE</key>
+		<translation>현재 오프라인 상태입니다. 인터넷 연결 후 게임을 다시 시작하여야만 성과가 등록됩니다.</translation>
+	</lookup>
+	<lookup>
+		<key>INVITE_FRIENDS_DEFAULT_MESSAGE</key>
+		<translation>Tricky Towers를 쌓을 시간입니다!</translation>
+	</lookup>
+	<lookup>
+		<key>INVITE_FRIENDS_STATUS</key>
+		<translation>플레이어 기다리는 중</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_CREATING_GAME</key>
+		<translation>방 만들기</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_JOINING_GAME</key>
+		<translation>게임 참여</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_WAITING_FOR_FRIENDS</key>
+		<translation>친구 기다리는 중</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_HEADER_INVITE_FRIENDS</key>
+		<translation>친구 초대</translation>
+	</lookup>
+	<lookup>
+		<key>ACCEPTING_INVITE</key>
+		<translation>초대 확인 중...</translation>
+	</lookup>
+	<lookup>
+		<key>PLAY_TOGETHER</key>
+		<translation>함께 플레이</translation>
+	</lookup>
+	<lookup>
+		<key>TOURNAMENT_RESULTS_POPUP_TITLE</key>
+		<translation>게임 완료</translation>
+	</lookup>
+	<lookup>
+		<key>CUP_TARGET</key>
+		<translation>{targetScore}점 먼저 도달시</translation>
+	</lookup>
+	<lookup>
+		<key>CUP_EXPERIENCE_BONUS</key>
+		<translation>+{xp} XP 승리 보너스</translation>
+	</lookup>
+	<lookup>
+		<key>DEFAULT_WIN</key>
+		<translation>박탈로 승리</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_TOURNAMENT_WINNER_TITLE</key>
+		<translation>{cupType} 승자!</translation>
+	</lookup>
+	<lookup>
+		<key>MOVE_LEFT</key>
+		<translation>왼쪽 이동</translation>
+	</lookup>
+	<lookup>
+		<key>MOVE_RIGHT</key>
+		<translation>오른쪽 이동</translation>
+	</lookup>
+	<lookup>
+		<key>DROP_DOWN</key>
+		<translation>떨어뜨리기</translation>
+	</lookup>
+	<lookup>
+		<key>ROTATE_RIGHT</key>
+		<translation>오른쪽 회전</translation>
+	</lookup>
+	<lookup>
+		<key>ROTATE_LEFT</key>
+		<translation>왼쪽 회전</translation>
+	</lookup>
+	<lookup>
+		<key>NUDGE_LEFT</key>
+		<translation>왼쪽 밀기</translation>
+	</lookup>
+	<lookup>
+		<key>NUDGE_RIGHT</key>
+		<translation>오른쪽 밀기</translation>
+	</lookup>
+	<lookup>
+		<key>ACTIVATE_SPELL</key>
+		<translation>백마법</translation>
+	</lookup>
+	<lookup>
+		<key>ACTIVATE_SPELL_DARK</key>
+		<translation>흑마법</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_OVERVIEW</key>
+		<translation>온라인 플레이어 정보</translation>
+	</lookup>
+	<lookup>
+		<key>KEYBINDING_TITLE_ACTION</key>
+		<translation>액션</translation>
+	</lookup>
+	<lookup>
+		<key>KEYBINDING_TITLE_RESET</key>
+		<translation>기본값으로 재설정</translation>
+	</lookup>
+	<lookup>
+		<key>KEYBINDING_TITLE_KEY</key>
+		<translation>키</translation>
+	</lookup>
+</language>

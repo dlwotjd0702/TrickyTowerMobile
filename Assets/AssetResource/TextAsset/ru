@@ -1,0 +1,1087 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<lookup>
+		<key>DIFFICULTY_EASY</key>
+		<translation>Легкий</translation>
+	</lookup>
+	<lookup>
+		<key>DIFFICULTY_NORMAL</key>
+		<translation>Нормальный</translation>
+	</lookup>
+	<lookup>
+		<key>DIFFICULTY_PRO</key>
+		<translation>Особый</translation>
+	</lookup>
+	<lookup>
+		<key>DIFFICULTY_ANY</key>
+		<translation>Случайный</translation>
+	</lookup>
+	<lookup>
+		<key>MODE_RACE</key>
+		<translation>Гонка</translation>
+	</lookup>
+	<lookup>
+		<key>MODE_SURVIVAL</key>
+		<translation>Выживание</translation>
+	</lookup>
+	<lookup>
+		<key>MODE_PUZZLE</key>
+		<translation>Головоломка</translation>
+	</lookup>
+	<lookup>
+		<key>MODE_ANY</key>
+		<translation>Случайный</translation>
+	</lookup>
+	<lookup>
+		<key>MODE_TITLE_OVERTIME</key>
+		<translation>Дополнительное время</translation>
+	</lookup>
+	<lookup>
+		<key>CUP_TINY</key>
+		<translation>Малый кубок</translation>
+	</lookup>
+	<lookup>
+		<key>CUP_BIG</key>
+		<translation>Большой кубок</translation>
+	</lookup>
+	<lookup>
+		<key>CUP_SUPER</key>
+		<translation>Суперкубок</translation>
+	</lookup>
+	<lookup>
+		<key>CUP_QUICK_MATCH</key>
+		<translation>Быстрая игра</translation>
+	</lookup>
+	<lookup>
+		<key>CUP_ONLINE</key>
+		<translation>Онлайн-кубок</translation>
+	</lookup>
+	<lookup>
+		<key>START_GAME_MESSAGE</key>
+		<translation>Чтобы начать, нажмите [continue]</translation>
+	</lookup>
+	<lookup>
+		<key>CONTINUE_GAME_MESSAGE</key>
+		<translation>Чтобы продолжить, нажмите [continue]</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_LOCAL</key>
+		<translation>Локальная битва</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_ONLINE</key>
+		<translation>Сетевая битва</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_SINGLE_PLAYER</key>
+		<translation>Один игрок</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_TRIALS</key>
+		<translation>Испытания</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_SHOP</key>
+		<translation>Магазин</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_LEADERBOARD</key>
+		<translation>Без конца</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_LEADERBOARD_HIGHSCORE_TITLE</key>
+		<translation>Рекорды</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_LEADERBOARD_MEDALS_TITLE</key>
+		<translation>Медали</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_HELP</key>
+		<translation>Справка</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_SETTINGS</key>
+		<translation>Настройки</translation>
+	</lookup>
+	<lookup>
+		<key>MENU_ITEM_QUIT</key>
+		<translation>Выйти из игры</translation>
+	</lookup>
+	<lookup>
+		<key>QUIT_POPUP_TITLE</key>
+		<translation>Выйти из игры</translation>
+	</lookup>
+	<lookup>
+		<key>QUIT_POPUP_MESSAGE</key>
+		<translation>Вы действительно хотите выйти из игры?</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATIONS_DISABLE</key>
+		<translation>[invite] Отключить подсказки</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_CONTINUE</key>
+		<translation>Продолжить [continue]</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_NEXT</key>
+		<translation>Далее [continue]</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_CONTINUE_LOBBY</key>
+		<translation>Вперед! [continue]</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_INVITE_FRIEND</key>
+		<translation>Пригласить друга [invite]</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_BACK</key>
+		<translation>Назад [back]</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_SELECT</key>
+		<translation>Выбрать [continue]</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_START_GAME</key>
+		<translation>Начать игру [continue]</translation>
+	</lookup>
+	<lookup>
+		<key>NAVIGATION_MORE_WIZARDS</key>
+		<translation>[store] Магазин</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_PLAYER_SELECT</key>
+		<translation>Выбрать игроков</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_SINGLE_PLAYER</key>
+		<translation>Один игрок</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_ONLINE_BATTLE</key>
+		<translation>Сетевая битва</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_MODE_SELECT</key>
+		<translation>Выбрать режим</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_LEADERBOARD</key>
+		<translation>Без конца</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_SETTINGS</key>
+		<translation>Настройки</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_LOBBY</key>
+		<translation>Найти игроков</translation>
+	</lookup>
+	<lookup>
+		<key>MEDALS_TITLE</key>
+		<translation>Медали:</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_SELECT_DEFAULT_PLAYER_NAME</key>
+		<translation>Игрок {playerIndex}</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_SELECT_CONNECT_CONTROLLER</key>
+		<translation>Подключить\n[controller]</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_TITLE_COUNTDOWN</key>
+		<translation>Начало через:</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_TITLE_MODE</key>
+		<translation>Начало:</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_READY</key>
+		<translation>Вперед!</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_GAME_CLOSED</key>
+		<translation>Игра закрыта</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_WAITING_FOR_PLAYERS</key>
+		<translation>Ожидаем\nигроков</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_LOOKING_FOR_GAMES</key>
+		<translation>Ищем\nигры</translation>
+	</lookup>
+	<lookup>
+		<key>SINGLE_PLAYER_LEVEL_LOCKED_TITLE</key>
+		<translation>Недоступно</translation>
+	</lookup>
+	<lookup>
+		<key>SINGLE_PLAYER_LEVEL_UNLOCK_TARGET</key>
+		<translation>Получите {medalCount},\nчтобы открыть</translation>
+	</lookup>
+	<lookup>
+		<key>SINGLE_PLAYER_LEVEL_BRICKS_TITLE</key>
+		<translation>Блоки</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_SLOT_SIGN_IN</key>
+		<translation>Войти</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_SLOT_JOIN</key>
+		<translation>[continue]\nчтобы\nподключиться</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_GLOBAL_TITLE</key>
+		<translation>Весь мир</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_FRIENDS_TITLE</key>
+		<translation>Друзья</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_WEEKLY_TITLE</key>
+		<translation>еженедельно</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_MONTHLY_TITLE</key>
+		<translation>ежемесячно</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_HIGHSCORE_TITLE</key>
+		<translation>Ваш рекорд</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_ERROR_NOT_LOGGED_INTO_PSN</key>
+		<translation>Вы не подключены к учетная запись Sony Entertainment Network.\n\nЧтобы смотреть списки лидеров, вы должны войти в систему.</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_ERROR_GENERAL_PSN</key>
+		<translation>Ошибка загрузки списков лидеров.\n\nПовторите попытку позже.</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_NO_ENTRIES</key>
+		<translation>Список лидеров пуст. Поставьте первый рекорд!</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_GRAPHICS</key>
+		<translation>Графика</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_SFX</key>
+		<translation>Звуковые эффекты</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_CONTROLLER_SFX</key>
+		<translation>Звуковые эффекты [controller]</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_APPLY</key>
+		<translation>подать заявление</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_MUSIC</key>
+		<translation>Музыка</translation>
+	</lookup>
+	<lookup>
+		<key>SETTINGS_STATS</key>
+		<translation>Статистика</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_CREDITS</key>
+		<translation>Создатели</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_KEYBINDING</key>
+		<translation>Управление</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_EXPLANATIONS</key>
+		<translation>Подсказки включены</translation>
+	</lookup>
+	<lookup>
+		<key>SETTINGS_RESOLUTION</key>
+		<translation>Разрешение</translation>
+	</lookup>
+	<lookup>
+		<key>SETTINGS_VSYNC</key>
+		<translation>V-Sync</translation>
+	</lookup>
+	<lookup>
+		<key>SETTINGS_QUALITY</key>
+		<translation>Качество</translation>
+	</lookup>
+	<lookup>
+		<key>SETTINGS_FULLSCREEN</key>
+		<translation>На весь экран</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_QUALITY_LOW</key>
+		<translation>Производительность</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_QUALITY_NORMAL</key>
+		<translation>Нормально</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_QUALITY_HIGH</key>
+		<translation>Волшебно</translation>
+	</lookup>
+	<lookup>
+		<key>SETTING_LANGUAGE</key>
+		<translation>Язык</translation>
+	</lookup>
+	<lookup>
+		<key>PAUSE_TITLE</key>
+		<translation>Пауза</translation>
+	</lookup>
+	<lookup>
+		<key>PAUSE_ITEM_RESUME</key>
+		<translation>Продолжить</translation>
+	</lookup>
+	<lookup>
+		<key>PAUSE_ITEM_RETRY</key>
+		<translation>Повторить</translation>
+	</lookup>
+	<lookup>
+		<key>PAUSE_ITEM_QUIT</key>
+		<translation>Выход</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_NEXT</key>
+		<translation>Далее</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_NEXT_LOCAL_MULTIPLAYER</key>
+		<translation>Следующая игра</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_RETRY</key>
+		<translation>Повторить</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_REMATCH</key>
+		<translation>Сыграть еще раз</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_QUIT_SINGLE_PLAYER</key>
+		<translation>Выбрать испытание</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_QUIT_LOCAL_MULTIPLAYER</key>
+		<translation>Главное меню</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_QUIT_LEADERBOARD</key>
+		<translation>Вернуться в меню</translation>
+	</lookup>
+	<lookup>
+		<key>END_GAME_POPUP_MODE_SELECT</key>
+		<translation>Выбрать режим</translation>
+	</lookup>
+	<lookup>
+		<key>CONTROLS_TITLE</key>
+		<translation>Управление</translation>
+	</lookup>
+	<lookup>
+		<key>CONTROLS_MOVE</key>
+		<translation>Передвинуть блок</translation>
+	</lookup>
+	<lookup>
+		<key>CONTROLS_ROTATE</key>
+		<translation>Повернуть блок</translation>
+	</lookup>
+	<lookup>
+		<key>CONTROLS_NUDGE</key>
+		<translation>Толкнуть блок</translation>
+	</lookup>
+	<lookup>
+		<key>CONTROLS_LIGHT_MAGIC</key>
+		<translation>Светлая магия</translation>
+	</lookup>
+	<lookup>
+		<key>CONTROLS_DARK_MAGIC</key>
+		<translation>Темная магия</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_TITLE_MULTIPLAYER_RACE</key>
+		<translation>Битва на скорость</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_TITLE_MULTIPLAYER_SURVIVAL</key>
+		<translation>Битва на выживание</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_TITLE_MULTIPLAYER_PUZZLE</key>
+		<translation>Битва-головоломка</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_TITLE_SINGLE_PLAYER_RACE</key>
+		<translation>Испытание на скорость</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_TITLE_SINGLE_PLAYER_SURVIVAL</key>
+		<translation>Испытание на выживание</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_TITLE_SINGLE_PLAYER_PUZZLE</key>
+		<translation>Испытание-головоломка</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_MULTIPLAYER_RACE</key>
+		<translation>Побеждает тот, кто дойдет до финиша первым.</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_MULTIPLAYER_SURVIVAL</key>
+		<translation>Сложите все блоки, не роняя.</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_MULTIPLAYER_PUZZLE</key>
+		<translation>Побеждает тот, у кого больше блоков ниже лазера.</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_SINGLE_PLAYER_RACE</key>
+		<translation>Дойдите до финиша прежде, чем выйдет время.</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_SINGLE_PLAYER_SURVIVAL</key>
+		<translation>Сложите все блоки, не роняя.</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_SINGLE_PLAYER_PUZZLE</key>
+		<translation>Сложите все блоки ниже лазера.</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_MULTIPLAYER_RACE_PRO_SUBTITLE</key>
+		<translation>Штормовая погода!</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_MULTIPLAYER_SURVIVAL_PRO_SUBTITLE</key>
+		<translation>Магические волны!</translation>
+	</lookup>
+	<lookup>
+		<key>EXPLANATION_MULTIPLAYER_PUZZLE_PRO_SUBTITLE</key>
+		<translation>Нужен толчок!</translation>
+	</lookup>
+	<lookup>
+		<key>HUD_PERSONAL_BEST</key>
+		<translation>Личный рекорд:</translation>
+	</lookup>
+	<lookup>
+		<key>HUD_NEW_HIGHSCORE</key>
+		<translation>Новый рекорд!</translation>
+	</lookup>
+	<lookup>
+		<key>HUD_SCORE</key>
+		<translation>Счет:</translation>
+	</lookup>
+	<lookup>
+		<key>COUNTDOWN_RACE</key>
+		<translation>Гонка</translation>
+	</lookup>
+	<lookup>
+		<key>MESSAGE_WINNER</key>
+		<translation>Победитель!</translation>
+	</lookup>
+	<lookup>
+		<key>MESSAGE_WAVE</key>
+		<translation>Волна</translation>
+	</lookup>
+	<lookup>
+		<key>MESSAGE_DRAW</key>
+		<translation>Ничья</translation>
+	</lookup>
+	<lookup>
+		<key>MESSAGE_WIZARD_OUT</key>
+		<translation>Маг выбыл!</translation>
+	</lookup>
+	<lookup>
+		<key>CHALLENGE_FAILED_MESSAGE</key>
+		<translation>Неудача</translation>
+	</lookup>
+	<lookup>
+		<key>CHALLENGE_FINISH_MESSAGE</key>
+		<translation>Финиш</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_QUIT_TITLE</key>
+		<translation>Выход</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_QUIT_MESSAGE</key>
+		<translation>Вы действительно хотите выйти из сетевой игры?</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_NOT_SIGNED_IN_TITLE</key>
+		<translation>Нужно войти в учетную запись</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_NOT_SIGNED_IN_MESSAGE</key>
+		<translation>Вам нужно войти в учетную запись Sony Entertainment Network.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_CONNECTION_PROBLEM_TITLE</key>
+		<translation>Ошибка соединения</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_CONNECTION_PROBLEM_MESSAGE</key>
+		<translation>Возникла проблема с соединением. Вы подключены к интернету?\n\nПовторите попытку позже.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_GENERAL_PSN_ERROR_TITLE</key>
+		<translation>Ошибка Playstation Network</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_GENERAL_PSN_ERROR_SUBTITLE</key>
+		<translation>Приносим извинения</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_GENERAL_PSN_ERROR_MESSAGE</key>
+		<translation>При отправке данных произошел сбой.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_BUTTON_CONFIRM</key>
+		<translation>Подтвердить</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_BUTTON_CONTINUE</key>
+		<translation>Продолжить</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_BUTTON_CLOSE</key>
+		<translation>Закрыть</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_NETWORK_ERROR_TITLE</key>
+		<translation>Ошибка сети</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_NETWORK_ERROR_MESSAGE</key>
+		<translation>Возникла проблема с соединением.\nСейчас вы вернетесь в меню.</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_PREFS_TITLE</key>
+		<translation>Данные сохранения Tricky Towers</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_PREFS_SUBTITLE</key>
+		<translation>Прогресс</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_PREFS_MESSAGE</key>
+		<translation>Будет загружено для основного пользователя.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_SAVE_GAME_TITLE</key>
+		<translation>Ошибка сохранения</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_SAVE_GAME_MESSAGE</key>
+		<translation>Приносим извинения.\nМы не можем сохранить вашу игру.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_LOAD_GAME_TITLE</key>
+		<translation>Ошибка сохранения</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_LOAD_GAME_MESSAGE</key>
+		<translation>Приносим извинения.\nПохоже, файл сохранения поврежден.\nСейчас мы создадим новый.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_STEAM_OVERLAY_AVAILABLE_TITLE</key>
+		<translation>Требуется оверлей Steam</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_STEAM_OVERLAY_AVAILABLE_MESSAGE</key>
+		<translation>Для доступа к магазину необходимо включить оверлей Steam.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_NO_STEAM_TITLE</key>
+		<translation>Не удалось подключиться к Steam</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_NO_STEAM_MESSAGE</key>
+		<translation>Убедитесь, что Steam запущен, или перезапустите клиент Steam.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_CONTROLLER_DISCONNECTED_TITLE</key>
+		<translation>[controller] отсоединен.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_ERROR_CONTROLLER_DISCONNECTED_MESSAGE</key>
+		<translation>{controllerName} отсоединен. Пожалуйста, подключите [controller] снова.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_BUTTON_RETRY</key>
+		<translation>Повторить</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_BUTTON_CANCEL</key>
+		<translation>Отмена</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_MODE_SURVIVAL_TITLE</key>
+		<translation>Испытание на выживание</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_MODE_PUZZLE_TITLE</key>
+		<translation>Испытание-головоломка</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_MODE_RACE_TITLE</key>
+		<translation>Испытание-Гонка</translation>
+	</lookup>
+	<lookup>
+		<key>LEADERBOARD_MODE_DESCRIPTION</key>
+		<translation>Сколько блоков вы сможете составить?</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_THANKS_FOR_PLAYING</key>
+		<translation>Спасибо за игру!</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_PROJECT_DIRECTOR</key>
+		<translation>Руководитель проекта</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_CREATIVE_AND_TECHNICAL_DIRECTOR</key>
+		<translation>Креативный и технический директор</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_GAME_DIRECTOR_AND_ART</key>
+		<translation>Гейм- и арт-директор</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_LEAD_PROGRAMMER</key>
+		<translation>Ведущий программист</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_PROGRAMMER</key>
+		<translation>Программист</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_MUSIC_AND_AUDIO</key>
+		<translation>Музыка и звуки</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_TESTERS</key>
+		<translation>Тестировщики</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_SCEE</key>
+		<translation>SCEE</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_SCEA</key>
+		<translation>SCEA</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_SIEJA</key>
+		<translation>SIEJA</translation>
+	</lookup>
+	<lookup>
+		<key>CREDITS_SPECIAL_THANKS</key>
+		<translation>Отдельная благодарность</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_SWITCH_USER_TITLE</key>
+		<translation>Поменять пользователя</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_SWITCH_USER_MESSAGE</key>
+		<translation>Только игрок, начавший эту игру ({userName}), может играть в этом режиме.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_HOST_MIGRATION_HOST_DROPPED</key>
+		<translation>Хост отключен!</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_HOST_MIGRATION_SWAPPING_HOST</key>
+		<translation>Смена хоста...</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_OTHER_USER_SIGNED_IN_TITLE</key>
+		<translation>Авторизован или вышел другой игрок</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_OTHER_USER_SIGNED_IN_MESSAGE</key>
+		<translation>Вы возвращены в главное меню из-за авторизации или выхода другого игрока.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_ROOM_FULL_TITLE</key>
+		<translation>В игре нет мест</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_ROOM_FULL_MESSAGE</key>
+		<translation>Похоже, в игре уже нет мест.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_GAME_STARTED_TITLE</key>
+		<translation>Игра началась</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_GAME_STARTED_MESSAGE</key>
+		<translation>Похоже, игра уже началась.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_GAME_DOESNT_EXIST_TITLE</key>
+		<translation>Игра завершилась</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_GAME_DOESNT_EXIST_MESSAGE</key>
+		<translation>Похоже, игра уже завершилась.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_NON_PRIMARY_USER_TITLE</key>
+		<translation>Нельзя принять приглашение</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_NON_PRIMARY_USER_MESSAGE</key>
+		<translation>Только пользователь, начавший эту игру ({userName}), может принимать приглашения.</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_HOST_LEFT_TITLE</key>
+		<translation>Хозяин покинул игру</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_INVITE_HOST_LEFT_MESSAGE</key>
+		<translation>Хозяин покинул игру, и вас вернули в главное меню.</translation>
+	</lookup>
+	<lookup>
+		<key>GAME_INFO_POPUP_TITLE</key>
+		<translation>Информация об игре</translation>
+	</lookup>
+	<lookup>
+		<key>GAME_INFO_GAME_MODE</key>
+		<translation>Режим игры:</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_INFO_ITEM_PLAYER_OFFLINE</key>
+		<translation>{username} покидает игру</translation>
+	</lookup>
+	<lookup>
+		<key>GAME_INFO_BUTTON_MESSAGE</key>
+		<translation>Информация об игре [gameInfo]</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_TITLE</key>
+		<translation>Сетевая статистика</translation>
+	</lookup>
+	<lookup>
+		<key>OTHER_STATS_TITLE</key>
+		<translation>Прочая статистика</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_GAMES_WON</key>
+		<translation>Победы</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_GAMES_LOST</key>
+		<translation>Поражения</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_GAMES_DRAW</key>
+		<translation>Ничьи</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_GAMES_RATIO</key>
+		<translation>побед/поражений</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_TIME_PLAYED</key>
+		<translation>Время в игре</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_MEDAL_COUNT</key>
+		<translation>Медали</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_LOCAL_MATCHES</key>
+		<translation>Начались местные матчи</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_HIGHSCORE_SURVIVAL</key>
+		<translation>Очки за выживание без конца</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_HIGHSCORE_PUZZLE</key>
+		<translation>Очки за головоломку без конца</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_TIME_FORMAT</key>
+		<translation>%h% ч. %mm% мин.</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_BUBBLES_STABILIZED</key>
+		<translation>Раздавлено шариков</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_SPELLS_USED</key>
+		<translation>Использовано заклинаний</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_BRICKS_PLACED</key>
+		<translation>Размещено блоков</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_HIGHEST_WAVE</key>
+		<translation>Самая длинная волна</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_FASTEST_NORMAL_RACE</key>
+		<translation>Самая быстрая обычная гонка</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_CUP</key>
+		<translation>Онлайн-кубки</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_CUP_WON</key>
+		<translation>Выиграно:</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_CUP_LOST</key>
+		<translation>потери:</translation>
+	</lookup>
+	<lookup>
+		<key>STATS_CUP_RATIO</key>
+		<translation>пропорция:</translation>
+	</lookup>
+	<lookup>
+		<key>ONLINE_PLAYER_SELECT_JOIN</key>
+		<translation>Найти игру</translation>
+	</lookup>
+	<lookup>
+		<key>ONLINE_PLAYER_SELECT_CUP</key>
+		<translation>Найти онлайн-кубок</translation>
+	</lookup>
+	<lookup>
+		<key>ONLINE_PLAYER_SELECT_FRIENDS</key>
+		<translation>Пригласить друзей</translation>
+	</lookup>
+	<lookup>
+		<key>ONLINE_PLAYER_ACCEPT_INVITE</key>
+		<translation>Присоединиться к игре</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_POPUP_TITLE</key>
+		<translation>Игра завершена</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_LEVEL_UP</key>
+		<translation>Повышение уровня!</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_EXPERIENCE</key>
+		<translation>{xp} ОП</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_LEVEL_DOWN</key>
+		<translation>Понижение уровня!</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_0</key>
+		<translation>Волшебник-новичок</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_1</key>
+		<translation>Волшебник-ученик</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_2</key>
+		<translation>Волшебник</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_3</key>
+		<translation>Чародей-новичок</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_4</key>
+		<translation>Чародей-ученик</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_5</key>
+		<translation>Чародей</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_6</key>
+		<translation>Маг-новичок</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_7</key>
+		<translation>Маг-ученик</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_8</key>
+		<translation>Маг</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_9</key>
+		<translation>Маг-эксперт</translation>
+	</lookup>
+	<lookup>
+		<key>WIZARD_LEVEL_MAX</key>
+		<translation>Уровень великого мага {subLevel}</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_RANK_1ST</key>
+		<translation>1-е место</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_RANK_2ND</key>
+		<translation>2-е место</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_RANK_3RD</key>
+		<translation>3-е место</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_RANK_4TH</key>
+		<translation>4-е место</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_FORFEIT</key>
+		<translation>Штраф!</translation>
+	</lookup>
+	<lookup>
+		<key>LEVEL_UPDATE_LEFT_GAME</key>
+		<translation>Покидает игру</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_WORLD_NAME_1</key>
+		<translation>Испытания новичка</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_WORLD_NAME_2</key>
+		<translation>Испытания ученика</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_WORLD_NAME_3</key>
+		<translation>Испытания профессионала</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_WORLD_NAME_4</key>
+		<translation>Испытания эксперта</translation>
+	</lookup>
+	<lookup>
+		<key>STATE_TITLE_WORLD_NAME_5</key>
+		<translation>Испытания мастера</translation>
+	</lookup>
+	<lookup>
+		<key>STEAM_USER_OFFLINE_ERROR_POPUP_TITLE</key>
+		<translation>Автономный режим</translation>
+	</lookup>
+	<lookup>
+		<key>STEAM_USER_OFFLINE_ERROR_POPUP_MESSAGE</key>
+		<translation>Вы сейчас в автономном режиме. Достижения не будут учтены, пока вы не перезапустите игру после подключения к интернету.</translation>
+	</lookup>
+	<lookup>
+		<key>INVITE_FRIENDS_DEFAULT_MESSAGE</key>
+		<translation>Пора в Tricky Towers вам поиграть</translation>
+	</lookup>
+	<lookup>
+		<key>INVITE_FRIENDS_STATUS</key>
+		<translation>Ожидаем игроков</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_CREATING_GAME</key>
+		<translation>Создание игры</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_JOINING_GAME</key>
+		<translation>Подключение к игре</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_WAITING_FOR_FRIENDS</key>
+		<translation>Ожидание друзей</translation>
+	</lookup>
+	<lookup>
+		<key>LOBBY_HEADER_INVITE_FRIENDS</key>
+		<translation>Пригласить друзей</translation>
+	</lookup>
+	<lookup>
+		<key>ACCEPTING_INVITE</key>
+		<translation>Проверка приглашения...</translation>
+	</lookup>
+	<lookup>
+		<key>PLAY_TOGETHER</key>
+		<translation>Играем вместе</translation>
+	</lookup>
+	<lookup>
+		<key>TOURNAMENT_RESULTS_POPUP_TITLE</key>
+		<translation>Игра завершена</translation>
+	</lookup>
+	<lookup>
+		<key>CUP_TARGET</key>
+		<translation>Первым набирает {targetScore} оч.</translation>
+	</lookup>
+	<lookup>
+		<key>CUP_EXPERIENCE_BONUS</key>
+		<translation>+{xp} ОП при победе</translation>
+	</lookup>
+	<lookup>
+		<key>DEFAULT_WIN</key>
+		<translation>Противник вышел из игры</translation>
+	</lookup>
+	<lookup>
+		<key>POPUP_TOURNAMENT_WINNER_TITLE</key>
+		<translation>обладатель {cupType}!</translation>
+	</lookup>
+	<lookup>
+		<key>MOVE_LEFT</key>
+		<translation>Передвинуть влево</translation>
+	</lookup>
+	<lookup>
+		<key>MOVE_RIGHT</key>
+		<translation>Передвинуть вправо</translation>
+	</lookup>
+	<lookup>
+		<key>DROP_DOWN</key>
+		<translation>Опустить</translation>
+	</lookup>
+	<lookup>
+		<key>ROTATE_RIGHT</key>
+		<translation>Вращать вправо</translation>
+	</lookup>
+	<lookup>
+		<key>ROTATE_LEFT</key>
+		<translation>Вращать влево</translation>
+	</lookup>
+	<lookup>
+		<key>NUDGE_LEFT</key>
+		<translation>Толкнуть влево</translation>
+	</lookup>
+	<lookup>
+		<key>NUDGE_RIGHT</key>
+		<translation>Толкнуть вправо</translation>
+	</lookup>
+	<lookup>
+		<key>ACTIVATE_SPELL</key>
+		<translation>Светлая магия</translation>
+	</lookup>
+	<lookup>
+		<key>ACTIVATE_SPELL_DARK</key>
+		<translation>Темная магия</translation>
+	</lookup>
+	<lookup>
+		<key>PLAYER_OVERVIEW</key>
+		<translation>Онлайн-профиль игрока</translation>
+	</lookup>
+	<lookup>
+		<key>KEYBINDING_TITLE_ACTION</key>
+		<translation>Действие</translation>
+	</lookup>
+	<lookup>
+		<key>KEYBINDING_TITLE_RESET</key>
+		<translation>Установить по умолчанию</translation>
+	</lookup>
+	<lookup>
+		<key>KEYBINDING_TITLE_KEY</key>
+		<translation>Клавиша</translation>
+	</lookup>
+</language>
