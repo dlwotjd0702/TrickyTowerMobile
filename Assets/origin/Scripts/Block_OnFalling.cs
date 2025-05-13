@@ -33,7 +33,7 @@ public class Block_OnFalling : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate (){
 		Vector3 position = transform.position;
-		position += m_ActualFallingSpeed * Vector3.down * Time.fixedDeltaTime;
+		position += Vector3.down * (m_ActualFallingSpeed * Time.fixedDeltaTime);
 		transform.position = position;
 
 		m_ActualFallingSpeed = m_FallingSpeed;
