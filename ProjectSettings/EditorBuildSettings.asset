@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/origin/Scenes/Main Menu.unity
+    path: Assets/4. Junghyunsik/origin/Scenes/Main Menu.unity
     guid: 0550d777c13e4634d8988c5afccc666c
   - enabled: 1
-    path: Assets/origin/Scenes/Game.unity
+    path: Assets/4. Junghyunsik/origin/Scenes/Game.unity
     guid: eaf85cecf238b2046a1120590531859a
   m_configObjects: {}
