@@ -21,10 +21,7 @@ public class InputManager : MonoBehaviour
     void Start()
     {
         spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
-        if (currentBlock == null)
-        {
-            currentBlock = Instantiate(spawnManager.blockPrefabs_[Random.Range(0, spawnManager.blockPrefabs_.Length)], transform.position, Quaternion.identity);
-        }
+
     }
 
     // Update is called once per frame

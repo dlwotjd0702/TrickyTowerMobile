@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class SoundSettingsUI : MonoBehaviour
 {
-    public AudioMixer audioMixer;
+    //public AudioMixer audioMixer;
 
     [Header("볼륨 관련")]
     public Image[] sfxBars;
