@@ -528,13 +528,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnSpawn: 1
   blockPrefabs:
-  - {fileID: 5853251775352359410, guid: 5e53de76b69bc78488fba7c3d9325f3d, type: 3}
-  - {fileID: 6466572758750648218, guid: 2c5b3753339fd3b4894adfa8ecf16cfe, type: 3}
-  - {fileID: 4431145280762580270, guid: 1c1f6f9734d751643a7de473bbd3638e, type: 3}
-  - {fileID: 8764462327695304522, guid: c174451b5cc2a4c45ac2279fe62c0294, type: 3}
-  - {fileID: 1259234310268375821, guid: 238b6df7abd28594ea47e9d38a8c4056, type: 3}
-  - {fileID: 6885612944393464076, guid: 05f47e0df95801f4b92236b39f87d48c, type: 3}
-  - {fileID: 7037521590664519867, guid: 71853d92a52c3e341af6111a3c2b1ec7, type: 3}
+  - {fileID: 1777947651070387467, guid: fbf9a65172cc6344386c5befee14146f, type: 3}
+  - {fileID: 1300525775055650344, guid: 0925202f5b4e7234e8587fbc2ba5c69c, type: 3}
+  - {fileID: 6575487456622198149, guid: 84bdab4f71d7b3743a4fcd03f18a7eb0, type: 3}
+  - {fileID: 8842236287265070799, guid: a8f8862193740424c8d26952a74f3bf0, type: 3}
+  - {fileID: 1871706571663693785, guid: 8836f21854f0e4641a09961bcd47345d, type: 3}
+  - {fileID: 4258362697125566074, guid: e8252fd7b994f0b4ba47987e31c7b488, type: 3}
+  - {fileID: 7557260189093230252, guid: 687b57bd4dc16294bb042240322bb2f4, type: 3}
 --- !u!1 &1250791107
 GameObject:
   m_ObjectHideFlags: 0
