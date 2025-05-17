@@ -6,14 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="33ec4f3c-9a43-40ac-a265-51209e7b0009" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/gph_brickI_petrified_desert.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/gph_brickI_petrified_desert.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/gph_brickJ_petrified_desert.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/gph_brickJ_petrified_desert.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/gph_brickL_petrified_desert.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/gph_brickL_petrified_desert.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/gph_brickO_petrified_desert.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/gph_brickO_petrified_desert.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/gph_brickS_petrified_desert.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/gph_brickS_petrified_desert.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/gph_brickT_petrified_desert.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/gph_brickT_petrified_desert.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/gph_brickZ_petrified_desert.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/gph_brickZ_petrified_desert.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Scene/InGameTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Scene/InGameTest.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Script/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Script/InputManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +18,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/origin/Scripts/Block.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/3.Script/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -40,7 +33,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;&lt;알 수 없음&gt;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Ingame&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -104,9 +97,8 @@
       <workItem from="1746755491930" duration="4000" />
       <workItem from="1747025674733" duration="1340000" />
       <workItem from="1747205466109" duration="2308000" />
-      <workItem from="1747210925160" duration="6554000" />
-      <workItem from="1747382565672" duration="1879000" />
-      <workItem from="1747384627642" duration="91000" />
+      <workItem from="1747210925160" duration="7810000" />
+      <workItem from="1747370115400" duration="1199000" />
     </task>
     <servers />
   </component>
