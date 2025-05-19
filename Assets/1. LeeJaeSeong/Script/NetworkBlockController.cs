@@ -1,4 +1,6 @@
 // 파일명: NetworkBlockController.cs
+
+using System;
 using Fusion;
 using Fusion.Addons.Physics;
 using UnityEngine;
@@ -16,6 +18,8 @@ public class NetworkBlockController : NetworkBehaviour
     [Networked] public bool IsPlaced { get; set; }
     [SerializeField] float moveDistance = 1f;
     [SerializeField] float downSpeed    = 2f;
+    public EffectManager effectManager;
+    
 
     Rigidbody2D        _rb;
     NetworkRigidbody2D _netRb;
@@ -41,11 +45,16 @@ public class NetworkBlockController : NetworkBehaviour
         {
             // 좌우 Discrete 이동
             if (input.MoveX != 0)
+            {
                 transform.position += Vector3.right * input.MoveX * moveDistance;
+                effectManager.isBlockMove = true;
+            }
+            
 
             // 회전
             if (input.Rotate)
-                transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + 90);
+                transform.Rotate(new Vector3(0, 0, 90));
+            
 
             // 자동/빠른 하강
             float speed = input.FastDown ? downSpeed * 5 : downSpeed;
@@ -69,7 +78,9 @@ public class NetworkBlockController : NetworkBehaviour
                 _trigger.isTrigger = false;
             gameObject.tag = "Floor";
             NetworkSpawnHandler.Instance.RequestNextBlock(Object.InputAuthority);
+            effectManager.IsShake = true;
         }
+        
 
         if (other.CompareTag("Respawn"))
         {

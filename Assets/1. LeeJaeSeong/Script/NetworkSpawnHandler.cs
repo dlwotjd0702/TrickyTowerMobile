@@ -12,7 +12,10 @@ public class NetworkSpawnHandler : MonoBehaviour, INetworkRunnerCallbacks
 
     [SerializeField] private NetworkPrefabRef[] blockPrefabs = new NetworkPrefabRef[7];
     [SerializeField] private Vector3 spawnPosition;
+    public EffectManager effectManager;
     private NetworkRunner _runner;
+    
+    
 
     private void Awake()
     {
@@ -45,13 +48,21 @@ public class NetworkSpawnHandler : MonoBehaviour, INetworkRunnerCallbacks
         int idx = UnityEngine.Random.Range(0, blockPrefabs.Length);
 
         NetworkPrefabRef chosenPrefab = blockPrefabs[idx];
+        
 
-        _runner.Spawn(
+        NetworkObject temp = _runner.Spawn(
             prefabRef      : chosenPrefab,
             position       : spawnPosition,
             rotation       : Quaternion.identity,
             inputAuthority : player
         );
+        
+        temp.transform.TryGetComponent(out NetworkBlockController blockController);
+        blockController.effectManager = effectManager;
+        effectManager.Block = temp.gameObject;
+        effectManager.isBlockChange = true;
+
+
     }
 
     
