@@ -7,10 +7,14 @@
     <list default="true" id="33ec4f3c-9a43-40ac-a265-51209e7b0009" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkBlockController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkBlockController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkSpawnHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkSpawnHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/NetworkPrefab/netgph_brickI_stone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/NetworkPrefab/netgph_brickI_stone.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/NetworkPrefab/netgph_brickJ_stone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/NetworkPrefab/netgph_brickJ_stone.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/NetworkPrefab/netgph_brickL_stone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/NetworkPrefab/netgph_brickL_stone.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/NetworkPrefab/netgph_brickO_stone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/NetworkPrefab/netgph_brickO_stone.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/NetworkPrefab/netgph_brickS_stone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/NetworkPrefab/netgph_brickS_stone.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/NetworkPrefab/netgph_brickT_stone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/NetworkPrefab/netgph_brickT_stone.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/NetworkPrefab/netgph_brickZ_stone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/NetworkPrefab/netgph_brickZ_stone.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/NetworkPrefab/network.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/NetworkPrefab/network.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Script/EffectManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Script/EffectManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +26,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d012868c0b9943c7bc3faef3a9135f2bc0000/b0/7028193c/NetworkRunner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/2. SeoYoungGwang/Script/VirtualLandingVisual.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/origin/Scripts/Block.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Downloads/3.Script/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -106,7 +111,7 @@
       <workItem from="1747370115400" duration="1380000" />
       <workItem from="1747615081272" duration="9788000" />
       <workItem from="1747634822920" duration="6385000" />
-      <workItem from="1747641339813" duration="1248000" />
+      <workItem from="1747641339813" duration="3674000" />
     </task>
     <servers />
   </component>

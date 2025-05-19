@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
   m_FlipX: 0
@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 3002465547114214235}
   - component: {fileID: 4843691647279521480}
   - component: {fileID: 2000226942865597125}
+  - component: {fileID: -1035034732709008500}
   m_Layer: 0
   m_Name: netgph_brickI_stone
   m_TagString: Untagged
@@ -306,6 +307,18 @@ MonoBehaviour:
   moveDistance: 0.5
   downSpeed: 2
   effectManager: {fileID: 0}
+--- !u!114 &-1035034732709008500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3720244540749285585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 879ddf957c6fad64196dc6106b66760f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6207566453382382875
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,7 +391,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
   m_FlipX: 0

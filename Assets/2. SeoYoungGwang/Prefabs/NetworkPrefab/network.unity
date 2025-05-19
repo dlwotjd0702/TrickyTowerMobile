@@ -1335,8 +1335,9 @@ MonoBehaviour:
   IsShake: 0
   IsShadow: 0
   Shadow: {fileID: 7807652710268291363, guid: d69949ec7fe1efd4cb57c9db2e9afc74, type: 3}
-  ShadowNum: 10
-  Block: {fileID: 0}
+  ShadowNum: 4
+  Block: {fileID: 3596282189257294509}
+  ShadowDuration: 0.1
 --- !u!4 &660930954463975416
 Transform:
   m_ObjectHideFlags: 0
@@ -1523,34 +1524,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1251254281903815022
-MonoBehaviour:
-  m_ObjectHideFlags: 59
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2346969072028942471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1541381998, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Guid:
-    RawGuidValue: 18db53e3b0b543d4caca49da6a377bdf
---- !u!114 &2002605581819707744
-MonoBehaviour:
-  m_ObjectHideFlags: 59
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2853440674431052218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1541381998, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Guid:
-    RawGuidValue: 49e5c0f7474e069458115365e4225083
 --- !u!1 &2097086097881216391
 GameObject:
   m_ObjectHideFlags: 0
@@ -1562,7 +1535,6 @@ GameObject:
   - component: {fileID: 660930954463975416}
   - component: {fileID: 1184507700265149836}
   - component: {fileID: 8635327992951276815}
-  - component: {fileID: 2850227607728959331}
   m_Layer: 0
   m_Name: netgph_brickJ_stone
   m_TagString: Untagged
@@ -1581,7 +1553,6 @@ GameObject:
   - component: {fileID: 3822866864845262111}
   - component: {fileID: 1053816534161870725}
   - component: {fileID: 4978271890617243504}
-  - component: {fileID: 1251254281903815022}
   m_Layer: 0
   m_Name: netgph_brickT_stone
   m_TagString: Untagged
@@ -1589,34 +1560,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2561063923130345340
-MonoBehaviour:
-  m_ObjectHideFlags: 59
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3105714817690035224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1541381998, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Guid:
-    RawGuidValue: e99db485e3d2c544bb2f41b4e8df0d3d
---- !u!114 &2850227607728959331
-MonoBehaviour:
-  m_ObjectHideFlags: 59
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2097086097881216391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1541381998, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Guid:
-    RawGuidValue: 78220c7c446a0b14aae0d2478ff440c0
 --- !u!1 &2853440674431052218
 GameObject:
   m_ObjectHideFlags: 0
@@ -1627,7 +1570,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8563008387749445309}
   - component: {fileID: 795372341915234092}
-  - component: {fileID: 2002605581819707744}
   m_Layer: 0
   m_Name: netgph_brickI_stone
   m_TagString: Untagged
@@ -1645,7 +1587,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3801231341858580587}
   - component: {fileID: 4724934727400501633}
-  - component: {fileID: 2561063923130345340}
   m_Layer: 0
   m_Name: netgph_brickL_stone
   m_TagString: Untagged
@@ -1730,7 +1671,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4670911437801479801}
   - component: {fileID: 3554232160883962830}
-  - component: {fileID: 7537105626106657055}
   m_Layer: 0
   m_Name: netgph_brickO_stone
   m_TagString: Untagged
@@ -1822,7 +1762,7 @@ Transform:
   m_GameObject: {fileID: 3596282189257294509}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.822395, y: 11.336937, z: 0}
+  m_LocalPosition: {x: -15.93, y: 11.08, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1880,20 +1820,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4954546785131900159
-MonoBehaviour:
-  m_ObjectHideFlags: 59
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6723006045652709774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1541381998, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Guid:
-    RawGuidValue: 5b6cda4b7bf1d704886b6724010d48a8
 --- !u!61 &4978271890617243504
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2099,7 +2025,6 @@ GameObject:
   - component: {fileID: 829763773638398978}
   - component: {fileID: 6258428394556846907}
   - component: {fileID: 4360827744242597733}
-  - component: {fileID: 8163889938044682419}
   m_Layer: 0
   m_Name: netgph_brickZ_stone
   m_TagString: Untagged
@@ -2118,7 +2043,6 @@ GameObject:
   - component: {fileID: 3217191137479232005}
   - component: {fileID: 6162848971586976942}
   - component: {fileID: 6040695177448719657}
-  - component: {fileID: 4954546785131900159}
   m_Layer: 0
   m_Name: netgph_brickS_stone
   m_TagString: Untagged
@@ -2126,34 +2050,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &7537105626106657055
-MonoBehaviour:
-  m_ObjectHideFlags: 59
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3596282189257294509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1541381998, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Guid:
-    RawGuidValue: 8a9b8bfe2daeb42458f798e28a9a944b
---- !u!114 &8163889938044682419
-MonoBehaviour:
-  m_ObjectHideFlags: 59
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6315912023746358958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1541381998, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Guid:
-    RawGuidValue: 4c07e75d80acc704d844987f4cd1b156
 --- !u!4 &8563008387749445309
 Transform:
   m_ObjectHideFlags: 0

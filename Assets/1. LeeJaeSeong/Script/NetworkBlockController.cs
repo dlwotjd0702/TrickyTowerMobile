@@ -19,10 +19,13 @@ public class NetworkBlockController : NetworkBehaviour
     [SerializeField] float moveDistance = 1f;
     [SerializeField] float downSpeed    = 2f;
     public EffectManager effectManager;
+    
 
     Rigidbody2D        _rb;
     NetworkRigidbody2D _netRb;
     BoxCollider2D _trigger;
+
+    
 
     public override void Spawned()
     {
@@ -48,7 +51,7 @@ public class NetworkBlockController : NetworkBehaviour
 
             // 회전
             if (input.Rotate)
-                transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + 90);
+                transform.Rotate(new Vector3(0, 0, 90));
 
             // 자동/빠른 하강
             float speed = input.FastDown ? downSpeed * 5 : downSpeed;
