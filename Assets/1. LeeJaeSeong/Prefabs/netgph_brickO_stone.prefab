@@ -217,5 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _IsPlaced: 0
-  moveDistance: 1
+  moveDistance: 0.5
+  force: 1000
+  maxMoveTime: 0.25
   downSpeed: 2
