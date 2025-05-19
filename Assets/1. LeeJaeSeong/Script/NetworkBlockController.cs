@@ -45,7 +45,7 @@ public class NetworkBlockController : NetworkBehaviour
 
             // 회전
             if (input.Rotate)
-                transform.Rotate(0, 0, 90);
+                transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + 90);
 
             // 자동/빠른 하강
             float speed = input.FastDown ? downSpeed * 5 : downSpeed;
@@ -69,6 +69,11 @@ public class NetworkBlockController : NetworkBehaviour
                 _trigger.isTrigger = false;
             gameObject.tag = "Floor";
             NetworkSpawnHandler.Instance.RequestNextBlock(Object.InputAuthority);
+        }
+
+        if (other.CompareTag("Respawn"))
+        {
+            Destroy(gameObject);
         }
     }
 }
