@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -1608370677688734286}
   m_Layer: 0
   m_Name: netgph_brickJ_stone
-  m_TagString: Untagged
+  m_TagString: LBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -265,3 +265,4 @@ MonoBehaviour:
   _IsPlaced: 0
   moveDistance: 0.5
   downSpeed: 2
+  effectManager: {fileID: 0}
