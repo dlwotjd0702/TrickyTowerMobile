@@ -69,6 +69,7 @@ public class NetworkBlockController : NetworkBehaviour
                 _trigger.isTrigger = false;
             gameObject.tag = "Floor";
             NetworkSpawnHandler.Instance.RequestNextBlock(Object.InputAuthority);
+            EffectManager.Instance.OnShake = true;
         }
 
         if (other.CompareTag("Respawn"))
