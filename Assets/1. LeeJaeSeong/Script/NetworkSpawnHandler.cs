@@ -14,6 +14,8 @@ public class NetworkSpawnHandler : MonoBehaviour, INetworkRunnerCallbacks
     [SerializeField] private Vector3 spawnPosition;
     public EffectManager effectManager;
     private NetworkRunner _runner;
+    
+    
 
     private void Awake()
     {
@@ -57,7 +59,8 @@ public class NetworkSpawnHandler : MonoBehaviour, INetworkRunnerCallbacks
         
         temp.transform.TryGetComponent(out NetworkBlockController blockController);
         blockController.effectManager = effectManager;
-        //effectManager.Block = temp.gameObject;
+        effectManager.Block = temp.gameObject;
+        effectManager.isBlockChange = true;
 
 
     }

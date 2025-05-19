@@ -18,35 +18,15 @@ public class VirtualLandingVisual : MonoBehaviour
 
     private void Update()
     {
-        OnOffLandVisual();
     }
 
     private void OnOffLandVisual()
     {
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
         {
-            flip = !flip;
-        }
-        
-        if (!_blockController.IsPlaced)
-        {
-            if (flip)
-            {
-                LandVisual[0].SetActive(true);
-                LandVisual[1].SetActive(false);
-            }
-            else
-            {
-                LandVisual[0].SetActive(false);
-                LandVisual[1].SetActive(true);
-            }
-        }
-        else
-        {
             LandVisual[0].SetActive(false);
             LandVisual[1].SetActive(false);
         }
-        
     }
     
     

@@ -25,8 +25,6 @@ public class NetworkBlockController : NetworkBehaviour
     NetworkRigidbody2D _netRb;
     BoxCollider2D _trigger;
 
-    
-
     public override void Spawned()
     {
         _rb    = GetComponent<Rigidbody2D>();
@@ -47,11 +45,16 @@ public class NetworkBlockController : NetworkBehaviour
         {
             // 좌우 Discrete 이동
             if (input.MoveX != 0)
+            {
                 transform.position += Vector3.right * input.MoveX * moveDistance;
+                effectManager.isBlockMove = true;
+            }
+            
 
             // 회전
             if (input.Rotate)
                 transform.Rotate(new Vector3(0, 0, 90));
+            
 
             // 자동/빠른 하강
             float speed = input.FastDown ? downSpeed * 5 : downSpeed;

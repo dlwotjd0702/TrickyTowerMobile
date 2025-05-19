@@ -6,8 +6,13 @@ using Random = UnityEngine.Random;
 
 public class EffectManager : MonoBehaviour
 {
-    [Header("GroundShake")]
+    public GameObject Block;
+    private string BlockTag;
+    private NetworkBlockController networkBlockController;
+    public bool isBlockChange = false;
+    public bool isBlockMove = false;
     
+    [Header("GroundShake")]
     public float shakeTerm;
     public float shakeDuration;
     public float shakeDistance;
@@ -20,12 +25,19 @@ public class EffectManager : MonoBehaviour
     [Header("FastMovement")]
     public SpriteRenderer Shadow;
     public int ShadowNum;
-    public GameObject Block;
     private float MoveDistance = 0.5f;
     private Vector3 afterMovePos;
     private Vector3 preMovePos;
     private GameObject[] Shadows;
     public float ShadowDuration;
+
+    [Header("LandVisual")] 
+    private GameObject currentLandVisual;
+    private GameObject[] LandVisuals = new GameObject[4];
+    private GameObject VerticalLandVisual;
+    private GameObject HorizontalLandVisual;
+    private bool isHorizontal = true;
+    
 
     private void Awake()
     {
@@ -40,13 +52,21 @@ public class EffectManager : MonoBehaviour
             Shadows[i] = Instantiate(Shadow.gameObject, transform.position, Quaternion.identity);
             Shadows[i].SetActive(false);
         }
+
+        for (int i = 0; i < LandVisuals.Length; i++)
+        {
+            LandVisuals[i] = transform.GetChild(i).gameObject;
+            LandVisuals[i].SetActive(false);
+        }
     }
 
     private void Update()
     {
         OnShake();
-        TempInput();
-        OnShadow();
+        //FastMoveInput();
+        //OnShadow();
+        ChangeLandVisual();
+        LandVisualUpdate();
     }
 
     #region 착지 시 흔들리는 효과
@@ -79,10 +99,10 @@ public class EffectManager : MonoBehaviour
     }
 
     #endregion
-
+    
     #region 좌우 고속 이동 시 잔상 효과
 
-    private void TempInput()
+    private void FastMoveInput()
     {
         preMovePos = Block.transform.position;
         if (Input.GetKeyDown(KeyCode.U))
@@ -96,9 +116,6 @@ public class EffectManager : MonoBehaviour
             IsShadow = true;
         }
         afterMovePos = Block.transform.position;
-        
-        
-        
     }
 
     private void OnShadow()
@@ -130,6 +147,75 @@ public class EffectManager : MonoBehaviour
         }
     }
 
+    #endregion
+
+    #region 블록 예상 착지 지점 시각화 효과
+
+    private void ChangeLandVisual()
+    {
+        if (isBlockChange)
+        {
+            for (int i = 0; i < LandVisuals.Length; i++)
+            {
+                LandVisuals[i].SetActive(false);
+            }
+            
+            isHorizontal = true;
+            BlockTag = Block.tag;
+            switch (BlockTag)
+            {
+                case"OBlock":
+                    VerticalLandVisual = LandVisuals[1];
+                    HorizontalLandVisual = LandVisuals[1];
+                    break;
+                case"SBlock":
+                case"ZBlock":
+                case"TBlock":
+                case"LBlock":
+                case"JBlock":
+                    VerticalLandVisual = LandVisuals[1];
+                    HorizontalLandVisual = LandVisuals[2];
+                    break;
+                case"IBlock":
+                    VerticalLandVisual = LandVisuals[0];
+                    HorizontalLandVisual = LandVisuals[3];
+                    break;
+            }
+            VerticalLandVisual.SetActive(false);
+            currentLandVisual = HorizontalLandVisual;
+            HorizontalLandVisual.SetActive(true);
+            transform.position = Block.transform.position;
+            isBlockChange = false;
+        }
+    }
+
+    private void LandVisualUpdate()
+    {
+        if (isBlockMove)
+        {
+            transform.position = Block.transform.position;
+            isBlockMove = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
+        {
+            isHorizontal = !isHorizontal;
+            if (isHorizontal)
+            {
+                VerticalLandVisual.SetActive(false);
+                currentLandVisual = HorizontalLandVisual;
+            }
+            else
+            {
+                HorizontalLandVisual.SetActive(false);
+                currentLandVisual = VerticalLandVisual;
+            }
+            
+            currentLandVisual.SetActive(true);
+        }
+    }
+    
+    
     #endregion
 
     
