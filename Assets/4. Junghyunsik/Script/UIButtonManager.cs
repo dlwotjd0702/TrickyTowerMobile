@@ -58,6 +58,17 @@ public class UIButtonManager : MonoBehaviour
                 modSetUI.SetActive(true);
                 break;
 
+            case "BackToPlaySet":
+                modSetUI.SetActive(false);
+                readyRoomUI.SetActive(false);
+                playSetUI.SetActive(true);
+                break;
+
+            case "CreateRoom":
+                modSetUI.SetActive(false);
+                readyRoomUI.SetActive(true);
+                break;
+            
             case "EnterRoom":
                 playSetUI.SetActive(false);
                 readyRoomUI.SetActive(true);
