@@ -8,32 +8,37 @@ using UnityEngine;
 
 public class NetworkInputHandler : MonoBehaviour, INetworkRunnerCallbacks
 {
-    // 이전 틱에 읽은 축 값(−1, 0, +1)
     private int _prevRawX = 0;
+
+    // 🔸 1프레임 키 입력 저장용
+    private bool _rotateQueued = false;
+
+    private void Update()
+    {
+        // 🔸 키 눌림 체크 → flag 저장
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
+            _rotateQueued = true;
+    }
 
     public void OnInput(NetworkRunner runner, NetworkInput input)
     {
-        // ① 지금 축 값 읽기 (−1,0,+1)
         int rawX = (int)Input.GetAxisRaw("Horizontal");
 
-        // ② 0 → ±1 전환된 순간에만 한 칸 이동
         int moveX = 0;
         if (_prevRawX == 0 && rawX != 0)
             moveX = rawX;
 
-        // ③ 다음 틱을 위해 이전 값 갱신
         _prevRawX = rawX;
 
-        // 회전과 빠른 하강은 GetKeyDown/Key 로 처리
-        bool rotate   = Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W);
-        bool fastDown = Input.GetKey(KeyCode.S);
-
+        // 🔸 저장된 키입력 사용 후 초기화
         var data = new NetworkBlockInputData
         {
             MoveX    = moveX,
-            Rotate   = rotate,
-            FastDown = fastDown
+            Rotate   = _rotateQueued,
+            FastDown = Input.GetKey(KeyCode.S)
         };
+
+        _rotateQueued = false; // 🔸 초기화
 
         input.Set(data);
     }
