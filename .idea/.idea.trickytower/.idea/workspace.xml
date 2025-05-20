@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33ec4f3c-9a43-40ac-a265-51209e7b0009" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkBlockController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkBlockController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkSpawnHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkSpawnHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/NetworkPrefab/network.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/NetworkPrefab/network.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +109,7 @@
       <workItem from="1747615081272" duration="9788000" />
       <workItem from="1747634822920" duration="6385000" />
       <workItem from="1747641339813" duration="13313000" />
-      <workItem from="1747714916785" duration="8004000" />
+      <workItem from="1747714916785" duration="7701000" />
     </task>
     <servers />
   </component>

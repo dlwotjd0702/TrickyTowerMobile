@@ -80,7 +80,6 @@ public class NetworkBlockController : NetworkBehaviour
             gameObject.tag = "Floor";
             NetworkSpawnHandler.Instance.RequestNextBlock(Object.InputAuthority);
             effectManager.IsShake = true;
-            soundManager.OnLandSound();
         }
         
 
