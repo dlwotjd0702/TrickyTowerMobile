@@ -5,7 +5,7 @@ using System.Linq;
 using Fusion;
 using UnityEngine;
 
-public class GameClearManager : MonoBehaviour
+public class GameClearManager : NetworkBehaviour
 {
     //게임종료와 종료후 모드별로 플레이어들의 등수를 판정
     //등수를 판정하기 위해 블럭이 각자 자신의 주인이 누구인지 데이터를 가지고 있어야 함 
@@ -23,12 +23,12 @@ public class GameClearManager : MonoBehaviour
 
     public void RaceModeClear(PlayerRef winner)
     {
-        Debug.Log("clear");
-        Time.timeScale = 0;
+        Debug.Log("clearRace");
+
         //레이스모드 종료후 1,2,3,4등 판정
-        IEnumerable<NetworkObject> allBlocks = GameObject.FindGameObjectsWithTag("Block")
-            .Select(go => go.GetComponent<NetworkObject>()) //변환
-            .Where(no => no != null); //필터링
+        IEnumerable<NetworkObject> allBlocks = GameObject.FindObjectsOfType<NetworkObject>()
+            .Where(no => no.gameObject.layer == LayerMask.NameToLayer("Block"))
+            .Where(no => no.TryGetComponent<NetworkBlockController>(out var controller) && controller.IsPlaced);
 
         //익명 타입 var
         var playerHeights = allBlocks
@@ -47,6 +47,12 @@ public class GameClearManager : MonoBehaviour
             .ToArray();
 
         AssignScore(ranking);
+    }
+
+    public void SurvivalModeClear(PlayerRef winner)
+    {
+        Debug.Log("clear");
+        
     }
 
     private void AssignScore(PlayerRef[] ranking)

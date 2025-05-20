@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -1024623137576932447}
   - component: {fileID: 8247429291248335190}
   - component: {fileID: -1608370677688734286}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: netgph_brickJ_stone
   m_TagString: LBlock
   m_Icon: {fileID: 0}

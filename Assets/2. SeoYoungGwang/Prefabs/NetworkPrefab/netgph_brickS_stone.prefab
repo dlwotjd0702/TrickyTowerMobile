@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -2610712301170122126}
   - component: {fileID: -1118047087094994058}
   - component: {fileID: -195406292744853586}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: netgph_brickS_stone
   m_TagString: ZBlock
   m_Icon: {fileID: 0}

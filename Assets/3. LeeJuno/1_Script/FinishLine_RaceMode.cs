@@ -4,25 +4,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fusion;
 
-public class FinishLine : MonoBehaviour //NetworkBehaviour
+public class FinishLine_RaceMode : MonoBehaviour //NetworkBehaviour
 {
     //결승선에 3초간 닿으면 게임종료
-    [SerializeField]
     private float timer = 0f;
-
     private PlayerRef? currentPlayer = null;
     private bool playerTouched = false;
     private int blockCount = 0;
 
     /*public override void FixedUpdateNetwork() //네트워크용
     {
-        if (Runner.IsServer == false || currentPlayer == null || playerTouched == false)
+        if (playerTouched == false)
             return;
 
         timer += Runner.DeltaTime;
 
         if (timer >= 3f)
         {
+        if (currentPlayer != null)
+                GameClearManager.Instance.RaceModeClear(currentPlayer.Value);
             enabled = false;
         }
 
@@ -75,7 +75,7 @@ public class FinishLine : MonoBehaviour //NetworkBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Block") == false) return;
+        if (other.gameObject.layer != LayerMask.NameToLayer("Block")) return;
 
         var block = other.GetComponent<NetworkObject>();
         if (block == null) return;
@@ -89,7 +89,7 @@ public class FinishLine : MonoBehaviour //NetworkBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Block") == false) return;
+        if (other.gameObject.layer != LayerMask.NameToLayer("Block")) return;
 
         var block = other.GetComponent<NetworkObject>();
         if (block == null) return;

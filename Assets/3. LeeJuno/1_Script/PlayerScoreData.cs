@@ -4,8 +4,7 @@ using Fusion;
 
 public class PlayerScoreData
 {
-    //게임매니저 등수에 따라 점수를 기록 다음 스테이지에 가도 유지
-    //12점 플레이어가 나오고 게임이 완전히 종료되면 초기화
+   
     private Dictionary<PlayerRef, int> playerScore = new Dictionary<PlayerRef, int>();
 
     public void AddScore(PlayerRef player, int score)
