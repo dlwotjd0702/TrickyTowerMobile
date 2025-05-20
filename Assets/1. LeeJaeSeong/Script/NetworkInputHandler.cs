@@ -31,7 +31,7 @@ public class NetworkInputHandler : MonoBehaviour, INetworkRunnerCallbacks
         _prevRawX = rawX;
 
         // 🔸 저장된 키입력 사용 후 초기화
-        var data = new NetworkBlockInputData
+        var data = new NetworkBlockController.NetworkBlockInputData
         {
             MoveX    = moveX,
             Rotate   = _rotateQueued,
@@ -42,6 +42,8 @@ public class NetworkInputHandler : MonoBehaviour, INetworkRunnerCallbacks
 
         input.Set(data);
     }
+    
+    
 
 
 
