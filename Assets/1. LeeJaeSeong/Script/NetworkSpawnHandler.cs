@@ -1,92 +1,62 @@
-// 파일명: NetworkSpawnHandler.cs
-
-using System;
-using System.Collections.Generic;
 using Fusion;
 using Fusion.Sockets;
 using UnityEngine;
 
-public class NetworkSpawnHandler : MonoBehaviour, INetworkRunnerCallbacks
+[RequireComponent(typeof(NetworkObject))]
+public class NetworkSpawnHandler : NetworkBehaviour,INetworkRunnerCallbacks
 {
-    public static NetworkSpawnHandler Instance { get; private set; }
+    [Header("블럭 프리팹")]
+    [SerializeField] NetworkPrefabRef[] blockPrefabs;
 
-    [SerializeField] private NetworkPrefabRef[] blockPrefabs = new NetworkPrefabRef[7];
-    [SerializeField] private Vector3 spawnPosition;
-    public EffectManager effectManager;
-    private NetworkRunner _runner;
-    
-    
+    [Header("외부 참조")]
+    public NetworkManager networkManager;
+    public EffectManager  effectManager;
 
-    private void Awake()
+    [Rpc(sources: RpcSources.All, targets: RpcTargets.StateAuthority)]
+    public void RPC_RequestBlockSpawn(RpcInfo info = default)
     {
-        // 싱글턴 초기화
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        var player = info.Source;
+        int idx    = networkManager.GetPlayerJoinIndex(player);
+        if (idx < 0 || idx >= networkManager.spawnOffsets.Length) return;
+
+        Vector3 sp = networkManager.spawnOffsets[idx];
+        SpawnBlockFor(Runner, player, sp);
     }
 
-    public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
+    public void SpawnBlockFor(NetworkRunner runner, PlayerRef player, Vector3 spawnPoint)
     {
-        _runner = runner;
-        if (runner.IsServer)
-            SpawnBlockFor(player);
-    }
+        int i = Random.Range(0, blockPrefabs.Length);
+        var obj = runner.Spawn(blockPrefabs[i], spawnPoint, Quaternion.identity, player);
 
- 
-    public void RequestNextBlock(PlayerRef player)
-    {
-        if (!_runner.IsServer) return;
-        SpawnBlockFor(player);
-    }
-
-    public void SpawnBlockFor(PlayerRef player)
-    {
-        if (blockPrefabs == null || blockPrefabs.Length == 0)
+        if (obj.TryGetComponent<NetworkBlockController>(out var ctrl))
         {
-            Debug.LogWarning("Block prefabs array is empty!");
-            return;
+            ctrl.effectManager  = effectManager;
+            ctrl.networkManager = networkManager;
+            effectManager.Block         = obj.gameObject;
+            effectManager.isBlockChange = true;
         }
-        int idx = UnityEngine.Random.Range(0, blockPrefabs.Length);
-
-        NetworkPrefabRef chosenPrefab = blockPrefabs[idx];
-        
-
-        NetworkObject temp = _runner.Spawn(
-            prefabRef      : chosenPrefab,
-            position       : spawnPosition,
-            rotation       : Quaternion.identity,
-            inputAuthority : player
-        );
-        
-        temp.transform.TryGetComponent(out NetworkBlockController blockController);
-        blockController.effectManager = effectManager;
-        effectManager.Block = temp.gameObject;
-        effectManager.isBlockChange = true;
-
-
     }
 
-    
-    
-    
+
     public void OnObjectExitAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player) { }
+
     public void OnObjectEnterAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player) { }
-    public void OnConnectedToServer(NetworkRunner runner) {}
-    public void OnSessionListUpdated(NetworkRunner runner, List<SessionInfo> sessionList) { }
-    public void OnPlayerLeft(NetworkRunner runner, PlayerRef player) {}
-    public void OnReliableDataProgress(NetworkRunner runner, PlayerRef player, ReliableKey key, float progress) { }
-    public void OnInput(NetworkRunner runner, NetworkInput input) {}
-    public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input) {}
-    public void OnShutdown(NetworkRunner runner, ShutdownReason reason) {}
+
+    public void OnPlayerJoined(NetworkRunner runner, PlayerRef player) { }
+    public void OnConnectedToServer(NetworkRunner runner) { }
+    public void OnInput(NetworkRunner runner, NetworkInput input) { }
+    public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input) { }
+    public void OnShutdown(NetworkRunner runner, ShutdownReason reason) { }
     public void OnDisconnectedFromServer(NetworkRunner runner, NetDisconnectReason reason) { }
-    public void OnDisconnectedFromServer(NetworkRunner runner) {}
-    public void OnConnectRequest(NetworkRunner runner, NetworkRunnerCallbackArgs.ConnectRequest request, byte[] token) {}
+    public void OnConnectRequest(NetworkRunner runner, NetworkRunnerCallbackArgs.ConnectRequest request, byte[] token) { }
     public void OnConnectFailed(NetworkRunner runner, NetAddress remoteAddress, NetConnectFailedReason reason) { }
     public void OnUserSimulationMessage(NetworkRunner runner, SimulationMessagePtr message) { }
-    public void OnReliableDataReceived(NetworkRunner runner, PlayerRef player, ReliableKey key, ArraySegment<byte> data) { }
-    public void OnSessionListUpdated(NetworkRunner runner, SessionInfo[] sessionList) {}
-    public void OnCustomAuthenticationResponse(NetworkRunner runner, System.Collections.Generic.Dictionary<string, object> data) {}
-    public void OnHostMigration(NetworkRunner runner, HostMigrationToken token) {}
-    public void OnSceneLoadStart(NetworkRunner runner) {}
-    public void OnSceneLoadDone(NetworkRunner runner) {}
-    public void OnReliableDataReceived(NetworkRunner runner, PlayerRef player, System.ArraySegment<byte> data) {}
+    public void OnReliableDataProgress(NetworkRunner runner, PlayerRef player, ReliableKey key, float progress) { }
+    public void OnReliableDataReceived(NetworkRunner runner, PlayerRef player, ReliableKey key, System.ArraySegment<byte> data) { }
+    public void OnSessionListUpdated(NetworkRunner runner, System.Collections.Generic.List<SessionInfo> sessionList) { }
+    public void OnPlayerLeft(NetworkRunner runner, PlayerRef player) { }
+    public void OnCustomAuthenticationResponse(NetworkRunner runner, System.Collections.Generic.Dictionary<string, object> data) { }
+    public void OnHostMigration(NetworkRunner runner, HostMigrationToken token) { }
+    public void OnSceneLoadStart(NetworkRunner runner) { }
+    public void OnSceneLoadDone(NetworkRunner runner) { }
 }
