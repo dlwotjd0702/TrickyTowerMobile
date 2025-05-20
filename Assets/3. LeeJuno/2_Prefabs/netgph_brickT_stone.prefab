@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -5997146978511206160}
   - component: {fileID: -1716748088343315961}
   - component: {fileID: 4776031736875999212}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: netgph_brickT_stone
   m_TagString: TBlock
   m_Icon: {fileID: 0}
@@ -358,3 +358,4 @@ MonoBehaviour:
   moveDistance: 0.5
   downSpeed: 2
   effectManager: {fileID: 0}
+  networkManager: {fileID: 0}
