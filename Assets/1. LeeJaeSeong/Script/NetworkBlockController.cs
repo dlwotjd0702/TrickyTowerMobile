@@ -19,6 +19,7 @@ public class NetworkBlockController : NetworkBehaviour
     [SerializeField] float moveDistance = 1f;
     [SerializeField] float downSpeed    = 2f;
     public EffectManager effectManager;
+    public SoundManager soundManager;
     
 
     Rigidbody2D        _rb;

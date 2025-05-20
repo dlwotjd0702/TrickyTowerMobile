@@ -13,6 +13,7 @@ public class NetworkSpawnHandler : MonoBehaviour, INetworkRunnerCallbacks
     [SerializeField] private NetworkPrefabRef[] blockPrefabs = new NetworkPrefabRef[7];
     [SerializeField] private Vector3 spawnPosition;
     public EffectManager effectManager;
+    public SoundManager soundManager;
     private NetworkRunner _runner;
     
     
@@ -59,10 +60,9 @@ public class NetworkSpawnHandler : MonoBehaviour, INetworkRunnerCallbacks
         
         temp.transform.TryGetComponent(out NetworkBlockController blockController);
         blockController.effectManager = effectManager;
+        soundManager.currentBlock = temp.gameObject;
         effectManager.Block = temp.gameObject;
         effectManager.isBlockChange = true;
-
-
     }
 
     
