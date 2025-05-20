@@ -97,6 +97,7 @@ public class EffectManager : MonoBehaviour
         while (currentTime < shakeDuration)
         {
             currentTime += Time.deltaTime;
+            Debug.Log(MainCamera.transform.position);
             MainCamera.transform.position = camOriginPos + new Vector3(Random.Range(-shakeDistance, shakeDistance), Random.Range(-shakeDistance, shakeDistance), 0);
             //BackGround.transform.position = camOriginPos + new Vector3(Random.Range(-shakeDistance, shakeDistance), Random.Range(-shakeDistance, shakeDistance), 0);
             yield return null;
