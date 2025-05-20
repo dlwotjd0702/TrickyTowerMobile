@@ -72,11 +72,15 @@ public class NetworkBlockController : NetworkBehaviour
             {
                 transform.position += Vector3.right * input.MoveX * moveDistance;
                 effectManager.isBlockMove = true;
+                soundManager.OnMoveSound();
             }
 
             // 회전
             if (input.Rotate)
+            {
                 transform.Rotate(0, 0, 90);
+                soundManager.OnRotateSound();
+            }
 
             // 빠른/자동 하강
             float speed = input.FastDown ? downSpeed * 5f : downSpeed;
@@ -103,10 +107,16 @@ public class NetworkBlockController : NetworkBehaviour
             networkManager.RequestNextBlock(Object.InputAuthority);
             effectManager.IsShake = true;
             if (other.CompareTag("Respawn"))
+            {
+                soundManager.OnFallSound();
                 Destroy(gameObject);
+                return;
+            }
+            soundManager.OnLandSound();
         }
         else if (other.CompareTag("Respawn") && IsPlaced)
         {
+            soundManager.OnFallSound();
             effectManager.IsShake = true;
             Destroy(gameObject);    
         }

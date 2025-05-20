@@ -8,6 +8,7 @@ using UnityEngine;
 
 public class NetworkInputHandler : MonoBehaviour, INetworkRunnerCallbacks
 {
+    
     private int _prevRawX = 0;
 
     // 🔸 1프레임 키 입력 저장용
