@@ -24,6 +24,7 @@ public class GameClearManager : MonoBehaviour
     public void RaceModeClear(PlayerRef winner)
     {
         Debug.Log("clear");
+        Time.timeScale = 0;
         //레이스모드 종료후 1,2,3,4등 판정
         IEnumerable<NetworkObject> allBlocks = GameObject.FindGameObjectsWithTag("Block")
             .Select(go => go.GetComponent<NetworkObject>()) //변환

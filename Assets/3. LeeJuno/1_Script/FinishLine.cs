@@ -31,6 +31,34 @@ public class FinishLine : MonoBehaviour //NetworkBehaviour
 
     private void Update()
     {
+        #region DebugKey
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            if (currentPlayer != null)
+                Debug.Log(GameClearManager.Instance.GetPlayerScore(currentPlayer.Value));
+            else
+            {
+                Debug.Log("currentPlayer is null");
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            var allScore = GameClearManager.Instance.GetAllScore();
+            foreach (var pair in allScore)
+            {
+                Debug.Log($"플레이어: {pair.Key},점수: {pair.Value}");
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            GameClearManager.Instance.ResetScore();
+        }
+
+        #endregion
+
         if (playerTouched == false)
             return;
 
@@ -40,9 +68,8 @@ public class FinishLine : MonoBehaviour //NetworkBehaviour
         {
             if (currentPlayer != null)
                 GameClearManager.Instance.RaceModeClear(currentPlayer.Value);
-           
+
             playerTouched = false;
-            enabled = false;
         }
     }
 
