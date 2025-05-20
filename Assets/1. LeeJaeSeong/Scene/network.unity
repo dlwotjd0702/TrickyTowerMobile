@@ -2190,10 +2190,7 @@ MonoBehaviour:
   IsShadow: 0
   Shadow: {fileID: 7807652710268291363, guid: d69949ec7fe1efd4cb57c9db2e9afc74, type: 3}
   ShadowNum: 4
-  ShadowTailDistance: 0.5
   ShadowDuration: 0.1
-  tempBlock: {fileID: 0}
-  RoatateValue: 45
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
