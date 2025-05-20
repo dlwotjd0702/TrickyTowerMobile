@@ -38,9 +38,11 @@ public class FinishLine : MonoBehaviour //NetworkBehaviour
 
         if (timer >= 3f)
         {
-            Debug.Log("clear");
-            enabled = false;
+            if (currentPlayer != null)
+                GameClearManager.Instance.RaceModeClear(currentPlayer.Value);
+           
             playerTouched = false;
+            enabled = false;
         }
     }
 
@@ -53,6 +55,9 @@ public class FinishLine : MonoBehaviour //NetworkBehaviour
 
         blockCount++;
         playerTouched = true;
+
+        if (currentPlayer == null)
+            currentPlayer = block.InputAuthority;
     }
 
     private void OnTriggerExit2D(Collider2D other)
