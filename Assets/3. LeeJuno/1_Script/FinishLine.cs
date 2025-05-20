@@ -12,7 +12,7 @@ public class FinishLine : MonoBehaviour //NetworkBehaviour
 
     private PlayerRef? currentPlayer = null;
     private bool playerTouched = false;
-    private Dictionary<PlayerRef, int> playerBlockCount = new();
+    private int blockCount = 0;
 
     /*public override void FixedUpdateNetwork() //네트워크용
     {
@@ -28,20 +28,20 @@ public class FinishLine : MonoBehaviour //NetworkBehaviour
 
         playerTouched = false;
     }*/
+
     private void Update()
     {
         if (playerTouched == false)
             return;
-        
+
         timer += Time.deltaTime;
 
         if (timer >= 3f)
         {
             Debug.Log("clear");
             enabled = false;
+            playerTouched = false;
         }
-
-        playerTouched = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -51,31 +51,8 @@ public class FinishLine : MonoBehaviour //NetworkBehaviour
         var block = other.GetComponent<NetworkObject>();
         if (block == null) return;
 
-        PlayerRef player = block.InputAuthority;
-
-        if (playerBlockCount.ContainsKey(player) == false)
-        {
-            playerBlockCount[player] = 0;
-        }
-
+        blockCount++;
         playerTouched = true;
-        playerBlockCount[player]++;
-    }
-
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.CompareTag("Block") == false) return;
-        {
-            var block = other.GetComponent<NetworkObject>();
-            if (block == null) return;
-
-            PlayerRef player = block.InputAuthority;
-            if (currentPlayer == null)
-            {
-                currentPlayer = player;
-                timer = 0f;
-            }
-        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -85,22 +62,11 @@ public class FinishLine : MonoBehaviour //NetworkBehaviour
         var block = other.GetComponent<NetworkObject>();
         if (block == null) return;
 
-        PlayerRef player = block.InputAuthority;
-
-        if (playerBlockCount.ContainsKey(player))
+        blockCount--;
+        if (blockCount <= 0)
         {
-            playerBlockCount[player]--;
-            if (playerBlockCount[player] <= 0)
-            {
-                playerBlockCount.Remove(player);
-
-                if (currentPlayer != null && player == currentPlayer.Value)
-                {
-                    timer = 0f;
-                    currentPlayer = null;
-                    playerTouched = false;
-                }
-            }
+            playerTouched = false;
+            timer = 0f;
         }
     }
 }
