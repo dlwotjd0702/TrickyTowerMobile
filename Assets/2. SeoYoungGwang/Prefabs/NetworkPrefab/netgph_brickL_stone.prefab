@@ -135,7 +135,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.65, y: 0.65}
+  m_Size: {x: 0.6375, y: 0.6375}
   m_EdgeRadius: 0
 --- !u!61 &7217646141175459285
 BoxCollider2D:
@@ -180,7 +180,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.65, y: 0.65}
+  m_Size: {x: 0.6375, y: 0.6375}
   m_EdgeRadius: 0
 --- !u!61 &3734815961137225614
 BoxCollider2D:
@@ -225,7 +225,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.65, y: 0.65}
+  m_Size: {x: 0.6375, y: 0.6375}
   m_EdgeRadius: 0
 --- !u!61 &7177094326393970637
 BoxCollider2D:
@@ -270,7 +270,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.65, y: 0.65}
+  m_Size: {x: 0.6375, y: 0.6375}
   m_EdgeRadius: 0
 --- !u!50 &6596008564108857495
 Rigidbody2D:
@@ -287,7 +287,7 @@ Rigidbody2D:
   m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.75
+  m_GravityScale: 0.1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
