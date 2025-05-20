@@ -8,8 +8,9 @@ public class BlockController : MonoBehaviour
     private InputManager inputManager;
     private SpawnManager spawnManager;
     private BoxCollider2D[] boxCollider;
-    
+
     private Rigidbody2D rigidBody;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class BlockController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.CompareTag("FinishLine")) return;
         rigidBody.isKinematic = false;
         gameObject.transform.TryGetComponent(out BlockController controller);
         spawnManager.OnSpawn = true;
@@ -31,6 +33,7 @@ public class BlockController : MonoBehaviour
         {
             box.isTrigger = false;
         }
+
         controller.enabled = false;
     }
 }

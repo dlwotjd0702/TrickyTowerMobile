@@ -6,6 +6,16 @@ TagManager:
   tags:
   - Block
   - Floor
+  - DestoryZone
+  - Ground
+  - FinishLine
+  - OBlock
+  - SBlock
+  - TBlock
+  - ZBlock
+  - JBlock
+  - IBlock
+  - LBlock
   layers:
   - Default
   - TransparentFX
@@ -13,7 +23,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Block
   - 
   - 
   - 
