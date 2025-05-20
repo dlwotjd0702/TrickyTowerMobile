@@ -32,34 +32,34 @@ public class FinishLine : MonoBehaviour //NetworkBehaviour
     {
         if (playerTouched == false)
             return;
-        
+
         timer += Time.deltaTime;
 
         if (timer >= 3f)
         {
             Debug.Log("clear");
             enabled = false;
+            playerTouched = false;
         }
-
-        playerTouched = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Block") == false) return;
-
-        var block = other.GetComponent<NetworkObject>();
-        if (block == null) return;
-
-        PlayerRef player = block.InputAuthority;
-
-        if (playerBlockCount.ContainsKey(player) == false)
+        if (other.CompareTag("Block"))
         {
-            playerBlockCount[player] = 0;
-        }
+            playerTouched = true;
+            var block = other.GetComponent<NetworkObject>();
+            if (block == null) return;
 
-        playerTouched = true;
-        playerBlockCount[player]++;
+            PlayerRef player = block.InputAuthority;
+
+            if (playerBlockCount.ContainsKey(player) == false)
+            {
+                playerBlockCount[player] = 0;
+            }
+
+            playerBlockCount[player]++;
+        }
     }
 
     private void OnTriggerStay2D(Collider2D other)
