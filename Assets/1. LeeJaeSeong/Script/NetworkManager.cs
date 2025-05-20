@@ -107,7 +107,6 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
             spawnHandler.SpawnBlockFor(_runner, player, sp);
         }
     }
-   
         
         
 

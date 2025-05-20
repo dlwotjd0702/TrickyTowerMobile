@@ -22,6 +22,7 @@ public class NetworkBlockController : NetworkBehaviour
     BoxCollider2D      _trigger;
 
     public EffectManager  effectManager;
+    public SoundManager  soundManager;
     public NetworkManager networkManager;
 
     public override void Spawned()
@@ -86,7 +87,7 @@ public class NetworkBlockController : NetworkBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Floor") && !IsPlaced)
+        if ((other.CompareTag("Floor") || other.CompareTag("Respawn")) && !IsPlaced )
         {
             IsPlaced = true;
 
@@ -101,9 +102,15 @@ public class NetworkBlockController : NetworkBehaviour
 
             networkManager.RequestNextBlock(Object.InputAuthority);
             effectManager.IsShake = true;
+            if (other.CompareTag("Respawn"))
+                Destroy(gameObject);
+        }
+        else if (other.CompareTag("Respawn") && IsPlaced)
+        {
+            effectManager.IsShake = true;
+            Destroy(gameObject);    
         }
 
-        if (other.CompareTag("Respawn"))
-            Destroy(gameObject);
+        
     }
 }

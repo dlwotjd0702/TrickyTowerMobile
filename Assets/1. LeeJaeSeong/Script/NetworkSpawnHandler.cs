@@ -11,6 +11,7 @@ public class NetworkSpawnHandler : NetworkBehaviour,INetworkRunnerCallbacks
     [Header("외부 참조")]
     public NetworkManager networkManager;
     public EffectManager  effectManager;
+    public SoundManager soundManager;
 
     [Rpc(sources: RpcSources.All, targets: RpcTargets.StateAuthority)]
     public void RPC_RequestBlockSpawn(RpcInfo info = default)
@@ -31,9 +32,11 @@ public class NetworkSpawnHandler : NetworkBehaviour,INetworkRunnerCallbacks
         if (obj.TryGetComponent<NetworkBlockController>(out var ctrl))
         {
             ctrl.effectManager  = effectManager;
+            ctrl.soundManager  = soundManager;
             ctrl.networkManager = networkManager;
             effectManager.Block         = obj.gameObject;
             effectManager.isBlockChange = true;
+            soundManager.currentBlock = obj.gameObject;
         }
     }
 

@@ -1314,13 +1314,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockPrefabs:
-  - RawGuidValue: 7e998054fa144764ba52ec61168e3b85
-  - RawGuidValue: 36d12dc4d11bb00439c3830633a3544a
-  - RawGuidValue: e7ad08dd7db001c4ea257c2cfb3a4915
-  - RawGuidValue: 5c32236ef3aa92241abe23bd5d77635b
-  - RawGuidValue: 9652ebe4921d3fb44aa91a75cb608426
-  - RawGuidValue: 409c3ca75d9724a40bf346d471d0b5ad
-  - RawGuidValue: 0c800c3c3dce1ea40abea421d65222f4
+  - RawGuidValue: 9976e0cb863ef864e89a809efb54ad4f
+  - RawGuidValue: 202f264fc64f3e248b033dfe3bca942e
+  - RawGuidValue: 626e6c86b741b954aaa52eb61bf3d35a
+  - RawGuidValue: 5dd94597dc05bbe4e9617f278c01b2f8
+  - RawGuidValue: f20bec5c23e40064b869e1ac262153e3
+  - RawGuidValue: 7bbab3510f9354542970d65941bfccc3
+  - RawGuidValue: 3d78a85dbe1789140a2a2b868262001e
   networkManager: {fileID: 2036541782}
   effectManager: {fileID: 2104402099}
 --- !u!114 &1094062847
@@ -2190,7 +2190,10 @@ MonoBehaviour:
   IsShadow: 0
   Shadow: {fileID: 7807652710268291363, guid: d69949ec7fe1efd4cb57c9db2e9afc74, type: 3}
   ShadowNum: 4
+  ShadowTailDistance: 0.5
   ShadowDuration: 0.1
+  tempBlock: {fileID: 0}
+  RoatateValue: 45
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
