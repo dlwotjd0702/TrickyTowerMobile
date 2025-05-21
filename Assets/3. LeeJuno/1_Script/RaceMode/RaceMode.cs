@@ -72,7 +72,7 @@ public class RaceMode : MonoBehaviour //NetworkBehaviour
             playerTouched = false;
         }
     }
-
+//시간비례 해서 선내려옴
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer != LayerMask.NameToLayer("Block")) return;

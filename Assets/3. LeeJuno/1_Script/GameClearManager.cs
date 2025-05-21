@@ -86,12 +86,14 @@ public class GameClearManager : NetworkBehaviour
         if (failedPlayers.Count >= Runner.ActivePlayers.Count()) //모든 플레이어 종료확인
         {
             PuzzleModeClear();
+            failedPlayers.Clear();
         }
     }
 
-    public void SurvivalModeClear() //** 서바이벌 모드 관련 로직 **
+    public void SurvivalModeClear(PlayerRef winner) //** 서바이벌 모드 관련 로직 **
     {
         Debug.Log("Survival clear");
+        //인자값으로 1등 남은 플레이어는 blockCount가 낮은순으로 등수
     }
     
 
