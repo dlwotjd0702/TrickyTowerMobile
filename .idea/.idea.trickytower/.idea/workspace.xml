@@ -6,16 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="33ec4f3c-9a43-40ac-a265-51209e7b0009" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Material/New Material.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Material/New Material.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/RT/RT_GradientBG.renderTexture" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/RT/RT_GradientBG.renderTexture.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Scene/OutGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Scene/OutGame.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/ButtonHoverToggle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/ButtonHoverToggle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/RoomBlockRotator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/RoomBlockRotator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/UIButtonManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/UIButtonManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Shader/NewUnlitShader.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Shader/NewUnlitShader.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkBlockController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkBlockController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Script/EffectManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Script/EffectManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,33 +17,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;deemo100&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/dlwotjd0702/TrickyTower.git&quot;,
-    &quot;accountId&quot;: &quot;925f27c7-493d-43e7-a859-8ee4115d500e&quot;
-  }
-}</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkBlockController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkInputHandler.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkSpawnHandler.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/4. Junghyunsik/Script/ButtonHoverToggle.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/4. Junghyunsik/Script/CornerHighlightAnimator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/4. Junghyunsik/Script/LightImageRotator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/4. Junghyunsik/Script/QuadMaterialSwitcher.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/4. Junghyunsik/Script/RoomBlockRotator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d012868c0b9943c7bc3faef3a9135f2bc0000/b0/7028193c/NetworkRunner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/2. SeoYoungGwang/Script/SoundManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/2. SeoYoungGwang/Script/VirtualLandingVisual.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/origin/Scripts/Block.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.7/Scripts/Runtime/TMPro_UGUI_Private.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/GraphicEditor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/ImageEditor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/RawImageEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/3.Script/DoubleBarrel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/3.Script/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/3.Script/PoolManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -62,30 +35,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;OutGame&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "Ingame",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Unity 에디터에 연결.Unity 에디터에 연결">
     <configuration name="유닛 테스트(배치 모드)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.62f1-x86_64\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.62f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\KGA\Documents\GitHub\TrickyTower -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\KGA\Documents\GitHub\TrickyTower" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
     </configuration>
+    <configuration name="독립실행형 플레이어" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/qlfem/trickytower.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\KGA\Documents\GitHub\TrickyTower\qlfem" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Unity 시작" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.62f1-x86_64\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.62f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\KGA\Documents\GitHub\TrickyTower -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\KGA\Documents\GitHub\TrickyTower" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -130,18 +111,15 @@
       <workItem from="1746755491930" duration="4000" />
       <workItem from="1747025674733" duration="1340000" />
       <workItem from="1747205466109" duration="2308000" />
-      <workItem from="1747218041999" duration="912000" />
-      <workItem from="1747361997531" duration="160000" />
-      <workItem from="1747621951722" duration="45000" />
-      <workItem from="1747640888156" duration="5553000" />
-      <workItem from="1747701585591" duration="2611000" />
-      <workItem from="1747704919673" duration="1789000" />
-      <workItem from="1747708587877" duration="16304000" />
-      <workItem from="1747736000597" duration="1217000" />
-      <workItem from="1747788693100" duration="4577000" />
-      <workItem from="1747793910497" duration="5481000" />
-      <workItem from="1747801787616" duration="10000" />
-      <workItem from="1747802978424" duration="11844000" />
+      <workItem from="1747210925160" duration="7810000" />
+      <workItem from="1747370115400" duration="1380000" />
+      <workItem from="1747615081272" duration="9788000" />
+      <workItem from="1747634822920" duration="6385000" />
+      <workItem from="1747641339813" duration="13313000" />
+      <workItem from="1747714916785" duration="8708000" />
+      <workItem from="1747728584204" duration="3789000" />
+      <workItem from="1747732691375" duration="10000" />
+      <workItem from="1747732745941" duration="10738000" />
     </task>
     <servers />
   </component>
