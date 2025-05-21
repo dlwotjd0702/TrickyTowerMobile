@@ -40,18 +40,15 @@ public class SoundManager : MonoBehaviour
     public void OnRotateSound()
     {
         audioSource.PlayOneShot(blockRotateClip);
-
     }
 
     public void OnFallSound()
     {
         audioSource.PlayOneShot(blockFallClip);
-
     }
     
     public void OnMoveSound()
     {
         audioSource.PlayOneShot(blockMoveClip);
-
     }
 }

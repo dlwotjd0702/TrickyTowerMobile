@@ -1415,13 +1415,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockPrefabs:
-  - RawGuidValue: 7e998054fa144764ba52ec61168e3b85
-  - RawGuidValue: 36d12dc4d11bb00439c3830633a3544a
-  - RawGuidValue: e7ad08dd7db001c4ea257c2cfb3a4915
-  - RawGuidValue: 5c32236ef3aa92241abe23bd5d77635b
-  - RawGuidValue: 9652ebe4921d3fb44aa91a75cb608426
-  - RawGuidValue: 409c3ca75d9724a40bf346d471d0b5ad
-  - RawGuidValue: 0c800c3c3dce1ea40abea421d65222f4
+  - RawGuidValue: 9976e0cb863ef864e89a809efb54ad4f
+  - RawGuidValue: 626e6c86b741b954aaa52eb61bf3d35a
+  - RawGuidValue: 202f264fc64f3e248b033dfe3bca942e
+  - RawGuidValue: 5dd94597dc05bbe4e9617f278c01b2f8
+  - RawGuidValue: f20bec5c23e40064b869e1ac262153e3
+  - RawGuidValue: 7bbab3510f9354542970d65941bfccc3
+  - RawGuidValue: 3d78a85dbe1789140a2a2b868262001e
   networkManager: {fileID: 2036541782}
   effectManager: {fileID: 2104402099}
   soundManager: {fileID: 1892439669}
@@ -1488,6 +1488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 051ed861083b9d349a4e450b636da602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effectManager: {fileID: 2104402099}
 --- !u!4 &1283933675 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2002092286329421524, guid: 76a401eaec4b9894991fdec3f4fedb80, type: 3}
@@ -2403,9 +2404,9 @@ MonoBehaviour:
   currentBlock: {fileID: 0}
   blockLandClip: {fileID: 8300000, guid: b2d5a9ad94c484344866e1c4d89e2f98, type: 3}
   blockRotateClip: {fileID: 8300000, guid: bebe2f28e30ef0f418de42afbf2ad0e4, type: 3}
-  blockFallClip: {fileID: 8300000, guid: d0f49fdfe1f735f4eadd682a09fd5d2b, type: 3}
+  blockFallClip: {fileID: 8300000, guid: 7038f837982bc264dbbff02f3f38003f, type: 3}
   blockMoveClip: {fileID: 8300000, guid: d0f3ab024cb753b4296570ff79a74816, type: 3}
-  backGroundMusicClip: {fileID: 8300000, guid: 00c2368f80723be4a873cc69ce8b0fe4, type: 3}
+  backGroundMusicClip: {fileID: 8300000, guid: eedca0dec92c6fd4ba6ffecd70718a13, type: 3}
 --- !u!4 &1917231997 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2707778436352696299, guid: 29faf9386720d0c44935a57c02a525ab, type: 3}
@@ -2607,10 +2608,12 @@ MonoBehaviour:
   IsShake: 0
   IsShadow: 0
   Shadow: {fileID: 7807652710268291363, guid: d69949ec7fe1efd4cb57c9db2e9afc74, type: 3}
-  ShadowNum: 4
-  ShadowTailDistance: 0.5
+  ShadowNum: 6
+  ShadowTailDistance: 1.5
+  afterMovePos: {x: 0, y: 0, z: 0}
+  preMovePos: {x: 0, y: 0, z: 0}
   ShadowDuration: 0.1
-  tempBlock: {fileID: 0}
+  isRight: 0
   RoatateValue: 45
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

@@ -10,6 +10,8 @@ public class NetworkBlockController : NetworkBehaviour
         public int  MoveX;
         public bool Rotate;
         public bool FastDown;
+        public bool leftFastMove;
+        public bool rightFastMove;
     }
 
     [Networked] public bool IsPlaced { get; set; }
@@ -72,7 +74,6 @@ public class NetworkBlockController : NetworkBehaviour
             {
                 transform.position += Vector3.right * input.MoveX * moveDistance;
                 effectManager.isBlockMove = true;
-                soundManager.OnMoveSound();
             }
 
             // 회전
@@ -80,6 +81,27 @@ public class NetworkBlockController : NetworkBehaviour
             {
                 transform.Rotate(0, 0, 90);
                 soundManager.OnRotateSound();
+            }
+
+            if (input.leftFastMove)
+            {
+                Debug.Log("Left Fast Move");
+                effectManager.preMovePos = transform.position;
+                transform.position -= Vector3.right * moveDistance * 2;
+                effectManager.afterMovePos  = transform.position;
+                effectManager.isBlockMove = true;
+                effectManager.OnShadow();
+                soundManager.OnMoveSound();
+            }
+            
+            if (input.rightFastMove)
+            {
+                effectManager.preMovePos = transform.position;
+                transform.position += Vector3.right * moveDistance * 2;
+                effectManager.afterMovePos  = transform.position;
+                effectManager.isBlockMove = true;
+                effectManager.OnShadow();
+                soundManager.OnMoveSound();
             }
 
             // 빠른/자동 하강

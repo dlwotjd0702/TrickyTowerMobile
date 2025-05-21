@@ -13,12 +13,30 @@ public class NetworkInputHandler : MonoBehaviour, INetworkRunnerCallbacks
 
     // 🔸 1프레임 키 입력 저장용
     private bool _rotateQueued = false;
+    private bool isLeftFastMove = false;
+    private bool isRightFastMove = false;
+    
+    [SerializeField] private EffectManager effectManager;
 
     private void Update()
     {
         // 🔸 키 눌림 체크 → flag 저장
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
             _rotateQueued = true;
+        if (Input.GetKeyDown(KeyCode.U) && !effectManager.IsShadow)
+        {
+            effectManager.IsShadow = true;
+            effectManager.isRight = false;
+            isLeftFastMove = true;
+            Debug.Log("isLeftFastMove");
+        }
+
+        if (Input.GetKeyDown(KeyCode.I) && !effectManager.IsShadow)
+        {
+            effectManager.IsShadow = true;
+            effectManager.isRight = true;
+            isRightFastMove = true;
+        }
     }
 
     public void OnInput(NetworkRunner runner, NetworkInput input)
@@ -36,10 +54,14 @@ public class NetworkInputHandler : MonoBehaviour, INetworkRunnerCallbacks
         {
             MoveX    = moveX,
             Rotate   = _rotateQueued,
-            FastDown = Input.GetKey(KeyCode.S)
+            FastDown = Input.GetKey(KeyCode.S),
+            leftFastMove = isLeftFastMove,
+            rightFastMove = isRightFastMove
         };
 
         _rotateQueued = false; // 🔸 초기화
+        isLeftFastMove = false;
+        isRightFastMove = false;
 
         input.Set(data);
     }
