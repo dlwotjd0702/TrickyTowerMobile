@@ -80,6 +80,9 @@ public class RaceMode : MonoBehaviour //NetworkBehaviour
         var block = other.GetComponent<NetworkObject>();
         if (block == null) return;
 
+        var blockCon = other.GetComponent<NetworkBlockController>();
+        if (blockCon.IsPlaced == false) return;
+
         blockCount++;
         playerTouched = true;
 

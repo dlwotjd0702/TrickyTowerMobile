@@ -13,9 +13,8 @@ public class PuzzleMode : MonoBehaviour
 
         var block = other.GetComponent<NetworkBlockController>();
         if (block.IsPlaced == false) return;
-
-        GameClearManager.Instance.PlayerFailed(block.Object.InputAuthority);
+        
         Destroy(block.gameObject);
+        GameClearManager.Instance.PlayerFailed(block.Object.InputAuthority);
     }
-    
 }

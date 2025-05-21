@@ -5,13 +5,6 @@ using System.Linq;
 using Fusion;
 using UnityEngine;
 
-public enum GameType
-{
-    Race,
-    Puzzle,
-    Survival,
-}
-
 public class GameClearManager : NetworkBehaviour
 {
     //게임종료와 종료후 모드별로 플레이어들의 등수를 판정
@@ -19,7 +12,6 @@ public class GameClearManager : NetworkBehaviour
     public static GameClearManager Instance;
     private PlayerScoreData scoreData = new PlayerScoreData();
     private HashSet<PlayerRef> failedPlayers = new HashSet<PlayerRef>();
-    private GameType CurrentGameType;
 
     private void Awake()
     {
@@ -28,11 +20,6 @@ public class GameClearManager : NetworkBehaviour
         else Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
-    }
-
-    public void SetGameType(GameType mode)//** 현재 모드 설정 **
-    {
-        CurrentGameType = mode;
     }
 
     public void RaceModeClear(PlayerRef winner) //레이스모드 관련로직
@@ -88,11 +75,6 @@ public class GameClearManager : NetworkBehaviour
         AssignScore(ranking);
     }
 
-    public void SurvivalModeClear() //** 서바이벌 모드 관련 로직 **
-    {
-        Debug.Log("Survival clear");
-    }
-    
     public void PlayerFailed(PlayerRef player) //플레이어 탈락 감지 로직
     {
         if (failedPlayers.Contains(player)) return;
@@ -103,19 +85,17 @@ public class GameClearManager : NetworkBehaviour
 
         if (failedPlayers.Count >= Runner.ActivePlayers.Count()) //모든 플레이어 종료확인
         {
-            //현재 모드에 맞는 클리어 로직(퍼즐, 서바이벌)
-            switch (CurrentGameType)
-            {
-                case GameType.Puzzle:
-                    PuzzleModeClear();
-                    break;
-                case GameType.Survival:
-                    SurvivalModeClear();
-                    break;
-            }
+            PuzzleModeClear();
         }
     }
+
+    public void SurvivalModeClear() //** 서바이벌 모드 관련 로직 **
+    {
+        Debug.Log("Survival clear");
+    }
     
+
+
     //----------이 밑에는 점수 관련 로직-------------
     private void AssignScore(PlayerRef[] ranking)
     {
