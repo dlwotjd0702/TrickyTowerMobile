@@ -69,12 +69,25 @@ public class UIButtonManager : MonoBehaviour
     [Header("Match Level Paging")]
     public Pager matchPager;
     
+    
+    //
+    [Header("PlaySet Preview Containers")]
+    [Tooltip("PlaySet/PlayerSettings/PlayerSelect 의 부모 (Player1~4)")]
+    public Transform playSetPlayerContainer;
+    [Tooltip("PlaySet/PlayerSettings/BlockSelect 의 부모 (Block1~4)")]
+    public Transform playSetBlockContainer;
+    
     [Header("페이드")]
     public Image blackOverlay;
     public float fadeTime = 0.5f;
 
     private bool isTransitioning = false;
 
+    
+    //
+    private int savedPlayerIndex = 0;
+    private int savedBlockIndex  = 0;
+    
     void Start()
     {
         // 버튼 클릭에 메소드 연결
@@ -122,6 +135,10 @@ public class UIButtonManager : MonoBehaviour
         // 활성화/비활성화
         for (int i = 0; i < modePages.Length; i++)
             modePages[i].SetActive(i == modeIndex);
+        
+        // Quad1 머테리얼 스위치
+        FindObjectOfType<QuadMaterialSwitcher>()
+        .SetModeMaterial(modeIndex);
     }
     
     void SetupPager(Pager pager)
@@ -188,15 +205,32 @@ public class UIButtonManager : MonoBehaviour
                 playSetUI.SetActive(true); 
                 break;
             
+            //
             case "MakeRoom":
-                playSetUI.SetActive(false);
-                modSetUI.SetActive(true);
+                // 1) 선택 저장
+                savedPlayerIndex = playerIndex;
+                savedBlockIndex  = blockIndex;
+                // 2) 바로 OFF→ON 토글
+                TogglePlaySetSelection();
+                // 3) 2초 후 PlaySet → ModSet
+                StartCoroutine(DelayedSwitch(playSetUI, modSetUI));
                 break;
-
+            
             case "BackToPlaySet":
                 modSetUI.SetActive(false);
                 readyRoomUI.SetActive(false);
                 playSetUI.SetActive(true);
+
+                // ▶ PlaySet Preview 컨테이너를 OFF 상태로 복원
+                playersOnContainer.gameObject.SetActive(false);
+                blocksOnContainer .gameObject.SetActive(false);
+                playersOffContainer.gameObject.SetActive(true);
+                blocksOffContainer .gameObject.SetActive(true);
+                // ▶ 페이징 인덱스도 0으로 리셋
+                playerIndex = 0;
+                blockIndex  = 0;
+                ShowPlayerPage(0);
+                ShowBlockPage(0);
                 break;
 
             case "CreateRoom":
@@ -204,9 +238,16 @@ public class UIButtonManager : MonoBehaviour
                 readyRoomUI.SetActive(true);
                 break;
             
+            
+            //
             case "EnterRoom":
-                playSetUI.SetActive(false);
-                readyRoomUI.SetActive(true);
+                // 1) 인덱스 저장
+                savedPlayerIndex = playerIndex;
+                savedBlockIndex  = blockIndex;
+                // 2) PlaySet UI 위에서 바로 OFF→ON 자식 토글
+                TogglePlaySetSelection();
+                // 3) 2초 뒤 전환 코루틴
+                StartCoroutine(TransitionAfterDelay(playSetUI, readyRoomUI));
                 break;
             
             // 게임 나가기 관련
@@ -228,7 +269,77 @@ public class UIButtonManager : MonoBehaviour
                 break;
         }
     }
+    
+    //
+    // PlaySet 위에서 OFF → ON 자식 토글
+    private void PreviewPlaySetSelection()
+    {
+        // Player1~4 밑 OFF/ON
+        for (int i = 0; i < playSetPlayerContainer.childCount; i++)
+        {
+            var p = playSetPlayerContainer.GetChild(i);
+            var off = p.Find("OFF");
+            var on  = p.Find("ON");
+            if (off != null) off.gameObject.SetActive(false);
+            if (on  != null) on .gameObject.SetActive(i == savedPlayerIndex);
+        }
 
+        // Block1~4 밑 OFF/ON
+        for (int i = 0; i < playSetBlockContainer.childCount; i++)
+        {
+            var b = playSetBlockContainer.GetChild(i);
+            var off = b.Find("OFF");
+            var on  = b.Find("ON");
+            if (off != null) off.gameObject.SetActive(false);
+            if (on  != null) on .gameObject.SetActive(i == savedBlockIndex);
+        }
+    }
+    
+    // PlaySet Preview Containers
+// (Inspector 에 바인딩 해 놓은 RectTransform 필드들)
+    public RectTransform playersOffContainer;
+    public RectTransform playersOnContainer;
+    public RectTransform blocksOffContainer;
+    public RectTransform blocksOnContainer;
+
+    private void TogglePlaySetSelection()
+    {
+        // OFF 컨테이너는 꺼주고…
+        playersOffContainer.gameObject.SetActive(false);
+        blocksOffContainer .gameObject.SetActive(false);
+        // ON 컨테이너는 켜 줍니다.
+        playersOnContainer .gameObject.SetActive(true);
+        blocksOnContainer .gameObject.SetActive(true);
+    
+        // 만약 LightImage가 항상 맨 앞(Child 0)에 들어온다면…
+        for(int i = 0; i < playersOnContainer.childCount - 1; i++)
+        {
+            // 실제 플레이어 오브젝트는 GetChild(i+1)
+            var playerGO = playersOnContainer.GetChild(i + 1).gameObject;
+            playerGO.SetActive(i == savedPlayerIndex);
+        }
+        
+        // PlaySet BlockON 자식 중 savedBlockIndex만 켜기 (LightImage 제외)
+        for (int i = 0; i < blocksOnContainer.childCount - 1; i++)
+        {
+            // 실제 Block 오브젝트는 GetChild(i+1)
+            var blockGO = blocksOnContainer.GetChild(i + 1).gameObject;
+            blockGO.SetActive(i == savedBlockIndex);
+        }
+        
+    }
+
+
+// 2) 2초 딜레이 후 전환하는 코루틴 추가
+    private IEnumerator DelayedSwitch(GameObject from, GameObject to)
+    {
+        // (원한다면) 디버그 로그
+        Debug.Log($"[UI] Switching from {from.name} to {to.name} after 2s");
+        yield return new WaitForSeconds(2f);
+        from.SetActive(false);
+        to  .SetActive(true);
+    }
+    
     private void RefreshHelpPages()
     {
         // 1) 각 Help 패널 활성/비활성
@@ -283,4 +394,24 @@ public class UIButtonManager : MonoBehaviour
 
         isTransitioning = false;
     }
+    
+    // 1) UIButtonManager 클래스 맨 아래에, 기존 FadeToMainUI 아래에 추가
+    private IEnumerator TransitionAfterDelay(GameObject from, GameObject to)
+    {
+        // 디버깅 로그: 저장된 인덱스 확인
+        Debug.Log($"[Transition] savedPlayerIndex={savedPlayerIndex}, savedBlockIndex={savedBlockIndex}");
+
+        // PlaySet 위 Preview
+        PreviewPlaySetSelection();
+        Debug.Log("[Transition] PreviewPlaySetSelection called, waiting 2 seconds...");
+
+        // 2초 대기
+        yield return new WaitForSeconds(2f);
+
+        Debug.Log($"[Transition] Switching UI: {from.name} → {to.name}");
+        from.SetActive(false);
+        to.SetActive(true);
+    }
+
+    
 }

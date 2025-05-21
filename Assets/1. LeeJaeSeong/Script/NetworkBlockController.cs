@@ -10,6 +10,8 @@ public class NetworkBlockController : NetworkBehaviour
         public int  MoveX;
         public bool Rotate;
         public bool FastDown;
+        public bool leftFastMove;
+        public bool rightFastMove;
     }
 
     [Networked] public bool IsPlaced { get; set; }
@@ -76,7 +78,31 @@ public class NetworkBlockController : NetworkBehaviour
 
             // 회전
             if (input.Rotate)
+            {
                 transform.Rotate(0, 0, 90);
+                soundManager.OnRotateSound();
+            }
+
+            if (input.leftFastMove)
+            {
+                Debug.Log("Left Fast Move");
+                effectManager.preMovePos = transform.position;
+                transform.position -= Vector3.right * moveDistance * 2;
+                effectManager.afterMovePos  = transform.position;
+                effectManager.isBlockMove = true;
+                effectManager.OnShadow();
+                soundManager.OnMoveSound();
+            }
+            
+            if (input.rightFastMove)
+            {
+                effectManager.preMovePos = transform.position;
+                transform.position += Vector3.right * moveDistance * 2;
+                effectManager.afterMovePos  = transform.position;
+                effectManager.isBlockMove = true;
+                effectManager.OnShadow();
+                soundManager.OnMoveSound();
+            }
 
             // 빠른/자동 하강
             float speed = input.FastDown ? downSpeed * 5f : downSpeed;
@@ -103,10 +129,26 @@ public class NetworkBlockController : NetworkBehaviour
             networkManager.RequestNextBlock(Object.InputAuthority);
             effectManager.IsShake = true;
             if (other.CompareTag("Respawn"))
+            {
+                soundManager.OnFallSound();
                 Destroy(gameObject);
+                return;
+            }
+
+            if (other.gameObject.layer == LayerMask.NameToLayer("Block") && effectManager.IsShadow)
+            {
+                /*other.gameObject.transform.TryGetComponent(out Rigidbody2D placeRigidBody);
+                Vector3 forceStartPoint = other.ClosestPoint(transform.position);
+                Vector3 backForceVector = transform.position - forceStartPoint;
+                Vector3 forceVector = placeRigidBody.velocity;*/
+                Debug.Log("Conflict!");
+            }
+            
+            soundManager.OnLandSound();
         }
         else if (other.CompareTag("Respawn") && IsPlaced)
         {
+            soundManager.OnFallSound();
             effectManager.IsShake = true;
             Destroy(gameObject);    
         }

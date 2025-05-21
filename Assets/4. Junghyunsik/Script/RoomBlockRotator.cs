@@ -1,7 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 
-public class BlockRotator : MonoBehaviour
+public class RoomBlockRotator : MonoBehaviour
 {
     [Header("회전할 RectTransform")]
     [SerializeField] private RectTransform blockRect;
