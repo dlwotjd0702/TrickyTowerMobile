@@ -53,7 +53,7 @@ public class FirebaseAccountManager : MonoBehaviour
 
             var result = task.Result;
             FirebaseUser newUser = result.User;
-            MainSystem.Instance.SetUserData(newUser);
+            Player.Instance.SetUserData(newUser);
             statusMessage = $"회원가입 성공: {newUser.Email}";
 
             UpdateUserNickname(newUser, nickname);
@@ -107,7 +107,7 @@ public class FirebaseAccountManager : MonoBehaviour
 
             var result = task.Result;
             FirebaseUser user = result.User;
-            MainSystem.Instance.SetUserData(user);
+            Player.Instance.SetUserData(user);
             isLoggedIn = true;
             statusMessage = $"로그인 성공: {user.Email}";
         });
@@ -118,7 +118,7 @@ public class FirebaseAccountManager : MonoBehaviour
         auth.SignOut();
         isLoggedIn = false;
         statusMessage = "로그아웃 되었습니다.";
-        MainSystem.Instance.SetUserData(null);
+        Player.Instance.SetUserData(null);
     }
 
     // Firebase-only: Create a game session document
