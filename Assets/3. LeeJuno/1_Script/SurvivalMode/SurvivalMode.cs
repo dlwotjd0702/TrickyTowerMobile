@@ -27,7 +27,7 @@ public class SurvivalMode : MonoBehaviour
             blockCount[p] = 22;
 
         if (--blockCount[p] <= 0)
-            Clear(p);
+            GameClearManager.Instance.SurvivalModeClear(p);
     }
 
     private void DestroyCheck(PlayerRef p)
@@ -37,11 +37,6 @@ public class SurvivalMode : MonoBehaviour
 
         if (--hp[p] <= 0)
             Die(p);
-    }
-
-    private void Clear(PlayerRef p)
-    {
-        
     }
 
     private void Die(PlayerRef p)
