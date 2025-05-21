@@ -49,9 +49,16 @@ public class GameClearManager : NetworkBehaviour
         AssignScore(ranking);
     }
 
-    public void SurvivalModeClear(PlayerRef winner)
+    public void SurvivalModeClear()
     {
-        Debug.Log("clear");
+        Debug.Log("Survival clear");
+        
+    }
+
+    public void PuzzleModeClear()
+    {
+        Debug.Log("Puzzle clear");
+        //모든 플레이어 퍼즐 게임 종료후 남은 벽돌 개수를 세서 많은순으로 1,2,3,4 판정
         
     }
 

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -5589969689717961217}
   - component: {fileID: 6433372091001938377}
   - component: {fileID: 2159056455824516168}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: netgph_brickO_stone
   m_TagString: OBlock
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SortKey: 263348176
+  SortKey: 460238124
   ObjectInterest: 1
   Flags: 262145
   NestedObjects: []
@@ -220,3 +220,5 @@ MonoBehaviour:
   moveDistance: 0.5
   downSpeed: 2
   effectManager: {fileID: 0}
+  soundManager: {fileID: 0}
+  networkManager: {fileID: 0}

@@ -1024,6 +1024,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1094062845}
   - component: {fileID: 1094062846}
+  - component: {fileID: 1094062847}
   m_Layer: 0
   m_Name: SpawnManager
   m_TagString: Untagged
@@ -1066,8 +1067,28 @@ MonoBehaviour:
   - RawGuidValue: 5b6cda4b7bf1d704886b6724010d48a8
   - RawGuidValue: 18db53e3b0b543d4caca49da6a377bdf
   - RawGuidValue: 4c07e75d80acc704d844987f4cd1b156
-  spawnPosition: {x: 0, y: 50, z: 0}
+  networkManager: {fileID: 0}
   effectManager: {fileID: 2104402099}
+  soundManager: {fileID: 0}
+--- !u!114 &1094062847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094062844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortKey: 1832810265
+  ObjectInterest: 1
+  Flags: 262145
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 1094062846}
+  ForceRemoteRenderTimeframe: 0
 --- !u!1 &1250791107
 GameObject:
   m_ObjectHideFlags: 0
@@ -1448,7 +1469,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputHandler: {fileID: 1250791109}
   spawnHandler: {fileID: 1094062846}
+  cameraManager: {fileID: 0}
   sessionName: TrickyTower
+  spawnOffsets:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
 --- !u!4 &2036541783
 Transform:
   m_ObjectHideFlags: 0
@@ -1952,7 +1979,7 @@ Transform:
   m_GameObject: {fileID: 3596282189257294509}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.93, y: 11.08, z: 0}
+  m_LocalPosition: {x: -16.07, y: 11.68, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
