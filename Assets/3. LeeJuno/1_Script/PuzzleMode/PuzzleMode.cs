@@ -6,22 +6,16 @@ using UnityEngine;
 public class PuzzleMode : MonoBehaviour
 {
     //플레이어의 벽돌감지 배치된 벽돌이 선에 닿으면 게임 종료 판정 
-  
-    private void OnTriggerEnter2D(Collider2D other)
+
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.layer != LayerMask.NameToLayer("Block")) return;
 
         var block = other.GetComponent<NetworkBlockController>();
-
         if (block.IsPlaced == false) return;
-        Destroy(block.gameObject);
-        
-        GameOver();
-    }
 
-    public void GameOver()
-    {
-        Debug.Log("Game Over");
-        //게임오버 클리어매니저에 알림
+        GameClearManager.Instance.PlayerFailed(block.Object.InputAuthority);
+        Destroy(block.gameObject);
     }
+    
 }
