@@ -134,6 +134,16 @@ public class NetworkBlockController : NetworkBehaviour
                 Destroy(gameObject);
                 return;
             }
+
+            if (other.gameObject.layer == LayerMask.NameToLayer("Block") && effectManager.IsShadow)
+            {
+                /*other.gameObject.transform.TryGetComponent(out Rigidbody2D placeRigidBody);
+                Vector3 forceStartPoint = other.ClosestPoint(transform.position);
+                Vector3 backForceVector = transform.position - forceStartPoint;
+                Vector3 forceVector = placeRigidBody.velocity;*/
+                Debug.Log("Conflict!");
+            }
+            
             soundManager.OnLandSound();
         }
         else if (other.CompareTag("Respawn") && IsPlaced)
