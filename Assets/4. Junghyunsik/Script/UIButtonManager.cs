@@ -13,7 +13,9 @@ public class UIButtonManager : MonoBehaviour
     public GameObject playSetUI;
     public GameObject modSetUI;
     public GameObject readyRoomUI;
-    public GameObject leaveGameUI;
+    public GameObject signupUI;
+    public GameObject eixtGameUI;
+    public GameObject roomListUI;
     
     [Header("Help Paging")]
     [Tooltip("Help 패널들 (Help1, Help2, Help3, Help4)")]
@@ -158,7 +160,6 @@ public class UIButtonManager : MonoBehaviour
     }
     
     
-    
     public void HandleButton(string buttonId)
     {
         if (isTransitioning) return;
@@ -196,7 +197,6 @@ public class UIButtonManager : MonoBehaviour
                 helpUI.SetActive(false);
                 optionUI.SetActive(false);
                 playSetUI.SetActive(false);
-                leaveGameUI.SetActive(false);
                 mainUI.SetActive(true);
                 break;
 
@@ -219,6 +219,7 @@ public class UIButtonManager : MonoBehaviour
             case "BackToPlaySet":
                 modSetUI.SetActive(false);
                 readyRoomUI.SetActive(false);
+                roomListUI.SetActive(false);
                 playSetUI.SetActive(true);
 
                 // ▶ PlaySet Preview 컨테이너를 OFF 상태로 복원
@@ -238,26 +239,37 @@ public class UIButtonManager : MonoBehaviour
                 readyRoomUI.SetActive(true);
                 break;
             
-            
-            //
             case "EnterRoom":
+                roomListUI.SetActive(false);
+                readyRoomUI.SetActive(true);
+                break;
+            
+            case "EnterRoomList":
                 // 1) 인덱스 저장
                 savedPlayerIndex = playerIndex;
                 savedBlockIndex  = blockIndex;
                 // 2) PlaySet UI 위에서 바로 OFF→ON 자식 토글
                 TogglePlaySetSelection();
                 // 3) 2초 뒤 전환 코루틴
-                StartCoroutine(TransitionAfterDelay(playSetUI, readyRoomUI));
+                StartCoroutine(TransitionAfterDelay(playSetUI, roomListUI));
+                break;
+            
+            case "Signup":
+                signupUI.SetActive(true);
+                break;
+            
+            case "SignupBack":
+                signupUI.SetActive(false);
                 break;
             
             // 게임 나가기 관련
             
             case "ShowLeaveGame":
-                leaveGameUI.SetActive(true);
+                eixtGameUI.SetActive(true);
                 break;
             
             case "LeaveGameNo":
-                leaveGameUI.SetActive(false);
+                eixtGameUI.SetActive(false);
                 break;
             
             case "LeaveGameYes":
