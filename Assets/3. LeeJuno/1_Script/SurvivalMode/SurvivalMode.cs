@@ -11,17 +11,17 @@ public class SurvivalMode : MonoBehaviour
 
     private void OnEnable()
     {
-        SurvivalEvents.BlockSpawned += SpawnCheck;
-        SurvivalEvents.BlockDestroyed += DestroyCheck;
+        SurvivalEvents.BlockSpawned += BlockSpawnCheck;
+        SurvivalEvents.BlockDestroyed += BlockDestroyCheck;
     }
 
     private void OnDisable()
     {
-        SurvivalEvents.BlockSpawned -= SpawnCheck;
-        SurvivalEvents.BlockDestroyed -= DestroyCheck;
+        SurvivalEvents.BlockSpawned -= BlockSpawnCheck;
+        SurvivalEvents.BlockDestroyed -= BlockDestroyCheck;
     }
 
-    private void SpawnCheck(PlayerRef p)
+    private void BlockSpawnCheck(PlayerRef p)
     {
         if (blockCount.ContainsKey(p) == false)
             blockCount[p] = 22;
@@ -30,16 +30,14 @@ public class SurvivalMode : MonoBehaviour
             GameClearManager.Instance.SurvivalModeClear(p);
     }
 
-    private void DestroyCheck(PlayerRef p)
+    private void BlockDestroyCheck(PlayerRef p)
     {
         if (hp.ContainsKey(p) == false)
             hp[p] = 3;
 
         if (--hp[p] <= 0)
-            Die(p);
-    }
-
-    private void Die(PlayerRef p)
-    {
+        {
+            GameClearManager.Instance.PlayerDie(p);
+        }
     }
 }
