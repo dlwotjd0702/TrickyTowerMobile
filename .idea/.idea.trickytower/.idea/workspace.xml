@@ -6,16 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="33ec4f3c-9a43-40ac-a265-51209e7b0009" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Material/New Material.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Material/New Material.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/RT/RT_GradientBG.renderTexture" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/RT/RT_GradientBG.renderTexture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/RT/RT_GradientBG1.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/RT/RT_GradientBG1.renderTexture" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Scene/OutGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Scene/OutGame.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/ButtonHoverToggle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/ButtonHoverToggle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/RoomBlockRotator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/RoomBlockRotator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/UIButtonManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/UIButtonManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Shader/NewUnlitShader.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Shader/NewUnlitShader.shader.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +38,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/4. Junghyunsik/Script/ButtonHoverToggle.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/4. Junghyunsik/Script/CornerHighlightAnimator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/4. Junghyunsik/Script/LightImageRotator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/4. Junghyunsik/Script/ModeBackgroundSwitcher.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/4. Junghyunsik/Script/QuadMaterialSwitcher.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/4. Junghyunsik/Script/RoomBlockRotator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/origin/Scripts/Block.cs" root0="FORCE_HIGHLIGHTING" />
@@ -142,6 +136,8 @@
       <workItem from="1747793910497" duration="5481000" />
       <workItem from="1747801787616" duration="10000" />
       <workItem from="1747802978424" duration="11844000" />
+      <workItem from="1747875418425" duration="474000" />
+      <workItem from="1747875907279" duration="3452000" />
     </task>
     <servers />
   </component>

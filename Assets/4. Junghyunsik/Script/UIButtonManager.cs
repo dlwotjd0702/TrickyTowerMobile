@@ -69,7 +69,6 @@ public class UIButtonManager : MonoBehaviour
     [Header("Match Level Paging")]
     public Pager matchPager;
     
-    
     //
     [Header("PlaySet Preview Containers")]
     [Tooltip("PlaySet/PlayerSettings/PlayerSelect 의 부모 (Player1~4)")]
@@ -82,11 +81,11 @@ public class UIButtonManager : MonoBehaviour
     public float fadeTime = 0.5f;
 
     private bool isTransitioning = false;
-
     
-    //
     private int savedPlayerIndex = 0;
     private int savedBlockIndex  = 0;
+    
+    public ModeBackgroundSwitcher BackgroundSwitcher;
     
     void Start()
     {
@@ -139,6 +138,7 @@ public class UIButtonManager : MonoBehaviour
         // Quad1 머테리얼 스위치
         FindObjectOfType<QuadMaterialSwitcher>()
         .SetModeMaterial(modeIndex);
+        BackgroundSwitcher.SetBackground(modeIndex);
     }
     
     void SetupPager(Pager pager)
