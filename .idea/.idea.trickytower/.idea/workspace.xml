@@ -7,7 +7,12 @@
     <list default="true" id="33ec4f3c-9a43-40ac-a265-51209e7b0009" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkBlockController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkBlockController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Script/EffectManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Script/EffectManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/team222/netgph_brickI_stone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/team222/netgph_brickI_stone.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/team222/netgph_brickJ_stone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/team222/netgph_brickJ_stone.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/team222/netgph_brickL_stone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/team222/netgph_brickL_stone.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/team222/netgph_brickS_stone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/team222/netgph_brickS_stone.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/team222/netgph_brickT_stone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/team222/netgph_brickT_stone.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/team222/netgph_brickZ_stone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/team222/netgph_brickZ_stone.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +28,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/2. SeoYoungGwang/Script/VirtualLandingVisual.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/origin/Scripts/Block.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Downloads/3.Script/DoubleBarrel.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/Downloads/3.Script/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/3.Script/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Downloads/3.Script/PoolManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -35,19 +40,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Ingame",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Ingame&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Unity 에디터에 연결.Unity 에디터에 연결">
     <configuration name="유닛 테스트(배치 모드)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.62f1\Editor\Unity.exe" />
@@ -119,7 +124,8 @@
       <workItem from="1747714916785" duration="8708000" />
       <workItem from="1747728584204" duration="3789000" />
       <workItem from="1747732691375" duration="10000" />
-      <workItem from="1747732745941" duration="10738000" />
+      <workItem from="1747732745941" duration="12511000" />
+      <workItem from="1747877546743" duration="6921000" />
     </task>
     <servers />
   </component>
