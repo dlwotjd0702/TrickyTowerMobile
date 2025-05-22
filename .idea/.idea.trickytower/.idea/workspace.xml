@@ -80,6 +80,14 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
     </configuration>
+    <configuration name="독립실행형 플레이어" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$USER_HOME$/Desktop/testtttt/trickytower.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\KGA\Desktop\testtttt" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Unity 시작" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.62f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\KGA\Documents\GitHub\TrickyTower -debugCodeOptimization" />
@@ -133,6 +141,7 @@
       <workItem from="1747701585591" duration="2611000" />
       <workItem from="1747704919673" duration="1789000" />
       <workItem from="1747708587877" duration="13511000" />
+      <workItem from="1747882069918" duration="155000" />
     </task>
     <servers />
   </component>
