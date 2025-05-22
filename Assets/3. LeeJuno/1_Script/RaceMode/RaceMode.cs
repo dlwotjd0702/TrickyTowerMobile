@@ -4,30 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fusion;
 
-public class RaceMode : MonoBehaviour //NetworkBehaviour
+public class RaceMode : MonoBehaviour 
 {
     //결승선에 3초간 닿으면 게임종료
     private float timer = 0f;
     private PlayerRef? currentPlayer = null;
     private bool playerTouched = false;
     private int blockCount = 0;
-
-    /*public override void FixedUpdateNetwork() //네트워크용
-    {
-        if (playerTouched == false)
-            return;
-
-        timer += Runner.DeltaTime;
-
-        if (timer >= 3f)
-        {
-        if (currentPlayer != null)
-                GameClearManager.Instance.RaceModeClear(currentPlayer.Value);
-            enabled = false;
-        }
-
-        playerTouched = false;
-    }*/
+    
 
     private void Update()
     {

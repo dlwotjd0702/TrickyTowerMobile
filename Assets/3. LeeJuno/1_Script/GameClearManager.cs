@@ -18,6 +18,7 @@ public class GameClearManager : NetworkBehaviour
     public static GameClearManager Instance;
     private PlayerScoreData scoreData = new PlayerScoreData();
     private HashSet<PlayerRef> failedPlayers = new HashSet<PlayerRef>();
+    public event Action<PlayerRef, GameType> RoundCleared;
 
     private void Awake()
     {
