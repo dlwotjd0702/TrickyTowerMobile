@@ -72,7 +72,8 @@ public class RaceMode : MonoBehaviour //NetworkBehaviour
             playerTouched = false;
         }
     }
-//시간비례 해서 선내려옴
+
+    //** 시간비례 해서 선내려옴 **
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer != LayerMask.NameToLayer("Block")) return;
@@ -80,8 +81,8 @@ public class RaceMode : MonoBehaviour //NetworkBehaviour
         var block = other.GetComponent<NetworkObject>();
         if (block == null) return;
 
-        var blockCon = other.GetComponent<NetworkBlockController>();
-        if (blockCon.IsPlaced == false) return;
+        // var blockCon = other.GetComponent<NetworkBlockController>();
+        // if (blockCon.IsPlaced == false) return;
 
         blockCount++;
         playerTouched = true;
