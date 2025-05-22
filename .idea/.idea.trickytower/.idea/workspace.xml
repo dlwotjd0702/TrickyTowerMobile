@@ -6,13 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="33ec4f3c-9a43-40ac-a265-51209e7b0009" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkBlockController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkBlockController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222/netgph_brickI_stone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/team222/netgph_brickI_stone.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222/netgph_brickJ_stone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/team222/netgph_brickJ_stone.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222/netgph_brickL_stone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/team222/netgph_brickL_stone.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222/netgph_brickS_stone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/team222/netgph_brickS_stone.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222/netgph_brickT_stone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/team222/netgph_brickT_stone.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222/netgph_brickZ_stone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/team222/netgph_brickZ_stone.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkSpawnHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkSpawnHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/NetworkPrefab/teamMakeScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/NetworkPrefab/teamMakeScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/AssetResource/Texture2D/icn_nextBrick_I.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/AssetResource/Texture2D/icn_nextBrick_I.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/AssetResource/Texture2D/icn_nextBrick_O.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/AssetResource/Texture2D/icn_nextBrick_O.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +21,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d012868c0b9943c7bc3faef3a9135f2bc0000/b0/7028193c/NetworkRunner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/2. SeoYoungGwang/Script/IngameUiManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/2. SeoYoungGwang/Script/SoundManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/2. SeoYoungGwang/Script/VirtualLandingVisual.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/origin/Scripts/Block.cs" root0="FORCE_HIGHLIGHTING" />
@@ -125,7 +123,7 @@
       <workItem from="1747728584204" duration="3789000" />
       <workItem from="1747732691375" duration="10000" />
       <workItem from="1747732745941" duration="12511000" />
-      <workItem from="1747877546743" duration="6921000" />
+      <workItem from="1747877546743" duration="12488000" />
     </task>
     <servers />
   </component>
