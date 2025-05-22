@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 public class EffectManager : MonoBehaviour
 {
     public GameObject Block;
+    private GameObject blockSprite;
     private string BlockTag;
     private NetworkBlockController networkBlockController;
     public bool isBlockChange = false;
@@ -27,13 +28,12 @@ public class EffectManager : MonoBehaviour
     public int ShadowNum;
     private float MoveDistance = 0.5f;
     public float ShadowTailDistance = 0.5f;
-    private Vector3 afterMovePos;
-    private Vector3 preMovePos;
+    public Vector3 afterMovePos;
+    public Vector3 preMovePos;
     private GameObject[] Shadows;
     public float ShadowDuration;
-    public GameObject tempBlock;
     private float multipUseVecter1;
-    private bool isRight;
+    public bool isRight;
     public float RoatateValue = 45f;
 
     [Header("LandVisual")] 
@@ -69,7 +69,6 @@ public class EffectManager : MonoBehaviour
     private void Update()
     {
         OnShake();
-        FastMoveInput();
         ChangeLandVisual();
         LandVisualUpdate();
     }
@@ -97,7 +96,6 @@ public class EffectManager : MonoBehaviour
         while (currentTime < shakeDuration)
         {
             currentTime += Time.deltaTime;
-            Debug.Log(MainCamera.transform.position);
             MainCamera.transform.position = camOriginPos + new Vector3(Random.Range(-shakeDistance, shakeDistance), Random.Range(-shakeDistance, shakeDistance), 0);
             //BackGround.transform.position = camOriginPos + new Vector3(Random.Range(-shakeDistance, shakeDistance), Random.Range(-shakeDistance, shakeDistance), 0);
             yield return null;
@@ -108,38 +106,21 @@ public class EffectManager : MonoBehaviour
     #endregion
     
     #region 좌우 고속 이동 시 잔상 효과
-
-    private void FastMoveInput()
+    
+    public void OnShadow()
     {
-        if ((Input.GetKeyDown(KeyCode.U) || Input.GetKeyDown(KeyCode.I)) && !IsShadow)
-        {
-            IsShadow = true;
-            preMovePos = tempBlock.transform.position;
-            if (Input.GetKeyDown(KeyCode.U))
-            {
-                tempBlock.transform.position -= new Vector3(MoveDistance, 0, 0);
-                isRight = false;
-            }
-            else if (Input.GetKeyDown(KeyCode.I))
-            {
-                tempBlock.transform.position += new Vector3(MoveDistance, 0, 0);
-                isRight = true;
-            }
-            afterMovePos = tempBlock.transform.position;
-            multipUseVecter1 = (afterMovePos - preMovePos).normalized.x;
-            OnShadow();
-        }
-        
-        
-    }
-
-    private void OnShadow()
-    {
+        multipUseVecter1 = (afterMovePos - preMovePos).normalized.x;
         float ShadowTerm = ((afterMovePos.x - preMovePos.x) + ShadowTailDistance * multipUseVecter1) / ShadowNum;
         for (int i = 0; i < ShadowNum; i++)
         {
+            if (Shadows[i] == null)
+            {
+                Shadows[i] = Instantiate(Shadow.gameObject, transform.position, Quaternion.identity);
+                Shadows[i].SetActive(false);
+            }
             Shadows[i].transform.TryGetComponent(out SpriteRenderer renderer);
-            renderer.sprite = tempBlock.GetComponent<SpriteRenderer>().sprite;
+            renderer.sprite = blockSprite.GetComponent<SpriteRenderer>().sprite;
+            Shadows[i].transform.SetParent(Block.transform);
             if (ShadowTerm > 0)
             {
                 Shadows[i].transform.position = preMovePos + new Vector3(ShadowTerm * i - ShadowTailDistance, 0, 0);
@@ -149,7 +130,7 @@ public class EffectManager : MonoBehaviour
                 Shadows[i].transform.position = preMovePos + new Vector3(ShadowTerm * i + ShadowTailDistance, 0, 0);
             }
                 
-            Shadows[i].transform.rotation = tempBlock.transform.rotation;
+            Shadows[i].transform.rotation = Block.transform.rotation;
             Shadows[i].SetActive(true);
         }
         OnFastMoveEffect(); 
@@ -169,20 +150,20 @@ public class EffectManager : MonoBehaviour
     {
 
         float currentTime = 0;
-        Vector3 blockOriginRot = tempBlock.transform.rotation.eulerAngles;
+        Vector3 blockOriginRot = blockSprite.transform.localRotation.eulerAngles;
         Vector3 targetRot = blockOriginRot + Vector3.forward * (RoatateValue * multipUseVecter1);
         
         while (currentTime < ShadowDuration/2)
         {
             currentTime += Time.deltaTime;
-            tempBlock.transform.rotation = Quaternion.Lerp(Quaternion.Euler(blockOriginRot), Quaternion.Euler(targetRot), currentTime/(ShadowDuration/2)  );
+            blockSprite.transform.localRotation = Quaternion.Lerp(Quaternion.Euler(blockOriginRot), Quaternion.Euler(targetRot), currentTime/(ShadowDuration/2)  );
             yield return null;
         }
         currentTime = 0;
         while (currentTime < ShadowDuration/2)
         {
             currentTime += Time.deltaTime;
-            tempBlock.transform.rotation = Quaternion.Lerp(Quaternion.Euler(targetRot), Quaternion.Euler(blockOriginRot), currentTime/(ShadowDuration/2)  );
+            blockSprite.transform.localRotation = Quaternion.Lerp(Quaternion.Euler(targetRot), Quaternion.Euler(blockOriginRot), currentTime/(ShadowDuration/2)  );
             yield return null;
         }
     }
@@ -213,6 +194,7 @@ public class EffectManager : MonoBehaviour
             
             isHorizontal = true;
             BlockTag = Block.tag;
+            blockSprite = Block.transform.GetChild(0).gameObject;
             switch (BlockTag)
             {
                 case"OBlock":
