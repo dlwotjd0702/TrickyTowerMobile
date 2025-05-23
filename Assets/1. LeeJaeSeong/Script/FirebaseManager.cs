@@ -52,14 +52,17 @@ public class FirebaseAccountManager : MonoBehaviour
         sessionButton.onClick.AddListener(OnCreateSessionDocument);
         
         loadSessionsButton.onClick.AddListener(FetchValidSessions);
+
+
         
         
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
         {
             if (task.Result == DependencyStatus.Available)
             {
-                auth = FirebaseAuth.DefaultInstance;
-                firestore = FirebaseFirestore.DefaultInstance;
+                var app = FirebaseApp.DefaultInstance;
+                auth = FirebaseAuth.GetAuth(app);
+                firestore = FirebaseFirestore.GetInstance(app);
                 isInitialized = true;
                 Debug.Log( "Firebase 초기화 완료");
             }
@@ -69,6 +72,9 @@ public class FirebaseAccountManager : MonoBehaviour
             }
         });
     }
+    
+    
+    
 
     private void CreateAccount(string email, string password, string nickname)
     {
@@ -239,6 +245,7 @@ public class FirebaseAccountManager : MonoBehaviour
         Debug.Log("1");
         var now = Timestamp.GetCurrentTimestamp();
         Debug.Log("2");
+        
         firestore.Collection("sessions")
             .WhereGreaterThanOrEqualTo("expiresAt", now)
             .GetSnapshotAsync()
