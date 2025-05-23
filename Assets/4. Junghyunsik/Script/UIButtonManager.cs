@@ -7,6 +7,14 @@ public class UIButtonManager : MonoBehaviour
 {
     [SerializeField] private GameObject roomListUI;
     
+    MaterialSwitcher matSwitcher;
+    
+    [Header("Quad 머티리얼 스위처")]
+    [SerializeField] MaterialSwitcher materialSwitcher;
+
+    [Header("배경 스위처")]
+    [SerializeField] ModeBackgroundSwitcher backgroundSwitcher;
+    
     [Header("UI")]
     public GameObject introUI;
     public GameObject mainUI;
@@ -89,15 +97,19 @@ public class UIButtonManager : MonoBehaviour
     
     public ModeBackgroundSwitcher BackgroundSwitcher;
     
+    void Awake()
+    {
+        // 씬에 하나만 있다면 FindObjectOfType로도 OK
+        matSwitcher = FindObjectOfType<MaterialSwitcher>();
+    }
+    
     void Start()
     {
-        // 버튼 클릭에 메소드 연결
+        // 페이징 버튼 리스너
         playerPrevBtn.onClick.AddListener(() => ShowPlayerPage(playerIndex - 1));
         playerNextBtn.onClick.AddListener(() => ShowPlayerPage(playerIndex + 1));
-
         blockPrevBtn.onClick.AddListener(() => ShowBlockPage(blockIndex - 1));
         blockNextBtn.onClick.AddListener(() => ShowBlockPage(blockIndex + 1));
-
         modePrevBtn.onClick.AddListener(() => ShowModePage(modeIndex - 1));
         modeNextBtn.onClick.AddListener(() => ShowModePage(modeIndex + 1));
 
@@ -107,7 +119,7 @@ public class UIButtonManager : MonoBehaviour
         SetupPager(randomPager);
         SetupPager(matchPager);
         
-        // 초기화
+        // 초기 페이지
         ShowPlayerPage(0);
         ShowBlockPage(0);
         ShowModePage(0);
@@ -138,8 +150,8 @@ public class UIButtonManager : MonoBehaviour
             modePages[i].SetActive(i == modeIndex);
         
         // Quad1 머테리얼 스위치
-        FindObjectOfType<QuadMaterialSwitcher>()
-        .SetModeMaterial(modeIndex);
+        FindObjectOfType<ModeBackgroundSwitcher>()
+            .SetBackground(modeIndex);
         BackgroundSwitcher.SetBackground(modeIndex);
     }
     
@@ -311,6 +323,12 @@ public class UIButtonManager : MonoBehaviour
     public RectTransform blocksOffContainer;
     public RectTransform blocksOnContainer;
 
+    public void OnModeSelected(int modeIndex)
+    {
+        // 오로지 BackGround RawImage 머티리얼만 바꿉니다.
+        matSwitcher.SetModeMaterial(modeIndex);
+    }
+    
     private void TogglePlaySetSelection()
     {
         // OFF 컨테이너는 꺼주고…

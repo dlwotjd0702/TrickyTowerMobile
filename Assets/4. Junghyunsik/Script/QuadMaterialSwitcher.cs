@@ -1,24 +1,29 @@
 using UnityEngine;
+using UnityEngine.UI;
 
-/// <summary>
-/// Quad1의 MeshRenderer.material을 모드에 따라 바꿔줍니다.
-/// </summary>
-public class QuadMaterialSwitcher : MonoBehaviour
+[RequireComponent(typeof(RawImage))]
+public class MaterialSwitcher : MonoBehaviour
 {
-    [Header("Quad1 MeshRenderer (인스펙터에 드래그)")]
-    public MeshRenderer quad1Renderer;
-
-    [Header("Mode별 머테리얼")]
     [Tooltip("0: Race, 1: Survival, 2: Puzzle")]
     public Material[] modeMaterials;
 
+    RawImage _rawImage;
+
+    void Awake()
+    {
+        _rawImage = GetComponent<RawImage>();
+    }
+
     /// <summary>
-    /// 0=Race,1=Survival,2=Puzzle
+    /// RawImage.material만 교체합니다.
     /// </summary>
     public void SetModeMaterial(int modeIndex)
     {
-        if (quad1Renderer == null || modeMaterials == null) return;
-        if (modeIndex < 0 || modeIndex >= modeMaterials.Length) return;
-        quad1Renderer.material = modeMaterials[modeIndex];
+        if (modeMaterials == null 
+            || modeIndex < 0 
+            || modeIndex >= modeMaterials.Length)
+            return;
+
+        _rawImage.material = modeMaterials[modeIndex];
     }
 }
