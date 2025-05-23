@@ -81,8 +81,7 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
             Scene        = SceneRef.FromIndex(1)
         });
         if (!result.Ok) Debug.LogError($"Client join failed: {result.ShutdownReason}");
-        var targetScene = SceneRef.FromIndex(1);
-        await runner.LoadScene(targetScene);
+       
     }
 
     private void SetupRunner()
