@@ -22,13 +22,12 @@ public class NetworkSpawnHandler : NetworkBehaviour,INetworkRunnerCallbacks
         if (idx < 0 || idx >= networkManager.spawnOffsets.Length) return;
 
         Vector3 sp = networkManager.spawnOffsets[idx];
-        SpawnBlockFor(Runner, player, sp);
+        SpawnBlockFor(Runner, player, sp, idx);
     }
 
-    public void SpawnBlockFor(NetworkRunner runner, PlayerRef player, Vector3 spawnPoint)
+    public void SpawnBlockFor(NetworkRunner runner, PlayerRef player, Vector3 spawnPoint, int idx)
     {
-        if(ingameUiManager.preIndex == null)
-            ingameUiManager.preIndex = Random.Range(0, blockPrefabs.Length);
+        Debug.Log("스폰 preIndex:" +  ingameUiManager.preIndex);
 
         NetworkObject obj = runner.Spawn(blockPrefabs[ingameUiManager.preIndex], spawnPoint, Quaternion.identity, player);
         
@@ -41,8 +40,6 @@ public class NetworkSpawnHandler : NetworkBehaviour,INetworkRunnerCallbacks
             effectManager.isBlockChange = true;
             soundManager.currentBlock = obj.gameObject;
         }
-        
-        ingameUiManager.NewBlockChoice();
     }
 
 

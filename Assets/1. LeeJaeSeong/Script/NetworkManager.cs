@@ -12,6 +12,7 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     public NetworkInputHandler inputHandler;
     public NetworkSpawnHandler spawnHandler;
     public CameraManager       cameraManager;
+    public IngameUiManager   ingameUiManager;
 
     [Header("네트워크 설정")]
     [SerializeField] string sessionName = "TrickyTower";
@@ -53,11 +54,8 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
             Scene        = sceneRef,
             SceneManager = sceneMgr
         });
-
-        
     }
-
-
+    
     public async void StartHost()
     {
         _runner = gameObject.AddComponent<NetworkRunner>();
@@ -91,7 +89,7 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
             cameraManager.SetupMiniCam(sp, GetMiniCamIndexForPlayer(player));
         if (runner.IsServer)
         {
-            spawnHandler.SpawnBlockFor(runner,player,sp);
+            spawnHandler.SpawnBlockFor(runner,player,sp, idx);
         }
     }
 
@@ -104,8 +102,10 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
         if (_runner.IsServer)
         {
             Debug.Log("호스트");
-            spawnHandler.SpawnBlockFor(_runner, player, sp);
+            spawnHandler.SpawnBlockFor(_runner, player, sp, idx);
+            
         }
+        ingameUiManager.NewBlockChoice();
     }
         
         

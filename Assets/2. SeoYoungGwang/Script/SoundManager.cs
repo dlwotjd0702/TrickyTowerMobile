@@ -1,10 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Fusion;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class SoundManager : MonoBehaviour
+public class SoundManager : NetworkBehaviour
 {
     private AudioSource audioSource;
     private AudioSource BGMaudioSource;

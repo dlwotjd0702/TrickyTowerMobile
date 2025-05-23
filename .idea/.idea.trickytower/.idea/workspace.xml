@@ -6,10 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="33ec4f3c-9a43-40ac-a265-51209e7b0009" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkSpawnHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkSpawnHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/NetworkPrefab/teamMakeScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/NetworkPrefab/teamMakeScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/AssetResource/Texture2D/icn_nextBrick_I.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/AssetResource/Texture2D/icn_nextBrick_I.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/AssetResource/Texture2D/icn_nextBrick_O.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/AssetResource/Texture2D/icn_nextBrick_O.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Script/EffectManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Script/EffectManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Script/IngameUiManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Script/IngameUiManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Script/SoundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Script/SoundManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/Managed/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/Managed/Assembly-CSharp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/boot.config" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/boot.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/globalgamemanagers" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/globalgamemanagers" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/globalgamemanagers.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/globalgamemanagers.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/level0" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/level0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/resources.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/resources.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/resources.assets.resS" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/resources.assets.resS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets0.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets0.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets0.assets.resS" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets0.assets.resS" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,12 +33,14 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d012868c0b9943c7bc3faef3a9135f2bc0000/b0/7028193c/NetworkRunner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d012868c0b9943c7bc3faef3a9135f2bc0000/c2/e2d71538/INetworkInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../MetaPrograming10-Study/Assets/00.Scripts/FusionBasic/NetworkInputData.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/2. SeoYoungGwang/Script/IngameUiManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/2. SeoYoungGwang/Script/SoundManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/2. SeoYoungGwang/Script/VirtualLandingVisual.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/origin/Scripts/Block.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Downloads/3.Script/DoubleBarrel.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/Downloads/3.Script/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/3.Script/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Downloads/3.Script/PoolManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -123,7 +137,9 @@
       <workItem from="1747728584204" duration="3789000" />
       <workItem from="1747732691375" duration="10000" />
       <workItem from="1747732745941" duration="12511000" />
-      <workItem from="1747877546743" duration="12488000" />
+      <workItem from="1747877546743" duration="19295000" />
+      <workItem from="1747902310614" duration="7176000" />
+      <workItem from="1747967019390" duration="203000" />
     </task>
     <servers />
   </component>
