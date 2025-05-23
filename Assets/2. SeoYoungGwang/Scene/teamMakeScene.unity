@@ -890,7 +890,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2024896258814215845, guid: 9f847debb50db0645ab080baa56503b0, type: 3}
       propertyPath: m_TargetDisplay
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2769525670652943089, guid: 9f847debb50db0645ab080baa56503b0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3080,6 +3080,7 @@ MonoBehaviour:
   networkManager: {fileID: 0}
   effectManager: {fileID: 2104402099}
   soundManager: {fileID: 1892439669}
+  ingameUiManager: {fileID: 1600843330}
 --- !u!114 &1094062847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3513,7 +3514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 436631835531173369, guid: c48623bda6ac7124ab2315cc7c07a973, type: 3}
       propertyPath: m_TargetDisplay
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4716759753206832697, guid: c48623bda6ac7124ab2315cc7c07a973, type: 3}
       propertyPath: m_Name
@@ -4481,7 +4482,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6238500702821524762, guid: 5a1d842c332f4e345b7e7d49a1757730, type: 3}
       propertyPath: m_TargetDisplay
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7828717608772842706, guid: 5a1d842c332f4e345b7e7d49a1757730, type: 3}
       propertyPath: m_LocalPosition.x
