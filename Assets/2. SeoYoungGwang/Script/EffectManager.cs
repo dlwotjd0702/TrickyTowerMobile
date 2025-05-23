@@ -5,7 +5,7 @@ using Fusion;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class EffectManager : NetworkBehaviour
+public class EffectManager : MonoBehaviour
 {
     public GameObject Block;
     private GameObject blockSprite;
