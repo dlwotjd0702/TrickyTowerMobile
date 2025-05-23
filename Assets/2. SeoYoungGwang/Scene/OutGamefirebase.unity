@@ -16435,14 +16435,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1648c53bcb471c5448f0615c5fa9e614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomListUI: {fileID: 0}
+  materialSwitcher: {fileID: 0}
+  backgroundSwitcher: {fileID: 0}
   introUI: {fileID: 4012455600575009152}
   mainUI: {fileID: 2384802070261694890}
   optionUI: {fileID: 1939088947250717299}
   helpUI: {fileID: 1459720370}
   playSetUI: {fileID: 496995206}
   modSetUI: {fileID: 1200787737}
-  readyRoomUI: {fileID: 1516156483}
-  leaveGameUI: {fileID: 564860915}
+  signupUI: {fileID: 0}
+  eixtGameUI: {fileID: 0}
   helpPages:
   - {fileID: 782281705}
   - {fileID: 255917659}
@@ -32429,6 +32432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81ce4b900435a034ca2d904306838fcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ttlMinutes: 1
   networkManager: {fileID: 0}
   sessionName: 
   inputemail: {fileID: 0}

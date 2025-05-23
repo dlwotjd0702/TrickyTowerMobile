@@ -4,7 +4,7 @@ using Fusion;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class IngameUiManager : NetworkBehaviour
+public class IngameUiManager : MonoBehaviour
 {
     [SerializeField] private NetworkSpawnHandler networkSpawnHandler;
     

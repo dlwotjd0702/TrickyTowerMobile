@@ -5,7 +5,7 @@ using Fusion;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class SoundManager : NetworkBehaviour
+public class SoundManager : MonoBehaviour
 {
     private AudioSource audioSource;
     private AudioSource BGMaudioSource;

@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/1. LeeJaeSeong/Scene/OutGamefirebase.unity
-    guid: 42a58913737264c4db4010e6d4086a40
+    path: Assets/2. SeoYoungGwang/Scene/OutGame.unity
+    guid: 02e727d67e16d574f8f70e2d04a37c42
   - enabled: 1
-    path: Assets/1. LeeJaeSeong/Scene/Lobby.unity
-    guid: a010dda73aebe7c42941a4c56150adf1
+    path: Assets/2. SeoYoungGwang/Scene/Lobby.unity
+    guid: 9608a626502181c40bd13f5dc1e08d6c
   - enabled: 1
-    path: Assets/1. LeeJaeSeong/Scene/Ingame-Fusion2.unity
-    guid: b1c85d3e61ef515469b82b1d089d6c7e
+    path: Assets/2. SeoYoungGwang/Scene/teamMakeSceneRace.unity
+    guid: fd107c361e032734b9dac5e105d93817
   m_configObjects: {}
