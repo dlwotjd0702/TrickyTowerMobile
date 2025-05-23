@@ -19,7 +19,16 @@ public class FirebaseAccountManager : MonoBehaviour
     private string nickname = "";
     // Firebase session management
     public string sessionName = "";
+    
+    [Header("세션 리스트 UI")]
+    public RectTransform sessionListContent; 
+    public Button loadSessionsButton;// Scroll View → Content
+    public GameObject      sessionButtonPrefab;
 
+    [Header("선택된 세션 UI")]
+    public TextMeshProUGUI selectedSessionLabel;
+    public Button          joinSessionButton;
+    private string _selectedSession = null;
   
     
     public TextMeshProUGUI inputemail;
@@ -41,6 +50,10 @@ public class FirebaseAccountManager : MonoBehaviour
         LoginButton.onClick.AddListener(OnLoginClicked);
         SigninButton.onClick.AddListener(OnCreateAccountClicked);
         sessionButton.onClick.AddListener(OnCreateSessionDocument);
+        
+        loadSessionsButton.onClick.AddListener(FetchValidSessions);
+        joinSessionButton.interactable = false;
+        joinSessionButton.onClick.AddListener(OnJoinSelectedSession);
         
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
         {
@@ -220,6 +233,61 @@ public class FirebaseAccountManager : MonoBehaviour
             {
                 if (t.IsFaulted) Debug.LogWarning("세션 연장 실패: " + t.Exception?.Message);
             });
+    }
+    
+    public void FetchValidSessions()
+    {
+        // 초기 UI 클리어 및 상태 리셋
+        _selectedSession = null;
+        selectedSessionLabel.text = "선택된 세션: 없음";
+        joinSessionButton.interactable = false;
+        foreach (Transform c in sessionListContent) Destroy(c.gameObject);
+
+        var now = Timestamp.GetCurrentTimestamp();
+        firestore.Collection("sessions")
+            .WhereGreaterThanOrEqualTo("expiresAt", now)
+            .GetSnapshotAsync()
+            .ContinueWithOnMainThread(task =>
+            {
+                if (task.IsFaulted)
+                {
+                    Debug.LogError("세션 목록 불러오기 실패: " + task.Exception);
+                    return;
+                }
+
+                foreach (var doc in task.Result.Documents)
+                {
+                    string name = doc.Id;
+                    var go = Instantiate(sessionButtonPrefab, sessionListContent);
+                    var label = go.GetComponentInChildren<TextMeshProUGUI>();
+                    label.text = name;
+
+                    var btn = go.GetComponentInChildren<Button>();
+                    btn.onClick.AddListener(() =>
+                    {
+                        // 선택 상태 갱신
+                        _selectedSession = name;
+                        selectedSessionLabel.text = $"선택된 세션: {name}";
+                        joinSessionButton.interactable = true;
+                    });
+                }
+            });
+    }
+    private void OnJoinSelectedSession()
+    {
+        if (string.IsNullOrEmpty(_selectedSession))
+            return;
+
+        networkManager.sessionName = _selectedSession;
+        networkManager.StartClient();
+    }
+
+
+    // 예: 로비 씬이 로드되면 한 번 호출
+    private void OnEnable()
+    {
+        // 로비 진입 시점에 호출
+        FetchValidSessions();
     }
 
 }

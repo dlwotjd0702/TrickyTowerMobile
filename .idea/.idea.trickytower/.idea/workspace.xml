@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="33ec4f3c-9a43-40ac-a265-51209e7b0009" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Scene/Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Scene/Lobby.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Scene/OutGamefirebase.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Scene/OutGamefirebase.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/FirebaseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/FirebaseManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,16 +17,25 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d012868c0b9943c7bc3faef3a9135f2bc0000/21/ddd08b71/SimulationBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d012868c0b9943c7bc3faef3a9135f2bc0000/56/7a9289b8/INetworkSceneManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d012868c0b9943c7bc3faef3a9135f2bc0000/b0/7028193c/NetworkRunner.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d012868c0b9943c7bc3faef3a9135f2bc0000/c2/e2d71538/INetworkInput.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../MetaPrograming10-Study/Assets/00.Scripts/FusionBasic/NetworkInputData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/CameraManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkBlockController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkInputHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkSpawnHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/2. SeoYoungGwang/Script/IngameUiManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/2. SeoYoungGwang/Script/SoundManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/2. SeoYoungGwang/Script/VirtualLandingVisual.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/4. Junghyunsik/Script/ButtonHoverToggle.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/4. Junghyunsik/Script/CornerHighlightAnimator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/4. Junghyunsik/Script/LightImageRotator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/4. Junghyunsik/Script/RoomBlockRotator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Photon/Fusion/Editor/Fusion.Unity.Editor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/origin/Scripts/Block.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/Downloads/3.Script/DoubleBarrel.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/Downloads/3.Script/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/Downloads/3.Script/PoolManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.7/Scripts/Runtime/TMPro_UGUI_Private.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
