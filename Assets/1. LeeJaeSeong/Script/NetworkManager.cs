@@ -64,9 +64,12 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
         if (!result.Ok) Debug.LogError($"Host start failed: {result.ShutdownReason}");
         var targetScene = SceneRef.FromIndex(1);
         await runner.LoadScene(targetScene);
+        
         firebaseAccountManager = FindObjectOfType<FirebaseAccountManager>();
+        firebaseAccountManager.CreateSessionDocument(sessionName);
         if (heartbeatRoutine != null) StopCoroutine(heartbeatRoutine);
         heartbeatRoutine = StartCoroutine(HeartbeatCoroutine());
+        
     }
 
     public async void StartClient()

@@ -52,8 +52,7 @@ public class FirebaseAccountManager : MonoBehaviour
         sessionButton.onClick.AddListener(OnCreateSessionDocument);
         
         loadSessionsButton.onClick.AddListener(FetchValidSessions);
-        joinSessionButton.interactable = false;
-        joinSessionButton.onClick.AddListener(OnJoinSelectedSession);
+        
         
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
         {
@@ -239,9 +238,8 @@ public class FirebaseAccountManager : MonoBehaviour
     {
         // 초기 UI 클리어 및 상태 리셋
         _selectedSession = null;
-        selectedSessionLabel.text = "선택된 세션: 없음";
-        joinSessionButton.interactable = false;
-        foreach (Transform c in sessionListContent) Destroy(c.gameObject);
+      
+      
 
         var now = Timestamp.GetCurrentTimestamp();
         firestore.Collection("sessions")

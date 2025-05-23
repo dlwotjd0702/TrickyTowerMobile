@@ -306,7 +306,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: BackToPlaySet
+          m_StringArgument: ExitRoom
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &6921427
@@ -1429,7 +1429,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomListUI: {fileID: 0}
-  materialSwitcher: {fileID: 0}
+  backgroundMaterialSwitcher: {fileID: 0}
+  modeBackgroundUIManager: {fileID: 0}
   introUI: {fileID: 0}
   mainUI: {fileID: 0}
   optionUI: {fileID: 0}
@@ -1516,14 +1517,12 @@ MonoBehaviour:
     prevButton: {fileID: 0}
     nextButton: {fileID: 0}
     index: 0
-  playSetPlayerContainer: {fileID: 0}
-  playSetBlockContainer: {fileID: 0}
-  blackOverlay: {fileID: 593832623}
-  fadeTime: 0.5
   playersOffContainer: {fileID: 0}
   playersOnContainer: {fileID: 0}
   blocksOffContainer: {fileID: 0}
   blocksOnContainer: {fileID: 0}
+  blackOverlay: {fileID: 593832623}
+  fadeTime: 0.5
 --- !u!4 &160205709
 Transform:
   m_ObjectHideFlags: 0
@@ -5076,8 +5075,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81ce4b900435a034ca2d904306838fcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ttlMinutes: 1
   networkManager: {fileID: 0}
   sessionName: 
+  sessionListContent: {fileID: 0}
+  loadSessionsButton: {fileID: 0}
+  sessionButtonPrefab: {fileID: 0}
+  selectedSessionLabel: {fileID: 0}
+  joinSessionButton: {fileID: 0}
   inputemail: {fileID: 0}
   inputpassword: {fileID: 0}
   inputnick: {fileID: 0}
@@ -5443,7 +5448,7 @@ MonoBehaviour:
   sunObject: {fileID: 1641617671}
   moonObject: {fileID: 1430817433}
   starContainer: {fileID: 1843618491}
-  modeMaterials: []
+  modeConfigs: []
 --- !u!224 &1261765259
 RectTransform:
   m_ObjectHideFlags: 0
