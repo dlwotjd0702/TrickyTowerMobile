@@ -11,6 +11,7 @@ public class FirebaseAccountManager : MonoBehaviour
 {
     private FirebaseAuth auth;
     private FirebaseFirestore firestore;
+    public int ttlMinutes = 1; 
     public NetworkManager networkManager;
 
     private string email = "";
@@ -33,7 +34,8 @@ public class FirebaseAccountManager : MonoBehaviour
     private bool isInitialized = false;
     private bool isLoggedIn = false;
     private bool isSignUpMode = false;
-
+    
+   
     private void Start()
     {
         LoginButton.onClick.AddListener(OnLoginClicked);
@@ -151,6 +153,7 @@ public class FirebaseAccountManager : MonoBehaviour
         CreateSessionDocument(sessionName);
         networkManager.sessionName = sessionName;
         networkManager.StartHost();
+        
     }
 
     private void SignOut()
@@ -164,31 +167,30 @@ public class FirebaseAccountManager : MonoBehaviour
     
 
     // Firebase-only: Create a game session document
-    private void CreateSessionDocument(string sessionName)
+    public void CreateSessionDocument(string sessionName)
     {
-        if (string.IsNullOrEmpty(sessionName))
+        var now = Timestamp.GetCurrentTimestamp();
+        var expireTs = Timestamp.FromDateTime(now.ToDateTime().AddMinutes(ttlMinutes));
+
+        var data = new Dictionary<string, object>()
         {
-            Debug.Log( "세션 이름을 입력하세요.");
-            return;
-        }
-        var sessionDoc = firestore.Collection("sessions").Document(sessionName);
-        var data = new Dictionary<string, object>
-        {
-            { "host", auth.CurrentUser.UserId },
-            { "createdAt", Timestamp.GetCurrentTimestamp() },
-            { "participants", new List<string> { auth.CurrentUser.UserId } }
+            { "host", FirebaseAuth.DefaultInstance.CurrentUser.UserId },
+            { "createdAt", now },
+            { "expiresAt", expireTs },
+            { "participants", new List<string> { FirebaseAuth.DefaultInstance.CurrentUser.UserId } }
         };
-        sessionDoc.SetAsync(data).ContinueWithOnMainThread(task =>
+        firestore.Collection("sessions")
+                 .Document(sessionName)
+                 .SetAsync(data)
+                 .ContinueWithOnMainThread(t =>
         {
-            if (task.IsCompletedSuccessfully)
-                Debug.Log( $"세션 생성 완료: {sessionName}");
-            else
-                Debug.Log( "세션 생성 실패: " + task.Exception?.Message);
+            if (t.IsFaulted) Debug.LogError("세션 생성 실패: " + t.Exception?.Message);
         });
-        
-        
     }
-    private void DeleteSessionDocument(string sessionName)
+    
+    
+
+    public void DeleteSessionDocument(string sessionName)
     {
         if (string.IsNullOrEmpty(sessionName))
         {
@@ -205,10 +207,19 @@ public class FirebaseAccountManager : MonoBehaviour
                 Debug.LogError($"세션 삭제 실패: {task.Exception?.Message}");
         });
     }
+    
+    public void UpdateSessionExpiration(string sessionName)
+    {
+        var now = Timestamp.GetCurrentTimestamp();
+        var expireTs = Timestamp.FromDateTime(now.ToDateTime().AddMinutes(ttlMinutes));
 
-  
-  
-
-   
+        firestore.Collection("sessions")
+            .Document(sessionName)
+            .UpdateAsync("expiresAt", expireTs)
+            .ContinueWithOnMainThread(t =>
+            {
+                if (t.IsFaulted) Debug.LogWarning("세션 연장 실패: " + t.Exception?.Message);
+            });
+    }
 
 }

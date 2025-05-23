@@ -16,6 +16,8 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     public NetworkSpawnHandler spawnHandler;
     public CameraManager cameraManager;
     public FirebaseAccountManager firebaseAccountManager;
+    public float heartbeatInterval = 10f;
+    private Coroutine heartbeatRoutine;
 
     [Header("네트워크 설정")]
     [SerializeField] public string sessionName;
@@ -62,6 +64,9 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
         if (!result.Ok) Debug.LogError($"Host start failed: {result.ShutdownReason}");
         var targetScene = SceneRef.FromIndex(1);
         await runner.LoadScene(targetScene);
+        firebaseAccountManager = FindObjectOfType<FirebaseAccountManager>();
+        if (heartbeatRoutine != null) StopCoroutine(heartbeatRoutine);
+        heartbeatRoutine = StartCoroutine(HeartbeatCoroutine());
     }
 
     public async void StartClient()
@@ -109,13 +114,6 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     }
 public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
-
-        
-          
-         
-
-          //  if (runner.IsServer)
-          //      spawnHandler?.SpawnBlockFor(runner, player, offset);
     }
 
     public void RequestNextBlock(PlayerRef player)
@@ -141,6 +139,15 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
         others.Sort((a, b) => a.RawEncoded.CompareTo(b.RawEncoded));
         int ix = others.IndexOf(player);
         return (ix >= 0 && ix < 3) ? ix : 0;
+    }
+    
+    private IEnumerator HeartbeatCoroutine()
+    {
+        while (runner != null && runner.IsServer)
+        {
+            yield return new WaitForSeconds(heartbeatInterval);
+            firebaseAccountManager?.UpdateSessionExpiration(sessionName);
+        }
     }
 
     /*private void StartGame()
@@ -184,7 +191,21 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     public void OnInput(NetworkRunner runner, NetworkInput input) { }
     public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input) { }
     public void OnConnectedToServer(NetworkRunner runner) { }
-    public void OnShutdown(NetworkRunner runner, ShutdownReason reason) { }
+
+    public void OnShutdown(NetworkRunner runner, ShutdownReason reason)
+    {
+        if (heartbeatRoutine != null)
+        {
+            StopCoroutine(heartbeatRoutine);
+            heartbeatRoutine = null;
+        }
+        if (runner.IsServer)
+        {
+           firebaseAccountManager = FindObjectOfType<FirebaseAccountManager>();
+           firebaseAccountManager.DeleteSessionDocument(sessionName);
+
+        }
+    }
     public void OnDisconnectedFromServer(NetworkRunner runner, NetDisconnectReason reason)
     {
         
