@@ -19,6 +19,8 @@ public enum GameType
 
 public class GameRuleManager : NetworkBehaviour
 {
+    public static GameRuleManager Instance;
+
     [SerializeField]
     private GameObject raceMode;
 
@@ -42,6 +44,17 @@ public class GameRuleManager : NetworkBehaviour
     {
         if (Runner.IsServer == false) return;
         GameClearManager.Instance.RoundCleared += RoundCleared;
+
+        if (Instance != null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+
+        DontDestroyOnLoad(this);
     }
 
     private void OnDestroy()
