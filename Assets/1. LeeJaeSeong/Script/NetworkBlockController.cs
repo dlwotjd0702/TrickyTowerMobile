@@ -35,6 +35,7 @@ public class NetworkBlockController : NetworkBehaviour
         bool server  = Object.HasStateAuthority;
         Runner.SetIsSimulated(Object, predict || server);
 
+        
         // 2) 컴포넌트 캐싱
         _rb      = GetComponent<Rigidbody2D>();
         _netRb   = GetComponent<NetworkRigidbody2D>();

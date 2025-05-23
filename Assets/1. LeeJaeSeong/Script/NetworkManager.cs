@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -14,9 +15,10 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     public NetworkInputHandler inputHandler;
     public NetworkSpawnHandler spawnHandler;
     public CameraManager cameraManager;
+    public FirebaseAccountManager firebaseAccountManager;
 
     [Header("네트워크 설정")]
-    [SerializeField] private string sessionName = "TrickyTower";
+    [SerializeField] public string sessionName;
     public Vector3[] spawnOffsets = new Vector3[4];
 
     private NetworkRunner runner;
@@ -27,8 +29,12 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
         DontDestroyOnLoad(gameObject);
     }
 
+
+
     private void OnGUI()
     {
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+            return;
         if (runner == null)
         {
             if (GUI.Button(new Rect(10, 10, 200, 40), "Host"))
@@ -41,11 +47,7 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
             if (GUI.Button(new Rect(10, 110, 200, 40), "Start Game"))
                 HostStartGame();
         }
-        /*else if (SceneManager.GetActiveScene().name == "Ingame-Fusion2")
-        {
-            if (GUI.Button(new Rect(10, 110, 200, 40), "Start Game"))
-                StartGame();
-        }*/
+        
     }
 
     public async void StartHost()
@@ -55,7 +57,7 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
             GameMode     = GameMode.Host,
             SessionName  = sessionName,
             SceneManager = gameObject.GetComponent<NetworkSceneManagerDefault>(),
-            Scene        = SceneRef.FromIndex(SceneManager.GetActiveScene().buildIndex),
+            Scene        = SceneRef.FromIndex(1),
             PlayerCount  = 4
         });
         if (!result.Ok) Debug.LogError($"Host start failed: {result.ShutdownReason}");
@@ -68,7 +70,7 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
             GameMode     = GameMode.Client,
             SessionName  = sessionName,
             SceneManager = gameObject.GetComponent<NetworkSceneManagerDefault>(),
-            Scene        = SceneRef.FromIndex(SceneManager.GetActiveScene().buildIndex)
+            Scene        = SceneRef.FromIndex(1)
         });
         if (!result.Ok) Debug.LogError($"Client join failed: {result.ShutdownReason}");
     }
@@ -88,7 +90,8 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
 
         var phys2D = gameObject.GetComponent<RunnerSimulatePhysics2D>()
                      ?? gameObject.AddComponent<RunnerSimulatePhysics2D>();
-        phys2D.ClientPhysicsSimulation = ClientPhysicsSimulation.SimulateForward;
+        phys2D.ClientPhysicsSimulation = ClientPhysicsSimulation.SimulateAlways;
+
         DontDestroyOnLoad(phys2D.gameObject);
     }
 
@@ -98,22 +101,18 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
         if (runner == null || !runner.IsServer || isGameStarted) return;
         isGameStarted = true;
         
-        var targetScene = SceneRef.FromIndex(1);
+        var targetScene = SceneRef.FromIndex(2);
         await runner.LoadScene(targetScene);
     }
 public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
+
         
-      //  int idx = GetPlayerJoinIndex(player);
-      //  Vector3 offset = spawnOffsets[Mathf.Clamp(idx, 0, spawnOffsets.Length - 1)];
-//
-      //  if (player == runner.LocalPlayer)
-      //      cameraManager?.SetupMainCam(offset);
-      //  else
-      //      cameraManager?.SetupMiniCam(offset, GetMiniCamIndexForPlayer(player));
-//
-      //  if (runner.IsServer)
-      //      spawnHandler?.SpawnBlockFor(runner, player, offset);
+          
+         
+
+          //  if (runner.IsServer)
+          //      spawnHandler?.SpawnBlockFor(runner, player, offset);
     }
 
     public void RequestNextBlock(PlayerRef player)
@@ -199,44 +198,59 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     public void OnSceneLoadStart(NetworkRunner runner) { }
     public void OnSceneLoadDone(NetworkRunner runner) 
     {
-        if (SceneManager.GetActiveScene().name == "Ingame-Fusion2")
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            firebaseAccountManager = FindObjectOfType<FirebaseAccountManager>();
+        }
+
+        if (SceneManager.GetActiveScene().buildIndex != 1)
+        {
+            
+        }
+        if (SceneManager.GetActiveScene().buildIndex != 2)
         {
             StartCoroutine(InitAfterSpawnHandler());
-
-            if (cameraManager == null) Debug.LogError("CameraManager를 찾을 수 없습니다.");
-            if (spawnHandler  == null) Debug.LogError("NetworkSpawnHandler를 찾을 수 없습니다.");
-            if (inputHandler  == null) Debug.LogError("NetworkInputHandler를 찾을 수 없습니다.");
-
-            
         }
         
     }
     private IEnumerator InitAfterSpawnHandler()
     {
-        // NetworkSpawnHandler 인스턴스가 씬에 올라올 때까지 대기
+        Debug.Log("찾기");
         yield return new WaitUntil(() => FindObjectOfType<NetworkSpawnHandler>() != null);
+        Debug.Log("찾기완료");
 
         // 이제 안전하게 초기화 코드 실행
-        var handler = FindObjectOfType<NetworkSpawnHandler>();
-        var cam     = FindObjectOfType<CameraManager>();
-        var input   = FindObjectOfType<NetworkInputHandler>();
+        spawnHandler = FindObjectOfType<NetworkSpawnHandler>();
+        cameraManager     = FindObjectOfType<CameraManager>();
+        inputHandler   = FindObjectOfType<NetworkInputHandler>();
+        
+        if(spawnHandler ==null) Debug.Log("아씨발1");
+        if(cameraManager ==null) Debug.Log("아씨발2");
+        if(inputHandler ==null) Debug.Log("아씨발3");
 
-        runner.AddCallbacks(handler);
-        runner.AddCallbacks(input);
+        runner.AddCallbacks(spawnHandler);
+        runner.AddCallbacks(inputHandler);
 
-        // 플레이어별 스폰·카메라 초기화…
+        // 모든 플레이어에 대해 처리
         foreach (var player in runner.ActivePlayers)
         {
+            // 1) 인덱스 계산
             int idx = GetPlayerJoinIndex(player);
-            Vector3 offset = spawnOffsets[Mathf.Clamp(idx,0,spawnOffsets.Length-1)];
-            if (player == runner.LocalPlayer)
-                cam.SetupMainCam(offset);
-            else
-                cam.SetupMiniCam(offset, GetMiniCamIndexForPlayer(player));
+            Vector3 offset = spawnOffsets[Mathf.Clamp(idx, 0, spawnOffsets.Length - 1)];
 
+            if (player == runner.LocalPlayer)
+                cameraManager.SetupMainCam(offset);
+            else
+                cameraManager.SetupMiniCam(offset, GetMiniCamIndexForPlayer(player));
+            // 3) 블록 스폰
             if (runner.IsServer)
-                handler.SpawnBlockFor(runner, player, offset);
+            {
+                spawnHandler.SpawnBlockFor(runner, player, offset);
+            }
+            
         }
+
+        
     }
     public void OnObjectEnterAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player) { }
     public void OnObjectExitAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player) { }

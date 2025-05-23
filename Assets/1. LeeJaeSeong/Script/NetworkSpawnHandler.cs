@@ -12,25 +12,30 @@ public class NetworkSpawnHandler : NetworkBehaviour,INetworkRunnerCallbacks
     public NetworkManager networkManager;
     public EffectManager  effectManager;
     public SoundManager soundManager;
-    public IngameUiManager ingameUiManager;
+   // public IngameUiManager ingameUiManager;
 
-    [Rpc(sources: RpcSources.All, targets: RpcTargets.StateAuthority)]
+   [Rpc(sources: RpcSources.All, targets: RpcTargets.StateAuthority)]
     public void RPC_RequestBlockSpawn(RpcInfo info = default)
     {
         var player = info.Source;
         int idx    = networkManager.GetPlayerJoinIndex(player);
+        Debug.Log("스폰되기전");
         if (idx < 0 || idx >= networkManager.spawnOffsets.Length) return;
 
         Vector3 sp = networkManager.spawnOffsets[idx];
         SpawnBlockFor(Runner, player, sp);
+        Debug.Log("스폰되기후");
     }
 
     public void SpawnBlockFor(NetworkRunner runner, PlayerRef player, Vector3 spawnPoint)
     {
-        if(ingameUiManager.preIndex == null)
-            ingameUiManager.preIndex = Random.Range(0, blockPrefabs.Length);
+       // if(ingameUiManager.preIndex == null)
+       //     ingameUiManager.preIndex = Random.Range(0, blockPrefabs.Length);
+        //NetworkObject obj = runner.Spawn(blockPrefabs[ingameUiManager.preIndex], spawnPoint, Quaternion.identity, player);
+       int i = Random.Range(0, blockPrefabs.Length);
+       var obj = runner.Spawn(blockPrefabs[i], spawnPoint, Quaternion.identity, player);
 
-        NetworkObject obj = runner.Spawn(blockPrefabs[ingameUiManager.preIndex], spawnPoint, Quaternion.identity, player);
+       
         
         if (obj.TryGetComponent<NetworkBlockController>(out var ctrl))
         {
@@ -42,7 +47,7 @@ public class NetworkSpawnHandler : NetworkBehaviour,INetworkRunnerCallbacks
             soundManager.currentBlock = obj.gameObject;
         }
         
-        ingameUiManager.NewBlockChoice();
+        //ingameUiManager.NewBlockChoice();
     }
 
 
