@@ -23,19 +23,19 @@ public class FirebaseAccountManager : MonoBehaviour
     [Header("세션 리스트 UI")]
     public RectTransform sessionListContent; 
     public Button loadSessionsButton;// Scroll View → Content
-    public GameObject      sessionButtonPrefab;
+    public Button      sessionButtonPrefab;
 
-    [Header("선택된 세션 UI")]
-    public TextMeshProUGUI selectedSessionLabel;
-    public Button          joinSessionButton;
-    private string _selectedSession = null;
   
     
     public TextMeshProUGUI inputemail;
     public TextMeshProUGUI inputpassword;
-    public TextMeshProUGUI inputnick;
+    
     public TextMeshProUGUI SessionName;
     public Button LoginButton;
+    
+    public TextMeshProUGUI makenick;
+    public TextMeshProUGUI makeemail;
+    public TextMeshProUGUI makepassword;
     public Button SigninButton;
     public Button sessionButton;
 
@@ -151,15 +151,15 @@ public class FirebaseAccountManager : MonoBehaviour
     }
     void OnCreateAccountClicked()
     {
-        email = inputemail.text;
-        password = inputpassword.text;
-        nickname = inputnick.text;
+        email = makeemail.text;
+        password = makepassword.text;
+        nickname = makenick.text;
         Debug.Log("login");
         CreateAccount(email, password, nickname);
     }
     void OnCreateSessionDocument()
     {
-        SessionName.text = sessionName;
+        sessionName = SessionName.text;
         
         Debug.Log("session");
         CreateSessionDocument(sessionName);
@@ -236,12 +236,9 @@ public class FirebaseAccountManager : MonoBehaviour
     
     public void FetchValidSessions()
     {
-        // 초기 UI 클리어 및 상태 리셋
-        _selectedSession = null;
-      
-      
-
+        Debug.Log("1");
         var now = Timestamp.GetCurrentTimestamp();
+        Debug.Log("2");
         firestore.Collection("sessions")
             .WhereGreaterThanOrEqualTo("expiresAt", now)
             .GetSnapshotAsync()
@@ -252,40 +249,31 @@ public class FirebaseAccountManager : MonoBehaviour
                     Debug.LogError("세션 목록 불러오기 실패: " + task.Exception);
                     return;
                 }
+                Debug.Log("3");
 
                 foreach (var doc in task.Result.Documents)
                 {
-                    string name = doc.Id;
-                    var go = Instantiate(sessionButtonPrefab, sessionListContent);
-                    var label = go.GetComponentInChildren<TextMeshProUGUI>();
-                    label.text = name;
+                    // 2. 로컬 변수로 캡처
+                    string sessionId = doc.Id;
+                
+                    // 3. Button 인스턴스 생성
+                    Button btn = Instantiate(sessionButtonPrefab, sessionListContent);
+                    btn.GetComponentInChildren<TextMeshProUGUI>().text = sessionId;
 
-                    var btn = go.GetComponentInChildren<Button>();
                     btn.onClick.AddListener(() =>
                     {
-                        // 선택 상태 갱신
-                        _selectedSession = name;
-                        selectedSessionLabel.text = $"선택된 세션: {name}";
-                        joinSessionButton.interactable = true;
+                        networkManager.sessionName = sessionId;
+                        networkManager.StartClient();
                     });
                 }
             });
     }
-    private void OnJoinSelectedSession()
-    {
-        if (string.IsNullOrEmpty(_selectedSession))
-            return;
-
-        networkManager.sessionName = _selectedSession;
-        networkManager.StartClient();
-    }
+   
 
 
     // 예: 로비 씬이 로드되면 한 번 호출
-    private void OnEnable()
-    {
-        // 로비 진입 시점에 호출
-        FetchValidSessions();
-    }
+    
+        
+   
 
 }

@@ -66,7 +66,6 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
         await runner.LoadScene(targetScene);
         
         firebaseAccountManager = FindObjectOfType<FirebaseAccountManager>();
-        firebaseAccountManager.CreateSessionDocument(sessionName);
         if (heartbeatRoutine != null) StopCoroutine(heartbeatRoutine);
         heartbeatRoutine = StartCoroutine(HeartbeatCoroutine());
         

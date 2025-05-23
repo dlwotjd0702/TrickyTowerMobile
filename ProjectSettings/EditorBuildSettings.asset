@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/1. LeeJaeSeong/Scene/OutGamefirebase.unity
-    guid: 42a58913737264c4db4010e6d4086a40
+    path: Assets/1. LeeJaeSeong/Scene/OutGame.unity
+    guid: 4a06f48dd85306e4bb76bfb850a1bc4e
   - enabled: 1
     path: Assets/1. LeeJaeSeong/Scene/Lobby.unity
     guid: a010dda73aebe7c42941a4c56150adf1
