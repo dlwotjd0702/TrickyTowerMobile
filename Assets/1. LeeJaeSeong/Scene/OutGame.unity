@@ -15701,17 +15701,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ttlMinutes: 1
   networkManager: {fileID: 35464381}
-  inputLoginEmail: {fileID: 0}
-  inputLoginPassword: {fileID: 0}
-  LoginButton: {fileID: 7989006623490506856}
-  inputSignUpEmail: {fileID: 0}
-  inputSignUpPassword: {fileID: 0}
-  inputSignUpNickname: {fileID: 0}
-  SigninButton: {fileID: 716751611}
+  sessionName: 
   sessionListContent: {fileID: 2706999052903470913}
   loadSessionsButton: {fileID: 95065835}
   sessionButtonPrefab: {fileID: 847468772}
-  SessionNameField: {fileID: 906967532}
+  inputemail: {fileID: 5269660745848294836}
+  inputpassword: {fileID: 4811066283048673445}
+  SessionName: {fileID: 906967532}
+  LoginButton: {fileID: 7989006623490506856}
+  makenick: {fileID: 1932224796}
+  makeemail: {fileID: 1434643193}
+  makepassword: {fileID: 1578536851}
+  SigninButton: {fileID: 716751611}
   sessionButton: {fileID: 745627424}
 --- !u!4 &872941633
 Transform:
@@ -22164,7 +22165,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1200787738
 Transform:
   m_ObjectHideFlags: 0
