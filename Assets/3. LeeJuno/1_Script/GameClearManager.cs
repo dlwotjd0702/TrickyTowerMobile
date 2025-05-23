@@ -16,10 +16,14 @@ public class GameClearManager : NetworkBehaviour
     //게임종료와 종료후 모드별로 플레이어들의 등수를 판정
     //등수를 판정하기 위해 블럭이 각자 자신의 주인이 누구인지 데이터를 가지고 있어야 함 
     public static GameClearManager Instance;
-    private PlayerScoreData scoreData = new PlayerScoreData();
-    private HashSet<PlayerRef> failedPlayers = new HashSet<PlayerRef>();
+
     public event Action<PlayerRef, GameType> RoundCleared;
 
+    private PlayerScoreData scoreData = new PlayerScoreData();
+    private HashSet<PlayerRef> failedPlayers = new HashSet<PlayerRef>();
+    private PlayerRef[] lastRoundRank;
+    private GameType currentGameType;
+    
     private void Awake()
     {
         if (Instance == null)
@@ -31,6 +35,7 @@ public class GameClearManager : NetworkBehaviour
 
     public void RaceModeClear(PlayerRef winner) //레이스모드 관련로직
     {
+        currentGameType = GameType.Race;
         Debug.Log("clearRace");
         //** 모든플레이어 블럭생성막힘 추가 필요 **
 
@@ -59,6 +64,7 @@ public class GameClearManager : NetworkBehaviour
 
     public void PuzzleModeClear() //퍼즐 모드 관련 로직
     {
+        currentGameType = GameType.Puzzle;
         Debug.Log("Puzzle clear");
         //그후에 남은 벽돌 개수를 세서 많은순으로 1,2,3,4 판정
 
@@ -97,12 +103,13 @@ public class GameClearManager : NetworkBehaviour
         }
     }
 
-    public void SurvivalModeClear(PlayerRef winner) //** 서바이벌 모드 관련 로직 **
+    public void SurvivalModeClear(PlayerRef winner) // 서바이벌 모드 관련 로직
     {
+        currentGameType = GameType.Survival;
         //인자값으로 1등 남은 플레이어는 blockCount가 낮은순으로 등수
         Debug.Log("Survival clear");
-       //** 모든 플레이어 블럭생성을 막는로직**
-       //** 지금은 쌓여진 블럭갯수로 판정 나중에 남은블럭으로 판정하게 변경 **
+        //** 모든 플레이어 블럭생성을 막는로직**
+        //** 지금은 쌓여진 블럭갯수로 판정 나중에 남은블럭으로 판정하게 변경 **
         var allBlocks = GameObject.FindObjectsOfType<NetworkObject>()
             .Where(no => no.gameObject.layer == LayerMask.NameToLayer("Block"))
             .Where(no => no.TryGetComponent<NetworkBlockController>(out var controller) && controller.IsPlaced);
@@ -118,11 +125,11 @@ public class GameClearManager : NetworkBehaviour
             .OrderByDescending(entry => entry.Count)
             .Select(entry => entry.Player)
             .ToArray();
-        
+
         AssignScore(ranking);
     }
 
-    public void PlayerDie(PlayerRef player) //마지막 생존자 찾는 로직
+    public void SurvivePlayerDie(PlayerRef player) //마지막 생존자 찾는 로직
     {
         if (failedPlayers.Add(player) == false) return;
         //** 해당 플레이어 블럭 생성막는 로직**
@@ -136,16 +143,15 @@ public class GameClearManager : NetworkBehaviour
         }
     }
 
-    public void GetBlockCount(int count)
+    public void GetBlockCount(int count)//남은 블럭갯수를 가져옴
     {
-        //남은 블럭갯수를 가져옴
         //문제 죽지않고 다른 플레이어가 게임을 클리어했을때 블럭 갯수를 어떻게 가져오게 할것인가
-        
     }
 
     //----------이 밑에는 점수 관련 로직-------------
     private void AssignScore(PlayerRef[] ranking)
     {
+        lastRoundRank = ranking;
         for (int i = 0; i < ranking.Length; i++)
         {
             int score
@@ -155,6 +161,13 @@ public class GameClearManager : NetworkBehaviour
                 : 0;
             scoreData.AddScore(ranking[i], score);
         }
+
+        RoundCleared?.Invoke(lastRoundRank[0], currentGameType);
+    }
+
+    public PlayerRef[] GetLastRoundRanking()
+    {
+        return lastRoundRank;
     }
 
     public Dictionary<PlayerRef, int> GetAllScore()

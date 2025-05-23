@@ -6,7 +6,7 @@ using Fusion;
 
 public enum PlayType
 {
-    Selction,
+    Selection,
     Cup
 }
 
@@ -20,13 +20,23 @@ public enum GameType
 public class GameRuleManager : NetworkBehaviour
 {
     [SerializeField]
-    private GameObject[] gameRules = new GameObject[3];
+    private GameObject raceMode;
+
+    [SerializeField]
+    private GameObject survivalMode;
+
+    [SerializeField]
+    private GameObject puzzleMode;
 
     [SerializeField]
     private int cupTargetScore = 12;
 
+    [SerializeField]
+    private ScoreBoard scoreBoard;
+
     private int roundIndex = 0;
     private bool gameActive = true;
+    private PlayType playType;
 
     public override void Spawned()
     {
@@ -36,44 +46,69 @@ public class GameRuleManager : NetworkBehaviour
 
     private void OnDestroy()
     {
-        if (Runner.IsServer)
-            GameClearManager.Instance.RoundCleared -= RoundCleared;
+        if (Runner.IsServer == false) return;
+        GameClearManager.Instance.RoundCleared -= RoundCleared;
     }
 
-    public void StartGame()
+    public void StartCupGame()
     {
+        playType = PlayType.Cup;
         GameClearManager.Instance.ResetScore();
-        gameActive = true;
+        scoreBoard.ResetSlots();
 
+        gameActive = true;
         roundIndex = 0;
         ActiveMode((GameType)roundIndex);
     }
 
-    private void ActiveMode(GameType type)
+    public void StartSelectGame(GameType type)
     {
-        foreach (var obj in gameRules)
-        {
-            obj.SetActive(false);
-        }
-
-        gameRules[(int)type].SetActive(true);
+        playType = PlayType.Selection;
+        ActiveMode(type);
     }
 
-    private void RoundCleared(PlayerRef winer, GameType gameType)
+    private void ActiveMode(GameType type)
+    {
+        switch (type)
+        {
+            case GameType.Race:
+                raceMode.SetActive(true);
+
+                survivalMode.SetActive(false);
+                puzzleMode.SetActive(false);
+                break;
+            case GameType.Survival:
+                survivalMode.SetActive(true);
+
+                puzzleMode.SetActive(false);
+                raceMode.SetActive(false);
+                break;
+            case GameType.Puzzle:
+                puzzleMode.SetActive(true);
+
+                survivalMode.SetActive(false);
+                raceMode.SetActive(false);
+                break;
+        }
+    }
+
+    private void RoundCleared(PlayerRef winner, GameType gameType)
     {
         if (gameActive == false) return;
-        
-        var score = GameClearManager.Instance.GetAllScore();
+
+        var ranking = GameClearManager.Instance.GetLastRoundRanking();
         //** 플레이어 점수UI 띄우기**
-        
-        int winnerScore = GameClearManager.Instance.GetPlayerScore(winer);
-        if (winnerScore >= cupTargetScore)
+        scoreBoard.FillMedals(ranking);
+
+        int winnerScore = GameClearManager.Instance.GetPlayerScore(winner);
+        if (winnerScore >= cupTargetScore || playType == PlayType.Selection)
         {
             GameClear();
         }
         else
         {
-            roundIndex = (roundIndex + 1) % gameRules.Length;
+            roundIndex = (roundIndex + 1);
+            //if (roundIndex >= 3)roundIndex
             Invoke(nameof(NextRound), 5f);
         }
     }
