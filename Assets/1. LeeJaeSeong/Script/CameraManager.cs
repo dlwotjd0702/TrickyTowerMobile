@@ -28,10 +28,14 @@ public class CameraManager : MonoBehaviour
     public void SetupMiniCam(Vector3 spawnPoint, int index)
     {
         if (index < 0 || index >= miniCams.Length) return;
-
+Debug.Log("1");
         Camera cam = miniCams[index];
+Debug.Log("2");
         cam.enabled = true;
+Debug.Log("3");
         cam.rect = new Rect(index * (1f / 3f), 2f / 3f, 1f / 3f, 1f / 3f); // ⬆️ 위 1/3을 3등분
+Debug.Log("4");
         cam.transform.position = new Vector3(spawnPoint.x, fixedY, fixedZ);
+Debug.Log("5");
     }
 }

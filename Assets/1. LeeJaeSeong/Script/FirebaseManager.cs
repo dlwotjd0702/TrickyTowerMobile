@@ -11,12 +11,13 @@ public class FirebaseAccountManager : MonoBehaviour
 {
     private FirebaseAuth auth;
     private FirebaseFirestore firestore;
+    public NetworkManager networkManager;
 
     private string email = "";
     private string password = "";
     private string nickname = "";
     // Firebase session management
-    private string sessionName = "";
+    public string sessionName = "";
 
   
     
@@ -26,6 +27,7 @@ public class FirebaseAccountManager : MonoBehaviour
     public TextMeshProUGUI SessionName;
     public Button LoginButton;
     public Button SigninButton;
+    public Button sessionButton;
 
 
     private bool isInitialized = false;
@@ -36,6 +38,7 @@ public class FirebaseAccountManager : MonoBehaviour
     {
         LoginButton.onClick.AddListener(OnLoginClicked);
         SigninButton.onClick.AddListener(OnCreateAccountClicked);
+        sessionButton.onClick.AddListener(OnCreateSessionDocument);
         
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
         {
@@ -140,6 +143,15 @@ public class FirebaseAccountManager : MonoBehaviour
         Debug.Log("login");
         CreateAccount(email, password, nickname);
     }
+    void OnCreateSessionDocument()
+    {
+        SessionName.text = sessionName;
+        
+        Debug.Log("session");
+        CreateSessionDocument(sessionName);
+        networkManager.sessionName = sessionName;
+        networkManager.StartHost();
+    }
 
     private void SignOut()
     {
@@ -148,6 +160,8 @@ public class FirebaseAccountManager : MonoBehaviour
         Debug.Log( "로그아웃 되었습니다.");
         Player.Instance.SetUserData(null);
     }
+    
+    
 
     // Firebase-only: Create a game session document
     private void CreateSessionDocument(string sessionName)
@@ -170,6 +184,25 @@ public class FirebaseAccountManager : MonoBehaviour
                 Debug.Log( $"세션 생성 완료: {sessionName}");
             else
                 Debug.Log( "세션 생성 실패: " + task.Exception?.Message);
+        });
+        
+        
+    }
+    private void DeleteSessionDocument(string sessionName)
+    {
+        if (string.IsNullOrEmpty(sessionName))
+        {
+            Debug.LogWarning("삭제할 세션 이름이 비어 있습니다.");
+            return;
+        }
+
+        var sessionDoc = firestore.Collection("sessions").Document(sessionName);
+        sessionDoc.DeleteAsync().ContinueWithOnMainThread(task =>
+        {
+            if (task.IsCompletedSuccessfully)
+                Debug.Log($"세션 삭제 완료: {sessionName}");
+            else
+                Debug.LogError($"세션 삭제 실패: {task.Exception?.Message}");
         });
     }
 

@@ -1,3 +1,4 @@
+using System;
 using Fusion;
 using Fusion.Addons.Physics;
 using UnityEngine;
@@ -21,7 +22,7 @@ public class NetworkBlockController : NetworkBehaviour
 
     Rigidbody2D        _rb;
     NetworkRigidbody2D _netRb;
-    BoxCollider2D      _trigger;
+    public BoxCollider2D[]     _trigger;
 
     public EffectManager  effectManager;
     public SoundManager  soundManager;
@@ -34,17 +35,18 @@ public class NetworkBlockController : NetworkBehaviour
         bool server  = Object.HasStateAuthority;
         Runner.SetIsSimulated(Object, predict || server);
 
+        
         // 2) 컴포넌트 캐싱
         _rb      = GetComponent<Rigidbody2D>();
         _netRb   = GetComponent<NetworkRigidbody2D>();
-        _trigger = GetComponent<BoxCollider2D>();
+        _trigger = GetComponents<BoxCollider2D>();
 
         _rb.bodyType     = RigidbodyType2D.Kinematic;
         _rb.gravityScale = 0;
 
         // 3) 매니저·이펙트 참조 채우기
         networkManager  = FindObjectOfType<NetworkManager>();
-        effectManager   = networkManager.spawnHandler.effectManager;
+        effectManager   = FindObjectOfType<EffectManager>();
 
         // 4) 클라이언트 예측 단계에서 블록 할당
         if (Object.HasInputAuthority)
@@ -52,6 +54,10 @@ public class NetworkBlockController : NetworkBehaviour
             effectManager.Block         = gameObject;
             effectManager.isBlockChange = true;
         }
+        
+        // 블록 콜라이더 좀 줄이기
+        foreach (var c in GetComponents<BoxCollider2D>()) c.size *= 0.8f;
+
     }
 
     public override void FixedUpdateNetwork()
@@ -122,10 +128,16 @@ public class NetworkBlockController : NetworkBehaviour
 
             _rb.bodyType     = RigidbodyType2D.Dynamic;
             _rb.gravityScale = 1;
-            foreach(var c in GetComponents<Collider2D>()) c.isTrigger = false;
-            _trigger.isTrigger = false;
+            foreach (var c in GetComponents<BoxCollider2D>())
+            {
+                c.isTrigger = false;
+                c.size /= 0.8f;
+            }
             gameObject.tag     = "Floor";
-
+            if (networkManager == null)
+            {
+                networkManager  = FindObjectOfType<NetworkManager>();
+            }
             networkManager.RequestNextBlock(Object.InputAuthority);
             effectManager.IsShake = true;
             if (other.CompareTag("Respawn"))
@@ -134,16 +146,23 @@ public class NetworkBlockController : NetworkBehaviour
                 Destroy(gameObject);
                 return;
             }
-
+            
             if (other.gameObject.layer == LayerMask.NameToLayer("Block") && effectManager.IsShadow)
             {
-                /*other.gameObject.transform.TryGetComponent(out Rigidbody2D placeRigidBody);
-                Vector3 forceStartPoint = other.ClosestPoint(transform.position);
-                Vector3 backForceVector = transform.position - forceStartPoint;
-                Vector3 forceVector = placeRigidBody.velocity;*/
+                other.gameObject.transform.TryGetComponent(out Rigidbody2D placeRigidBody);
+                Vector3 forceOrigin = other.ClosestPoint(transform.position);
+                Vector3 toDownBlockNormalVector2 = (transform.position - forceOrigin).normalized;
+                Vector3 toPlaceBlockNormalVector2 = (other.transform.position - forceOrigin).normalized;
+
+                float force = effectManager.preMovePos.x;
+            
+                Vector2 toDownBlockNormalX = new Vector2(toDownBlockNormalVector2.x, 0);
+                Vector2 toPlaceBlockNormalX = new Vector2(toPlaceBlockNormalVector2.x, 0);
+                _rb.AddForceAtPosition(toDownBlockNormalX * force, forceOrigin, ForceMode2D.Impulse);
+                placeRigidBody.AddForceAtPosition(toPlaceBlockNormalVector2 * force, forceOrigin, ForceMode2D.Impulse);
                 Debug.Log("Conflict!");
             }
-            
+
             soundManager.OnLandSound();
         }
         else if (other.CompareTag("Respawn") && IsPlaced)
@@ -152,7 +171,5 @@ public class NetworkBlockController : NetworkBehaviour
             effectManager.IsShake = true;
             Destroy(gameObject);    
         }
-
-        
     }
 }

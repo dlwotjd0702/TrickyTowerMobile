@@ -259,6 +259,7 @@ MonoBehaviour:
   _IsPlaced: 0
   moveDistance: 0.5
   downSpeed: 2
+  _trigger: []
   effectManager: {fileID: 0}
   soundManager: {fileID: 0}
   networkManager: {fileID: 0}
