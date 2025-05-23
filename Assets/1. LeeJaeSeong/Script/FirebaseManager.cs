@@ -9,278 +9,261 @@ using UnityEngine.UI;
 
 public class FirebaseAccountManager : MonoBehaviour
 {
-    private FirebaseAuth auth;
-    private FirebaseFirestore firestore;
-    public int ttlMinutes = 1; 
-    public NetworkManager networkManager;
+    public static FirebaseAccountManager Instance { get; private set; }
 
-    private string email = "";
-    private string password = "";
-    private string nickname = "";
-    // Firebase session management
-    public string sessionName = "";
-    
-    [Header("세션 리스트 UI")]
-    public RectTransform sessionListContent; 
-    public Button loadSessionsButton;// Scroll View → Content
-    public Button      sessionButtonPrefab;
+    // per‐email FirebaseApp/Auth/Firestore
+    private Dictionary<string, FirebaseApp>       _apps       = new Dictionary<string, FirebaseApp>();
+    private Dictionary<string, FirebaseAuth>      _auths      = new Dictionary<string, FirebaseAuth>();
+    private Dictionary<string, FirebaseFirestore> _firestores= new Dictionary<string, FirebaseFirestore>();
 
-  
-    
-    public TextMeshProUGUI inputemail;
-    public TextMeshProUGUI inputpassword;
-    
-    public TextMeshProUGUI SessionName;
-    public Button LoginButton;
-    
-    public TextMeshProUGUI makenick;
-    public TextMeshProUGUI makeemail;
-    public TextMeshProUGUI makepassword;
-    public Button SigninButton;
-    public Button sessionButton;
+    [Header("Session Settings")] 
+    public int               ttlMinutes   = 1;
+    public NetworkManager    networkManager;
+    public string            sessionName  = "";
 
+    [Header("Session List UI")]
+    public RectTransform     sessionListContent;
+    public Button            loadSessionsButton;
+    public Button            sessionButtonPrefab;
+
+    [Header("Login UI")]
+    public TextMeshProUGUI   inputemail;
+    public TextMeshProUGUI   inputpassword;
+    public Button            LoginButton;
+
+    [Header("Signup UI")]
+    public TextMeshProUGUI   makeemail;
+    public TextMeshProUGUI   makepassword;
+    public TextMeshProUGUI   makenick;
+    public Button            SigninButton;
+
+    [Header("Create Session Button")]
+    public TextMeshProUGUI   SessionName;
+    public Button            sessionButton;
 
     private bool isInitialized = false;
-    private bool isLoggedIn = false;
-    private bool isSignUpMode = false;
-    
-   
+    private string _currentUserKey = null; // email used for auth
+
+    private void Awake()
+    {
+        // Singleton
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     private void Start()
     {
+        if (isInitialized) return;
+
+        // UI callbacks
         LoginButton.onClick.AddListener(OnLoginClicked);
         SigninButton.onClick.AddListener(OnCreateAccountClicked);
         sessionButton.onClick.AddListener(OnCreateSessionDocument);
-        
         loadSessionsButton.onClick.AddListener(FetchValidSessions);
 
-
-        
-        
-        FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
+        // Initialize default FirebaseApp
+        FirebaseApp.CheckAndFixDependenciesAsync()
+            .ContinueWithOnMainThread(task =>
         {
             if (task.Result == DependencyStatus.Available)
             {
-                var app = FirebaseApp.DefaultInstance;
-                auth = FirebaseAuth.GetAuth(app);
-                firestore = FirebaseFirestore.GetInstance(app);
                 isInitialized = true;
-                Debug.Log( "Firebase 초기화 완료");
+                Debug.Log("✅ Firebase DefaultInstance initialized");
             }
             else
             {
-                Debug.Log( $"Firebase 초기화 실패: {task.Result}");
+                Debug.LogError($"❌ Firebase init failed: {task.Result}");
             }
         });
     }
-    
-    
-    
+
+    private void OnLoginClicked()
+    {
+        var email    = inputemail.text;
+        var password = inputpassword.text;
+        SignIn(email, password);
+    }
+
+    private void OnCreateAccountClicked()
+    {
+        var email    = makeemail.text;
+        var password = makepassword.text;
+        var nickname = makenick.text;
+        CreateAccount(email, password, nickname);
+    }
+
+    private void OnCreateSessionDocument()
+    {
+        sessionName = SessionName.text;
+        if (string.IsNullOrEmpty(_currentUserKey))
+        {
+            Debug.LogError("세션을 생성하려면 먼저 로그인해야 합니다.");
+            return;
+        }
+        // use logged-in user's auth
+        var (auth, fs) = GetAuthAndFirestoreFor(_currentUserKey);
+        CreateSessionDocument(sessionName, auth, fs);
+        networkManager.sessionName = sessionName;
+        networkManager.StartHost();
+    }
+
+    // Create or fetch a FirebaseApp/Auth/Firestore triple for this key (email)
+    private (FirebaseAuth auth, FirebaseFirestore fs) GetAuthAndFirestoreFor(string key)
+    {
+        if (!_apps.ContainsKey(key))
+        {
+            var opts = FirebaseApp.DefaultInstance.Options;
+            var app  = FirebaseApp.Create(new AppOptions {
+                ApiKey    = opts.ApiKey,
+                AppId     = opts.AppId,
+                ProjectId = opts.ProjectId,
+            }, key);
+            _apps[key]        = app;
+            _auths[key]       = FirebaseAuth.GetAuth(app);
+            _firestores[key]  = FirebaseFirestore.GetInstance(app);
+        }
+        return (_auths[key], _firestores[key]);
+    }
 
     private void CreateAccount(string email, string password, string nickname)
     {
-        Debug.Log( "회원가입 진행 중...");
-        auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWithOnMainThread(task =>
+        Debug.Log("회원가입 중...");
+        var (auth, fs) = GetAuthAndFirestoreFor(email);
+        auth.CreateUserWithEmailAndPasswordAsync(email, password)
+            .ContinueWithOnMainThread(task =>
         {
-            if (task.IsCanceled || task.IsFaulted)
+            if (task.IsFaulted || task.IsCanceled)
             {
-                Debug.Log( "회원가입 실패: " + task.Exception?.Message);
+                Debug.LogError("회원가입 실패: " + task.Exception?.Message);
                 return;
             }
 
-            var result = task.Result;
-            FirebaseUser newUser = result.User;
+            var newUser = task.Result.User;
             Player.Instance.SetUserData(newUser);
-            Debug.Log( $"회원가입 성공: {newUser.Email}");
+            Debug.Log($"회원가입 성공: {newUser.Email}");
+            _currentUserKey = email;
 
-            UpdateUserNickname(newUser, nickname);
-            CreateUserDocument(newUser.UserId, email, nickname);
-            isSignUpMode = false;
-            isLoggedIn = true;
-        });
-    }
-
-    private void UpdateUserNickname(FirebaseUser user, string nickname)
-    {
-        UserProfile profile = new UserProfile { DisplayName = nickname };
-        user.UpdateUserProfileAsync(profile).ContinueWithOnMainThread(task =>
-        {
-            if (task.IsCompletedSuccessfully)
-                Debug.Log( $"\n닉네임 설정 완료: {nickname}");
-            else
-                Debug.Log( "\n닉네임 설정 실패: " + task.Exception?.Message);
-        });
-    }
-
-    private void CreateUserDocument(string uid, string email, string nickname)
-    {
-        var userDoc = firestore.Collection("users").Document(uid);
-        var userData = new
-        {
-            email = email,
-            nickname = nickname,
-            createdAt = Timestamp.GetCurrentTimestamp(),
-            role = "user"
-        };
-        userDoc.SetAsync(userData).ContinueWithOnMainThread(task =>
-        {
-            if (task.IsCompletedSuccessfully)
-                Debug.Log( "\nFirestore 사용자 문서 생성 완료");
-            else
-                Debug.Log( "\nFirestore 문서 생성 실패: " + task.Exception?.Message);
+            // 프로필 설정
+            newUser.UpdateUserProfileAsync(new UserProfile { DisplayName = nickname });
+            
+            // Firestore에 사용자 문서 생성
+            var data = new Dictionary<string, object>
+            {
+                { "email",     email },
+                { "nickname",  nickname },
+                { "createdAt", Timestamp.GetCurrentTimestamp() },
+                { "role",      "user" }
+            };
+            fs.Collection("users").Document(newUser.UserId)
+              .SetAsync(data).ContinueWithOnMainThread(t =>
+            {
+                if (t.IsFaulted) Debug.LogError("사용자 문서 생성 실패: " + t.Exception?.Message);
+                else             Debug.Log("Firestore 사용자 문서 생성 완료");
+            });
         });
     }
 
     private void SignIn(string email, string password)
     {
-        Debug.Log( "로그인 시도 중...");
-        auth.SignInWithEmailAndPasswordAsync(email, password).ContinueWithOnMainThread(task =>
+        Debug.Log("로그인 시도 중...");
+        var (auth, fs) = GetAuthAndFirestoreFor(email);
+        auth.SignInWithEmailAndPasswordAsync(email, password)
+            .ContinueWithOnMainThread(task =>
         {
-            if (task.IsCanceled || task.IsFaulted)
+            if (task.IsFaulted || task.IsCanceled)
             {
-                Debug.Log( "로그인 실패: " + task.Exception?.Message);
+                Debug.LogError("로그인 실패: " + task.Exception?.Message);
                 return;
             }
 
-            var result = task.Result;
-            FirebaseUser user = result.User;
+            var user = task.Result.User;
             Player.Instance.SetUserData(user);
-            isLoggedIn = true;
-            Debug.Log( $"로그인 성공: {user.Email}");
+            Debug.Log($"로그인 성공: {user.Email}");
+            _currentUserKey = email;
         });
     }
-    void OnLoginClicked()
-    {
-        email = inputemail.text;
-        password = inputpassword.text;
-        Debug.Log("login");
-        SignIn(email, password);
-    }
-    void OnCreateAccountClicked()
-    {
-        email = makeemail.text;
-        password = makepassword.text;
-        nickname = makenick.text;
-        Debug.Log("login");
-        CreateAccount(email, password, nickname);
-    }
-    void OnCreateSessionDocument()
-    {
-        sessionName = SessionName.text;
-        
-        Debug.Log("session");
-        CreateSessionDocument(sessionName);
-        networkManager.sessionName = sessionName;
-        networkManager.StartHost();
-        
-    }
 
-    private void SignOut()
+    private void CreateSessionDocument(string sessionName, FirebaseAuth auth, FirebaseFirestore fs)
     {
-        auth.SignOut();
-        isLoggedIn = false;
-        Debug.Log( "로그아웃 되었습니다.");
-        Player.Instance.SetUserData(null);
-    }
-    
-    
-
-    // Firebase-only: Create a game session document
-    public void CreateSessionDocument(string sessionName)
-    {
-        var now = Timestamp.GetCurrentTimestamp();
+        var now      = Timestamp.GetCurrentTimestamp();
         var expireTs = Timestamp.FromDateTime(now.ToDateTime().AddMinutes(ttlMinutes));
 
-        var data = new Dictionary<string, object>()
+        var data = new Dictionary<string, object>
         {
-            { "host", FirebaseAuth.DefaultInstance.CurrentUser.UserId },
-            { "createdAt", now },
-            { "expiresAt", expireTs },
-            { "participants", new List<string> { FirebaseAuth.DefaultInstance.CurrentUser.UserId } }
+            { "host",         auth.CurrentUser.UserId },
+            { "createdAt",    now },
+            { "expiresAt",    expireTs },
+            { "participants", new List<string> { auth.CurrentUser.UserId } }
         };
-        firestore.Collection("sessions")
-                 .Document(sessionName)
-                 .SetAsync(data)
-                 .ContinueWithOnMainThread(t =>
+
+        fs.Collection("sessions").Document(sessionName)
+          .SetAsync(data).ContinueWithOnMainThread(t =>
         {
             if (t.IsFaulted) Debug.LogError("세션 생성 실패: " + t.Exception?.Message);
+            else             Debug.Log($"세션 생성 완료: {sessionName}");
         });
     }
-    
-    
 
     public void DeleteSessionDocument(string sessionName)
     {
-        if (string.IsNullOrEmpty(sessionName))
+        if (string.IsNullOrEmpty(_currentUserKey)) return;
+        var (auth, fs) = GetAuthAndFirestoreFor(_currentUserKey);
+        fs.Collection("sessions").Document(sessionName)
+          .DeleteAsync().ContinueWithOnMainThread(t =>
         {
-            Debug.LogWarning("삭제할 세션 이름이 비어 있습니다.");
-            return;
-        }
-
-        var sessionDoc = firestore.Collection("sessions").Document(sessionName);
-        sessionDoc.DeleteAsync().ContinueWithOnMainThread(task =>
-        {
-            if (task.IsCompletedSuccessfully)
-                Debug.Log($"세션 삭제 완료: {sessionName}");
-            else
-                Debug.LogError($"세션 삭제 실패: {task.Exception?.Message}");
+            if (t.IsFaulted) Debug.LogError("세션 삭제 실패: " + t.Exception?.Message);
+            else             Debug.Log($"세션 삭제 완료: {sessionName}");
         });
     }
-    
+
     public void UpdateSessionExpiration(string sessionName)
     {
-        var now = Timestamp.GetCurrentTimestamp();
+        if (string.IsNullOrEmpty(_currentUserKey)) return;
+        var (auth, fs) = GetAuthAndFirestoreFor(_currentUserKey);
+        var now      = Timestamp.GetCurrentTimestamp();
         var expireTs = Timestamp.FromDateTime(now.ToDateTime().AddMinutes(ttlMinutes));
 
-        firestore.Collection("sessions")
-            .Document(sessionName)
-            .UpdateAsync("expiresAt", expireTs)
-            .ContinueWithOnMainThread(t =>
-            {
-                if (t.IsFaulted) Debug.LogWarning("세션 연장 실패: " + t.Exception?.Message);
-            });
+        fs.Collection("sessions").Document(sessionName)
+          .UpdateAsync("expiresAt", expireTs)
+          .ContinueWithOnMainThread(t =>
+        {
+            if (t.IsFaulted) Debug.LogWarning("세션 연장 실패: " + t.Exception?.Message);
+            else             Debug.Log($"세션 연장 완료: {sessionName}");
+        });
     }
-    
+
     public void FetchValidSessions()
     {
-        Debug.Log("1");
+        var fs  = FirebaseFirestore.DefaultInstance;
         var now = Timestamp.GetCurrentTimestamp();
-        Debug.Log("2");
-        
-        firestore.Collection("sessions")
-            .WhereGreaterThanOrEqualTo("expiresAt", now)
-            .GetSnapshotAsync()
-            .ContinueWithOnMainThread(task =>
+
+        fs.Collection("sessions")
+          .WhereGreaterThanOrEqualTo("expiresAt", now)
+          .GetSnapshotAsync().ContinueWithOnMainThread(task =>
+        {
+            if (task.IsFaulted)
             {
-                if (task.IsFaulted)
-                {
-                    Debug.LogError("세션 목록 불러오기 실패: " + task.Exception);
-                    return;
-                }
-                Debug.Log("3");
+                Debug.LogError("세션 목록 불러오기 실패: " + task.Exception);
+                return;
+            }
 
-                foreach (var doc in task.Result.Documents)
-                {
-                    // 2. 로컬 변수로 캡처
-                    string sessionId = doc.Id;
-                
-                    // 3. Button 인스턴스 생성
-                    Button btn = Instantiate(sessionButtonPrefab, sessionListContent);
-                    btn.GetComponentInChildren<TextMeshProUGUI>().text = sessionId;
 
-                    btn.onClick.AddListener(() =>
-                    {
-                        networkManager.sessionName = sessionId;
-                        networkManager.StartClient();
-                    });
-                }
-            });
+            foreach (var doc in task.Result.Documents)
+            {
+                var id  = doc.Id;
+                var btn = Instantiate(sessionButtonPrefab, sessionListContent);
+                btn.GetComponentInChildren<TextMeshProUGUI>().text = id;
+                btn.onClick.AddListener(() =>
+                {
+                    networkManager.sessionName = id;
+                    networkManager.StartClient();
+                });
+            }
+        });
     }
-   
-
-
-    // 예: 로비 씬이 로드되면 한 번 호출
-    
-        
-   
-
 }
