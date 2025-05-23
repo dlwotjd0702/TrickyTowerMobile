@@ -6,11 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="33ec4f3c-9a43-40ac-a265-51209e7b0009" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/FirebaseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/FirebaseManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Scene/InGameTestControl.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Scene/InGameTestControl.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Scene/Ingame.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Scene/Ingame.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Scene/OutGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Scene/OutGame.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Scene/lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Scene/lobby.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/FusionDemos/Photon-Fusion-Intro-Sample-2.0.6-Stable-1034.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/UIButtonManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/UIButtonManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +145,7 @@
       <workItem from="1747802978424" duration="11844000" />
       <workItem from="1747875418425" duration="474000" />
       <workItem from="1747875907279" duration="13182000" />
-      <workItem from="1747962313003" duration="17264000" />
+      <workItem from="1747962313003" duration="20792000" />
     </task>
     <servers />
   </component>

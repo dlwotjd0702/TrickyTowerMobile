@@ -1,4 +1,5 @@
 using UnityEngine;
+using DG.Tweening;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
@@ -189,7 +190,7 @@ public class UIButtonManager : MonoBehaviour
                 savedPlayerIndex = playerIndex;
                 savedBlockIndex  = blockIndex;
                 TogglePlaySetSelection();
-                StartCoroutine(DelayedSwitch(playSetUI, modSetUI));
+                StartCoroutine(FadeSwitch(playSetUI, modSetUI));
                 break;
 
             case "BackToPlaySet":
@@ -209,6 +210,7 @@ public class UIButtonManager : MonoBehaviour
 
             case "CreateRoom":
             case "EnterRoom":
+                DOTween.KillAll();
                 SceneManager.LoadScene("lobby");
                 break;
 
@@ -216,7 +218,7 @@ public class UIButtonManager : MonoBehaviour
                 savedPlayerIndex = playerIndex;
                 savedBlockIndex  = blockIndex;
                 TogglePlaySetSelection();
-                StartCoroutine(TransitionAfterDelay(playSetUI, roomListUI));
+                StartCoroutine(FadeSwitch(playSetUI, roomListUI));
                 break;
 
             case "Signup":
@@ -296,19 +298,52 @@ public class UIButtonManager : MonoBehaviour
         isTransitioning = false;
     }
 
-    private IEnumerator DelayedSwitch(GameObject from, GameObject to)
+    private IEnumerator FadeSwitch(GameObject from, GameObject to)
     {
-        yield return new WaitForSeconds(2f);
-        from.SetActive(false);
-        to  .SetActive(true);
-    }
+        // 1) 전환 잠금
+        isTransitioning = true;
 
-    private IEnumerator TransitionAfterDelay(GameObject from, GameObject to)
-    {
-        TogglePlaySetSelection();
+        // 2) 2초 대기 (키·클릭 모두 무시)
         yield return new WaitForSeconds(2f);
-        from.SetActive(false);
-        to  .SetActive(true);
+
+        // 3) 페이드 아웃 준비: blackOverlay 켜고 RaycastTarget 활성화
+        blackOverlay.gameObject.SetActive(true);
+        blackOverlay.raycastTarget = true;    // <-- 여기서 마우스도 차단합니다
+
+        Color c = blackOverlay.color;
+        c.a = 0f;
+        blackOverlay.color = c;
+
+        // 4) 페이드 아웃
+        float t = 0f;
+        while (t < fadeTime)
+        {
+            t += Time.deltaTime;
+            c.a = Mathf.Lerp(0f, 1f, t / fadeTime);
+            blackOverlay.color = c;
+            yield return null;
+        }
+
+        // 5) UI 전환
+        if (from != null) from.SetActive(false);
+        if (to   != null) to  .SetActive(true);
+
+        // 6) 페이드 인
+        t = 0f;
+        while (t < fadeTime)
+        {
+            t += Time.deltaTime;
+            c.a = Mathf.Lerp(1f, 0f, t / fadeTime);
+            blackOverlay.color = c;
+            yield return null;
+        }
+
+        // 7) 페이드 끝나면 RaycastTarget 비활성화 후 overlay 끄기
+        blackOverlay.raycastTarget = false;
+        blackOverlay.gameObject.SetActive(false);
+
+        // 8) 전환 해제
+        isTransitioning = false;
     }
 
     private void TogglePlaySetSelection()
