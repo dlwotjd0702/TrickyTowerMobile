@@ -37,7 +37,7 @@ public class SurvivalMode : MonoBehaviour
 
         if (--hp[p] <= 0)
         {
-            GameClearManager.Instance.PlayerDie(p);
+            GameClearManager.Instance.SurvivePlayerDie(p);
         }
     }
 }

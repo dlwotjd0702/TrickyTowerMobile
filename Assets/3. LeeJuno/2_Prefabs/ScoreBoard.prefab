@@ -345,6 +345,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3347007356550499279}
+  - component: {fileID: 1277885726484497702}
+  - component: {fileID: 9171306797686510721}
   m_Layer: 0
   m_Name: ScoreBoard
   m_TagString: Untagged
@@ -373,6 +375,40 @@ Transform:
   - {fileID: 2086153385458091370}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1277885726484497702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3400117910976624884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf8b3971ad065e74e8a1bcd7e042efa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldMedalPrefab: {fileID: 3344465132640263719, guid: e9a7679473d94084eb1434bcab466f6a, type: 3}
+  silverMedalPrefab: {fileID: 410318729465190411, guid: ba450c94d76260c4da57e11b28cd0dd0, type: 3}
+  bronzeMedalPrefab: {fileID: 6969851137560661144, guid: 32c5d387dbd18e145925f4d5c24f2113, type: 3}
+--- !u!114 &9171306797686510721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3400117910976624884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortKey: 3708154601
+  ObjectInterest: 1
+  Flags: 262145
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 1277885726484497702}
+  ForceRemoteRenderTimeframe: 0
 --- !u!1 &5097573963435038996
 GameObject:
   m_ObjectHideFlags: 0
