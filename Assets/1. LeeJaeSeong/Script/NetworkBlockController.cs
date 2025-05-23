@@ -35,6 +35,7 @@ public class NetworkBlockController : NetworkBehaviour
         bool server  = Object.HasStateAuthority;
         Runner.SetIsSimulated(Object, predict || server);
 
+        
         // 2) 컴포넌트 캐싱
         _rb      = GetComponent<Rigidbody2D>();
         _netRb   = GetComponent<NetworkRigidbody2D>();
@@ -45,7 +46,7 @@ public class NetworkBlockController : NetworkBehaviour
 
         // 3) 매니저·이펙트 참조 채우기
         networkManager  = FindObjectOfType<NetworkManager>();
-        effectManager   = networkManager.spawnHandler.effectManager;
+        effectManager   = FindObjectOfType<EffectManager>();
 
         // 4) 클라이언트 예측 단계에서 블록 할당
         if (Object.HasInputAuthority)
@@ -133,7 +134,10 @@ public class NetworkBlockController : NetworkBehaviour
                 c.size /= 0.8f;
             }
             gameObject.tag     = "Floor";
-
+            if (networkManager == null)
+            {
+                networkManager  = FindObjectOfType<NetworkManager>();
+            }
             networkManager.RequestNextBlock(Object.InputAuthority);
             effectManager.IsShake = true;
             if (other.CompareTag("Respawn"))
