@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33ec4f3c-9a43-40ac-a265-51209e7b0009" name="변경" comment="" />
+    <list default="true" id="33ec4f3c-9a43-40ac-a265-51209e7b0009" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Material/SurvivalDefault.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Material/SurvivalDefault.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/RT.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/RT/RT_GradientBG1.renderTexture" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/RT/RT_GradientBG1.renderTexture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Scene/Ingame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Scene/Ingame.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Scene/Ingame.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Scene/Ingame.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Scene/OutGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Scene/OutGame.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/UIButtonManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/UIButtonManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Shader/PuzzleDefault.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Shader/PuzzleDefault.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Shader/RaceDefault.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Shader/RaceDefault.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Shader/SurvivalDefault.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Shader/SurvivalDefault.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,6 +87,14 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
     </configuration>
+    <configuration name="독립실행형 플레이어" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/build/trickytower.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\KGA\Documents\GitHub\TrickyTower\build" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Unity 시작" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.62f1-x86_64\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\KGA\Documents\GitHub\TrickyTower -debugCodeOptimization" />
@@ -132,7 +154,8 @@
       <workItem from="1747801787616" duration="10000" />
       <workItem from="1747802978424" duration="11844000" />
       <workItem from="1747875418425" duration="474000" />
-      <workItem from="1747875907279" duration="12692000" />
+      <workItem from="1747875907279" duration="13182000" />
+      <workItem from="1747962313003" duration="3468000" />
     </task>
     <servers />
   </component>

@@ -5,6 +5,8 @@ using System.Collections;
 
 public class UIButtonManager : MonoBehaviour
 {
+    [SerializeField] private GameObject roomListUI;
+    
     [Header("UI")]
     public GameObject introUI;
     public GameObject mainUI;
@@ -12,10 +14,8 @@ public class UIButtonManager : MonoBehaviour
     public GameObject helpUI;
     public GameObject playSetUI;
     public GameObject modSetUI;
-    public GameObject readyRoomUI;
     public GameObject signupUI;
     public GameObject eixtGameUI;
-    public GameObject roomListUI;
     
     [Header("Help Paging")]
     [Tooltip("Help 패널들 (Help1, Help2, Help3, Help4)")]
@@ -218,7 +218,6 @@ public class UIButtonManager : MonoBehaviour
             
             case "BackToPlaySet":
                 modSetUI.SetActive(false);
-                readyRoomUI.SetActive(false);
                 roomListUI.SetActive(false);
                 playSetUI.SetActive(true);
 
@@ -235,13 +234,11 @@ public class UIButtonManager : MonoBehaviour
                 break;
 
             case "CreateRoom":
-                modSetUI.SetActive(false);
-                readyRoomUI.SetActive(true);
+                SceneManager.LoadScene("lobby");
                 break;
             
             case "EnterRoom":
-                roomListUI.SetActive(false);
-                readyRoomUI.SetActive(true);
+                SceneManager.LoadScene("lobby");
                 break;
             
             case "EnterRoomList":

@@ -11,7 +11,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/3. LeeJuno/2_Prefabs/20250521prefab/gameruletest.unity
     guid: 78280c1a866dac345a571286f6af7a62
-  - enabled: 1
+  - enabled: 0
     path: Assets/1. LeeJaeSeong/Scene/OutGamefirebase.unity
     guid: 42a58913737264c4db4010e6d4086a40
+  - enabled: 0
+    path: Assets/4. Junghyunsik/Scene/OutGame.unity
+    guid: c4dd5294f412db04d93965adc47234e9
+  - enabled: 0
+    path: Assets/4. Junghyunsik/Scene/lobby.unity
+    guid: c36265a7bde0fcb4eaa5234c3b0bde6e
+  - enabled: 1
+    path: Assets/1. LeeJaeSeong/Scene/teamScenetest.unity
+    guid: 1223c32ab80489c409639a2e375d89ea
   m_configObjects: {}
