@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Fusion;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class IngameUiManager : MonoBehaviour
+public class IngameUiManager : NetworkBehaviour
 {
     [SerializeField] private NetworkSpawnHandler networkSpawnHandler;
     
     [SerializeField] private Image[] NextBlockImage;
-    public string nextBlockName;
+    public string PlayerNumber;
     public int newIndex;
     public int preIndex;
     
@@ -20,6 +21,7 @@ public class IngameUiManager : MonoBehaviour
         {
             NextBlockImage[i].gameObject.SetActive(false);
         }
+        preIndex = Random.Range(0, NextBlockImage.Length);
     }
 
     // Update is called once per frame

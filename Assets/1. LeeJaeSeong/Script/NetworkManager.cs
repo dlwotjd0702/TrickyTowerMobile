@@ -33,16 +33,15 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
 
     private void OnGUI()
     {
-        if (SceneManager.GetActiveScene().buildIndex != 0)
-            return;
-        if (runner == null)
+        
+        if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             if (GUI.Button(new Rect(10, 10, 200, 40), "Host"))
                 StartHost();
             if (GUI.Button(new Rect(10, 60, 200, 40), "Join"))
                 StartClient();
         }
-        else if (!isGameStarted && runner.IsServer)
+        if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             if (GUI.Button(new Rect(10, 110, 200, 40), "Start Game"))
                 HostStartGame();
@@ -61,6 +60,8 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
             PlayerCount  = 4
         });
         if (!result.Ok) Debug.LogError($"Host start failed: {result.ShutdownReason}");
+        var targetScene = SceneRef.FromIndex(1);
+        await runner.LoadScene(targetScene);
     }
 
     public async void StartClient()
@@ -73,6 +74,8 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
             Scene        = SceneRef.FromIndex(1)
         });
         if (!result.Ok) Debug.LogError($"Client join failed: {result.ShutdownReason}");
+        var targetScene = SceneRef.FromIndex(1);
+        await runner.LoadScene(targetScene);
     }
 
     private void SetupRunner()
@@ -198,16 +201,16 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     public void OnSceneLoadStart(NetworkRunner runner) { }
     public void OnSceneLoadDone(NetworkRunner runner) 
     {
-        if (SceneManager.GetActiveScene().buildIndex != 0)
+        if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             firebaseAccountManager = FindObjectOfType<FirebaseAccountManager>();
         }
 
-        if (SceneManager.GetActiveScene().buildIndex != 1)
+        if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             
         }
-        if (SceneManager.GetActiveScene().buildIndex != 2)
+        if (SceneManager.GetActiveScene().buildIndex == 2)
         {
             StartCoroutine(InitAfterSpawnHandler());
         }

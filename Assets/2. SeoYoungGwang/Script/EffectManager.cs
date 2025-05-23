@@ -1,10 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Fusion;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class EffectManager : MonoBehaviour
+public class EffectManager : NetworkBehaviour
 {
     public GameObject Block;
     private GameObject blockSprite;
@@ -87,6 +88,7 @@ public class EffectManager : MonoBehaviour
 
     private IEnumerator Shake()
     {
+        Debug.Log("shake");
         Vector3 camOriginPos = MainCamera.transform.position;
         WaitForSeconds wfs = new WaitForSeconds(shakeTerm);
         float currentTime = 0;
@@ -133,22 +135,13 @@ public class EffectManager : MonoBehaviour
             Shadows[i].transform.rotation = Block.transform.rotation;
             Shadows[i].SetActive(true);
         }
-        OnFastMoveEffect(); 
+        StartCoroutine(Shake());
+        StartCoroutine(FastMoveRotate());
         StartCoroutine(OffShadow());
     }
-
-    private void OnFastMoveEffect()
-    {
-        //흔들림
-        StartCoroutine(Shake());
-        
-        //회전
-        StartCoroutine(FastMoveRotate());
-    }
-    
     private IEnumerator FastMoveRotate()
     {
-
+        Debug.Log("회전 시작, 현재 스플라이트 회전: " + blockSprite.transform.localRotation.eulerAngles);
         float currentTime = 0;
         Vector3 blockOriginRot = blockSprite.transform.localRotation.eulerAngles;
         Vector3 targetRot = blockOriginRot + Vector3.forward * (RoatateValue * multipUseVecter1);
@@ -156,16 +149,21 @@ public class EffectManager : MonoBehaviour
         while (currentTime < ShadowDuration/2)
         {
             currentTime += Time.deltaTime;
-            blockSprite.transform.localRotation = Quaternion.Lerp(Quaternion.Euler(blockOriginRot), Quaternion.Euler(targetRot), currentTime/(ShadowDuration/2)  );
+            Debug.Log("바뀐 회전값: " + blockSprite.transform.localRotation);
             yield return null;
         }
+        blockSprite.transform.localRotation =  Quaternion.Euler(targetRot);
+
+        Debug.Log("회전 끝! 이제 복구 시작!");
         currentTime = 0;
         while (currentTime < ShadowDuration/2)
         {
             currentTime += Time.deltaTime;
-            blockSprite.transform.localRotation = Quaternion.Lerp(Quaternion.Euler(targetRot), Quaternion.Euler(blockOriginRot), currentTime/(ShadowDuration/2)  );
+            Debug.Log("복구 회전값: " + blockSprite.transform.localRotation);
             yield return null;
         }
+        blockSprite.transform.localRotation =  Quaternion.Euler(blockOriginRot);
+        Debug.Log("회전 끝!");
     }
 
     private IEnumerator OffShadow()
@@ -177,6 +175,7 @@ public class EffectManager : MonoBehaviour
             Shadows[i].SetActive(false);
         }
         IsShadow = false;
+        Debug.Log("그림자 끄기");
     }
 
     #endregion

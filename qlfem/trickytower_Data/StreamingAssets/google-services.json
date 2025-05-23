@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "35525550026",
+    "project_id": "trickytower",
+    "storage_bucket": "trickytower.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:35525550026:android:3dd8422bae11bd0363b933",
+        "android_client_info": {
+          "package_name": "com.TrickyTowerProject.trickytower"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwR0-Sp-nhhJC9JRQKjBYsufYitMA45Os"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
