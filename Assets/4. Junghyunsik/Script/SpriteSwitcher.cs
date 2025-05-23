@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(RawImage))]
-public class MaterialSwitcher : MonoBehaviour
+public class SpriteSwitcher : MonoBehaviour
 {
     [Tooltip("0: Race, 1: Survival, 2: Puzzle")]
     public Material[] modeMaterials;
