@@ -24,6 +24,14 @@ public class ModeBackgroundSprites
     [Header("Mountain (mountain1~3)")]
     public Sprite[] mountainSprites;  // 길이 3
     public bool hideMountains = false;
+    
+    [Header("Sky Objects")]
+    [Tooltip("태양 여부")]
+    public bool showSun = false;
+    [Tooltip("달 여부")]
+    public bool showMoon = false;
+    [Tooltip("별 여부")]
+    public bool showStars  = false;  // ← 별 추가
 }
 
 public class ModeBackgroundSwitcher : MonoBehaviour
@@ -40,9 +48,15 @@ public class ModeBackgroundSwitcher : MonoBehaviour
     [Header("Mountain Images (순서대로 mountain1~3)")]
     public Image[] mountainImages = new Image[3];
 
+    [Header("Sun & Moon")]
+    public GameObject sunObject;   
+    public GameObject moonObject;  
+    public GameObject starContainer;
+    
     [Header("모드별 배경 스프라이트 세트")]
     public ModeBackgroundSprites[] modeSets;
-
+    
+    
     /// <summary>
     /// modeIndex 번째 모드로 배경 요소 전체를 교체합니다.
     /// </summary>
@@ -123,5 +137,13 @@ public class ModeBackgroundSwitcher : MonoBehaviour
                 }
             }
         }
+        
+        // --- Sun & Moon & Stars ---
+        if (sunObject != null)
+            sunObject.SetActive(set.showSun);
+        if (moonObject != null)
+            moonObject.SetActive(set.showMoon);
+        if (starContainer != null)
+            starContainer.SetActive(set.showStars);
     }
 }

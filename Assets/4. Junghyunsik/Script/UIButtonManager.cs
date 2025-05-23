@@ -5,6 +5,16 @@ using System.Collections;
 
 public class UIButtonManager : MonoBehaviour
 {
+    [SerializeField] private GameObject roomListUI;
+    
+    MaterialSwitcher matSwitcher;
+    
+    [Header("Quad 머티리얼 스위처")]
+    [SerializeField] MaterialSwitcher materialSwitcher;
+
+    [Header("배경 스위처")]
+    [SerializeField] ModeBackgroundSwitcher backgroundSwitcher;
+    
     [Header("UI")]
     public GameObject introUI;
     public GameObject mainUI;
@@ -12,8 +22,8 @@ public class UIButtonManager : MonoBehaviour
     public GameObject helpUI;
     public GameObject playSetUI;
     public GameObject modSetUI;
-    public GameObject readyRoomUI;
-    public GameObject leaveGameUI;
+    public GameObject signupUI;
+    public GameObject eixtGameUI;
     
     [Header("Help Paging")]
     [Tooltip("Help 패널들 (Help1, Help2, Help3, Help4)")]
@@ -87,15 +97,19 @@ public class UIButtonManager : MonoBehaviour
     
     public ModeBackgroundSwitcher BackgroundSwitcher;
     
+    void Awake()
+    {
+        // 씬에 하나만 있다면 FindObjectOfType로도 OK
+        matSwitcher = FindObjectOfType<MaterialSwitcher>();
+    }
+    
     void Start()
     {
-        // 버튼 클릭에 메소드 연결
+        // 페이징 버튼 리스너
         playerPrevBtn.onClick.AddListener(() => ShowPlayerPage(playerIndex - 1));
         playerNextBtn.onClick.AddListener(() => ShowPlayerPage(playerIndex + 1));
-
         blockPrevBtn.onClick.AddListener(() => ShowBlockPage(blockIndex - 1));
         blockNextBtn.onClick.AddListener(() => ShowBlockPage(blockIndex + 1));
-
         modePrevBtn.onClick.AddListener(() => ShowModePage(modeIndex - 1));
         modeNextBtn.onClick.AddListener(() => ShowModePage(modeIndex + 1));
 
@@ -105,7 +119,7 @@ public class UIButtonManager : MonoBehaviour
         SetupPager(randomPager);
         SetupPager(matchPager);
         
-        // 초기화
+        // 초기 페이지
         ShowPlayerPage(0);
         ShowBlockPage(0);
         ShowModePage(0);
@@ -136,8 +150,8 @@ public class UIButtonManager : MonoBehaviour
             modePages[i].SetActive(i == modeIndex);
         
         // Quad1 머테리얼 스위치
-        FindObjectOfType<QuadMaterialSwitcher>()
-        .SetModeMaterial(modeIndex);
+        FindObjectOfType<ModeBackgroundSwitcher>()
+            .SetBackground(modeIndex);
         BackgroundSwitcher.SetBackground(modeIndex);
     }
     
@@ -156,7 +170,6 @@ public class UIButtonManager : MonoBehaviour
         for (int i = 0; i < pager.pages.Length; i++)
             pager.pages[i].SetActive(i == pager.index);
     }
-    
     
     
     public void HandleButton(string buttonId)
@@ -196,7 +209,6 @@ public class UIButtonManager : MonoBehaviour
                 helpUI.SetActive(false);
                 optionUI.SetActive(false);
                 playSetUI.SetActive(false);
-                leaveGameUI.SetActive(false);
                 mainUI.SetActive(true);
                 break;
 
@@ -218,7 +230,7 @@ public class UIButtonManager : MonoBehaviour
             
             case "BackToPlaySet":
                 modSetUI.SetActive(false);
-                readyRoomUI.SetActive(false);
+                roomListUI.SetActive(false);
                 playSetUI.SetActive(true);
 
                 // ▶ PlaySet Preview 컨테이너를 OFF 상태로 복원
@@ -234,30 +246,39 @@ public class UIButtonManager : MonoBehaviour
                 break;
 
             case "CreateRoom":
-                modSetUI.SetActive(false);
-                readyRoomUI.SetActive(true);
+                SceneManager.LoadScene("lobby");
                 break;
             
-            
-            //
             case "EnterRoom":
+                SceneManager.LoadScene("lobby");
+                break;
+            
+            case "EnterRoomList":
                 // 1) 인덱스 저장
                 savedPlayerIndex = playerIndex;
                 savedBlockIndex  = blockIndex;
                 // 2) PlaySet UI 위에서 바로 OFF→ON 자식 토글
                 TogglePlaySetSelection();
                 // 3) 2초 뒤 전환 코루틴
-                StartCoroutine(TransitionAfterDelay(playSetUI, readyRoomUI));
+                StartCoroutine(TransitionAfterDelay(playSetUI, roomListUI));
+                break;
+            
+            case "Signup":
+                signupUI.SetActive(true);
+                break;
+            
+            case "SignupBack":
+                signupUI.SetActive(false);
                 break;
             
             // 게임 나가기 관련
             
             case "ShowLeaveGame":
-                leaveGameUI.SetActive(true);
+                eixtGameUI.SetActive(true);
                 break;
             
             case "LeaveGameNo":
-                leaveGameUI.SetActive(false);
+                eixtGameUI.SetActive(false);
                 break;
             
             case "LeaveGameYes":
@@ -302,6 +323,12 @@ public class UIButtonManager : MonoBehaviour
     public RectTransform blocksOffContainer;
     public RectTransform blocksOnContainer;
 
+    public void OnModeSelected(int modeIndex)
+    {
+        // 오로지 BackGround RawImage 머티리얼만 바꿉니다.
+        matSwitcher.SetModeMaterial(modeIndex);
+    }
+    
     private void TogglePlaySetSelection()
     {
         // OFF 컨테이너는 꺼주고…
