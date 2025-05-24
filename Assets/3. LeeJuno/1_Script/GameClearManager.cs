@@ -29,8 +29,6 @@ public class GameClearManager : NetworkBehaviour
         if (Instance == null)
             Instance = this;
         else Destroy(gameObject);
-
-        DontDestroyOnLoad(gameObject);
     }
 
     public void RaceModeClear(PlayerRef winner) //레이스모드 관련로직

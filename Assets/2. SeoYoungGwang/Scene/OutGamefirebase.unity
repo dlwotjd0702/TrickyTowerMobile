@@ -16435,14 +16435,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1648c53bcb471c5448f0615c5fa9e614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomListUI: {fileID: 0}
+  materialSwitcher: {fileID: 0}
+  backgroundSwitcher: {fileID: 0}
   introUI: {fileID: 4012455600575009152}
   mainUI: {fileID: 2384802070261694890}
   optionUI: {fileID: 1939088947250717299}
   helpUI: {fileID: 1459720370}
   playSetUI: {fileID: 496995206}
   modSetUI: {fileID: 1200787737}
-  readyRoomUI: {fileID: 1516156483}
-  leaveGameUI: {fileID: 564860915}
+  signupUI: {fileID: 0}
+  eixtGameUI: {fileID: 0}
   helpPages:
   - {fileID: 782281705}
   - {fileID: 255917659}
@@ -32429,12 +32432,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81ce4b900435a034ca2d904306838fcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ttlMinutes: 1
+  networkManager: {fileID: 0}
+  sessionName: 
   inputemail: {fileID: 0}
   inputpassword: {fileID: 0}
   inputnick: {fileID: 0}
   SessionName: {fileID: 0}
   LoginButton: {fileID: 0}
   SigninButton: {fileID: 0}
+  sessionButton: {fileID: 0}
 --- !u!1 &2063436054
 GameObject:
   m_ObjectHideFlags: 0
@@ -41606,20 +41613,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77bd6e767a3a7494092b3aa352345260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfxBars:
-  - {fileID: 6473585449491755155}
-  - {fileID: 5820739048398813349}
-  - {fileID: 5700365667318162441}
-  - {fileID: 7310621913512254090}
-  - {fileID: 2784540213027991061}
-  musicBars:
-  - {fileID: 5873296123272997652}
-  - {fileID: 7384839375615216492}
-  - {fileID: 266831363552547644}
-  - {fileID: 4406211680244852310}
-  - {fileID: 6093542918811933804}
-  barOn: {fileID: 21300000, guid: d3465724a486a7c478615323ae73b5e6, type: 3}
-  barOff: {fileID: 21300000, guid: 5672a50e55c0de34db78c180502b7929, type: 3}
 --- !u!1 &7933889784466122939
 GameObject:
   m_ObjectHideFlags: 0

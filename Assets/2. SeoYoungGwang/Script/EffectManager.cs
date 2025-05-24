@@ -72,6 +72,8 @@ public class EffectManager : MonoBehaviour
         OnShake();
         ChangeLandVisual();
         LandVisualUpdate();
+        transform.position = Block.transform.position;
+        Debug.Log(transform.position);
     }
 
     #region 착지 시 흔들리는 효과

@@ -12,7 +12,7 @@ public class NetworkSpawnHandler : NetworkBehaviour,INetworkRunnerCallbacks
     public NetworkManager networkManager;
     public EffectManager  effectManager;
     public SoundManager soundManager;
-   // public IngameUiManager ingameUiManager;
+    public IngameUiManager ingameUiManager;
 
    [Rpc(sources: RpcSources.All, targets: RpcTargets.StateAuthority)]
     public void RPC_RequestBlockSpawn(RpcInfo info = default)
@@ -29,9 +29,9 @@ public class NetworkSpawnHandler : NetworkBehaviour,INetworkRunnerCallbacks
 
     public void SpawnBlockFor(NetworkRunner runner, PlayerRef player, Vector3 spawnPoint)
     {
-       // if(ingameUiManager.preIndex == null)
-       //     ingameUiManager.preIndex = Random.Range(0, blockPrefabs.Length);
-        //NetworkObject obj = runner.Spawn(blockPrefabs[ingameUiManager.preIndex], spawnPoint, Quaternion.identity, player);
+       //if(ingameUiManager.preIndex == null)
+       //    ingameUiManager.preIndex = Random.Range(0, blockPrefabs.Length);
+       //NetworkObject obj = runner.Spawn(blockPrefabs[ingameUiManager.preIndex], spawnPoint, Quaternion.identity, player);
        int i = Random.Range(0, blockPrefabs.Length);
        var obj = runner.Spawn(blockPrefabs[i], spawnPoint, Quaternion.identity, player);
 
@@ -47,9 +47,10 @@ public class NetworkSpawnHandler : NetworkBehaviour,INetworkRunnerCallbacks
                effectManager.isBlockChange = true;
                soundManager.currentBlock = obj.gameObject;
            }
+           //ingameUiManager.NewBlockChoice();
        }
 
-       //ingameUiManager.NewBlockChoice();
+       
     }
 
 
