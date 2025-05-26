@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 82abef5c185c85340be048cdc842fb9a
+<<<<<<<< HEAD:Assets/3. LeeJuno/0_Scene/JUNO_Buildsetting/CombinateGame.unity.meta
+guid: d781b0185c199dc4b9793400308004df
+========
+guid: bca9d02f77895c54ca4df2006df7daa0
+>>>>>>>> Play:Assets/2. SeoYoungGwang/Scene/MethodTest.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
