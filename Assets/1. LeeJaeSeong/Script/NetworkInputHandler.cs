@@ -33,6 +33,10 @@ public class NetworkInputHandler : MonoBehaviour, INetworkRunnerCallbacks,IPoint
         // 🔸 키 눌림 체크 → flag 저장
         KeyBoardInput();
         RotateOnClick();
+        LeftMoveOnClick();
+        RightMoveOnClick();
+        LeftFastMoveOnClick();
+        RightFastMoveOnClick();
 
     }
 
@@ -58,37 +62,51 @@ public class NetworkInputHandler : MonoBehaviour, INetworkRunnerCallbacks,IPoint
 
     private void RotateOnClick()
     {
-        _rotateQueued = true;
+        if (leftRotateButton.onClick || rightRotateButton.onClick)
+        {
+            _rotateQueued = true;
+            leftRotateButton.onClick =  false;
+            rightRotateButton.onClick = false;
+        }
     }
     
     private void LeftMoveOnClick()
     {
-        
+        if (leftMoveButton.onClick)
+        {
+            leftMoveButton.onClick = false;
+        }
     }
     
     private void RightMoveOnClick()
     {
-        
+        if (rightMoveButton.onClick)
+        {
+            rightMoveButton.onClick = false;
+        }
     }
 
     private void LeftFastMoveOnClick()
     {
-        effectManager.IsShadow = true;
-        effectManager.isRight = false;
-        isLeftFastMove = true;
-        Debug.Log("isLeftFastMove");
+        if (leftFastMoveButton.onClick)
+        {
+            effectManager.IsShadow = true;
+            effectManager.isRight = false;
+            isLeftFastMove = true;
+            Debug.Log("isLeftFastMove");
+            leftFastMoveButton.onClick = false;
+        }
     }
 
     private void RightFastMoveOnClick()
     {
-        effectManager.IsShadow = true;
-        effectManager.isRight = true;
-        isRightFastMove = true;
-    }
-
-    private void DownMoveOnClick()
-    {
-        
+        if (rightFastMoveButton.onClick)
+        {
+            effectManager.IsShadow = true;
+            effectManager.isRight = true;
+            isRightFastMove = true;
+            rightFastMoveButton.onClick = false;
+        }
     }
 
     public void OnInput(NetworkRunner runner, NetworkInput input)
@@ -106,7 +124,7 @@ public class NetworkInputHandler : MonoBehaviour, INetworkRunnerCallbacks,IPoint
         {
             MoveX    = moveX,
             Rotate   = _rotateQueued,
-            FastDown = Input.GetKey(KeyCode.S),
+            FastDown = downButton.isClick,
             leftFastMove = isLeftFastMove,
             rightFastMove = isRightFastMove
         };
