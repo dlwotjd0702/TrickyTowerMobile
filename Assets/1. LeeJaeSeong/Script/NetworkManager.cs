@@ -14,6 +14,7 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     [Header("외부 연결")]
     public NetworkInputHandler inputHandler;
     public NetworkSpawnHandler spawnHandler;
+    public GameRuleManager gameRuleManager;
     public CameraManager cameraManager;
     public FirebaseAccountManager firebaseAccountManager;
     public float heartbeatInterval = 10f;
@@ -195,6 +196,9 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
 
     public void OnShutdown(NetworkRunner runner, ShutdownReason reason)
     {
+    }
+
+    /*{
         if (heartbeatRoutine != null)
         {
             StopCoroutine(heartbeatRoutine);
@@ -206,7 +210,7 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
            firebaseAccountManager.DeleteSessionDocument(sessionName);
 
         }
-    }
+    }*/
     public void OnDisconnectedFromServer(NetworkRunner runner, NetDisconnectReason reason)
     {
         
@@ -242,19 +246,21 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
         Debug.Log("찾기");
         yield return new WaitUntil(() => FindObjectOfType<NetworkSpawnHandler>() != null);
+        yield return new WaitUntil(() => FindObjectOfType<GameRuleManager>() != null);
         Debug.Log("찾기완료");
 
         // 이제 안전하게 초기화 코드 실행
         spawnHandler = FindObjectOfType<NetworkSpawnHandler>();
         cameraManager     = FindObjectOfType<CameraManager>();
         inputHandler   = FindObjectOfType<NetworkInputHandler>();
-        
-        if(spawnHandler ==null) Debug.Log("아씨발1");
-        if(cameraManager ==null) Debug.Log("아씨발2");
-        if(inputHandler ==null) Debug.Log("아씨발3");
+        gameRuleManager   = FindObjectOfType<GameRuleManager>();
+  
 
         runner.AddCallbacks(spawnHandler);
         runner.AddCallbacks(inputHandler);
+   
+        
+        //gameRuleManager.StartCupGame(GameType.Race);
 
         // 모든 플레이어에 대해 처리
         foreach (var player in runner.ActivePlayers)
@@ -270,11 +276,25 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
             // 3) 블록 스폰
             if (runner.IsServer)
             {
+                {
+                    if (heartbeatRoutine != null)
+                    {
+                        StopCoroutine(heartbeatRoutine);
+                        heartbeatRoutine = null;
+                    }
+                    if (runner.IsServer)
+                    {
+                        if(firebaseAccountManager==null) firebaseAccountManager = FindObjectOfType<FirebaseAccountManager>();
+                        firebaseAccountManager.DeleteSessionDocument(sessionName);
+
+                    }
+                }
+                gameRuleManager.StartCupGame(GameType.Survival);
                 spawnHandler.SpawnBlockFor(runner, player, offset);
             }
             
         }
-
+        
         
     }
     public void OnObjectEnterAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player) { }

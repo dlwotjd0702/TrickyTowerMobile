@@ -9,6 +9,7 @@ public class IngameUiManager : MonoBehaviour
     [SerializeField] private NetworkSpawnHandler networkSpawnHandler;
     
     [SerializeField] private Image[] NextBlockImage;
+    
     public string PlayerNumber;
     public int newIndex;
     public int preIndex;

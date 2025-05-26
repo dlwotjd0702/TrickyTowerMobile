@@ -19,8 +19,6 @@ public enum GameType
 
 public class GameRuleManager : NetworkBehaviour
 {
-    public static GameRuleManager Instance;
-
     [SerializeField]
     private GameObject raceMode;
 
@@ -38,23 +36,13 @@ public class GameRuleManager : NetworkBehaviour
 
     private int roundIndex = 0;
     private bool gameActive = true;
+    private bool isInvinsible = false;
     private PlayType playType;
 
     public override void Spawned()
     {
         if (Runner.IsServer == false) return;
         GameClearManager.Instance.RoundCleared += RoundCleared;
-
-        if (Instance != null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(this);
-        }
-
-        DontDestroyOnLoad(this);
     }
 
     private void OnDestroy()
@@ -63,15 +51,15 @@ public class GameRuleManager : NetworkBehaviour
         GameClearManager.Instance.RoundCleared -= RoundCleared;
     }
 
-    public void StartCupGame()
+    public void StartCupGame(GameType type)
     {
         playType = PlayType.Cup;
         GameClearManager.Instance.ResetScore();
         scoreBoard.ResetSlots();
 
         gameActive = true;
-        roundIndex = 0;
-        ActiveMode((GameType)roundIndex);
+        roundIndex = (int)type;
+        ActiveMode(type);
     }
 
     public void StartSelectGame(GameType type)
@@ -107,13 +95,20 @@ public class GameRuleManager : NetworkBehaviour
 
     private void RoundCleared(PlayerRef winner, GameType gameType)
     {
+        Debug.Log("라운드끝");
         if (gameActive == false) return;
-
+        Debug.Log("다음라운드");
         var ranking = GameClearManager.Instance.GetLastRoundRanking();
         //** 플레이어 점수UI 띄우기**
         scoreBoard.FillMedals(ranking);
 
         int winnerScore = GameClearManager.Instance.GetPlayerScore(winner);
+        
+        GameClearManager.Instance.RemoveAllBlocks();
+        GameClearManager.Instance.AllowAllBlocks();
+        GameClearManager.Instance.ClearPlayers();
+        GameClearManager.Instance.ClearFalse();
+         Debug.Log("1");
         if (winnerScore >= cupTargetScore || playType == PlayType.Selection)
         {
             GameClear();
@@ -121,7 +116,7 @@ public class GameRuleManager : NetworkBehaviour
         else
         {
             roundIndex = (roundIndex + 1);
-            //if (roundIndex >= 3)roundIndex
+            if (roundIndex >= 3) roundIndex = 0;
             Invoke(nameof(NextRound), 5f);
         }
     }

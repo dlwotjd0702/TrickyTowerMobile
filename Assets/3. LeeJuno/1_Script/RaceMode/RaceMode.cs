@@ -4,17 +4,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fusion;
 
-public class RaceMode : MonoBehaviour 
+public class RaceMode : MonoBehaviour
 {
     //결승선에 3초간 닿으면 게임종료
+    [SerializeField]
+    private float speed = 0.1f;
+
     private float timer = 0f;
     private PlayerRef? currentPlayer = null;
     private bool playerTouched = false;
+   
     private int blockCount = 0;
-    
+
 
     private void Update()
     {
+        if (GameClearManager.Instance.clear) return;
+        var vector3 = transform.position;
+        vector3.y = transform.position.y - speed * Time.deltaTime;
+        transform.position = vector3;
+
         #region DebugKey
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -50,6 +59,7 @@ public class RaceMode : MonoBehaviour
 
         if (timer >= 3f)
         {
+            
             if (currentPlayer != null)
                 GameClearManager.Instance.RaceModeClear(currentPlayer.Value);
 
@@ -60,13 +70,13 @@ public class RaceMode : MonoBehaviour
     //** 시간비례 해서 선내려옴 **
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer != LayerMask.NameToLayer("Block")) return;
+        if (other.gameObject.layer != LayerMask.NameToLayer("Block") || GameClearManager.Instance.clear) return;
 
         var block = other.GetComponent<NetworkObject>();
         if (block == null) return;
 
-        // var blockCon = other.GetComponent<NetworkBlockController>();
-        // if (blockCon.IsPlaced == false) return;
+        var blockCon = other.GetComponent<NetworkBlockController>();
+        if (blockCon.IsPlaced == false) return;
 
         blockCount++;
         playerTouched = true;
@@ -81,6 +91,9 @@ public class RaceMode : MonoBehaviour
 
         var block = other.GetComponent<NetworkObject>();
         if (block == null) return;
+
+        var blockCon = other.GetComponent<NetworkBlockController>();
+        if (blockCon.IsPlaced == false) return;
 
         blockCount--;
         if (blockCount <= 0)
