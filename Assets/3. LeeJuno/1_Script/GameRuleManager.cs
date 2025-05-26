@@ -19,7 +19,7 @@ public enum GameType
 
 public class GameRuleManager : NetworkBehaviour
 {
-    public static GameRuleManager Instance;
+    
 
     [SerializeField]
     private GameObject raceMode;
@@ -45,16 +45,7 @@ public class GameRuleManager : NetworkBehaviour
         if (Runner.IsServer == false) return;
         GameClearManager.Instance.RoundCleared += RoundCleared;
 
-        if (Instance != null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(this);
-        }
-
-        DontDestroyOnLoad(this);
+     
     }
 
     private void OnDestroy()
@@ -63,15 +54,15 @@ public class GameRuleManager : NetworkBehaviour
         GameClearManager.Instance.RoundCleared -= RoundCleared;
     }
 
-    public void StartCupGame()
+    public void StartCupGame(GameType type)
     {
         playType = PlayType.Cup;
         GameClearManager.Instance.ResetScore();
         scoreBoard.ResetSlots();
 
         gameActive = true;
-        roundIndex = 0;
-        ActiveMode((GameType)roundIndex);
+        roundIndex = (int)type;
+        ActiveMode(type);
     }
 
     public void StartSelectGame(GameType type)
@@ -121,7 +112,7 @@ public class GameRuleManager : NetworkBehaviour
         else
         {
             roundIndex = (roundIndex + 1);
-            //if (roundIndex >= 3)roundIndex
+            if (roundIndex >= 3) roundIndex = 0;
             Invoke(nameof(NextRound), 5f);
         }
     }

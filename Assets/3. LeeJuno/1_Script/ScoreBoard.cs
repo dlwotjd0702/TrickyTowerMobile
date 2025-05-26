@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Fusion;
 using UnityEngine;
-
+//** UI와 연동필요 **
 public class ScoreBoard : NetworkBehaviour
 {
     [Header("Medal Prefabs")]
