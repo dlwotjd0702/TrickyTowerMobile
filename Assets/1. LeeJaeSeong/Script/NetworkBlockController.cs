@@ -56,7 +56,7 @@ public class NetworkBlockController : NetworkBehaviour
         }
         
         // 블록 콜라이더 좀 줄이기
-        foreach (var c in GetComponents<BoxCollider2D>()) c.size *= 0.8f;
+        foreach (var c in GetComponents<BoxCollider2D>()) c.size *= 0.9f;
 
     }
 
@@ -111,8 +111,11 @@ public class NetworkBlockController : NetworkBehaviour
             }
 
             // 빠른/자동 하강
-            float speed = input.FastDown ? downSpeed * 5f : downSpeed;
-            transform.position += Vector3.down * (speed * Runner.DeltaTime);
+            if (Runner.IsServer)
+            {
+                float speed = input.FastDown ? downSpeed * 5f : downSpeed;
+                transform.position += Vector3.down * (speed * Runner.DeltaTime);
+            }
         }
     }
 
@@ -131,7 +134,7 @@ public class NetworkBlockController : NetworkBehaviour
             foreach (var c in GetComponents<BoxCollider2D>())
             {
                 c.isTrigger = false;
-                c.size /= 0.8f;
+                c.size /= 0.9f;
             }
             gameObject.tag     = "Floor";
             if (networkManager == null)

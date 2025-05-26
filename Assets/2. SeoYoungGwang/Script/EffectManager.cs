@@ -138,7 +138,7 @@ public class EffectManager : MonoBehaviour
             Shadows[i].SetActive(true);
         }
         StartCoroutine(Shake());
-        StartCoroutine(FastMoveRotate());
+        //StartCoroutine(FastMoveRotate());
         StartCoroutine(OffShadow());
     }
     private IEnumerator FastMoveRotate()

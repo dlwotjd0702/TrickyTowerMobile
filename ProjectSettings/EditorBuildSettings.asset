@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/1. LeeJaeSeong/Scene/New Folder/OutGame.unity
-    guid: 4a06f48dd85306e4bb76bfb850a1bc4e
+    path: Assets/2. SeoYoungGwang/Buildsetting/OutGame.unity
+    guid: 1f5465125caa1584dab45fed8a145d36
   - enabled: 1
-    path: Assets/1. LeeJaeSeong/Scene/New Folder/Lobby.unity
-    guid: a010dda73aebe7c42941a4c56150adf1
+    path: Assets/2. SeoYoungGwang/Buildsetting/Lobby.unity
+    guid: a978db30aacb71d4290a9d4afba23faf
   - enabled: 1
-    path: Assets/1. LeeJaeSeong/Scene/CombinateGame.unity
-    guid: d66128d5e2323cd4d83a295e9d0d1b8c
+    path: Assets/2. SeoYoungGwang/Buildsetting/CombinateGame.unity
+    guid: 04fa4cd905170b645b62096c517b2788
   m_configObjects: {}

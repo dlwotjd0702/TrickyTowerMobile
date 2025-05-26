@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Fusion;
 using Fusion.Sockets;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NetworkInputHandler : MonoBehaviour, INetworkRunnerCallbacks
 {
@@ -20,6 +21,8 @@ public class NetworkInputHandler : MonoBehaviour, INetworkRunnerCallbacks
 
     private void Update()
     {
+        //if()
+        
         // 🔸 키 눌림 체크 → flag 저장
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
             _rotateQueued = true;
