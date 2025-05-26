@@ -7,17 +7,7 @@
     <list default="true" id="33ec4f3c-9a43-40ac-a265-51209e7b0009" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/FirebaseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/FirebaseManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Scene.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Scene/InGameTest.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Scene/InGameTest.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Scene/OutGame.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Scene/OutGame.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Scene/lobby.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Scene/lobby.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/LobbyPlayerUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/LobbyPlayerUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/UIButtonManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/UIButtonManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/FusionDemos/Photon-Fusion-Intro-Sample-2.0.6-Stable-1034.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/OutGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/OutGame.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +145,8 @@
       <workItem from="1748221023758" duration="2369000" />
       <workItem from="1748224141379" duration="11788000" />
       <workItem from="1748238641722" duration="6000" />
-      <workItem from="1748238661406" duration="10816000" />
+      <workItem from="1748238661406" duration="12483000" />
+      <workItem from="1748252144347" duration="1218000" />
     </task>
     <servers />
   </component>

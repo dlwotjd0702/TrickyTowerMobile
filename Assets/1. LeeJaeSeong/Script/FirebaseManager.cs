@@ -228,9 +228,7 @@ public class FirebaseAccountManager : MonoBehaviour
                 networkManager.sessionName = sessionName;
                 // 2) 호스트 시작
                 networkManager.StartHost();
-                // 3) 호스트 룸 씬(예: "Lobby") 로 전환
                 DOTween.KillAll();
-                SceneManager.LoadScene("Lobby");
             } 
             
         });
