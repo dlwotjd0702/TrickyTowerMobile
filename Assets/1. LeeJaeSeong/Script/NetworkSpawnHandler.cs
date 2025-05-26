@@ -19,6 +19,13 @@ public class NetworkSpawnHandler : NetworkBehaviour, INetworkRunnerCallbacks
     public void RPC_RequestBlockSpawn(RpcInfo info = default)
     {
         var player = info.Source;
+
+        if (GameClearManager.Instance.CanSpawn(player) == false) //블럭 스폰 차단중인지 검사
+        {
+            Debug.Log($"스폰 차단중 {player}");
+            return;
+        }
+
         int idx = networkManager.GetPlayerJoinIndex(player);
         Debug.Log("스폰되기전");
         if (idx < 0 || idx >= networkManager.spawnOffsets.Length) return;
@@ -33,25 +40,32 @@ public class NetworkSpawnHandler : NetworkBehaviour, INetworkRunnerCallbacks
         //if(ingameUiManager.preIndex == null)
         //    ingameUiManager.preIndex = Random.Range(0, blockPrefabs.Length);
         //NetworkObject obj = runner.Spawn(blockPrefabs[ingameUiManager.preIndex], spawnPoint, Quaternion.identity, player);
+
+        if (GameClearManager.Instance.CanSpawn(player) == false) //블럭 스폰 차단중인지 검사
+        {
+            Debug.Log($"스폰 차단중 {player}");
+            return;
+        }
+
         int i = Random.Range(0, blockPrefabs.Length);
         var obj = runner.Spawn(blockPrefabs[i], spawnPoint, Quaternion.identity, player);
-       
+
         //서바이벌 모드 블럭스폰 이벤트
         SurvivalEvents.Spawned(player);
 
-         if (player == runner.LocalPlayer)
-         {
-             if (obj.TryGetComponent<NetworkBlockController>(out var ctrl))
-             {
-                 ctrl.effectManager = effectManager;
-                 ctrl.soundManager = soundManager;
-                 ctrl.networkManager = networkManager;
-                 effectManager.Block = obj.gameObject;
-                 effectManager.isBlockChange = true;
-                 soundManager.currentBlock = obj.gameObject;
-             }
-             //ingameUiManager.NewBlockChoice();
-         }
+        if (player == runner.LocalPlayer)
+        {
+            if (obj.TryGetComponent<NetworkBlockController>(out var ctrl))
+            {
+                ctrl.effectManager = effectManager;
+                ctrl.soundManager = soundManager;
+                ctrl.networkManager = networkManager;
+                effectManager.Block = obj.gameObject;
+                effectManager.isBlockChange = true;
+                soundManager.currentBlock = obj.gameObject;
+            }
+            //ingameUiManager.NewBlockChoice();
+        }
     }
 
 

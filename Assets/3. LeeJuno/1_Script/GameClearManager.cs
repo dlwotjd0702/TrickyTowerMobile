@@ -7,10 +7,12 @@ using UnityEngine;
 
 //추가해야할 사항 
 // 1. 서바이벌 블럭과 hp 카운트 이벤트 블럭스포너에 연결 V
-// 2. 블럭생성기에 플레이어 블럭생성을 막는 로직추가 
-// 지정플레이어 막는기능, 모든플레이어 막는기능, 배치안된 블럭제거하는 기능 
+// 2. 블럭생성기에 플레이어 블럭생성을 막는 로직추가 V
+// 지정플레이어 막는기능, 모든플레이어 막는기능,
+// 게임오버시에 배치안된 블럭제거하는 기능 
+// 지정플레이어 제거, 모든 플레이어제거
 // 3. 서바이벌 모드 판정 쌓인 블럭갯수에서 남은블럭 갯수로 변경
-//4. 게임끝나면 블럭 전부 삭제
+// 4. 게임끝나면 블럭 전부 삭제
 
 public class GameClearManager : NetworkBehaviour
 {
@@ -25,6 +27,8 @@ public class GameClearManager : NetworkBehaviour
     private PlayerRef[] lastRoundRank;
     private GameType currentGameType;
     public bool clear { get; private set; }
+    private bool stopAllSpawns = false;
+    private HashSet<PlayerRef> blockedPlayers = new HashSet<PlayerRef>();
 
     private void Awake()
     {
@@ -33,12 +37,29 @@ public class GameClearManager : NetworkBehaviour
         else Destroy(gameObject);
     }
 
+    //-------------블럭 소환 차단 관련로직--------------
+    public void StopAllSpawns() => stopAllSpawns = true; //모두 차단
+    public void AllowAllBlocks() => stopAllSpawns = false; //모두 허용
+
+    public void StopPlayer(PlayerRef p) => blockedPlayers.Add(p); //지정 차단
+    public void UnblockPlayer(PlayerRef p) => blockedPlayers.Remove(p); //지정 차단해제
+    public void ClearPlayers() => blockedPlayers.Clear(); //모든 지정 차단해제
+
+    public bool CanSpawn(PlayerRef p) // 스폰가능 검사
+        => stopAllSpawns == false && blockedPlayers.Contains(p) == false;
+
+    public void ClearFalse() => clear = false;
+
+    //--------------블럭 삭제 관련로직-----------------
+    
     public void RaceModeClear(PlayerRef winner) //레이스모드 관련로직
     {
         clear = true;
         currentGameType = GameType.Race;
         Debug.Log("clearRace");
-        //** 모든플레이어 블럭생성막힘 추가 필요 **
+
+        //모든플레이어 블럭생성막힘 추가
+        StopAllSpawns();
 
         //레이스모드 종료후 1,2,3,4등 판정
         IEnumerable<NetworkObject> allBlocks = GameObject.FindObjectsOfType<NetworkObject>()
@@ -94,7 +115,10 @@ public class GameClearManager : NetworkBehaviour
         if (failedPlayers.Contains(player)) return;
 
         failedPlayers.Add(player);
-        //** 해당 플레이어 블럭생성중지 **
+
+        // 해당 플레이어 블럭생성중지 
+        StopPlayer(player);
+
         Debug.Log($"{player} 탈락");
 
         if (failedPlayers.Count >= Runner.ActivePlayers.Count()) //모든 플레이어 종료확인
@@ -109,7 +133,10 @@ public class GameClearManager : NetworkBehaviour
         currentGameType = GameType.Survival;
         //인자값으로 1등 남은 플레이어는 blockCount가 낮은순으로 등수
         Debug.Log("Survival clear");
-        //** 모든 플레이어 블럭생성을 막는로직**
+
+        // 모든 플레이어 블럭생성을 막는로직
+        StopAllSpawns();
+
         //** 지금은 쌓여진 블럭갯수로 판정 나중에 남은블럭으로 판정하게 변경 **
         var allBlocks = GameObject.FindObjectsOfType<NetworkObject>()
             .Where(no => no.gameObject.layer == LayerMask.NameToLayer("Block"))
@@ -133,7 +160,10 @@ public class GameClearManager : NetworkBehaviour
     public void SurvivePlayerDie(PlayerRef player) //마지막 생존자 찾는 로직
     {
         if (failedPlayers.Add(player) == false) return;
-        //** 해당 플레이어 블럭 생성막는 로직**
+        Debug.Log(player + "죽음");
+        // 해당 플레이어 블럭 생성막는 로직
+        
+
         int total = Runner.ActivePlayers.Count();
 
         if (failedPlayers.Count >= total - 1)

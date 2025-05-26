@@ -97,11 +97,17 @@ public class GameRuleManager : NetworkBehaviour
     {
         if (gameActive == false) return;
 
+
         var ranking = GameClearManager.Instance.GetLastRoundRanking();
         //** 플레이어 점수UI 띄우기**
         scoreBoard.FillMedals(ranking);
 
         int winnerScore = GameClearManager.Instance.GetPlayerScore(winner);
+
+        GameClearManager.Instance.AllowAllBlocks();
+        GameClearManager.Instance.ClearPlayers();
+        GameClearManager.Instance.ClearFalse();
+
         if (winnerScore >= cupTargetScore || playType == PlayType.Selection)
         {
             GameClear();
@@ -130,5 +136,4 @@ public class GameRuleManager : NetworkBehaviour
                 .ToArray();
         //** 최종 점수UI 띄우기 **
     }
-    
 }

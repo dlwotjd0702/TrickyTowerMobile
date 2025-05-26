@@ -183,7 +183,6 @@ public class NetworkBlockController : NetworkBehaviour
 
     private void SurvivalHPDown(PlayerRef p)
     {
-        Debug.Log("이벤트 호출");
         SurvivalEvents.Destroyed(p);
     }
 }
