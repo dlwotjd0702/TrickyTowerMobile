@@ -95,15 +95,16 @@ public class GameRuleManager : NetworkBehaviour
 
     private void RoundCleared(PlayerRef winner, GameType gameType)
     {
+        Debug.Log("라운드끝");
         if (gameActive == false) return;
-
-
+        Debug.Log("다음라운드");
         var ranking = GameClearManager.Instance.GetLastRoundRanking();
         //** 플레이어 점수UI 띄우기**
         scoreBoard.FillMedals(ranking);
 
         int winnerScore = GameClearManager.Instance.GetPlayerScore(winner);
-
+        
+        GameClearManager.Instance.RemoveAllBlocks();
         GameClearManager.Instance.AllowAllBlocks();
         GameClearManager.Instance.ClearPlayers();
         GameClearManager.Instance.ClearFalse();

@@ -51,7 +51,50 @@ public class GameClearManager : NetworkBehaviour
     public void ClearFalse() => clear = false;
 
     //--------------블럭 삭제 관련로직-----------------
-    
+    public void RemoveUnplacedBlock(PlayerRef p) // 지정 플레이어 배치안된 블럭제거
+    {
+        if (Runner.IsServer == false) return;
+
+        var toRemove = GameObject.FindObjectsOfType<NetworkObject>()
+            .Where(no => no.gameObject.layer == LayerMask.NameToLayer("Block"))
+            .Where(no => no.InputAuthority == p)
+            .Where(no => no.TryGetComponent<NetworkBlockController>(out var ctrl)
+                         && ctrl.IsPlaced == false);
+        foreach (var obj in toRemove)
+        {
+            Runner.Despawn(obj);
+        }
+    }
+
+    public void RemoveUnplacedAllBlocks()// 모든 플레이어 배치안된 블럭제거
+    {
+        if (Runner.IsServer == false) return;
+        
+        var toRemove = GameObject.FindObjectsOfType<NetworkObject>()
+            .Where(no => no.gameObject.layer == LayerMask.NameToLayer("Block"))
+            .Where(no => no.TryGetComponent<NetworkBlockController>(out var ctrl)
+                         && ctrl.IsPlaced == false);
+        
+        foreach (var obj in toRemove)
+        {
+            Runner.Despawn(obj);
+        }
+    }
+
+    public void RemoveAllBlocks() // 모든 블럭제거
+    {
+        if (Runner.IsServer == false) return;
+
+        var allBlocks = GameObject.FindObjectsOfType<NetworkObject>()
+            .Where(no => no.gameObject.layer == LayerMask.NameToLayer("Block"));
+
+        foreach (var block in allBlocks)
+        {
+            Runner.Despawn(block);
+        }
+    }
+    //---------------------------------------------
+
     public void RaceModeClear(PlayerRef winner) //레이스모드 관련로직
     {
         clear = true;
@@ -60,7 +103,8 @@ public class GameClearManager : NetworkBehaviour
 
         //모든플레이어 블럭생성막힘 추가
         StopAllSpawns();
-
+        RemoveUnplacedAllBlocks();
+        
         //레이스모드 종료후 1,2,3,4등 판정
         IEnumerable<NetworkObject> allBlocks = GameObject.FindObjectsOfType<NetworkObject>()
             .Where(no => no.gameObject.layer == LayerMask.NameToLayer("Block"))
@@ -89,7 +133,7 @@ public class GameClearManager : NetworkBehaviour
         currentGameType = GameType.Puzzle;
         Debug.Log("Puzzle clear");
         //그후에 남은 벽돌 개수를 세서 많은순으로 1,2,3,4 판정
-
+        
         IEnumerable<NetworkObject> allBlocks = GameObject.FindObjectsOfType<NetworkObject>()
             .Where(no => no.gameObject.layer == LayerMask.NameToLayer("Block"))
             .Where(no => no.TryGetComponent<NetworkBlockController>(out var controller) && controller.IsPlaced);
@@ -110,10 +154,12 @@ public class GameClearManager : NetworkBehaviour
         AssignScore(ranking);
     }
 
-    public void PlayerFailed(PlayerRef player) //플레이어 탈락 감지 로직
+    public void PuzzlePlayerEnd(PlayerRef player) //퍼즐 플레이어 탈락 감지 로직
     {
         if (failedPlayers.Contains(player)) return;
 
+        RemoveUnplacedBlock(player);
+       
         failedPlayers.Add(player);
 
         // 해당 플레이어 블럭생성중지 
@@ -136,6 +182,7 @@ public class GameClearManager : NetworkBehaviour
 
         // 모든 플레이어 블럭생성을 막는로직
         StopAllSpawns();
+        RemoveUnplacedAllBlocks();
 
         //** 지금은 쌓여진 블럭갯수로 판정 나중에 남은블럭으로 판정하게 변경 **
         var allBlocks = GameObject.FindObjectsOfType<NetworkObject>()
@@ -161,8 +208,10 @@ public class GameClearManager : NetworkBehaviour
     {
         if (failedPlayers.Add(player) == false) return;
         Debug.Log(player + "죽음");
+
+        RemoveUnplacedBlock(player);
         // 해당 플레이어 블럭 생성막는 로직
-        
+        StopPlayer(player);
 
         int total = Runner.ActivePlayers.Count();
 
@@ -184,6 +233,7 @@ public class GameClearManager : NetworkBehaviour
 
     private void AssignScore(PlayerRef[] ranking)
     {
+        Debug.Log("점수정산");
         lastRoundRank = ranking;
         for (int i = 0; i < ranking.Length; i++)
         {
@@ -194,9 +244,10 @@ public class GameClearManager : NetworkBehaviour
                 : 0;
             scoreData.AddScore(ranking[i], score);
         }
-
+        Debug.Log("정산끝");
         ScoreDebug();
         RoundCleared?.Invoke(lastRoundRank[0], currentGameType);
+        Debug.Log("인보크");
     }
 
     private void ScoreDebug()

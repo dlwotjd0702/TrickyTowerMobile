@@ -15,6 +15,6 @@ public class PuzzleMode : MonoBehaviour
         if (block.IsPlaced == false) return;
         
         Destroy(block.gameObject);
-        GameClearManager.Instance.PlayerFailed(block.Object.InputAuthority);
+        GameClearManager.Instance.PuzzlePlayerEnd(block.Object.InputAuthority);
     }
 }
