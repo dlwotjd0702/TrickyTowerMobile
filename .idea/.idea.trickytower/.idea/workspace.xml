@@ -6,15 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="33ec4f3c-9a43-40ac-a265-51209e7b0009" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkInputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkInputHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkSpawnHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkSpawnHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Buildsetting/CombinateGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Buildsetting/CombinateGame.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/Managed/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/Managed/Assembly-CSharp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/boot.config" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/boot.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/level2" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/level2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/resources.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/resources.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets2.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets2.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets2.assets.resS" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets2.assets.resS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Script/ButtonController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Script/ButtonController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +143,7 @@
       <workItem from="1747875907279" duration="13182000" />
       <workItem from="1747962313003" duration="17264000" />
       <workItem from="1748220447745" duration="11671000" />
-      <workItem from="1748243351022" duration="2069000" />
+      <workItem from="1748243351022" duration="3372000" />
     </task>
     <servers />
   </component>

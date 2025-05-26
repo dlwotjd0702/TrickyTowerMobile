@@ -5,16 +5,17 @@ using UnityEngine.EventSystems;
 
 public class ButtonController : MonoBehaviour, IPointerDownHandler,  IPointerUpHandler
 {
-    public bool OnClick = false;
+    public bool onClick = false;
+    public bool OffClick = false;
 
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        OnClick = true;
+        onClick = true;
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        OnClick = false;
+        OffClick = true;
     }
 }
