@@ -116,7 +116,7 @@ public class NetworkBlockController : NetworkBehaviour
         }
     }
 
-
+//클라이언트에서의 충돌을 서버도 인식해서 돌림 if(Object.InputAuthority == Runner.LocalPlayer) 클라만 굴려야하는게 있다면 이 검사 추가
     void OnTriggerEnter2D(Collider2D other)
     {
         if ((other.CompareTag("Floor") || other.CompareTag("Respawn")) && !IsPlaced )
@@ -138,17 +138,19 @@ public class NetworkBlockController : NetworkBehaviour
             {
                 networkManager  = FindObjectOfType<NetworkManager>();
             }
+            if(Object.InputAuthority == Runner.LocalPlayer) effectManager.IsShake = true;
+           
             networkManager.RequestNextBlock(Object.InputAuthority);
-            effectManager.IsShake = true;
             if (other.CompareTag("Respawn"))
             {
                 soundManager.OnFallSound();
                 Destroy(gameObject);
                 return;
             }
-            
+         
             if (other.gameObject.layer == LayerMask.NameToLayer("Block") && effectManager.IsShadow)
             {
+               
                 other.gameObject.transform.TryGetComponent(out Rigidbody2D placeRigidBody);
                 Vector3 forceOrigin = other.ClosestPoint(transform.position);
                 Vector3 toDownBlockNormalVector2 = (transform.position - forceOrigin).normalized;

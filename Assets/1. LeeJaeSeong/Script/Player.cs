@@ -4,7 +4,7 @@ using Firebase.Auth;
 using Fusion;
 using UnityEngine;
 
-public class YachtUser
+public class User
 {
     //세션 종료시 해당 정보들이 계속 교체된다
     //Ex)
@@ -20,14 +20,14 @@ public class Player : MonoBehaviour
     
     public static Player Instance;
 
-    public YachtUser YachtUser { get; private set; }
+    public User YachtUser { get; private set; }
 
     private void Awake()
     {
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        YachtUser = new YachtUser();
+        YachtUser = new User();
     }
 
     // Update is called once per frame

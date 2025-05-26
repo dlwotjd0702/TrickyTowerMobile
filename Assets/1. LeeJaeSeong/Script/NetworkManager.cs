@@ -119,7 +119,7 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
 
     public void RequestNextBlock(PlayerRef player)
     {
-        if (!runner.IsServer) return;
+        if (!runner.IsServer) return; //여기서 서버외 인원들 다 튕김
         int idx = GetPlayerJoinIndex(player);
         Vector3 offset = spawnOffsets[Mathf.Clamp(idx, 0, spawnOffsets.Length - 1)];
         spawnHandler?.SpawnBlockFor(runner, player, offset);
