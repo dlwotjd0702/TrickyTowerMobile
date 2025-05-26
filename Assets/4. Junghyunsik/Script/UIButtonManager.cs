@@ -22,7 +22,9 @@ public class UIButtonManager : MonoBehaviour
     public GameObject modSetUI;
     public GameObject signupUI;
     public GameObject exitGameUI;
-
+    public GameObject reenterUI;
+    public GameObject successSignupUI;
+    
     [Header("Help Paging")]
     public GameObject[] helpPages;
     public Image[]     pageIndicators;
@@ -225,6 +227,14 @@ public class UIButtonManager : MonoBehaviour
                 signupUI.SetActive(true);
                 break;
 
+            case "SignupreenterUI":
+                reenterUI.SetActive(false);
+                break;
+            
+            case "successSignupUI":
+                successSignupUI.SetActive(false);
+                break;
+            
             case "SignupBack":
                 signupUI.SetActive(false);
                 break;

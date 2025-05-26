@@ -1,4 +1,4 @@
-// LobbyPlayerUI.cs
+
 using UnityEngine;
 using TMPro;
 

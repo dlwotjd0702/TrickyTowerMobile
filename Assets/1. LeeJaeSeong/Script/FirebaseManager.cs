@@ -1,16 +1,20 @@
 using UnityEngine;
 using Firebase;
+using UnityEngine.SceneManagement; 
 using Firebase.Auth;
 using Firebase.Firestore;
 using Firebase.Extensions;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class FirebaseAccountManager : MonoBehaviour
 {
     public static FirebaseAccountManager Instance { get; private set; }
 
+    
+    
     // per‐email FirebaseApp/Auth/Firestore
     private Dictionary<string, FirebaseApp>       _apps       = new Dictionary<string, FirebaseApp>();
     private Dictionary<string, FirebaseAuth>      _auths      = new Dictionary<string, FirebaseAuth>();
@@ -140,6 +144,12 @@ public class FirebaseAccountManager : MonoBehaviour
             if (task.IsFaulted || task.IsCanceled)
             {
                 Debug.LogError("회원가입 실패: " + task.Exception?.Message);
+                
+                // UIButtonManager의 reenterUI 켜기
+                var uiMgr = FindObjectOfType<UIButtonManager>();
+                if (uiMgr != null && uiMgr.reenterUI != null) 
+                    uiMgr.reenterUI.SetActive(true); 
+                uiMgr.signupUI.SetActive(true);
                 return;
             }
 
@@ -165,6 +175,8 @@ public class FirebaseAccountManager : MonoBehaviour
                 if (t.IsFaulted) Debug.LogError("사용자 문서 생성 실패: " + t.Exception?.Message);
                 else             Debug.Log("Firestore 사용자 문서 생성 완료");
             });
+            var uiMgrSuccess = FindObjectOfType<UIButtonManager>();
+            uiMgrSuccess.successSignupUI.SetActive(true);
         });
     }
 
@@ -178,6 +190,8 @@ public class FirebaseAccountManager : MonoBehaviour
             if (task.IsFaulted || task.IsCanceled)
             {
                 Debug.LogError("로그인 실패: " + task.Exception?.Message);
+                var LognInFaill = FindObjectOfType<UIButtonManager>();
+                LognInFaill.reenterUI.SetActive(true); 
                 return;
             }
 
@@ -185,6 +199,9 @@ public class FirebaseAccountManager : MonoBehaviour
             Player.Instance.SetUserData(user);
             Debug.Log($"로그인 성공: {user.Email}");
             _currentUserKey = email;
+            var LognIn = FindObjectOfType<UIButtonManager>();
+            LognIn. introUI.SetActive(false);
+            LognIn. mainUI.SetActive(true);
         });
     }
 
@@ -205,7 +222,17 @@ public class FirebaseAccountManager : MonoBehaviour
           .SetAsync(data).ContinueWithOnMainThread(t =>
         {
             if (t.IsFaulted) Debug.LogError("세션 생성 실패: " + t.Exception?.Message);
-            else             Debug.Log($"세션 생성 완료: {sessionName}");
+            else
+            {
+                Debug.Log($"세션 생성 완료: {sessionName}");
+                networkManager.sessionName = sessionName;
+                // 2) 호스트 시작
+                networkManager.StartHost();
+                // 3) 호스트 룸 씬(예: "Lobby") 로 전환
+                DOTween.KillAll();
+                SceneManager.LoadScene("Lobby");
+            } 
+            
         });
     }
 
@@ -217,7 +244,11 @@ public class FirebaseAccountManager : MonoBehaviour
           .DeleteAsync().ContinueWithOnMainThread(t =>
         {
             if (t.IsFaulted) Debug.LogError("세션 삭제 실패: " + t.Exception?.Message);
-            else             Debug.Log($"세션 삭제 완료: {sessionName}");
+            else            
+            {
+                Debug.Log($"세션 삭제 완료: {sessionName}");
+
+            }
         });
     }
 
