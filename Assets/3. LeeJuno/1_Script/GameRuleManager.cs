@@ -130,22 +130,5 @@ public class GameRuleManager : NetworkBehaviour
                 .ToArray();
         //** 최종 점수UI 띄우기 **
     }
-
-    //서바이벌 모드 데미지 입는 코루틴 잠깐무적
-    public void SurvivalHPDown(PlayerRef p)
-    {
-        if (isInvinsible) return;
-        
-        SurvivalEvents.Destroyed(p);
-        StartCoroutine(SurvivalInvisible());
-    }
-
-    IEnumerator SurvivalInvisible()
-    {
-        isInvinsible = true;
-
-        yield return new WaitForSeconds(1f);
-
-        isInvinsible = false;
-    }
+    
 }

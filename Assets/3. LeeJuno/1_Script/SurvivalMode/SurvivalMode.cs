@@ -8,10 +8,15 @@ public class SurvivalMode : MonoBehaviour
 {
     Dictionary<PlayerRef, int> blockCount = new Dictionary<PlayerRef, int>();
     Dictionary<PlayerRef, int> hp = new Dictionary<PlayerRef, int>();
-    private bool survivalClear;
+    Dictionary<PlayerRef, bool> isInvincible = new Dictionary<PlayerRef, bool>();
 
     [SerializeField]
     private int clearBlock = 22;
+
+    [SerializeField]
+    private float invincibleTime = 1.5f;
+
+    private bool survivalClear;
 
     private void OnEnable()
     {
@@ -32,26 +37,39 @@ public class SurvivalMode : MonoBehaviour
         if (blockCount.ContainsKey(p) == false)
             blockCount[p] = clearBlock;
 
-        Debug.Log("블럭수" + blockCount[p]);
-
         if (--blockCount[p] <= 0)
         {
             survivalClear = true;
             GameClearManager.Instance.SurvivalModeClear(p);
         }
+
+        Debug.Log("블럭수" + blockCount[p]);
     }
 
     private void BlockDestroyCheck(PlayerRef p)
     {
-        Debug.Log("발동");
+        if (isInvincible.TryGetValue(p, out bool inv) && inv)
+        {
+            return;
+        }
+
+        isInvincible[p] = true;
+        StartCoroutine(IvincibleCooldown(p));
+
         if (hp.ContainsKey(p) == false)
             hp[p] = 3;
-
-        Debug.Log("hp수" + hp[p]);
 
         if (--hp[p] <= 0)
         {
             GameClearManager.Instance.SurvivePlayerDie(p);
         }
+
+        Debug.Log("hp수" + hp[p]);
+    }
+
+    private IEnumerator IvincibleCooldown(PlayerRef p)
+    {
+        yield return new WaitForSeconds(invincibleTime);
+        isInvincible[p] = false;
     }
 }

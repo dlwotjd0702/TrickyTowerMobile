@@ -39,19 +39,19 @@ public class NetworkSpawnHandler : NetworkBehaviour, INetworkRunnerCallbacks
         //서바이벌 모드 블럭스폰 이벤트
         SurvivalEvents.Spawned(player);
 
-        //  if (player == runner.LocalPlayer)
-        //  {
-        //      if (obj.TryGetComponent<NetworkBlockController>(out var ctrl))
-        //      {
-        //          ctrl.effectManager = effectManager;
-        //          ctrl.soundManager = soundManager;
-        //          ctrl.networkManager = networkManager;
-        //          effectManager.Block = obj.gameObject;
-        //          effectManager.isBlockChange = true;
-        //          soundManager.currentBlock = obj.gameObject;
-        //      }
-        //      //ingameUiManager.NewBlockChoice();
-        //  }
+         if (player == runner.LocalPlayer)
+         {
+             if (obj.TryGetComponent<NetworkBlockController>(out var ctrl))
+             {
+                 ctrl.effectManager = effectManager;
+                 ctrl.soundManager = soundManager;
+                 ctrl.networkManager = networkManager;
+                 effectManager.Block = obj.gameObject;
+                 effectManager.isBlockChange = true;
+                 soundManager.currentBlock = obj.gameObject;
+             }
+             //ingameUiManager.NewBlockChoice();
+         }
     }
 
 
