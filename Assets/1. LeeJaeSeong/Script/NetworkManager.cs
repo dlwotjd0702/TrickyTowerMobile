@@ -258,6 +258,7 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
 
         runner.AddCallbacks(spawnHandler);
         runner.AddCallbacks(inputHandler);
+   
         
         //gameRuleManager.StartCupGame(GameType.Race);
 
@@ -288,14 +289,12 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
 
                     }
                 }
+                gameRuleManager.StartCupGame(GameType.Survival);
                 spawnHandler.SpawnBlockFor(runner, player, offset);
             }
             
         }
-        if (runner.IsServer)
-        {
-            gameRuleManager.StartCupGame(GameType.Survival);
-        }
+        
         
     }
     public void OnObjectEnterAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player) { }

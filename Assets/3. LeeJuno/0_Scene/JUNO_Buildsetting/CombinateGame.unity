@@ -344,7 +344,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1367652529434845935, guid: 3b152b705d65d6f4da3de128a6698d19, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2957896786589808391, guid: 3b152b705d65d6f4da3de128a6698d19, type: 3}
       propertyPath: SortKey
@@ -673,7 +673,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2024896258814215845, guid: 9f847debb50db0645ab080baa56503b0, type: 3}
       propertyPath: m_TargetDisplay
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2769525670652943089, guid: 9f847debb50db0645ab080baa56503b0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3223,7 +3223,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5457316915011297662, guid: d920431279ee14648a89e13c90b043f9, type: 3}
       propertyPath: clearBlock
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8207065038485199481, guid: d920431279ee14648a89e13c90b043f9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3268,6 +3268,10 @@ PrefabInstance:
     - target: {fileID: 8307934190909731319, guid: d920431279ee14648a89e13c90b043f9, type: 3}
       propertyPath: m_Name
       value: Survival_Ground_Set
+      objectReference: {fileID: 0}
+    - target: {fileID: 8307934190909731319, guid: d920431279ee14648a89e13c90b043f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4962,7 +4966,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 343685344972219990, guid: 9fbc937f81d201d4fa07ba64115b44f9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6651192759076573423, guid: 9fbc937f81d201d4fa07ba64115b44f9, type: 3}
       propertyPath: m_LocalPosition.x

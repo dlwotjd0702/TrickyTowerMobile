@@ -60,21 +60,22 @@ public class GameClearManager : NetworkBehaviour
             .Where(no => no.InputAuthority == p)
             .Where(no => no.TryGetComponent<NetworkBlockController>(out var ctrl)
                          && ctrl.IsPlaced == false);
+
         foreach (var obj in toRemove)
         {
             Runner.Despawn(obj);
         }
     }
 
-    public void RemoveUnplacedAllBlocks()// 모든 플레이어 배치안된 블럭제거
+    public void RemoveUnplacedAllBlocks() // 모든 플레이어 배치안된 블럭제거
     {
         if (Runner.IsServer == false) return;
-        
+
         var toRemove = GameObject.FindObjectsOfType<NetworkObject>()
             .Where(no => no.gameObject.layer == LayerMask.NameToLayer("Block"))
             .Where(no => no.TryGetComponent<NetworkBlockController>(out var ctrl)
                          && ctrl.IsPlaced == false);
-        
+
         foreach (var obj in toRemove)
         {
             Runner.Despawn(obj);
@@ -103,7 +104,6 @@ public class GameClearManager : NetworkBehaviour
 
         //모든플레이어 블럭생성막힘 추가
         StopAllSpawns();
-        RemoveUnplacedAllBlocks();
         
         //레이스모드 종료후 1,2,3,4등 판정
         IEnumerable<NetworkObject> allBlocks = GameObject.FindObjectsOfType<NetworkObject>()
@@ -126,6 +126,7 @@ public class GameClearManager : NetworkBehaviour
             .ToArray();
 
         AssignScore(ranking);
+        RemoveUnplacedAllBlocks();
     }
 
     public void PuzzleModeClear() //퍼즐 모드 관련 로직
@@ -133,7 +134,7 @@ public class GameClearManager : NetworkBehaviour
         currentGameType = GameType.Puzzle;
         Debug.Log("Puzzle clear");
         //그후에 남은 벽돌 개수를 세서 많은순으로 1,2,3,4 판정
-        
+
         IEnumerable<NetworkObject> allBlocks = GameObject.FindObjectsOfType<NetworkObject>()
             .Where(no => no.gameObject.layer == LayerMask.NameToLayer("Block"))
             .Where(no => no.TryGetComponent<NetworkBlockController>(out var controller) && controller.IsPlaced);
@@ -159,7 +160,7 @@ public class GameClearManager : NetworkBehaviour
         if (failedPlayers.Contains(player)) return;
 
         RemoveUnplacedBlock(player);
-       
+
         failedPlayers.Add(player);
 
         // 해당 플레이어 블럭생성중지 
@@ -182,26 +183,28 @@ public class GameClearManager : NetworkBehaviour
 
         // 모든 플레이어 블럭생성을 막는로직
         StopAllSpawns();
-        RemoveUnplacedAllBlocks();
 
         //** 지금은 쌓여진 블럭갯수로 판정 나중에 남은블럭으로 판정하게 변경 **
         var allBlocks = GameObject.FindObjectsOfType<NetworkObject>()
             .Where(no => no.gameObject.layer == LayerMask.NameToLayer("Block"))
             .Where(no => no.TryGetComponent<NetworkBlockController>(out var controller) && controller.IsPlaced);
 
+        Debug.Log("1");
         var blockCounts = allBlocks
             .GroupBy(no => no.InputAuthority)
             .Select(group => new
             {
                 Player = group.Key, Count = group.Count()
             });
-
+        Debug.Log("2");
         PlayerRef[] ranking = blockCounts
             .OrderByDescending(entry => entry.Count)
             .Select(entry => entry.Player)
             .ToArray();
+        Debug.Log("3");
 
         AssignScore(ranking);
+        RemoveUnplacedAllBlocks();
     }
 
     public void SurvivePlayerDie(PlayerRef player) //마지막 생존자 찾는 로직
@@ -244,6 +247,7 @@ public class GameClearManager : NetworkBehaviour
                 : 0;
             scoreData.AddScore(ranking[i], score);
         }
+
         Debug.Log("정산끝");
         ScoreDebug();
         RoundCleared?.Invoke(lastRoundRank[0], currentGameType);

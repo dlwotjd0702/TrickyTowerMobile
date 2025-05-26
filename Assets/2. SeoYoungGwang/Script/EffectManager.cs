@@ -72,7 +72,7 @@ public class EffectManager : MonoBehaviour
         OnShake();
         ChangeLandVisual();
         LandVisualUpdate();
-        transform.position = Block.transform.position;
+       // transform.position = Block.transform.position;
 
     }
 
