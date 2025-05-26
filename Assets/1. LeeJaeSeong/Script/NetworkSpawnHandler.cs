@@ -36,19 +36,19 @@ public class NetworkSpawnHandler : NetworkBehaviour,INetworkRunnerCallbacks
        var obj = runner.Spawn(blockPrefabs[i], spawnPoint, Quaternion.identity, player);
 
 
-    //  if (player == runner.LocalPlayer)
-    //  {
-    //      if (obj.TryGetComponent<NetworkBlockController>(out var ctrl))
-    //      {
-    //          ctrl.effectManager = effectManager;
-    //          ctrl.soundManager = soundManager;
-    //          ctrl.networkManager = networkManager;
-    //          effectManager.Block = obj.gameObject;
-    //          effectManager.isBlockChange = true;
-    //          soundManager.currentBlock = obj.gameObject;
-    //      }
-    //      //ingameUiManager.NewBlockChoice();
-    //  }
+      if (player == runner.LocalPlayer)
+      {
+          if (obj.TryGetComponent<NetworkBlockController>(out var ctrl))
+          {
+              ctrl.effectManager = effectManager;
+              ctrl.soundManager = soundManager;
+              ctrl.networkManager = networkManager;
+              effectManager.Block = obj.gameObject;
+              effectManager.isBlockChange = true;
+              soundManager.currentBlock = obj.gameObject;
+          }
+          //ingameUiManager.NewBlockChoice();
+      }
 
        
     }

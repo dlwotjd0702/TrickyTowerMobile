@@ -5,9 +5,10 @@ using System.Collections.Generic;
 using Fusion;
 using Fusion.Sockets;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class NetworkInputHandler : MonoBehaviour, INetworkRunnerCallbacks
+public class NetworkInputHandler : MonoBehaviour, INetworkRunnerCallbacks,IPointerDownHandler,IPointerUpHandler 
 {
     
     private int _prevRawX = 0;
@@ -18,12 +19,25 @@ public class NetworkInputHandler : MonoBehaviour, INetworkRunnerCallbacks
     private bool isRightFastMove = false;
     
     [SerializeField] private EffectManager effectManager;
+    [SerializeField] private ButtonController leftMoveButton;
+    [SerializeField] private ButtonController rightMoveButton;
+    [SerializeField] private ButtonController leftFastMoveButton;
+    [SerializeField] private ButtonController rightFastMoveButton;
+    [SerializeField] private ButtonController downButton;
+    [SerializeField] private ButtonController leftRotateButton;
+    [SerializeField] private ButtonController rightRotateButton;
 
     private void Update()
     {
-        //if()
         
         // 🔸 키 눌림 체크 → flag 저장
+        KeyBoardInput();
+        RotateOnClick();
+
+    }
+
+    private void KeyBoardInput()
+    {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
             _rotateQueued = true;
         if (Input.GetKeyDown(KeyCode.U) && !effectManager.IsShadow)
@@ -40,6 +54,41 @@ public class NetworkInputHandler : MonoBehaviour, INetworkRunnerCallbacks
             effectManager.isRight = true;
             isRightFastMove = true;
         }
+    }
+
+    private void RotateOnClick()
+    {
+        _rotateQueued = true;
+    }
+    
+    private void LeftMoveOnClick()
+    {
+        
+    }
+    
+    private void RightMoveOnClick()
+    {
+        
+    }
+
+    private void LeftFastMoveOnClick()
+    {
+        effectManager.IsShadow = true;
+        effectManager.isRight = false;
+        isLeftFastMove = true;
+        Debug.Log("isLeftFastMove");
+    }
+
+    private void RightFastMoveOnClick()
+    {
+        effectManager.IsShadow = true;
+        effectManager.isRight = true;
+        isRightFastMove = true;
+    }
+
+    private void DownMoveOnClick()
+    {
+        
     }
 
     public void OnInput(NetworkRunner runner, NetworkInput input)
@@ -94,4 +143,13 @@ public class NetworkInputHandler : MonoBehaviour, INetworkRunnerCallbacks
     public void OnSceneLoadStart(NetworkRunner runner) {}
     public void OnSceneLoadDone(NetworkRunner runner) {}
     public void OnReliableDataReceived(NetworkRunner runner, PlayerRef player, System.ArraySegment<byte> data) {}
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        
+    }
 }
