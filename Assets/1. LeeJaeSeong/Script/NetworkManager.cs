@@ -196,6 +196,9 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
 
     public void OnShutdown(NetworkRunner runner, ShutdownReason reason)
     {
+    }
+
+    /*{
         if (heartbeatRoutine != null)
         {
             StopCoroutine(heartbeatRoutine);
@@ -207,7 +210,7 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
            firebaseAccountManager.DeleteSessionDocument(sessionName);
 
         }
-    }
+    }*/
     public void OnDisconnectedFromServer(NetworkRunner runner, NetDisconnectReason reason)
     {
         
@@ -272,11 +275,27 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
             // 3) 블록 스폰
             if (runner.IsServer)
             {
+                {
+                    if (heartbeatRoutine != null)
+                    {
+                        StopCoroutine(heartbeatRoutine);
+                        heartbeatRoutine = null;
+                    }
+                    if (runner.IsServer)
+                    {
+                        if(firebaseAccountManager==null) firebaseAccountManager = FindObjectOfType<FirebaseAccountManager>();
+                        firebaseAccountManager.DeleteSessionDocument(sessionName);
+
+                    }
+                }
                 spawnHandler.SpawnBlockFor(runner, player, offset);
             }
             
         }
-
+        if (runner.IsServer)
+        {
+            gameRuleManager.StartCupGame(GameType.Survival);
+        }
         
     }
     public void OnObjectEnterAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player) { }

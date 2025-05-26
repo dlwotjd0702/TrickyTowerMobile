@@ -10,11 +10,12 @@ using UnityEngine;
 // 2. 블럭생성기에 플레이어 블럭생성을 막는 로직추가
 // 지정플레이어 막는기능, 모든플레이어 막는기능, 배치안된 블럭제거하는 기능 
 // 3. 서바이벌 모드 판정 쌓인 블럭갯수에서 남은블럭 갯수로 변경
+//4. 게임끝나면 블럭 전부 삭제
 
 public class GameClearManager : NetworkBehaviour
 {
     //게임종료와 종료후 모드별로 플레이어들의 등수를 판정
-    //등수를 판정하기 위해 블럭이 각자 자신의 주인이 누구인지 데이터를 가지고 있어야 함 
+    //등수를 판정하기 위해 블럭이 각자 자신의 주인이 누구인지 데이터를 가지고 있어야 함
     public static GameClearManager Instance;
 
     public event Action<PlayerRef, GameType> RoundCleared;
@@ -23,7 +24,8 @@ public class GameClearManager : NetworkBehaviour
     private HashSet<PlayerRef> failedPlayers = new HashSet<PlayerRef>();
     private PlayerRef[] lastRoundRank;
     private GameType currentGameType;
-    
+    public bool clear { get; private set; }
+
     private void Awake()
     {
         if (Instance == null)
@@ -33,6 +35,7 @@ public class GameClearManager : NetworkBehaviour
 
     public void RaceModeClear(PlayerRef winner) //레이스모드 관련로직
     {
+        clear = true;
         currentGameType = GameType.Race;
         Debug.Log("clearRace");
         //** 모든플레이어 블럭생성막힘 추가 필요 **
@@ -141,12 +144,14 @@ public class GameClearManager : NetworkBehaviour
         }
     }
 
-    public void GetBlockCount(int count)//남은 블럭갯수를 가져옴
+    public void GetBlockCount(int count) //남은 블럭갯수를 가져옴
     {
         //문제 죽지않고 다른 플레이어가 게임을 클리어했을때 블럭 갯수를 어떻게 가져오게 할것인가
     }
 
     //----------이 밑에는 점수 관련 로직-------------
+
+
     private void AssignScore(PlayerRef[] ranking)
     {
         lastRoundRank = ranking;
@@ -160,8 +165,19 @@ public class GameClearManager : NetworkBehaviour
             scoreData.AddScore(ranking[i], score);
         }
 
+        ScoreDebug();
         RoundCleared?.Invoke(lastRoundRank[0], currentGameType);
     }
+
+    private void ScoreDebug()
+    {
+        var allScore = GameClearManager.Instance.GetAllScore();
+        foreach (var pair in allScore)
+        {
+            Debug.Log($"플레이어: {pair.Key},점수: {pair.Value}");
+        }
+    }
+
 
     public PlayerRef[] GetLastRoundRanking()
     {

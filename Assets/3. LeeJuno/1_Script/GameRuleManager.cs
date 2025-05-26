@@ -19,8 +19,6 @@ public enum GameType
 
 public class GameRuleManager : NetworkBehaviour
 {
-    
-
     [SerializeField]
     private GameObject raceMode;
 
@@ -38,14 +36,13 @@ public class GameRuleManager : NetworkBehaviour
 
     private int roundIndex = 0;
     private bool gameActive = true;
+    private bool isInvinsible = false;
     private PlayType playType;
 
     public override void Spawned()
     {
         if (Runner.IsServer == false) return;
         GameClearManager.Instance.RoundCleared += RoundCleared;
-
-     
     }
 
     private void OnDestroy()
@@ -132,5 +129,23 @@ public class GameRuleManager : NetworkBehaviour
                 .Select(kv => kv.Key)
                 .ToArray();
         //** 최종 점수UI 띄우기 **
+    }
+
+    //서바이벌 모드 데미지 입는 코루틴 잠깐무적
+    public void SurvivalHPDown(PlayerRef p)
+    {
+        if (isInvinsible) return;
+        
+        SurvivalEvents.Destroyed(p);
+        StartCoroutine(SurvivalInvisible());
+    }
+
+    IEnumerator SurvivalInvisible()
+    {
+        isInvinsible = true;
+
+        yield return new WaitForSeconds(1f);
+
+        isInvinsible = false;
     }
 }

@@ -8,6 +8,10 @@ public class SurvivalMode : MonoBehaviour
 {
     Dictionary<PlayerRef, int> blockCount = new Dictionary<PlayerRef, int>();
     Dictionary<PlayerRef, int> hp = new Dictionary<PlayerRef, int>();
+    private bool survivalClear;
+
+    [SerializeField]
+    private int clearBlock = 22;
 
     private void OnEnable()
     {
@@ -23,17 +27,27 @@ public class SurvivalMode : MonoBehaviour
 
     private void BlockSpawnCheck(PlayerRef p)
     {
+        if (survivalClear) return;
+
         if (blockCount.ContainsKey(p) == false)
-            blockCount[p] = 22;
+            blockCount[p] = clearBlock;
+
+        Debug.Log("블럭수" + blockCount[p]);
 
         if (--blockCount[p] <= 0)
+        {
+            survivalClear = true;
             GameClearManager.Instance.SurvivalModeClear(p);
+        }
     }
 
     private void BlockDestroyCheck(PlayerRef p)
     {
+        Debug.Log("발동");
         if (hp.ContainsKey(p) == false)
             hp[p] = 3;
+
+        Debug.Log("hp수" + hp[p]);
 
         if (--hp[p] <= 0)
         {
