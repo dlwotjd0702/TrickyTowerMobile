@@ -38,6 +38,8 @@ public class EffectManager : MonoBehaviour
     public float RoatateValue = 45f;
 
     [Header("LandVisual")] 
+    [SerializeField] private ButtonController roatateButton1;
+    [SerializeField] private ButtonController roatateButton2;
     private GameObject currentLandVisual;
     private GameObject[] LandVisuals = new GameObject[4];
     private GameObject VerticalLandVisual;
@@ -230,23 +232,23 @@ public class EffectManager : MonoBehaviour
             transform.position = Block.transform.position;
             isBlockMove = false;
         }
+    }
 
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
+    public void RotateSetLandVisual()
+    {
+        isHorizontal = !isHorizontal;
+        if (isHorizontal)
         {
-            isHorizontal = !isHorizontal;
-            if (isHorizontal)
-            {
-                VerticalLandVisual.SetActive(false);
-                currentLandVisual = HorizontalLandVisual;
-            }
-            else
-            {
-                HorizontalLandVisual.SetActive(false);
-                currentLandVisual = VerticalLandVisual;
-            }
-            
-            currentLandVisual.SetActive(true);
+            VerticalLandVisual.SetActive(false);
+            currentLandVisual = HorizontalLandVisual;
         }
+        else
+        {
+            HorizontalLandVisual.SetActive(false);
+            currentLandVisual = VerticalLandVisual;
+        }
+            
+        currentLandVisual.SetActive(true);
     }
     
     
