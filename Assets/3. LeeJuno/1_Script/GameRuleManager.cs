@@ -54,7 +54,6 @@ public class GameRuleManager : NetworkBehaviour
 
     public void StartCupGame(GameType type)
     {
-        if (Runner.IsServer == false) return;
         playType = PlayType.Cup;
         GameClearManager.Instance.ResetScore();
         //scoreBoard.ResetSlotsLocal();

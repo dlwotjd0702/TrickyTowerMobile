@@ -157,10 +157,6 @@ MonoBehaviour:
   NestedObjects:
   - {fileID: 1922434569733506445}
   - {fileID: 912400602655746614}
-  - {fileID: 4107063450947346239}
-  - {fileID: 2364882010502305645}
-  - {fileID: 6865541504622936440}
-  - {fileID: 6980259241260376296}
   NetworkedBehaviours:
   - {fileID: 3329999383638739876}
   ForceRemoteRenderTimeframe: 0
@@ -349,7 +345,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5342024617685385778
 Transform:
   m_ObjectHideFlags: 0
@@ -383,51 +379,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf8b3971ad065e74e8a1bcd7e042efa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreBoardPanel: {fileID: 1743236065807518071}
-  goldMedalPrefab: {fileID: 3344465132640263719, guid: e9a7679473d94084eb1434bcab466f6a, type: 3}
-  silverMedalPrefab: {fileID: 410318729465190411, guid: ba450c94d76260c4da57e11b28cd0dd0, type: 3}
-  bronzeMedalPrefab: {fileID: 6969851137560661144, guid: 32c5d387dbd18e145925f4d5c24f2113, type: 3}
-  slotPointsByPlayer:
-  - slots:
-    - {fileID: 3442780179459343109}
-    - {fileID: 2572516378506841127}
-    - {fileID: 376526624240300691}
-    - {fileID: 5839185857497255005}
-    - {fileID: 4876150350794996362}
-    - {fileID: 8439731549839221811}
-    - {fileID: 4059171068100883578}
-    - {fileID: 410242057089946692}
-    - {fileID: 386209153970166804}
-  - slots:
-    - {fileID: 7315090134916911697}
-    - {fileID: 426419077940386207}
-    - {fileID: 8150608541106017338}
-    - {fileID: 3050485657093923517}
-    - {fileID: 288297544025728194}
-    - {fileID: 8777414817783315886}
-    - {fileID: 3429977854909210728}
-    - {fileID: 7074153811461348152}
-    - {fileID: 438798653768523051}
-  - slots:
-    - {fileID: 8240996589778220907}
-    - {fileID: 7183545330143336319}
-    - {fileID: 9139620368644116531}
-    - {fileID: 3760316906002373117}
-    - {fileID: 3822658292156891694}
-    - {fileID: 7572357028644622892}
-    - {fileID: 1378306516850308355}
-    - {fileID: 2798422222797356663}
-    - {fileID: 347535738354205002}
-  - slots:
-    - {fileID: 7002940660225531326}
-    - {fileID: 971041905326062500}
-    - {fileID: 7511974461414630717}
-    - {fileID: 1474195166556611148}
-    - {fileID: 5971044588606551308}
-    - {fileID: 7435004062562801455}
-    - {fileID: 9070892394276845817}
-    - {fileID: 1061671129848244907}
-    - {fileID: 8010714618224964440}
+  boxes:
+  - {fileID: 5983033430608310762}
+  - {fileID: 169687154939701975}
+  - {fileID: 1347168264926889851}
+  - {fileID: 8027463819147423462}
+  goldMedal: {fileID: 3344465132640263719, guid: e9a7679473d94084eb1434bcab466f6a, type: 3}
+  silverMedal: {fileID: 410318729465190411, guid: ba450c94d76260c4da57e11b28cd0dd0, type: 3}
+  bronzeMedal: {fileID: 6969851137560661144, guid: 32c5d387dbd18e145925f4d5c24f2113, type: 3}
 --- !u!114 &912400602655746614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -457,6 +416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8080990978048718041}
   - component: {fileID: 7461656932747870813}
+  - component: {fileID: 5983033430608310762}
   m_Layer: 0
   m_Name: ScoreBox_1
   m_TagString: Untagged
@@ -540,6 +500,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5983033430608310762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001685133845043647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afa11b4c9bf0ca04495a1a2c2678822e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  medalSlots:
+  - {fileID: 3442780179459343109}
+  - {fileID: 2572516378506841127}
+  - {fileID: 376526624240300691}
+  - {fileID: 5839185857497255005}
+  - {fileID: 4876150350794996362}
+  - {fileID: 8439731549839221811}
+  - {fileID: 4059171068100883578}
+  - {fileID: 410242057089946692}
+  - {fileID: 386209153970166804}
 --- !u!1 &2109348901080880631
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,6 +1036,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3634485318558527010}
   - component: {fileID: 7330247444460658197}
+  - component: {fileID: 169687154939701975}
   m_Layer: 0
   m_Name: ScoreBox_2
   m_TagString: Untagged
@@ -1137,6 +1120,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &169687154939701975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2993707913135161524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afa11b4c9bf0ca04495a1a2c2678822e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  medalSlots:
+  - {fileID: 7315090134916911697}
+  - {fileID: 426419077940386207}
+  - {fileID: 8150608541106017338}
+  - {fileID: 3050485657093923517}
+  - {fileID: 288297544025728194}
+  - {fileID: 8777414817783315886}
+  - {fileID: 3429977854909210728}
+  - {fileID: 7074153811461348152}
+  - {fileID: 438798653768523051}
 --- !u!1 &3110279826735455437
 GameObject:
   m_ObjectHideFlags: 0
@@ -1735,6 +1740,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2714984114468923176}
   - component: {fileID: 1636412366453096062}
+  - component: {fileID: 1347168264926889851}
   m_Layer: 0
   m_Name: ScoreBox_3
   m_TagString: Untagged
@@ -1818,6 +1824,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1347168264926889851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4263108455535324429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afa11b4c9bf0ca04495a1a2c2678822e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  medalSlots:
+  - {fileID: 8240996589778220907}
+  - {fileID: 7183545330143336319}
+  - {fileID: 9139620368644116531}
+  - {fileID: 3760316906002373117}
+  - {fileID: 3822658292156891694}
+  - {fileID: 7572357028644622892}
+  - {fileID: 1378306516850308355}
+  - {fileID: 2798422222797356663}
+  - {fileID: 347535738354205002}
 --- !u!1 &4908317344870245763
 GameObject:
   m_ObjectHideFlags: 0
@@ -2584,6 +2612,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9102025040030646262}
   - component: {fileID: 9197423589563698276}
+  - component: {fileID: 8027463819147423462}
   m_Layer: 0
   m_Name: ScoreBox_4
   m_TagString: Untagged
@@ -2667,6 +2696,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8027463819147423462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6442156293237852647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afa11b4c9bf0ca04495a1a2c2678822e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  medalSlots:
+  - {fileID: 7002940660225531326}
+  - {fileID: 971041905326062500}
+  - {fileID: 7511974461414630717}
+  - {fileID: 1474195166556611148}
+  - {fileID: 5971044588606551308}
+  - {fileID: 7435004062562801455}
+  - {fileID: 9070892394276845817}
+  - {fileID: 1061671129848244907}
+  - {fileID: 8010714618224964440}
 --- !u!1 &6607703615964696450
 GameObject:
   m_ObjectHideFlags: 0
@@ -3832,17 +3883,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 829354231897279623}
     m_Modifications:
+    - target: {fileID: 1208441892140946508, guid: 3b152b705d65d6f4da3de128a6698d19, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1367652529434845935, guid: 3b152b705d65d6f4da3de128a6698d19, type: 3}
       propertyPath: m_Name
       value: Race_Ground_Set
       objectReference: {fileID: 0}
     - target: {fileID: 1367652529434845935, guid: 3b152b705d65d6f4da3de128a6698d19, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2957896786589808391, guid: 3b152b705d65d6f4da3de128a6698d19, type: 3}
       propertyPath: SortKey
       value: 2217139161
+      objectReference: {fileID: 0}
+    - target: {fileID: 3412794122152785372, guid: 3b152b705d65d6f4da3de128a6698d19, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3540401803888901973, guid: 3b152b705d65d6f4da3de128a6698d19, type: 3}
       propertyPath: SortKey
@@ -3888,6 +3947,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5252564688939625371, guid: 3b152b705d65d6f4da3de128a6698d19, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821566740303635401, guid: 3b152b705d65d6f4da3de128a6698d19, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6240437962682114322, guid: 3b152b705d65d6f4da3de128a6698d19, type: 3}
       propertyPath: SortKey
       value: 3673309
@@ -3896,7 +3963,11 @@ PrefabInstance:
       propertyPath: SortKey
       value: 205354668
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7567151352480104578, guid: 3b152b705d65d6f4da3de128a6698d19, type: 3}
+    - {fileID: 6240437962682114322, guid: 3b152b705d65d6f4da3de128a6698d19, type: 3}
+    - {fileID: 2957896786589808391, guid: 3b152b705d65d6f4da3de128a6698d19, type: 3}
+    - {fileID: 3540401803888901973, guid: 3b152b705d65d6f4da3de128a6698d19, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3906,55 +3977,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1367652529434845935, guid: 3b152b705d65d6f4da3de128a6698d19, type: 3}
   m_PrefabInstance: {fileID: 710778037733941354}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2364882010502305645 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2957896786589808391, guid: 3b152b705d65d6f4da3de128a6698d19, type: 3}
-  m_PrefabInstance: {fileID: 710778037733941354}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4107063450947346239 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3540401803888901973, guid: 3b152b705d65d6f4da3de128a6698d19, type: 3}
-  m_PrefabInstance: {fileID: 710778037733941354}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &5350848585119064998 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4872675634023465932, guid: 3b152b705d65d6f4da3de128a6698d19, type: 3}
   m_PrefabInstance: {fileID: 710778037733941354}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6865541504622936440 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6240437962682114322, guid: 3b152b705d65d6f4da3de128a6698d19, type: 3}
-  m_PrefabInstance: {fileID: 710778037733941354}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6980259241260376296 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7567151352480104578, guid: 3b152b705d65d6f4da3de128a6698d19, type: 3}
-  m_PrefabInstance: {fileID: 710778037733941354}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3222424291281952455
 PrefabInstance:
   m_ObjectHideFlags: 0

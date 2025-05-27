@@ -317,12 +317,11 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
 
                     }
                 }
-                gameRuleManager.StartCupGame(GameType.Survival);
+                
                 spawnHandler.SpawnBlockFor(runner, player, offset);
             }
-            
+            gameRuleManager.StartCupGame(GameType.Race);
         }
-        
         
     }
     public void OnObjectEnterAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player) { }
