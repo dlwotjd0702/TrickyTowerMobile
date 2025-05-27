@@ -16,6 +16,10 @@ public class NetworkBlockController : NetworkBehaviour
     }
 
     [Networked] public bool IsPlaced { get; set; }
+    public bool biggerTrigger = false;
+    public bool noRotateTrigger = false;
+    public bool fastFallTrigger = false;
+    
 
     [SerializeField] float moveDistance = 1f;
     [SerializeField] float downSpeed    = 2f;
@@ -47,6 +51,7 @@ public class NetworkBlockController : NetworkBehaviour
         // 3) 매니저·이펙트 참조 채우기
         networkManager  = FindObjectOfType<NetworkManager>();
         effectManager   = FindObjectOfType<EffectManager>();
+        soundManager    = FindObjectOfType<SoundManager>();
 
         // 4) 클라이언트 예측 단계에서 블록 할당
         if (Object.HasInputAuthority)
@@ -58,6 +63,24 @@ public class NetworkBlockController : NetworkBehaviour
         // 블록 콜라이더 좀 줄이기
         foreach (var c in GetComponents<BoxCollider2D>()) c.size *= 0.9f;
 
+    }
+
+    private void bigger()
+    {
+        if (biggerTrigger == true)
+        {
+            Debug.Log("[NetworkBlockController] biggerTrigger 작동! 블록 크기 2배.");
+            gameObject.transform.localScale *= 2;
+            biggerTrigger = false;
+        }
+    }
+
+    private void Update()
+    {
+        if (effectManager.Block != null)
+        {
+         bigger();
+        }
     }
 
     public override void FixedUpdateNetwork()
@@ -85,8 +108,16 @@ public class NetworkBlockController : NetworkBehaviour
             // 회전
             if (input.Rotate)
             {
-                transform.Rotate(0, 0, 90);
-                soundManager.OnRotateSound();
+                if (!noRotateTrigger)
+                {
+                    transform.Rotate(0, 0, 90);
+                    soundManager.OnRotateSound();
+                }
+                else
+                {
+                    if (input.Rotate && noRotateTrigger)
+                        Debug.Log("[NetworkBlockController] noRotateTrigger로 회전 차단.");
+                }
             }
 
             if (input.leftFastMove)
@@ -113,9 +144,19 @@ public class NetworkBlockController : NetworkBehaviour
             // 빠른/자동 하강
             if (Runner.IsServer)
             {
-                float speed = input.FastDown ? downSpeed * 5f : downSpeed;
+
+                // fastFall 플래그가 켜져 있으면 무조건 빠르게, 아니면 input.FastDown 에 따라
+                float speed = (fastFallTrigger || input.FastDown) 
+                    ? downSpeed * 5f 
+                    : downSpeed;
+
+                if (fastFallTrigger)
+                    Debug.Log($"[NetworkBlockController] fastFall 적용, 속도 = {speed}");
+                
                 transform.position += Vector3.down * (speed * Runner.DeltaTime);
+                
             }
+            
         }
     }
 
@@ -124,7 +165,14 @@ public class NetworkBlockController : NetworkBehaviour
     {
         if ((other.CompareTag("Floor") || other.CompareTag("Respawn")) && !IsPlaced )
         {
+            // 착지 처리
             IsPlaced = true;
+
+            // 착지 후엔 noRotateTrigger, fastFall 리셋
+            noRotateTrigger = false;
+            fastFallTrigger = false;
+           
+            Debug.Log("[NetworkBlockController] 블록 착지 – 모든 트리거 리셋");
 
             // 착지 후엔 서버 권위만 시뮬레이션
             Runner.SetIsSimulated(Object, Object.HasStateAuthority);

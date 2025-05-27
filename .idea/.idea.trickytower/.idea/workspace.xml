@@ -6,117 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="33ec4f3c-9a43-40ac-a265-51209e7b0009" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Buildsetting/CombinateGame.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Buildsetting/CombinateGame.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Buildsetting/Lobby.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Buildsetting/Lobby.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Buildsetting/OutGame.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Buildsetting/OutGame.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/1ca.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/1ca.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/2ca.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/2ca.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/3ca.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/3ca.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/4ca.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/4ca.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/GameMode.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/GameMode.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/GameMode.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/GameMode.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/Ground (1).prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/Ground (1).prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/Ground (2).prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/Ground (2).prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/Ground (3).prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/Ground (3).prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/Ground.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/Ground.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/ScoreBoard.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/ScoreBoard.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/netgph_brickI_stone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/netgph_brickI_stone.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/netgph_brickJ_stone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/netgph_brickJ_stone.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/netgph_brickL_stone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/netgph_brickL_stone.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/netgph_brickO_stone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/netgph_brickO_stone.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/netgph_brickS_stone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/netgph_brickS_stone.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/netgph_brickT_stone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/netgph_brickT_stone.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/netgph_brickZ_stone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/netgph_brickZ_stone.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/FirebaseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/FirebaseManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3. LeeJuno/0_Scene/JUNO_Buildsetting/Lobby.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/0_Scene/JUNO_Buildsetting/Lobby.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/CombinateGame.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/CombinateGame.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/LobbySceneManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/LobbySceneManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/LobbyUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/LobbyUIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkBlockController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkBlockController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/CombinateGame.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/CombinateGame.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/Lobby.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/Lobby.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/OutGame.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/OutGame.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/RoomJoiner.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/RoomJoiner.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/SoundSettingsUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/SoundSettingsUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/UIButtonManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/UIButtonManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/gph_brickI_stone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/gph_brickI_stone.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/gph_brickJ_stone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/gph_brickJ_stone.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/gph_brickL_stone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/gph_brickL_stone.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/gph_brickO_stone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/gph_brickO_stone.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/gph_brickS_stone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/gph_brickS_stone.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/gph_brickT_stone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/gph_brickT_stone.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/gph_brickZ_stone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/gph_brickZ_stone.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/netgph_brickI_stone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/netgph_brickI_stone.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/netgph_brickJ_stone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/netgph_brickJ_stone.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/netgph_brickL_stone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/netgph_brickL_stone.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/netgph_brickO_stone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/netgph_brickO_stone.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/netgph_brickS_stone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/netgph_brickS_stone.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/netgph_brickT_stone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/netgph_brickT_stone.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/netgph_brickZ_stone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/netgph_brickZ_stone.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/network.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TeamPrefab/network.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222/Buildsetting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222/Buildsetting/CombinateGame.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222/Buildsetting/CombinateGame.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222/Buildsetting/Lobby.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222/Buildsetting/Lobby.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222/Buildsetting/OutGame.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222/Buildsetting/OutGame.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222/netgph_brickI_stone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222/netgph_brickI_stone.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222/netgph_brickJ_stone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222/netgph_brickJ_stone.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222/netgph_brickL_stone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222/netgph_brickL_stone.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222/netgph_brickO_stone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222/netgph_brickO_stone.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222/netgph_brickS_stone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222/netgph_brickS_stone.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222/netgph_brickT_stone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222/netgph_brickT_stone.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222/netgph_brickZ_stone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222/netgph_brickZ_stone.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222/teamScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/team222/teamScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/zbuildScen.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/zbuildScen/Ingame-Fusion2.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/zbuildScen/Ingame-Fusion2.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/zbuildScen/Lobby.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/zbuildScen/Lobby.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/zbuildScen/OutGame.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/zbuildScen/OutGame.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Photon/FusionDemos/Photon-Fusion-Intro-Sample-2.0.6-Stable-1034.unitypackage.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +46,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkSpawnHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/4. Junghyunsik/Script/ButtonHoverToggle.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/4. Junghyunsik/Script/NetworkCallbacks.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/4. Junghyunsik/Script/OurSoundManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/4. Junghyunsik/Script/QualitySettingUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/origin/Scripts/Block.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.7/Scripts/Runtime/TMPro_UGUI_Private.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/GraphicEditor.cs" root0="SKIP_HIGHLIGHTING" />
@@ -160,19 +63,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "networkdev",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;OutGamedev&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Unity 에디터에 연결.Unity 에디터에 연결">
     <configuration name="유닛 테스트(배치 모드)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.62f1\Editor\Unity.exe" />
@@ -256,6 +159,9 @@
       <workItem from="1748238641722" duration="6000" />
       <workItem from="1748238661406" duration="12483000" />
       <workItem from="1748252144347" duration="1218000" />
+      <workItem from="1748304935649" duration="148000" />
+      <workItem from="1748305610276" duration="5097000" />
+      <workItem from="1748313102483" duration="13953000" />
     </task>
     <servers />
   </component>

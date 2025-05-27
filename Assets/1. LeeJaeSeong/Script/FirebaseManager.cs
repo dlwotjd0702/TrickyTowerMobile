@@ -1,6 +1,5 @@
 using UnityEngine;
 using Firebase;
-using UnityEngine.SceneManagement; 
 using Firebase.Auth;
 using Firebase.Firestore;
 using Firebase.Extensions;
@@ -31,18 +30,18 @@ public class FirebaseAccountManager : MonoBehaviour
     public Button            sessionButtonPrefab;
 
     [Header("Login UI")]
-    public TextMeshProUGUI   inputemail;
-    public TextMeshProUGUI   inputpassword;
+    public TMP_InputField   inputemail;
+    public TMP_InputField   inputpassword;
     public Button            LoginButton;
 
     [Header("Signup UI")]
-    public TextMeshProUGUI   makeemail;
-    public TextMeshProUGUI   makepassword;
-    public TextMeshProUGUI   makenick;
+    public TMP_InputField   makeemail;
+    public TMP_InputField   makepassword;
+    public TMP_InputField   makenick;
     public Button            SigninButton;
 
     [Header("Create Session Button")]
-    public TextMeshProUGUI   SessionName;
+    public TMP_InputField   SessionName;
     public Button            sessionButton;
 
     private bool isInitialized = false;
