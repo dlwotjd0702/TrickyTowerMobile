@@ -57,9 +57,9 @@ public class NetworkSpawnHandler : NetworkBehaviour, INetworkRunnerCallbacks
         {
             if (obj.TryGetComponent<NetworkBlockController>(out var ctrl))
             {
-                ctrl.effectManager = effectManager;
-                ctrl.soundManager = soundManager;
-                ctrl.networkManager = networkManager;
+               ctrl.effectManager = effectManager;
+               ctrl.soundManager = soundManager;
+               ctrl.networkManager = networkManager;
                 effectManager.Block = obj.gameObject;
                 effectManager.isBlockChange = true;
                 soundManager.currentBlock = obj.gameObject;

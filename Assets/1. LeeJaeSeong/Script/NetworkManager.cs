@@ -317,7 +317,7 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
 
                     }
                 }
-                gameRuleManager.StartCupGame(GameType.Race);
+                gameRuleManager.StartCupGame(GameType.Survival);
                 spawnHandler.SpawnBlockFor(runner, player, offset);
             }
             

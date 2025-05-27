@@ -51,6 +51,7 @@ public class NetworkBlockController : NetworkBehaviour
         // 3) 매니저·이펙트 참조 채우기
         networkManager = FindObjectOfType<NetworkManager>();
         effectManager = FindObjectOfType<EffectManager>();
+        soundManager = FindObjectOfType<SoundManager>();
 
         // 4) 클라이언트 예측 단계에서 블록 할당
         if (Object.HasInputAuthority)
