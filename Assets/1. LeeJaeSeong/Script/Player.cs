@@ -20,6 +20,9 @@ public class Player : MonoBehaviour
     
     public static Player Instance;
 
+    public string nickname;
+    
+
     public User user { get; private set; }
 
     private void Awake()

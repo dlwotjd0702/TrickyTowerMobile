@@ -5,22 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/1. LeeJaeSeong/Buildsetting/1. OutGame.unity
     guid: ccae093fed19e7b4db61fc5e35a71b90
-  - enabled: 0
+  - enabled: 1
     path: Assets/1. LeeJaeSeong/Buildsetting/2.Lobby.unity
     guid: 8f8b87c7e9cfe944c924634a686319fd
-  - enabled: 0
+  - enabled: 1
     path: Assets/1. LeeJaeSeong/Buildsetting/3.CombinateGame.unity
     guid: 74bb6ebf680b38d4a9818b77fb261a6e
-  - enabled: 1
+  - enabled: 0
     path: Assets/3. LeeJuno/0_Scene/JUNO_TeamBuildsetting/1. OutGame.unity
     guid: 557d667a42d7c5146a121f1b24fa282b
-  - enabled: 1
+  - enabled: 0
     path: Assets/3. LeeJuno/0_Scene/JUNO_TeamBuildsetting/2.Lobby.unity
     guid: 9a630a80288ab654f80d5e06374695aa
-  - enabled: 1
+  - enabled: 0
     path: Assets/3. LeeJuno/0_Scene/JUNO_TeamBuildsetting/3.CombinateGame.unity
     guid: cf618b645f727d6489b6667e2cca0bba
   m_configObjects: {}

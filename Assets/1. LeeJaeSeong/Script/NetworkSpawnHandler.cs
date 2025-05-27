@@ -14,6 +14,8 @@ public class NetworkSpawnHandler : NetworkBehaviour, INetworkRunnerCallbacks
     public EffectManager effectManager;
     public SoundManager soundManager;
     public IngameUiManager ingameUiManager;
+    
+    public NetworkPrefabRef winnertropy;
 
     [Rpc(sources: RpcSources.All, targets: RpcTargets.StateAuthority)]
     public void RPC_RequestBlockSpawn(RpcInfo info = default)

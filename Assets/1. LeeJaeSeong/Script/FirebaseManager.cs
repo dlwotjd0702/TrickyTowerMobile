@@ -196,6 +196,7 @@ public class FirebaseAccountManager : MonoBehaviour
             var user = task.Result.User;
             Player.Instance.SetUserData(user);
             Debug.Log($"로그인 성공: {user.Email}");
+            Player.Instance.nickname = user.DisplayName;
             _currentUserKey = email;
             var LognIn = FindObjectOfType<UIButtonManager>();
             LognIn. introUI.SetActive(false);
@@ -268,7 +269,8 @@ public class FirebaseAccountManager : MonoBehaviour
 
         fs.Collection("sessions")
           .WhereGreaterThanOrEqualTo("expiresAt", now)
-          .GetSnapshotAsync().ContinueWithOnMainThread(task =>
+          .GetSnapshotAsync()
+          .ContinueWithOnMainThread(task =>
         {
             if (task.IsFaulted)
             {
@@ -276,15 +278,41 @@ public class FirebaseAccountManager : MonoBehaviour
                 return;
             }
 
-
             foreach (var doc in task.Result.Documents)
             {
-                var id  = doc.Id;
+                string id = doc.Id;
+
+                // 1) participants 배열 읽어서 카운트
+                int count = 0;
+                if (doc.TryGetValue("participants", out List<string> plist))
+                    count = plist.Count;
+
+                // 2) 버튼 생성 & 라벨 세팅
                 var btn = Instantiate(sessionButtonPrefab, sessionListContent);
-                btn.GetComponentInChildren<TextMeshProUGUI>().text = id;
+                var label = btn.GetComponentInChildren<TextMeshProUGUI>();
+                label.text = $"{id} ({count}명)";
+
+                // 로컬 값 캡쳐
+                string sessionId = id;
+
+                // 3) 클릭 리스너: 참가자 추가 → 클라이언트 참가
                 btn.onClick.AddListener(() =>
                 {
-                    networkManager.sessionName = id;
+                    // Firestore에 내 UserId 추가
+                    var (auth, firestore) = GetAuthAndFirestoreFor(_currentUserKey);
+                    firestore.Collection("sessions")
+                             .Document(sessionId)
+                             .UpdateAsync("participants", FieldValue.ArrayUnion(auth.CurrentUser.UserId))
+                             .ContinueWithOnMainThread(t2 =>
+                    {
+                        if (t2.IsFaulted)
+                            Debug.LogError("참가자 추가 실패: " + t2.Exception);
+                        else
+                            Debug.Log($"[{sessionId}] 참가자 추가 완료");
+                    });
+
+                    // 실제 참가 처리
+                    networkManager.sessionName = sessionId;
                     networkManager.StartClient();
                 });
             }

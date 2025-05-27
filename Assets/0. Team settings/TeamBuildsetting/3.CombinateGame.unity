@@ -2285,11 +2285,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 912400602655746614, guid: 2732e9dfc2ba0354c8edc04c4b56ce27, type: 3}
       propertyPath: SortKey
-      value: 2015992962
+      value: 1060074397
       objectReference: {fileID: 0}
     - target: {fileID: 1922434569733506445, guid: 2732e9dfc2ba0354c8edc04c4b56ce27, type: 3}
       propertyPath: SortKey
-      value: 1933988300
+      value: 978069735
       objectReference: {fileID: 0}
     - target: {fileID: 2364882010502305645, guid: 2732e9dfc2ba0354c8edc04c4b56ce27, type: 3}
       propertyPath: SortKey
@@ -2299,9 +2299,13 @@ PrefabInstance:
       propertyPath: SortKey
       value: 2384621784
       objectReference: {fileID: 0}
+    - target: {fileID: 4713170375191320303, guid: 2732e9dfc2ba0354c8edc04c4b56ce27, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4917637428693289307, guid: 2732e9dfc2ba0354c8edc04c4b56ce27, type: 3}
       propertyPath: SortKey
-      value: 433131730
+      value: 3772180461
       objectReference: {fileID: 0}
     - target: {fileID: 6865541504622936440, guid: 2732e9dfc2ba0354c8edc04c4b56ce27, type: 3}
       propertyPath: SortKey
@@ -4775,7 +4779,7 @@ MonoBehaviour:
   m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SortKey: 774765982
+  SortKey: 4113814713
   ObjectInterest: 1
   Flags: 786433
   NestedObjects: []
@@ -9483,6 +9487,8 @@ MonoBehaviour:
   ShadowDuration: 0.1
   isRight: 0
   RoatateValue: 45
+  roatateButton1: {fileID: 0}
+  roatateButton2: {fileID: 0}
 --- !u!1 &2137330933
 GameObject:
   m_ObjectHideFlags: 0
