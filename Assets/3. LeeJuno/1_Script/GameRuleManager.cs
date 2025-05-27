@@ -34,6 +34,7 @@ public class GameRuleManager : NetworkBehaviour
     [SerializeField]
     private ScoreBoard scoreBoard;
 
+    private NetworkManager networkManager;
     private int roundIndex = 0;
     private bool gameActive = true;
     private bool isInvinsible = false;
@@ -55,7 +56,7 @@ public class GameRuleManager : NetworkBehaviour
     {
         playType = PlayType.Cup;
         GameClearManager.Instance.ResetScore();
-        scoreBoard.ResetSlots();
+        //scoreBoard.ResetSlotsLocal();
 
         gameActive = true;
         roundIndex = (int)type;
@@ -96,19 +97,21 @@ public class GameRuleManager : NetworkBehaviour
     private void RoundCleared(PlayerRef winner, GameType gameType)
     {
         Debug.Log("라운드끝");
-        if (gameActive == false) return;
+        if (Runner.IsServer == false || gameActive == false) return;
         Debug.Log("다음라운드");
         var ranking = GameClearManager.Instance.GetLastRoundRanking();
         //** 플레이어 점수UI 띄우기**
-        scoreBoard.FillMedals(ranking);
-
+        var allScores = GameClearManager.Instance.GetAllScore();     
+        Debug.Log("0");
+        scoreBoard.ShowScoreBoard();
+        Debug.Log("1");
         int winnerScore = GameClearManager.Instance.GetPlayerScore(winner);
-        
+
         GameClearManager.Instance.RemoveAllBlocks();
         GameClearManager.Instance.AllowAllBlocks();
         GameClearManager.Instance.ClearPlayers();
         GameClearManager.Instance.ClearFalse();
-         Debug.Log("1");
+        Debug.Log("2");
         if (winnerScore >= cupTargetScore || playType == PlayType.Selection)
         {
             GameClear();
@@ -117,11 +120,23 @@ public class GameRuleManager : NetworkBehaviour
         {
             roundIndex = (roundIndex + 1);
             if (roundIndex >= 3) roundIndex = 0;
-            Invoke(nameof(NextRound), 5f);
+            networkManager = FindObjectOfType<NetworkManager>();
+            networkManager.GameClear();
+           
         }
     }
 
-    private void NextRound()
+    private void gamecleartoserver()//클리어 알림
+    {
+        
+    }
+
+    public void scoreset(int idx)//플레이어 인덱스 받아옴
+    {
+        
+    }
+
+    public void NextRound()
     {
         ActiveMode((GameType)roundIndex);
     }

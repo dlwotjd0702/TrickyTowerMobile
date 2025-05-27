@@ -161,6 +161,25 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
         }
     }
 
+    private IEnumerator delaynextround()
+    {
+        yield return new WaitForSeconds(3f);
+        gameRuleManager.NextRound();
+    }
+    public async void GameClear()
+    {
+        var targetScene = SceneRef.FromIndex(2);
+        await runner.LoadScene(targetScene);
+        /*foreach (var player in runner.ActivePlayers)
+        {
+            // 1) 인덱스 계산
+            int idx = GetPlayerJoinIndex(player);
+            Vector3 offset = spawnOffsets[Mathf.Clamp(idx, 0, spawnOffsets.Length - 1)];
+            gameRuleManager.StartCupGame(GameType.Race);
+            spawnHandler.SpawnBlockFor(runner, player, offset);
+        }*/
+    }
+
     /*private void StartGame()
     {
              foreach (var player in runner.ActivePlayers) 
@@ -269,7 +288,7 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
         runner.AddCallbacks(inputHandler);
    
         
-        gameRuleManager.StartCupGame(GameType.Race);
+        //gameRuleManager.StartCupGame(GameType.Race);
 
         // 모든 플레이어에 대해 처리
         foreach (var player in runner.ActivePlayers)
@@ -298,7 +317,7 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
 
                     }
                 }
-                gameRuleManager.StartCupGame(GameType.Survival);
+                gameRuleManager.StartCupGame(GameType.Puzzle);
                 spawnHandler.SpawnBlockFor(runner, player, offset);
             }
             

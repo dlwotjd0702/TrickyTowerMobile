@@ -29,6 +29,7 @@ public class GameClearManager : NetworkBehaviour
     public bool clear { get; private set; }
     private bool stopAllSpawns = false;
     private HashSet<PlayerRef> blockedPlayers = new HashSet<PlayerRef>();
+    public Vector3 MaxHeight;
 
     private void Awake()
     {
@@ -158,9 +159,7 @@ public class GameClearManager : NetworkBehaviour
     public void PuzzlePlayerEnd(PlayerRef player) //퍼즐 플레이어 탈락 감지 로직
     {
         if (failedPlayers.Contains(player)) return;
-
-        RemoveUnplacedBlock(player);
-
+        
         failedPlayers.Add(player);
 
         // 해당 플레이어 블럭생성중지 
@@ -171,6 +170,7 @@ public class GameClearManager : NetworkBehaviour
         if (failedPlayers.Count >= Runner.ActivePlayers.Count()) //모든 플레이어 종료확인
         {
             PuzzleModeClear();
+            RemoveUnplacedBlock(player);
             failedPlayers.Clear();
         }
     }
@@ -212,7 +212,7 @@ public class GameClearManager : NetworkBehaviour
         if (failedPlayers.Add(player) == false) return;
         Debug.Log(player + "죽음");
 
-        RemoveUnplacedBlock(player);
+       
         // 해당 플레이어 블럭 생성막는 로직
         StopPlayer(player);
 
@@ -223,6 +223,7 @@ public class GameClearManager : NetworkBehaviour
             PlayerRef winner =
                 Runner.ActivePlayers.First(p => failedPlayers.Contains(p) == false);
             SurvivalModeClear(winner);
+            RemoveUnplacedBlock(player);
         }
     }
 
@@ -250,8 +251,9 @@ public class GameClearManager : NetworkBehaviour
 
         Debug.Log("정산끝");
         ScoreDebug();
+        
         RoundCleared?.Invoke(lastRoundRank[0], currentGameType);
-        Debug.Log("인보크");
+        Debug.Log("점수 함수 끝");
     }
 
     private void ScoreDebug()
