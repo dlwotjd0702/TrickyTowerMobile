@@ -99,11 +99,9 @@ public class GameRuleManager : NetworkBehaviour
         Debug.Log("라운드끝");
         if (Runner.IsServer == false || gameActive == false) return;
         Debug.Log("다음라운드");
-        var ranking = GameClearManager.Instance.GetLastRoundRanking();
         //** 플레이어 점수UI 띄우기**
-        var allScores = GameClearManager.Instance.GetAllScore();     
-        Debug.Log("0");
         scoreBoard.ShowScoreBoard();
+
         Debug.Log("1");
         int winnerScore = GameClearManager.Instance.GetPlayerScore(winner);
 
@@ -122,18 +120,15 @@ public class GameRuleManager : NetworkBehaviour
             if (roundIndex >= 3) roundIndex = 0;
             networkManager = FindObjectOfType<NetworkManager>();
             networkManager.GameClear();
-           
         }
     }
 
-    private void gamecleartoserver()//클리어 알림
+    private void gamecleartoserver() //클리어 알림
     {
-        
     }
 
-    public void scoreset(int idx)//플레이어 인덱스 받아옴
+    public void scoreset(int idx) //플레이어 인덱스 받아옴
     {
-        
     }
 
     public void NextRound()
