@@ -6,19 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="33ec4f3c-9a43-40ac-a265-51209e7b0009" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/FirebaseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/FirebaseManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkBlockController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkBlockController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/CombinateGame.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/CombinateGame.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/Lobby.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/Lobby.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/OutGame.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/OutGame.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/RoomJoiner.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/RoomJoiner.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/SoundSettingsUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/SoundSettingsUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/UIButtonManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/UIButtonManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/FusionDemos/Photon-Fusion-Intro-Sample-2.0.6-Stable-1034.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/1. OutGame.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/1. OutGame.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Prefabs/BG_Camera.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Prefabs/BG_Camera.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Prefabs/Canvas.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Prefabs/Canvas.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Prefabs/Quad.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Prefabs/Quad.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +157,7 @@
       <workItem from="1748252144347" duration="1218000" />
       <workItem from="1748304935649" duration="148000" />
       <workItem from="1748305610276" duration="5097000" />
-      <workItem from="1748313102483" duration="13953000" />
+      <workItem from="1748313102483" duration="16235000" />
     </task>
     <servers />
   </component>
