@@ -118,8 +118,10 @@ public class GameRuleManager : NetworkBehaviour
         {
             roundIndex = (roundIndex + 1);
             if (roundIndex >= 3) roundIndex = 0;
+            
             networkManager = FindObjectOfType<NetworkManager>();
             networkManager.GameClear();
+            //** 씬을 불러오기 전에 어느정도 딜레이가 있어서 스코어 보드를 보여줘야함 **
         }
     }
 
