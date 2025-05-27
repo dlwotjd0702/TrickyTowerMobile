@@ -112,6 +112,8 @@ public class NetworkInputHandler : MonoBehaviour, INetworkRunnerCallbacks,IPoint
     public void OnInput(NetworkRunner runner, NetworkInput input)
     {
         int rawX = (int)Input.GetAxisRaw("Horizontal");
+        
+        bool isDown = downButton.isClick || Input.GetKey(KeyCode.S);
 
         int moveX = 0;
         if (_prevRawX == 0 && rawX != 0)
@@ -124,7 +126,7 @@ public class NetworkInputHandler : MonoBehaviour, INetworkRunnerCallbacks,IPoint
         {
             MoveX    = moveX,
             Rotate   = _rotateQueued,
-            FastDown = downButton.isClick,
+            FastDown = isDown,
             leftFastMove = isLeftFastMove,
             rightFastMove = isRightFastMove
         };
