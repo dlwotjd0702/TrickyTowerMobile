@@ -84,13 +84,12 @@ public class EffectManager : MonoBehaviour
     {
         if (IsShake)
         {
-            
             StartCoroutine(Shake());
             IsShake = false;
         }
     }
 
-    private IEnumerator Shake()
+    public IEnumerator Shake()
     {
         Debug.Log("shake");
         Vector3 camOriginPos = MainCamera.transform.position;
