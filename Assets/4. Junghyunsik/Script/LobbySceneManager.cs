@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 
@@ -30,4 +30,4 @@ public class LobbySceneManager : MonoBehaviour
         // 한 번만 실행하고 이벤트 해제
         SceneManager.sceneLoaded -= OnOutGameSceneLoaded;
     }
-}
+}*/

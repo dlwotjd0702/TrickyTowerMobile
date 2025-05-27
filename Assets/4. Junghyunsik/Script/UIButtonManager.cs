@@ -212,8 +212,6 @@ public class UIButtonManager : MonoBehaviour
 
             case "CreateRoom":
             case "EnterRoom":
-                DOTween.KillAll();
-                SceneManager.LoadScene("lobby");
                 break;
 
             case "EnterRoomList":

@@ -12,12 +12,13 @@ using Debug = UnityEngine.Debug;
 public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
 {
     [Header("외부 연결")]
-    public NetworkInputHandler inputHandler;
-    public NetworkSpawnHandler spawnHandler;
-    public GameRuleManager gameRuleManager;
-    public CameraManager cameraManager;
+    private NetworkInputHandler inputHandler;
+    private NetworkSpawnHandler spawnHandler;
+    private GameRuleManager gameRuleManager;
+    private CameraManager cameraManager;
     public FirebaseAccountManager firebaseAccountManager;
-    public float heartbeatInterval = 10f;
+    private LobbyUIManager lobbyUIManager;
+    private float heartbeatInterval = 10f;
     private Coroutine heartbeatRoutine;
 
     [Header("네트워크 설정")]
@@ -116,6 +117,14 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     }
 public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
+        if (player != runner.LocalPlayer)
+        {
+            foreach (var p in runner.ActivePlayers)
+            {
+                int idx = GetPlayerJoinIndex(p);
+                lobbyUIManager.ToggleSlot(idx,true);
+            }
+        }
     }
 
     public void RequestNextBlock(PlayerRef player)
@@ -227,14 +236,14 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     public void OnSceneLoadStart(NetworkRunner runner) { }
     public void OnSceneLoadDone(NetworkRunner runner) 
     {
-        if (SceneManager.GetActiveScene().buildIndex == 0)
-        {
-            firebaseAccountManager = FindObjectOfType<FirebaseAccountManager>();
-        }
-
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {
-            
+            lobbyUIManager = FindObjectOfType<LobbyUIManager>();
+            foreach (var p in runner.ActivePlayers)
+            {
+                int idx = GetPlayerJoinIndex(p);
+                lobbyUIManager.ToggleSlot(idx,true);
+            }
         }
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
@@ -260,7 +269,7 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
         runner.AddCallbacks(inputHandler);
    
         
-        //gameRuleManager.StartCupGame(GameType.Race);
+        gameRuleManager.StartCupGame(GameType.Race);
 
         // 모든 플레이어에 대해 처리
         foreach (var player in runner.ActivePlayers)

@@ -109,10 +109,9 @@ public class FirebaseAccountManager : MonoBehaviour
             Debug.LogError("세션을 생성하려면 먼저 로그인해야 합니다.");
             return;
         }
-        // use logged-in user's auth
+        networkManager.sessionName = sessionName;
         var (auth, fs) = GetAuthAndFirestoreFor(_currentUserKey);
         CreateSessionDocument(sessionName, auth, fs);
-        networkManager.sessionName = sessionName;
         networkManager.StartHost();
     }
 
@@ -225,9 +224,6 @@ public class FirebaseAccountManager : MonoBehaviour
             else
             {
                 Debug.Log($"세션 생성 완료: {sessionName}");
-                networkManager.sessionName = sessionName;
-                // 2) 호스트 시작
-                networkManager.StartHost();
                 DOTween.KillAll();
             } 
             

@@ -1,9 +1,11 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class LobbyUIManager : MonoBehaviour
 {
-    [System.Serializable]
+    [Serializable]
     public class Slot
     {
         public GameObject playerIn;
@@ -11,48 +13,55 @@ public class LobbyUIManager : MonoBehaviour
         public TextMeshProUGUI nameText;
     }
 
-    [SerializeField] private Slot[] slots = new Slot[4];
+    [SerializeField]
+    private Slot[] slots = new Slot[4];
 
-    // ActivateNext/DeactivateNext 둘 다 이 인덱스를 기준으로 동작
-    private int activateIndex = 0;
-
-    private void Start()
+    /// <summary>
+    /// 주어진 인덱스 목록에 따라 각 슬롯을 활성화/비활성화합니다.
+    /// 0~3 범위의 인덱스를 사용하십시오.
+    /// </summary>
+    /// <param name="activeIndices">활성화할 슬롯 인덱스 목록</param>
+    public void UpdateSlots(IEnumerable<int> activeIndices)
     {
-        ClearAllSlots();
-    }
-
-    /// <summary>다음 슬롯 하나만 활성화 (0→1→2→3)</summary>
-    public void ActivateNext()
-    {
-        if (activateIndex >= slots.Length)
+        // 모든 슬롯 초기화
+        for (int i = 0; i < slots.Length; i++)
         {
-            Debug.Log("모든 슬롯이 이미 활성화되어 있습니다.");
-            return;
+            slots[i].playerIn?.SetActive(false);
+            slots[i].playerWaiting?.SetActive(true);
         }
 
-        slots[activateIndex].playerIn?.SetActive(true);
-        slots[activateIndex].playerWaiting?.SetActive(false);
-        activateIndex++;
+        // 전달된 인덱스만 활성화
+        foreach (var index in activeIndices)
+        {
+            if (index < 0 || index >= slots.Length)
+            {
+                Debug.LogWarning($"Invalid slot index: {index}");
+                continue;
+            }
+            slots[index].playerIn?.SetActive(true);
+            slots[index].playerWaiting?.SetActive(false);
+        }
     }
 
     /// <summary>
-    /// 마지막으로 활성화된 슬롯부터 비활성화 (ActivateNext 된 순서의 역순)
-    /// 예: ActivateNext 3번 호출 후 activateIndex == 3, DeactivateNext 호출 시 index 2 비활성화
+    /// 특정 슬롯 하나만 토글합니다.
     /// </summary>
-    public void DeactivateNext()
+    /// <param name="index">토글할 슬롯 인덱스</param>
+    /// <param name="isActive">true면 활성화, false면 비활성화</param>
+    public void ToggleSlot(int index, bool isActive)
     {
-        if (activateIndex <= 0)
+        if (index < 0 || index >= slots.Length)
         {
-            Debug.Log("비활성화할 슬롯이 없습니다.");
+            Debug.LogWarning($"Invalid slot index: {index}");
             return;
         }
-
-        // 방금 켠 슬롯의 인덱스로 이동
-        activateIndex--;
-        slots[activateIndex].playerIn?.SetActive(false);
-        slots[activateIndex].playerWaiting?.SetActive(true);
+        slots[index].playerIn?.SetActive(isActive);
+        slots[index].playerWaiting?.SetActive(!isActive);
     }
 
+    /// <summary>
+    /// 모든 슬롯을 기본 상태(모두 대기)로 초기화합니다.
+    /// </summary>
     public void ClearAllSlots()
     {
         for (int i = 0; i < slots.Length; i++)
@@ -60,6 +69,5 @@ public class LobbyUIManager : MonoBehaviour
             slots[i].playerIn?.SetActive(false);
             slots[i].playerWaiting?.SetActive(true);
         }
-        activateIndex = 0;
     }
 }

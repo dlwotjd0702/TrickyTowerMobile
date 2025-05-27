@@ -20,14 +20,14 @@ public class Player : MonoBehaviour
     
     public static Player Instance;
 
-    public User YachtUser { get; private set; }
+    public User user { get; private set; }
 
     private void Awake()
     {
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        YachtUser = new User();
+        user = new User();
     }
 
     // Update is called once per frame
@@ -38,13 +38,13 @@ public class Player : MonoBehaviour
 
     public void SetUserData(FirebaseUser user)
     {
-        YachtUser.UserData = user;
-        Debug.Log($"MainSystem ::: {YachtUser.UserData.DisplayName}");
+        this.user.UserData = user;
+        Debug.Log($"MainSystem ::: {this.user.UserData.DisplayName}");
     }
 
     public void SetFusionPlayerRef(PlayerRef playerRef)
     {
-        YachtUser.FusionPlayerRef = playerRef;
+        user.FusionPlayerRef = playerRef;
     }
     
 }
