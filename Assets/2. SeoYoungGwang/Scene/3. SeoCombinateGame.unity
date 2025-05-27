@@ -15539,7 +15539,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1244612144
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19663,7 +19663,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1609396826
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20261,7 +20261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1661467038
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21874,7 +21874,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1780652936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25993,6 +25993,8 @@ MonoBehaviour:
   ShadowDuration: 0.1
   isRight: 0
   RoatateValue: 45
+  roatateButton1: {fileID: 1115799499}
+  roatateButton2: {fileID: 628228798}
 --- !u!1 &2105917074
 GameObject:
   m_ObjectHideFlags: 0

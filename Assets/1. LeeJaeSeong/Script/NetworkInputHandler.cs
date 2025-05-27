@@ -12,11 +12,15 @@ public class NetworkInputHandler : MonoBehaviour, INetworkRunnerCallbacks,IPoint
 {
     
     private int _prevRawX = 0;
+    private int _prevRawX2 = 0;
+    private int rawX2 = 0;
 
     // 🔸 1프레임 키 입력 저장용
     private bool _rotateQueued = false;
     private bool isLeftFastMove = false;
     private bool isRightFastMove = false;
+
+    
     
     [SerializeField] private EffectManager effectManager;
     [SerializeField] private ButtonController leftMoveButton;
@@ -43,7 +47,10 @@ public class NetworkInputHandler : MonoBehaviour, INetworkRunnerCallbacks,IPoint
     private void KeyBoardInput()
     {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
+        {
             _rotateQueued = true;
+            effectManager.RotateSetLandVisual();
+        }
         if (Input.GetKeyDown(KeyCode.U) && !effectManager.IsShadow)
         {
             effectManager.IsShadow = true;
@@ -65,6 +72,7 @@ public class NetworkInputHandler : MonoBehaviour, INetworkRunnerCallbacks,IPoint
         if (leftRotateButton.onClick || rightRotateButton.onClick)
         {
             _rotateQueued = true;
+            effectManager.RotateSetLandVisual();
             leftRotateButton.onClick =  false;
             rightRotateButton.onClick = false;
         }
@@ -74,6 +82,7 @@ public class NetworkInputHandler : MonoBehaviour, INetworkRunnerCallbacks,IPoint
     {
         if (leftMoveButton.onClick)
         {
+            rawX2 = -1;
             leftMoveButton.onClick = false;
         }
     }
@@ -82,6 +91,7 @@ public class NetworkInputHandler : MonoBehaviour, INetworkRunnerCallbacks,IPoint
     {
         if (rightMoveButton.onClick)
         {
+            rawX2 = 1;
             rightMoveButton.onClick = false;
         }
     }
@@ -118,8 +128,11 @@ public class NetworkInputHandler : MonoBehaviour, INetworkRunnerCallbacks,IPoint
         int moveX = 0;
         if (_prevRawX == 0 && rawX != 0)
             moveX = rawX;
+        if(_prevRawX2 == 0 && rawX2 != 0)
+            moveX =  rawX2;
 
         _prevRawX = rawX;
+        _prevRawX2 = rawX2;
 
         // 🔸 저장된 키입력 사용 후 초기화
         var data = new NetworkBlockController.NetworkBlockInputData
@@ -134,6 +147,7 @@ public class NetworkInputHandler : MonoBehaviour, INetworkRunnerCallbacks,IPoint
         _rotateQueued = false; // 🔸 초기화
         isLeftFastMove = false;
         isRightFastMove = false;
+        rawX2 = 0;
 
         input.Set(data);
     }

@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/2. SeoYoungGwang/Scene/3. SeoCombinateGame.unity
     guid: 80cda96559fae004cb0b19f733d50bfa
+  - enabled: 0
+    path: Assets/0. Team settings/TeamBuildsetting/3.CombinateGame.unity
+    guid: 1b20efeec1ee9684185f1714d9735524
   m_configObjects: {}
