@@ -59,7 +59,7 @@ public class SurvivalMode : MonoBehaviour
         if (hp.ContainsKey(p) == false)
             hp[p] = 3;
 
-        if (hp[p]-- <= 0)
+        if (hp[p]-- <= 1)
         {
             GameClearManager.Instance.SurvivePlayerDie(p);
         }

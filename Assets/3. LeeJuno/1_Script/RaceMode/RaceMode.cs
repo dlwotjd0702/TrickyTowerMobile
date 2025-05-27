@@ -75,8 +75,8 @@ public class RaceMode : MonoBehaviour
         var block = other.GetComponent<NetworkObject>();
         if (block == null) return;
 
-        var blockCon = other.GetComponent<NetworkBlockController>();
-        if (blockCon.IsPlaced == false) return;
+        // var blockCon = other.GetComponent<NetworkBlockController>();
+        // if (blockCon.IsPlaced == false) return;
 
         blockCount++;
         playerTouched = true;
@@ -92,8 +92,8 @@ public class RaceMode : MonoBehaviour
         var block = other.GetComponent<NetworkObject>();
         if (block == null) return;
 
-        var blockCon = other.GetComponent<NetworkBlockController>();
-        if (blockCon.IsPlaced == false) return;
+        // var blockCon = other.GetComponent<NetworkBlockController>();
+        // if (blockCon.IsPlaced == false) return;
 
         blockCount--;
         if (blockCount <= 0)

@@ -217,9 +217,11 @@ public class GameClearManager : NetworkBehaviour
         StopPlayer(player);
 
         int total = Runner.ActivePlayers.Count();
-
+        Debug.Log("토탈"+total);
+        
         if (failedPlayers.Count >= total - 1)
         {
+            Debug.Log("실패한 "+failedPlayers.Count);
             PlayerRef winner =
                 Runner.ActivePlayers.First(p => failedPlayers.Contains(p) == false);
             SurvivalModeClear(winner);
