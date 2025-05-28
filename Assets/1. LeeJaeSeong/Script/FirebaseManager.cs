@@ -152,7 +152,8 @@ public class FirebaseAccountManager : MonoBehaviour
             }
 
             var newUser = task.Result.User;
-            Player.Instance.SetUserData(newUser);
+            Player player = FindObjectOfType<Player>();
+            player.SetUserData(newUser);
             Debug.Log($"회원가입 성공: {newUser.Email}");
             _currentUserKey = email;
 
@@ -194,9 +195,11 @@ public class FirebaseAccountManager : MonoBehaviour
             }
 
             var user = task.Result.User;
-            Player.Instance.SetUserData(user);
+            Player player = FindObjectOfType<Player>();
+            
+            player.SetUserData(user);
             Debug.Log($"로그인 성공: {user.Email}");
-            Player.Instance.nickname = user.DisplayName;
+            player.nickname = user.DisplayName;
             _currentUserKey = email;
             var LognIn = FindObjectOfType<UIButtonManager>();
             LognIn. introUI.SetActive(false);

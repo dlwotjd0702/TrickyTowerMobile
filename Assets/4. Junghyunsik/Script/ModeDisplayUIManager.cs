@@ -13,9 +13,9 @@ public class ModeDisplayUIManager : MonoBehaviour
 
     void Start()
     {
-        var mode = FirebaseAccountManager.Instance.sessionGameType;
-        Debug.Log($"[Lobby] Loaded sessionGameType → {mode}");
-        UpdateModeUI(mode);
+        //var mode = FirebaseAccountManager.Instance.sessionGameType;
+       //Debug.Log($"[Lobby] Loaded sessionGameType → {mode}");
+        //UpdateModeUI(mode);
     }
 
     public void UpdateModeUI(GameType mode)

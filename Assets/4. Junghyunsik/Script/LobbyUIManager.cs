@@ -13,53 +13,52 @@ public class LobbyUIManager : MonoBehaviour
         public TextMeshProUGUI nameText;
     }
 
-    [SerializeField]
-    private Slot[] slots = new Slot[4];
-
-    public string nickname;
+    [SerializeField] private Slot[] slots = new Slot[4];
 
     /// <summary>
-    /// 주어진 인덱스 목록에 따라 각 슬롯을 활성화/비활성화합니다.
-    /// 0~3 범위의 인덱스를 사용하십시오.
-    /// </summary>
-    /// <param name="activeIndices">활성화할 슬롯 인덱스 목록</param>
-    public void UpdateSlots(IEnumerable<int> activeIndices)
-    {
-        // 모든 슬롯 초기화
-        for (int i = 0; i < slots.Length; i++)
-        {
-            slots[i].playerIn?.SetActive(false);
-            slots[i].playerWaiting?.SetActive(true);
-        }
-
-        Player.Instance.nickname = nickname;//이거 사용
-        // 전달된 인덱스만 활성화
-        foreach (var index in activeIndices)
-        {
-            if (index < 0 || index >= slots.Length)
-            {
-                Debug.LogWarning($"Invalid slot index: {index}");
-                continue;
-            }
-            slots[index].playerIn?.SetActive(true);
-            slots[index].playerWaiting?.SetActive(false);
-        }
-    }
-
-    /// <summary>
-    /// 특정 슬롯 하나만 토글합니다.
+    /// 특정 슬롯 하나만 토글하고, 플레이어 이름을 세팅합니다.
     /// </summary>
     /// <param name="index">토글할 슬롯 인덱스</param>
     /// <param name="isActive">true면 활성화, false면 비활성화</param>
-    public void ToggleSlot(int index, bool isActive)
+    /// <param name="playerName">활성화할 때 표시할 플레이어 이름</param>
+    public void ToggleSlot(int index, bool isActive, string playerName = "")
     {
-        if (index < 0 || index >= slots.Length)
+        if (index < 0 || index >= slots.Length) return;
+
+        slots[index].playerIn.SetActive(isActive);
+        slots[index].playerWaiting.SetActive(!isActive);
+
+        // 이름도 세팅 or 초기화
+        if (isActive)
+            slots[index].nameText.text = playerName;
+        else
+            slots[index].nameText.text = "";
+    }
+
+    /// <summary>
+    /// 주어진 인덱스 목록에 따라 각 슬롯을 활성화/비활성화하고 이름을 세팅합니다.
+    /// </summary>
+    public void UpdateSlots(Dictionary<int,string> activeWithNames)
+    {
+        // 모두 리셋
+        for (int i = 0; i < slots.Length; i++)
         {
-            Debug.LogWarning($"Invalid slot index: {index}");
-            return;
+            slots[i].playerIn.SetActive(false);
+            slots[i].playerWaiting.SetActive(true);
+            slots[i].nameText.text = "";
         }
-        slots[index].playerIn?.SetActive(isActive);
-        slots[index].playerWaiting?.SetActive(!isActive);
+
+        // 전달된 인덱스 + 이름 정보만 활성화
+        foreach (var kv in activeWithNames)
+        {
+            int idx = kv.Key;
+            string name = kv.Value;
+            if (idx < 0 || idx >= slots.Length) continue;
+
+            slots[idx].playerIn.SetActive(true);
+            slots[idx].playerWaiting.SetActive(false);
+            slots[idx].nameText.text = name;
+        }
     }
 
     /// <summary>
@@ -69,8 +68,9 @@ public class LobbyUIManager : MonoBehaviour
     {
         for (int i = 0; i < slots.Length; i++)
         {
-            slots[i].playerIn?.SetActive(false);
-            slots[i].playerWaiting?.SetActive(true);
+            slots[i].playerIn.SetActive(false);
+            slots[i].playerWaiting.SetActive(true);
+            slots[i].nameText.text = "";
         }
     }
 }

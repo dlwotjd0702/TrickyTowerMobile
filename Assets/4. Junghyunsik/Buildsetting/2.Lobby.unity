@@ -374,7 +374,6 @@ GameObject:
   - component: {fileID: 69814372}
   - component: {fileID: 69814375}
   - component: {fileID: 69814374}
-  - component: {fileID: 69814373}
   m_Layer: 0
   m_Name: Player2Space
   m_TagString: Untagged
@@ -403,21 +402,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0.000030517578}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &69814373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 69814371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 302114ab7650f4f4e9b6d7433371ba8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerIn: {fileID: 2106027844}
-  playerWaiting: {fileID: 1116926522}
-  nameText: {fileID: 2127235778}
 --- !u!114 &69814374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,7 +564,7 @@ GameObject:
   - component: {fileID: 123657240}
   - component: {fileID: 123657239}
   m_Layer: 0
-  m_Name: Block
+  m_Name: Block3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -656,7 +640,7 @@ GameObject:
   - component: {fileID: 135817144}
   - component: {fileID: 135817143}
   m_Layer: 0
-  m_Name: Player Name
+  m_Name: Player Name4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -701,7 +685,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Player Name
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -865,7 +849,7 @@ GameObject:
   - component: {fileID: 168976021}
   - component: {fileID: 168976020}
   m_Layer: 0
-  m_Name: Player Name
+  m_Name: Player Name4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -941,7 +925,7 @@ GameObject:
   - component: {fileID: 199008168}
   - component: {fileID: 199008167}
   m_Layer: 0
-  m_Name: Player Name
+  m_Name: Player Name3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1111,7 +1095,7 @@ GameObject:
   - component: {fileID: 232036082}
   - component: {fileID: 232036081}
   m_Layer: 0
-  m_Name: Image
+  m_Name: Image3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1894,7 +1878,6 @@ GameObject:
   - component: {fileID: 543403323}
   - component: {fileID: 543403326}
   - component: {fileID: 543403325}
-  - component: {fileID: 543403324}
   m_Layer: 0
   m_Name: Player3Space
   m_TagString: Untagged
@@ -1923,21 +1906,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &543403324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 543403322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 302114ab7650f4f4e9b6d7433371ba8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerIn: {fileID: 1398394364}
-  playerWaiting: {fileID: 1028170050}
-  nameText: {fileID: 831805508}
 --- !u!114 &543403325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2063,7 +2031,7 @@ GameObject:
   - component: {fileID: 571868130}
   - component: {fileID: 571868129}
   m_Layer: 0
-  m_Name: PlayerImg
+  m_Name: PlayerImg3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2206,7 +2174,7 @@ GameObject:
   - component: {fileID: 602898752}
   - component: {fileID: 602898751}
   m_Layer: 0
-  m_Name: WaitingForPlayerText
+  m_Name: WaitingForPlayer4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2340,7 +2308,7 @@ GameObject:
   - component: {fileID: 616374390}
   - component: {fileID: 616374389}
   m_Layer: 0
-  m_Name: PlayerImg
+  m_Name: PlayerImg4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2506,7 +2474,7 @@ GameObject:
   - component: {fileID: 668217420}
   - component: {fileID: 668217419}
   m_Layer: 0
-  m_Name: Block
+  m_Name: Block1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2655,7 +2623,6 @@ GameObject:
   m_Component:
   - component: {fileID: 780943670}
   - component: {fileID: 780943669}
-  - component: {fileID: 780943671}
   m_Layer: 0
   m_Name: LobbyUIManager
   m_TagString: Untagged
@@ -2703,23 +2670,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &780943671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 780943668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7751896caede7840bc1bd02bfc6e600, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  modeText: {fileID: 0}
-  modeIcon: {fileID: 0}
-  raceSprite: {fileID: 0}
-  survivalSprite: {fileID: 0}
-  puzzleSprite: {fileID: 0}
 --- !u!1 &781449483
 GameObject:
   m_ObjectHideFlags: 0
@@ -2823,7 +2773,7 @@ GameObject:
   - component: {fileID: 802314143}
   - component: {fileID: 802314142}
   m_Layer: 0
-  m_Name: WaitingForPlayerText
+  m_Name: WaitingForPlayer3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3182,7 +3132,7 @@ GameObject:
   - component: {fileID: 831805509}
   - component: {fileID: 831805508}
   m_Layer: 0
-  m_Name: Player Name
+  m_Name: Player Name3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3227,7 +3177,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Player Name
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3316,7 +3266,7 @@ GameObject:
   - component: {fileID: 831819831}
   - component: {fileID: 831819830}
   m_Layer: 0
-  m_Name: PlayerImg
+  m_Name: PlayerImg1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3600,7 +3550,7 @@ GameObject:
   - component: {fileID: 850626128}
   - component: {fileID: 850626127}
   m_Layer: 0
-  m_Name: Image
+  m_Name: Image4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3748,7 +3698,7 @@ GameObject:
   m_Component:
   - component: {fileID: 935639096}
   m_Layer: 0
-  m_Name: Playerin
+  m_Name: Playerin1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3825,7 +3775,7 @@ GameObject:
   - component: {fileID: 991018502}
   - component: {fileID: 991018501}
   m_Layer: 0
-  m_Name: LoadingBlock
+  m_Name: LoadingBlock4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3921,7 +3871,7 @@ GameObject:
   - component: {fileID: 999176905}
   - component: {fileID: 999176904}
   m_Layer: 0
-  m_Name: WaitingForPlayerText
+  m_Name: WaitingForPlayer2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4055,7 +4005,7 @@ GameObject:
   - component: {fileID: 1002869094}
   - component: {fileID: 1002869093}
   m_Layer: 0
-  m_Name: Image
+  m_Name: Image2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4128,7 +4078,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1028170051}
   m_Layer: 0
-  m_Name: PlayerWaiting
+  m_Name: PlayerWaiting3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4258,7 +4208,7 @@ GameObject:
   - component: {fileID: 1084017056}
   - component: {fileID: 1084017055}
   m_Layer: 0
-  m_Name: LoadingBlock
+  m_Name: LoadingBlock3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4473,7 +4423,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1116926523}
   m_Layer: 0
-  m_Name: PlayerWaiting
+  m_Name: PlayerWaiting2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4603,7 +4553,7 @@ GameObject:
   - component: {fileID: 1132230123}
   - component: {fileID: 1132230122}
   m_Layer: 0
-  m_Name: Block
+  m_Name: Block2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5861,7 +5811,7 @@ GameObject:
   - component: {fileID: 1379294350}
   - component: {fileID: 1379294349}
   m_Layer: 0
-  m_Name: Player Name
+  m_Name: Player Name2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5973,7 +5923,7 @@ GameObject:
   - component: {fileID: 1393358806}
   - component: {fileID: 1393358805}
   m_Layer: 0
-  m_Name: Player Name
+  m_Name: Player Name1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6047,7 +5997,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1398394365}
   m_Layer: 0
-  m_Name: Playerin
+  m_Name: Playerin3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6313,7 +6263,7 @@ GameObject:
   - component: {fileID: 1539110721}
   - component: {fileID: 1539110720}
   m_Layer: 0
-  m_Name: LoadingBlock
+  m_Name: LoadingBlock2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6543,7 +6493,7 @@ GameObject:
   - component: {fileID: 1576309290}
   - component: {fileID: 1576309289}
   m_Layer: 0
-  m_Name: PlayerImg
+  m_Name: PlayerImg2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6619,7 +6569,7 @@ GameObject:
   - component: {fileID: 1588175956}
   - component: {fileID: 1588175955}
   m_Layer: 0
-  m_Name: LoadingBlock
+  m_Name: LoadingBlock1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6910,7 +6860,6 @@ GameObject:
   - component: {fileID: 1681545413}
   - component: {fileID: 1681545416}
   - component: {fileID: 1681545415}
-  - component: {fileID: 1681545414}
   m_Layer: 0
   m_Name: Player4Space
   m_TagString: Untagged
@@ -6939,21 +6888,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1681545414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1681545412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 302114ab7650f4f4e9b6d7433371ba8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerIn: {fileID: 1887390326}
-  playerWaiting: {fileID: 1847366539}
-  nameText: {fileID: 135817143}
 --- !u!114 &1681545415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7170,7 +7104,7 @@ GameObject:
   - component: {fileID: 1777344131}
   - component: {fileID: 1777344130}
   m_Layer: 0
-  m_Name: Player Name
+  m_Name: Player Name1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7215,7 +7149,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Player Name
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7304,7 +7238,7 @@ GameObject:
   - component: {fileID: 1781494331}
   - component: {fileID: 1781494330}
   m_Layer: 0
-  m_Name: WaitingForPlayerText
+  m_Name: WaitingForPlayer1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7512,8 +7446,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1840791740}
   - component: {fileID: 1840791743}
-  - component: {fileID: 1840791742}
   - component: {fileID: 1840791741}
+  - component: {fileID: 1840791742}
   m_Layer: 0
   m_Name: Player1Space
   m_TagString: Untagged
@@ -7605,7 +7539,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1847366540}
   m_Layer: 0
-  m_Name: PlayerWaiting
+  m_Name: PlayerWaiting4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8055,7 +7989,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1887390327}
   m_Layer: 0
-  m_Name: Playerin
+  m_Name: Playerin4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8095,7 +8029,7 @@ GameObject:
   - component: {fileID: 1912741652}
   - component: {fileID: 1912741651}
   m_Layer: 0
-  m_Name: Image
+  m_Name: Image1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9187,7 +9121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2106027845}
   m_Layer: 0
-  m_Name: Playerin
+  m_Name: Playerin2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9263,7 +9197,7 @@ GameObject:
   - component: {fileID: 2127235779}
   - component: {fileID: 2127235778}
   m_Layer: 0
-  m_Name: Player Name
+  m_Name: Player Name2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9308,7 +9242,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Player Name
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9395,7 +9329,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2142198394}
   m_Layer: 0
-  m_Name: PlayerWaiting
+  m_Name: PlayerWaiting1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

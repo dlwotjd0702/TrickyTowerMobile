@@ -2676,7 +2676,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 135794805}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &135794807
 Camera:
   m_ObjectHideFlags: 0
@@ -15854,7 +15854,6 @@ MonoBehaviour:
   ttlMinutes: 1
   networkManager: {fileID: 35464381}
   sessionName: 
-  sessionGameType: 0
   sessionListContent: {fileID: 2706999052903470913}
   loadSessionsButton: {fileID: 95065835}
   sessionButtonPrefab: {fileID: 847468772}
@@ -16345,6 +16344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55c69482076fc6f409b95e4e503a9456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nickname: 
 --- !u!4 &907425571
 Transform:
   m_ObjectHideFlags: 0
@@ -22632,6 +22632,7 @@ MonoBehaviour:
   rightBtn: {fileID: 1099663923}
   roomNameInput: {fileID: 765870499}
   createButton: {fileID: 745627424}
+  networkManager: {fileID: 35464381}
 --- !u!1 &1204629835
 GameObject:
   m_ObjectHideFlags: 0

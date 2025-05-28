@@ -1,18 +1,20 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; // if you use TMP_InputField
+using TMPro;
 
 public class RoomSettingsUI : MonoBehaviour
 {
     [Header("Mode Selection")]
-    [Tooltip("Race, Survival, Puzzle 순서대로 할당")]
-    [SerializeField] private GameObject[] modeImages;
-    [SerializeField] private Button     leftBtn;
-    [SerializeField] private Button     rightBtn;
+    [SerializeField] private GameObject[] modeImages; // 0:Race,1:Survival,2:Puzzle
+    [SerializeField] private Button leftBtn;
+    [SerializeField] private Button rightBtn;
 
     [Header("Room Create")]
     [SerializeField] private TMP_InputField roomNameInput;
     [SerializeField] private Button         createButton;
+
+    [Header("Network")]
+    [SerializeField] private NetworkManager networkManager; // int gameType, sessionName
 
     private int currentIndex = 0;
 
@@ -25,7 +27,6 @@ public class RoomSettingsUI : MonoBehaviour
 
     private void Start()
     {
-        // 처음에 Race만 보이도록
         UpdateModeDisplay();
     }
 
@@ -43,18 +44,8 @@ public class RoomSettingsUI : MonoBehaviour
 
     private void UpdateModeDisplay()
     {
-        // 선택된 모드 이미지만 활성화
         for (int i = 0; i < modeImages.Length; i++)
             modeImages[i].SetActive(i == currentIndex);
-
-        // GameType enum 순서와 인덱스가 0:Race, 1:Survival, 2:Puzzle 이라고 가정
-        FirebaseAccountManager.Instance.sessionGameType = (GameType)currentIndex;
-        Debug.Log($"[RoomSettingsUI] mode → {FirebaseAccountManager.Instance.sessionGameType}");
-        
-        var mode = (GameType)currentIndex;
-        FirebaseAccountManager.Instance.sessionGameType = mode;
-        Debug.Log($"[RoomSettingsUI] Selected mode → {mode}");
-        
     }
 
     private void OnCreateClicked()
@@ -65,6 +56,12 @@ public class RoomSettingsUI : MonoBehaviour
             Debug.LogWarning("방 이름을 입력해주세요!");
             return;
         }
-        FirebaseAccountManager.Instance.CreateRoom(roomName);
+
+        // currentIndex를 GameType으로 캐스트해서 전달
+        networkManager.gameType    = (GameType)currentIndex;
+        networkManager.sessionName = roomName;
+
+        Debug.Log($"[RoomSettingsUI] CreateRoom name={roomName}, gameType={(GameType)currentIndex}");
+        
     }
 }
