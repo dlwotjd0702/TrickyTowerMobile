@@ -39,6 +39,12 @@ public class GameRuleManager : NetworkBehaviour
     private bool gameActive = true;
     private bool isInvinsible = false;
     private PlayType playType;
+    
+    // 몇 번 이겼는지 기록할 맵
+    private Dictionary<PlayerRef, int> winCounts = new Dictionary<PlayerRef, int>();
+
+// 최종 승리 조건
+    [SerializeField] private int winsToVictory = 3;
 
     public override void Spawned()
     {
@@ -99,10 +105,12 @@ public class GameRuleManager : NetworkBehaviour
         Debug.Log("라운드끝");
         if (Runner.IsServer == false || gameActive == false) return;
         Debug.Log("다음라운드");
+        
         //** 플레이어 점수UI 띄우기**
         scoreBoard.ShowScoreBoard();
-
+        ////각자의 스코어보드 제작 및 네트워크 트랜스폼부착, 3초뒤 보드가 꺼지도록 설정
         Debug.Log("1");
+       
         int winnerScore = GameClearManager.Instance.GetPlayerScore(winner);
 
         GameClearManager.Instance.RemoveAllBlocks();
@@ -118,21 +126,12 @@ public class GameRuleManager : NetworkBehaviour
         {
             roundIndex = (roundIndex + 1);
             if (roundIndex >= 3) roundIndex = 0;
-            
             networkManager = FindObjectOfType<NetworkManager>();
-            networkManager.GameClear();
-            //** 씬을 불러오기 전에 어느정도 딜레이가 있어서 스코어 보드를 보여줘야함 **
+            networkManager.GameClear(winner);
         }
     }
 
-    private void gamecleartoserver() //클리어 알림
-    {
-    }
-
-    public void scoreset(int idx) //플레이어 인덱스 받아옴
-    {
-    }
-
+    
     public void NextRound()
     {
         ActiveMode((GameType)roundIndex);

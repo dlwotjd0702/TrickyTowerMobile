@@ -11,7 +11,7 @@ public class SurvivalMode : MonoBehaviour
     Dictionary<PlayerRef, bool> isInvincible = new Dictionary<PlayerRef, bool>();
 
     [SerializeField]
-    private int clearBlock = 22;
+    private int clearBlock = 220;
 
     [SerializeField]
     private float invincibleTime = 1.5f;

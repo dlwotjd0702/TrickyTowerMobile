@@ -24,34 +24,6 @@ public class RaceMode : MonoBehaviour
         vector3.y = transform.position.y - speed * Time.deltaTime;
         transform.position = vector3;
 
-        #region DebugKey
-
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            if (currentPlayer != null)
-                Debug.Log(GameClearManager.Instance.GetPlayerScore(currentPlayer.Value));
-            else
-            {
-                Debug.Log("currentPlayer is null");
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            var allScore = GameClearManager.Instance.GetAllScore();
-            foreach (var pair in allScore)
-            {
-                Debug.Log($"플레이어: {pair.Key},점수: {pair.Value}");
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            GameClearManager.Instance.ResetScore();
-        }
-
-        #endregion
-
         if (playerTouched == false)
             return;
 
