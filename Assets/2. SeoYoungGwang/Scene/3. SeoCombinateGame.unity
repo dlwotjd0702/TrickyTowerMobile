@@ -14401,6 +14401,8 @@ MonoBehaviour:
   effectManager: {fileID: 2104402099}
   soundManager: {fileID: 1892439669}
   ingameUiManager: {fileID: 1600843330}
+  winnertropy:
+    RawGuidValue: 00000000000000000000000000000000
 --- !u!114 &1094062847
 MonoBehaviour:
   m_ObjectHideFlags: 0

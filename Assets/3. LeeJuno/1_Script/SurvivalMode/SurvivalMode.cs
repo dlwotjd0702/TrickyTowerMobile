@@ -57,6 +57,7 @@ public class SurvivalMode : MonoBehaviour
         StartCoroutine(IvincibleCooldown(p));
 
         if (hp.ContainsKey(p) == false)
+            
             hp[p] = 3;
 
         if (hp[p]-- <= 1)

@@ -5,94 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33ec4f3c-9a43-40ac-a265-51209e7b0009" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/0. Team settings/TeamPrefab/winner.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/winner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/winner.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/0_Scene/JUNO_TeamBuildsetting/1. OutGame.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/0_Scene/JUNO_TeamBuildsetting/1. OutGame.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/0_Scene/JUNO_TeamBuildsetting/2.Lobby.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/1_Script/ScoreBoardBox.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/2_Prefabs/GameModePrefabs/GameMode.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/2_Prefabs/GameModePrefabs/GameMode.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/2_Prefabs/OutGameBackground.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/2_Prefabs/OutGameBackground/Puzzle_BG.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/2_Prefabs/OutGameBackground/Race_BG.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/2_Prefabs/OutGameBackground/Survival_BG.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/1.OutGame.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/3.CombinateGame.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/3.CombinateGame.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/Old.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/Old/Lobby.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Prefabs/Puzzle.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Prefabs/Puzzle.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Prefabs/Race.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Prefabs/Race.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Prefabs/Survival.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Prefabs/Survival.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/Magic1Activator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/Magic1Activator.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/MagicInputHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/MagicInputHandler.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/MagicManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/MagicManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/OurSoundManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/OurSoundManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Shader/Tricky Towers Soundtrack 01 Menu Theme.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Shader/Tricky Towers Soundtrack 01 Menu Theme.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Photon/FusionDemos/Photon-Fusion-Intro-Sample-2.0.6-Stable-1034.unitypackage.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0. Team settings/TeamBuildsetting/3.CombinateGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0. Team settings/TeamBuildsetting/3.CombinateGame.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0. Team settings/TeamPrefab/GameMode.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0. Team settings/TeamPrefab/GameMode.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Buildsetting/3.CombinateGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Buildsetting/3.CombinateGame.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Buildsetting/3.CombinateGame.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Buildsetting/3.CombinateGame.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/GameMode.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/GameMode.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/OldPrefabs/GameMode.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/OldPrefabs/GameMode.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/CameraManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/CameraManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/FirebaseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/FirebaseManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkBlockController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkBlockController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkSpawnHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkSpawnHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Scene/1. SeoOutGame.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Scene/1. SeoOutGame.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3. LeeJuno/0_Scene/JUNO_Buildsetting.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/0_Scene/JUNO_TeamBuildsetting.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3. LeeJuno/0_Scene/JUNO_Buildsetting/CombinateGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/0_Scene/JUNO_TeamBuildsetting/3.CombinateGame.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3. LeeJuno/0_Scene/JUNO_Buildsetting/CombinateGame.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3. LeeJuno/0_Scene/JUNO_Buildsetting/Lobby.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3. LeeJuno/0_Scene/JUNO_Buildsetting/Lobby.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3. LeeJuno/0_Scene/JUNO_Buildsetting/OutGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/1.OutGame.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3. LeeJuno/0_Scene/JUNO_Buildsetting/OutGame.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/0_Scene/JUNO_TeamBuildsetting/3.CombinateGame.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3. LeeJuno/0_Scene/JUNOteamScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3. LeeJuno/0_Scene/JUNOteamScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3. LeeJuno/0_Scene/gameruletest.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3. LeeJuno/0_Scene/gameruletest.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/2.Lobby.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3. LeeJuno/1_Script/GameClearManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/1_Script/GameClearManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3. LeeJuno/1_Script/GameRuleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/1_Script/GameRuleManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3. LeeJuno/1_Script/RaceMode/RaceMode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/1_Script/RaceMode/RaceMode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3. LeeJuno/1_Script/ScoreBoard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/1_Script/ScoreBoard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3. LeeJuno/1_Script/SurvivalMode/SurvivalMode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/1_Script/SurvivalMode/SurvivalMode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3. LeeJuno/2_Prefabs/GameModePrefabs/FinishLine_RaceMode.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/2_Prefabs/GameModePrefabs/FinishLine_RaceMode.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3. LeeJuno/2_Prefabs/GameModePrefabs/FinishLine_RaceMode.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/2_Prefabs/GameModePrefabs/FinishLine_RaceMode.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3. LeeJuno/Resourse/Sprite/gph_onlineScoreMedalBronze.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/Resourse/Sprite/gph_onlineScoreMedalBronze.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3. LeeJuno/Resourse/Sprite/gph_onlineScoreMedalGold.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/Resourse/Sprite/gph_onlineScoreMedalGold.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3. LeeJuno/Resourse/Sprite/gph_onlineScoreMedalSilver.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/Resourse/Sprite/gph_onlineScoreMedalSilver.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/CombinateGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/Old/CombinateGame.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/CombinateGame.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/Old/CombinateGame.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/0_Scene/JUNO_TeamBuildsetting/2.Lobby.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/Lobby.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/Old/Lobby.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/OutGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/Old/OutGame.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/OutGame.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/Old/OutGame.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Prefabs/BG_Camera.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Prefabs/BG_Camera.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/2_Prefabs/OutGameBackground/Survival_BG.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Prefabs/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/2.Lobby.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Prefabs/Canvas.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/2_Prefabs/OutGameBackground/Puzzle_BG.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Prefabs/Quad.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0. Team settings/TeamPrefab/winner.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Prefabs/Quad.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/2_Prefabs/OutGameBackground/Race_BG.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/LobbyUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/LobbyUIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/RoomJoiner.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/RoomJoiner.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/1_Script/ScoreBoardBox.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/SoundSettingsUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/SoundSettingsUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/UIButtonManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/UIButtonManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/SurviveGround.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/SurviveGround.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Scene/3. SeoCombinateGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Scene/3. SeoCombinateGame.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Photon/FusionDemos/Photon-Fusion-Intro-Sample-2.0.6-Stable-1034.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/Managed/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/Managed/Assembly-CSharp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/boot.config" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/boot.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/globalgamemanagers" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/globalgamemanagers" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/globalgamemanagers.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/globalgamemanagers.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/level0" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/level0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/level1" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/level1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/level2" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/level2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/resources.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/resources.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/resources.assets.resS" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/resources.assets.resS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets0.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets0.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets0.assets.resS" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets0.assets.resS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets1.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets1.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets2.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets2.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets2.assets.resS" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets2.assets.resS" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +71,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Play 병합 중",
+    "git-widget-placeholder": "Play",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -229,7 +159,7 @@
       <workItem from="1747875907279" duration="13182000" />
       <workItem from="1747962313003" duration="17264000" />
       <workItem from="1748220447745" duration="11671000" />
-      <workItem from="1748243351022" duration="22917000" />
+      <workItem from="1748243351022" duration="24949000" />
     </task>
     <servers />
   </component>
