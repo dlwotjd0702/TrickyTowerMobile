@@ -105,10 +105,12 @@ public class GameRuleManager : NetworkBehaviour
         Debug.Log("라운드끝");
         if (Runner.IsServer == false || gameActive == false) return;
         Debug.Log("다음라운드");
+        
         //** 플레이어 점수UI 띄우기**
-        //scoreBoard.ShowScoreBoard();
-//각자의 스코어보드 제작 및 네트워크 트랜스폼부착, 3초뒤 보드가 꺼지도록 설정
+        scoreBoard.ShowScoreBoard();
+        ////각자의 스코어보드 제작 및 네트워크 트랜스폼부착, 3초뒤 보드가 꺼지도록 설정
         Debug.Log("1");
+       
         int winnerScore = GameClearManager.Instance.GetPlayerScore(winner);
 
         GameClearManager.Instance.RemoveAllBlocks();
