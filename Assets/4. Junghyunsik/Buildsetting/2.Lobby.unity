@@ -2655,6 +2655,7 @@ GameObject:
   m_Component:
   - component: {fileID: 780943670}
   - component: {fileID: 780943669}
+  - component: {fileID: 780943671}
   m_Layer: 0
   m_Name: LobbyUIManager
   m_TagString: Untagged
@@ -2702,6 +2703,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &780943671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780943668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7751896caede7840bc1bd02bfc6e600, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modeText: {fileID: 0}
+  modeIcon: {fileID: 0}
+  raceSprite: {fileID: 0}
+  survivalSprite: {fileID: 0}
+  puzzleSprite: {fileID: 0}
 --- !u!1 &781449483
 GameObject:
   m_ObjectHideFlags: 0

@@ -15854,6 +15854,7 @@ MonoBehaviour:
   ttlMinutes: 1
   networkManager: {fileID: 35464381}
   sessionName: 
+  sessionGameType: 0
   sessionListContent: {fileID: 2706999052903470913}
   loadSessionsButton: {fileID: 95065835}
   sessionButtonPrefab: {fileID: 847468772}
@@ -22582,13 +22583,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1200787738}
+  - component: {fileID: 1200787739}
   m_Layer: 0
   m_Name: ModSet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1200787738
 Transform:
   m_ObjectHideFlags: 0
@@ -22610,6 +22612,26 @@ Transform:
   - {fileID: 1036490856}
   m_Father: {fileID: 2706999052903470913}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1200787739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200787737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a121a0db16b9fb46b05972252851aec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modeImages:
+  - {fileID: 2004855491}
+  - {fileID: 1832952462}
+  - {fileID: 1947906383}
+  leftBtn: {fileID: 414435718}
+  rightBtn: {fileID: 1099663923}
+  roomNameInput: {fileID: 765870499}
+  createButton: {fileID: 745627424}
 --- !u!1 &1204629835
 GameObject:
   m_ObjectHideFlags: 0
@@ -35331,7 +35353,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1932875354
 Transform:
   m_ObjectHideFlags: 0
@@ -42038,7 +42060,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &4034653661675151281
 GameObject:
   m_ObjectHideFlags: 0
