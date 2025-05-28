@@ -6,15 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="33ec4f3c-9a43-40ac-a265-51209e7b0009" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/FirebaseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/FirebaseManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/1.OutGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/1.OutGame.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/2.Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Buildsetting/2.Lobby.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/LobbyUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/LobbyUIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/ModeDisplayUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/ModeDisplayUIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/RoomSettingsUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/RoomSettingsUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/OurSoundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Junghyunsik/Script/OurSoundManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,9 +35,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkInputHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkSpawnHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/4. Junghyunsik/Script/Audio Manager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/4. Junghyunsik/Script/ButtonHoverToggle.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/4. Junghyunsik/Script/OurSoundManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/4. Junghyunsik/Script/QualitySettingUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/origin/Scripts/Block.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.7/Scripts/Runtime/TMPro_UGUI_Private.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/GraphicEditor.cs" root0="SKIP_HIGHLIGHTING" />
@@ -158,7 +152,7 @@
       <workItem from="1748304935649" duration="148000" />
       <workItem from="1748305610276" duration="5097000" />
       <workItem from="1748313102483" duration="20552000" />
-      <workItem from="1748392961164" duration="20814000" />
+      <workItem from="1748392961164" duration="25559000" />
     </task>
     <servers />
   </component>
