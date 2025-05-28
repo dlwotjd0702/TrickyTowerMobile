@@ -34,10 +34,17 @@ public class GameRuleManager : NetworkBehaviour
     [SerializeField]
     private ScoreBoard scoreBoard;
 
+    private NetworkManager networkManager;
     private int roundIndex = 0;
     private bool gameActive = true;
     private bool isInvinsible = false;
     private PlayType playType;
+    
+    // 몇 번 이겼는지 기록할 맵
+    private Dictionary<PlayerRef, int> winCounts = new Dictionary<PlayerRef, int>();
+
+// 최종 승리 조건
+    [SerializeField] private int winsToVictory = 3;
 
     public override void Spawned()
     {
@@ -55,7 +62,7 @@ public class GameRuleManager : NetworkBehaviour
     {
         playType = PlayType.Cup;
         GameClearManager.Instance.ResetScore();
-        scoreBoard.ResetSlots();
+        //scoreBoard.ResetSlotsLocal();
 
         gameActive = true;
         roundIndex = (int)type;
@@ -96,19 +103,19 @@ public class GameRuleManager : NetworkBehaviour
     private void RoundCleared(PlayerRef winner, GameType gameType)
     {
         Debug.Log("라운드끝");
-        if (gameActive == false) return;
+        if (Runner.IsServer == false || gameActive == false) return;
         Debug.Log("다음라운드");
-        var ranking = GameClearManager.Instance.GetLastRoundRanking();
         //** 플레이어 점수UI 띄우기**
-        scoreBoard.FillMedals(ranking);
-
+        //scoreBoard.ShowScoreBoard();
+//각자의 스코어보드 제작 및 네트워크 트랜스폼부착, 3초뒤 보드가 꺼지도록 설정
+        Debug.Log("1");
         int winnerScore = GameClearManager.Instance.GetPlayerScore(winner);
-        
+
         GameClearManager.Instance.RemoveAllBlocks();
         GameClearManager.Instance.AllowAllBlocks();
         GameClearManager.Instance.ClearPlayers();
         GameClearManager.Instance.ClearFalse();
-         Debug.Log("1");
+        Debug.Log("2");
         if (winnerScore >= cupTargetScore || playType == PlayType.Selection)
         {
             GameClear();
@@ -117,11 +124,13 @@ public class GameRuleManager : NetworkBehaviour
         {
             roundIndex = (roundIndex + 1);
             if (roundIndex >= 3) roundIndex = 0;
-            Invoke(nameof(NextRound), 5f);
+            networkManager = FindObjectOfType<NetworkManager>();
+            networkManager.GameClear(winner);
         }
     }
 
-    private void NextRound()
+    
+    public void NextRound()
     {
         ActiveMode((GameType)roundIndex);
     }

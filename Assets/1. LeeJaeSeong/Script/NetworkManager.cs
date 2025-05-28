@@ -27,6 +27,7 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
 
     private NetworkRunner runner;
     private bool isGameStarted = false;
+    GameType gameType = 0;
 
     private void Awake()
     {
@@ -161,6 +162,51 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
         }
     }
 
+    private IEnumerator delaynextround()
+    {
+        yield return new WaitForSeconds(5f);
+        foreach (var player in runner.ActivePlayers)
+        {
+            // 1) 인덱스 계산
+            int idx = GetPlayerJoinIndex(player);
+            Vector3 offset = spawnOffsets[Mathf.Clamp(idx, 0, spawnOffsets.Length - 1)];
+
+           
+            // 3) 블록 스폰
+            if (runner.IsServer)
+            {
+                spawnHandler.SpawnBlockFor(runner, player, offset);
+            }
+            gameRuleManager.StartCupGame(gameType);
+        }
+    }
+    public void GameClear(PlayerRef winner)
+    {
+        if (!runner.IsServer) return;
+        int idx = GetPlayerJoinIndex(winner);
+        Vector3 offset = spawnOffsets[Mathf.Clamp(idx, 0, spawnOffsets.Length - 1)];
+        var tropy = runner.Spawn(
+            prefabRef:  spawnHandler.winnertropy,
+            position:   offset,
+            rotation:   Quaternion.identity
+        );
+        StartCoroutine(delaynextround());
+        /*var targetScene = SceneRef.FromIndex(2);
+        await runner.LoadScene(targetScene);*/
+        StartCoroutine(DespawnAfterDelay(tropy, 4f));  // 5초 뒤
+    }
+
+    private IEnumerator DespawnAfterDelay(NetworkObject obj, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        // Runner가 살아있고 obj도 유효하면 네트워크에서 제거
+        if (runner != null && obj != null && obj.IsValid)
+        {
+            runner.Despawn(obj);
+        }
+    }
+
     /*private void StartGame()
     {
              foreach (var player in runner.ActivePlayers) 
@@ -269,7 +315,7 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
         runner.AddCallbacks(inputHandler);
    
         
-        gameRuleManager.StartCupGame(GameType.Race);
+        //gameRuleManager.StartCupGame(GameType.Race);
 
         // 모든 플레이어에 대해 처리
         foreach (var player in runner.ActivePlayers)
@@ -298,12 +344,11 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
 
                     }
                 }
-                gameRuleManager.StartCupGame(GameType.Survival);
+                
                 spawnHandler.SpawnBlockFor(runner, player, offset);
             }
-            
+            gameRuleManager.StartCupGame(gameType);
         }
-        
         
     }
     public void OnObjectEnterAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player) { }

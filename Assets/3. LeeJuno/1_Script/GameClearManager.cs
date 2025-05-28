@@ -8,11 +8,11 @@ using UnityEngine;
 //추가해야할 사항 
 // 1. 서바이벌 블럭과 hp 카운트 이벤트 블럭스포너에 연결 V
 // 2. 블럭생성기에 플레이어 블럭생성을 막는 로직추가 V
-// 지정플레이어 막는기능, 모든플레이어 막는기능,
-// 게임오버시에 배치안된 블럭제거하는 기능 
-// 지정플레이어 제거, 모든 플레이어제거
+// 지정플레이어 막는기능, 모든플레이어 막는기능, V
+// 게임오버시에 배치안된 블럭제거하는 기능 V 
+// 지정플레이어 제거, 모든 플레이어제거 V
 // 3. 서바이벌 모드 판정 쌓인 블럭갯수에서 남은블럭 갯수로 변경
-// 4. 게임끝나면 블럭 전부 삭제
+// 4. 게임끝나면 블럭 전부 삭제 V
 
 public class GameClearManager : NetworkBehaviour
 {
@@ -29,6 +29,7 @@ public class GameClearManager : NetworkBehaviour
     public bool clear { get; private set; }
     private bool stopAllSpawns = false;
     private HashSet<PlayerRef> blockedPlayers = new HashSet<PlayerRef>();
+    public Vector3 MaxHeight;
 
     private void Awake()
     {
@@ -158,9 +159,7 @@ public class GameClearManager : NetworkBehaviour
     public void PuzzlePlayerEnd(PlayerRef player) //퍼즐 플레이어 탈락 감지 로직
     {
         if (failedPlayers.Contains(player)) return;
-
-        RemoveUnplacedBlock(player);
-
+        
         failedPlayers.Add(player);
 
         // 해당 플레이어 블럭생성중지 
@@ -171,6 +170,7 @@ public class GameClearManager : NetworkBehaviour
         if (failedPlayers.Count >= Runner.ActivePlayers.Count()) //모든 플레이어 종료확인
         {
             PuzzleModeClear();
+            RemoveUnplacedBlock(player);
             failedPlayers.Clear();
         }
     }
@@ -212,17 +212,20 @@ public class GameClearManager : NetworkBehaviour
         if (failedPlayers.Add(player) == false) return;
         Debug.Log(player + "죽음");
 
-        RemoveUnplacedBlock(player);
+       
         // 해당 플레이어 블럭 생성막는 로직
         StopPlayer(player);
 
         int total = Runner.ActivePlayers.Count();
-
+        Debug.Log("토탈"+total);
+        
         if (failedPlayers.Count >= total - 1)
         {
+            Debug.Log("실패한 "+failedPlayers.Count);
             PlayerRef winner =
                 Runner.ActivePlayers.First(p => failedPlayers.Contains(p) == false);
             SurvivalModeClear(winner);
+            RemoveUnplacedBlock(player);
         }
     }
 
@@ -231,8 +234,7 @@ public class GameClearManager : NetworkBehaviour
         //문제 죽지않고 다른 플레이어가 게임을 클리어했을때 블럭 갯수를 어떻게 가져오게 할것인가
     }
 
-    //----------이 밑에는 점수 관련 로직-------------
-
+    //----------이 밑에는 점수 관련 로직------------
 
     private void AssignScore(PlayerRef[] ranking)
     {
@@ -250,8 +252,9 @@ public class GameClearManager : NetworkBehaviour
 
         Debug.Log("정산끝");
         ScoreDebug();
+        
         RoundCleared?.Invoke(lastRoundRank[0], currentGameType);
-        Debug.Log("인보크");
+        Debug.Log("점수 함수 끝");
     }
 
     private void ScoreDebug()

@@ -311,8 +311,8 @@ public class UIButtonManager : MonoBehaviour
         // 1) 전환 잠금
         isTransitioning = true;
 
-        // 2) 2초 대기 (키·클릭 모두 무시)
-        yield return new WaitForSeconds(2f);
+        // 2) 0.5초 대기 (키·클릭 모두 무시)
+        yield return new WaitForSeconds(0.5f);
 
         // 3) 페이드 아웃 준비: blackOverlay 켜고 RaycastTarget 활성화
         blackOverlay.gameObject.SetActive(true);

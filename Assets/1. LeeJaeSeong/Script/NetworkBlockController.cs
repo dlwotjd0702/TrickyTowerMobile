@@ -16,6 +16,10 @@ public class NetworkBlockController : NetworkBehaviour
     }
 
     [Networked] public bool IsPlaced { get; set; }
+    public bool biggerTrigger = false;
+    public bool noRotateTrigger = false;
+    public bool fastFallTrigger = false;
+    
 
     [SerializeField] float moveDistance = 1f;
     [SerializeField] float downSpeed    = 2f;
@@ -47,7 +51,7 @@ public class NetworkBlockController : NetworkBehaviour
         // 3) 매니저·이펙트 참조 채우기
         networkManager  = FindObjectOfType<NetworkManager>();
         effectManager   = FindObjectOfType<EffectManager>();
-        soundManager   = FindObjectOfType<SoundManager>();
+        soundManager    = FindObjectOfType<SoundManager>();
 
         // 4) 클라이언트 예측 단계에서 블록 할당
         if (Object.HasInputAuthority)
@@ -60,6 +64,24 @@ public class NetworkBlockController : NetworkBehaviour
         foreach (var c in GetComponents<BoxCollider2D>()) c.size *= 0.8f;
 
     }
+    
+    [Rpc(RpcSources.StateAuthority, RpcTargets.InputAuthority)]
+    private void RPC_TriggerShake(RpcInfo info = default)
+    {
+        effectManager.IsShake = true;
+    }
+
+    private void bigger()
+    {
+        if (biggerTrigger == true)
+        {
+            Debug.Log("[NetworkBlockController] biggerTrigger 작동! 블록 크기 2배.");
+            gameObject.transform.localScale *= 2;
+            biggerTrigger = false;
+        }
+    }
+
+  
 
     public override void FixedUpdateNetwork()
     {
@@ -72,6 +94,11 @@ public class NetworkBlockController : NetworkBehaviour
         bool isServer = Object.HasStateAuthority;
         if (!isOwner && !isServer)
             return;
+        
+        if (isOwner)
+        {
+            effectManager.Block = gameObject;
+        }
 
         // 3) 입력이 있으면 적용
         if (GetInput(out NetworkBlockInputData input))
@@ -86,8 +113,16 @@ public class NetworkBlockController : NetworkBehaviour
             // 회전
             if (input.Rotate)
             {
-                transform.Rotate(0, 0, 90);
-                soundManager.OnRotateSound();
+                if (!noRotateTrigger)
+                {
+                    transform.Rotate(0, 0, 90);
+                    soundManager.OnRotateSound();
+                }
+                else
+                {
+                    if (input.Rotate && noRotateTrigger)
+                        Debug.Log("[NetworkBlockController] noRotateTrigger로 회전 차단.");
+                }
             }
 
             if (input.leftFastMove)
@@ -97,8 +132,11 @@ public class NetworkBlockController : NetworkBehaviour
                 transform.position -= Vector3.right * moveDistance * 2;
                 effectManager.afterMovePos  = transform.position;
                 effectManager.isBlockMove = true;
-                effectManager.OnShadow();
-                soundManager.OnMoveSound();
+                if (Object.HasInputAuthority)
+                {
+                    effectManager.OnShadow(); 
+                    soundManager.OnMoveSound();
+                }
             }
             
             if (input.rightFastMove)
@@ -107,29 +145,45 @@ public class NetworkBlockController : NetworkBehaviour
                 transform.position += Vector3.right * moveDistance * 2;
                 effectManager.afterMovePos  = transform.position;
                 effectManager.isBlockMove = true;
-                effectManager.OnShadow();
-                soundManager.OnMoveSound();
+                if (Object.HasInputAuthority)
+                {
+                    effectManager.OnShadow(); 
+                    soundManager.OnMoveSound();
+                }
             }
 
             // 빠른/자동 하강
             if (Runner.IsServer)
             {
-                float speed = input.FastDown ? downSpeed * 5f : downSpeed;
+
+                // fastFall 플래그가 켜져 있으면 무조건 빠르게, 아니면 input.FastDown 에 따라
+                float speed = (fastFallTrigger || input.FastDown) 
+                    ? downSpeed * 5f 
+                    : downSpeed;
+
+                if (fastFallTrigger)
+                    Debug.Log($"[NetworkBlockController] fastFall 적용, 속도 = {speed}");
+                
                 transform.position += Vector3.down * (speed * Runner.DeltaTime);
+                
             }
+            
         }
     }
 
-//클라이언트에서의 충돌을 서버도 인식해서 돌림 if(Object.InputAuthority == Runner.LocalPlayer) 클라만 굴려야하는게 있다면 이 검사 추가
     void OnTriggerEnter2D(Collider2D other)
     {
         if ((other.CompareTag("Floor") || other.CompareTag("Respawn")) && !IsPlaced )
         {
+            // 착지 처리
             IsPlaced = true;
-            StartCoroutine(effectManager.Shake());
-
-            // 착지 후엔 서버 권위만 시뮬레이션
             Runner.SetIsSimulated(Object, Object.HasStateAuthority);
+
+            // 착지 후엔 noRotateTrigger, fastFall 리셋
+            noRotateTrigger = false;
+            fastFallTrigger = false;
+           
+      
 
             _rb.bodyType     = RigidbodyType2D.Dynamic;
             _rb.gravityScale = 1;
@@ -138,44 +192,40 @@ public class NetworkBlockController : NetworkBehaviour
                 c.isTrigger = false;
                 c.size /= 0.8f;
             }
-            gameObject.tag     = "Floor";
-            if (networkManager == null)
+
+            gameObject.tag = "Floor";
+            if (Runner.IsServer)
             {
-                networkManager  = FindObjectOfType<NetworkManager>();
+                RPC_TriggerShake();
             }
-            //if(Object.InputAuthority == Runner.LocalPlayer) effectManager.IsShake = true;
-           
+            if(networkManager==null) networkManager = FindObjectOfType<NetworkManager>();
             networkManager.RequestNextBlock(Object.InputAuthority);
+
             if (other.CompareTag("Respawn"))
             {
-                soundManager.OnFallSound();
+                // Respawn도 동일하게
+                if (Runner.IsServer)
+                {
+                    RPC_TriggerShake();
+                }
                 Destroy(gameObject);
                 return;
             }
-         
-            if (other.gameObject.layer == LayerMask.NameToLayer("Block") && effectManager.IsShadow)
-            {
-               
-                other.gameObject.transform.TryGetComponent(out Rigidbody2D placeRigidBody);
-                Vector3 forceOrigin = other.ClosestPoint(transform.position);
-                Vector3 toDownBlockNormalVector2 = (transform.position - forceOrigin).normalized;
-                Vector3 toPlaceBlockNormalVector2 = (other.transform.position - forceOrigin).normalized;
-
-                float force = effectManager.preMovePos.x;
-            
-                Vector2 toDownBlockNormalX = new Vector2(toDownBlockNormalVector2.x, 0);
-                Vector2 toPlaceBlockNormalX = new Vector2(toPlaceBlockNormalVector2.x, 0);
-                _rb.AddForceAtPosition(toDownBlockNormalX * force, forceOrigin, ForceMode2D.Impulse);
-                placeRigidBody.AddForceAtPosition(toPlaceBlockNormalVector2 * force, forceOrigin, ForceMode2D.Impulse);
-                Debug.Log("Conflict!");
-            }
-
             soundManager.OnLandSound();
         }
-        else if (other.CompareTag("Respawn") && IsPlaced)
+        
+        if (other.CompareTag("Respawn") && IsPlaced)
         {
             soundManager.OnFallSound();
             effectManager.IsShake = true;
+            if (effectManager.Block == gameObject)
+            {
+                effectManager.Block         = null;
+                effectManager.isBlockChange = false;
+                effectManager.isBlockMove   = false;
+                effectManager.IsShadow      = false;
+                effectManager.IsShake       = false;
+            }
             Destroy(gameObject);    
         }
     }

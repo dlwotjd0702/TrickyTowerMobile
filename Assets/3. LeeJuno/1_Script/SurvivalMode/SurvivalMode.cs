@@ -59,8 +59,9 @@ public class SurvivalMode : MonoBehaviour
         if (hp.ContainsKey(p) == false)
             hp[p] = 3;
 
-        if (hp[p]-- <= 0)
+        if (hp[p]-- <= 1)
         {
+            //블럭스폰이 막혀야하는데
             GameClearManager.Instance.SurvivePlayerDie(p);
         }
 

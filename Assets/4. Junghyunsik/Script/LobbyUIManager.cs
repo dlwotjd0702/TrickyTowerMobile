@@ -16,6 +16,8 @@ public class LobbyUIManager : MonoBehaviour
     [SerializeField]
     private Slot[] slots = new Slot[4];
 
+    public string nickname;
+
     /// <summary>
     /// 주어진 인덱스 목록에 따라 각 슬롯을 활성화/비활성화합니다.
     /// 0~3 범위의 인덱스를 사용하십시오.
@@ -30,6 +32,7 @@ public class LobbyUIManager : MonoBehaviour
             slots[i].playerWaiting?.SetActive(true);
         }
 
+        Player.Instance.nickname = nickname;//이거 사용
         // 전달된 인덱스만 활성화
         foreach (var index in activeIndices)
         {

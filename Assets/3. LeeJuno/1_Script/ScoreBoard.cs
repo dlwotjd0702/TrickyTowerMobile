@@ -1,84 +1,41 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Fusion;
 using UnityEngine;
-//** UI와 연동필요 **
+
 public class ScoreBoard : NetworkBehaviour
 {
-    [Header("Medal Prefabs")]
-    [SerializeField]
-    private GameObject goldMedalPrefab;
+    [SerializeField] private ScoreBoardBox[] boxes;
+    [SerializeField] private GameObject goldMedal, silverMedal, bronzeMedal;
 
-    [SerializeField]
-    private GameObject silverMedalPrefab;
-
-    [SerializeField]
-    private GameObject bronzeMedalPrefab;
-
-    [Header("Slot Points")]
-    [SerializeField]
-    private Transform[][] slotPoints; //이차원 배열
-
-    private const int MaxSlots = 9;
-
-    // 각 플레이어가 몇 슬롯 채웠는지
-    private Dictionary<PlayerRef, int> fillSlots = new Dictionary<PlayerRef, int>();
-
-    public override void Spawned()
+    // 서버 권한에서 호출
+    public void ShowScoreBoard()
     {
         if (!Runner.IsServer) return;
 
-        // 플레이어별 인덱스 초기화
-        foreach (var p in Runner.ActivePlayers)
-            fillSlots[p] = 0;
-    }
+        var ranking = GameClearManager.Instance.GetLastRoundRanking();
 
-    public void FillMedals(PlayerRef[] ranking)
-    {
-        // 1등→3개, 2등→2개, 3등→1개, 4등→0개
-        for (int i = 0; i < ranking.Length; i++)
+        // 초기화
+        foreach (var b in boxes)
+            b.ResetBox();
+
+        for (int rank = 0; rank < ranking.Length; rank++)
         {
-            var player = ranking[i];
-            int count
-                = i == 0 ? 3
-                : i == 1 ? 2
-                : i == 2 ? 1
-                : 0;
-            
-            GameObject prefab
-                = i == 0 ? goldMedalPrefab
-                : i == 1 ? silverMedalPrefab
-                : bronzeMedalPrefab;
+            var p = ranking[rank];
+            int medals = rank == 0 ? 3 : rank == 1 ? 2 : rank == 2 ? 1 : 0;
+            var prefab = rank == 0 ? goldMedal : rank == 1 ? silverMedal : bronzeMedal;
 
-            for (int k = 0; k < count; k++)
-                AddMedal(player, prefab);
+            // PlayerRef.AsIndex 로 바로 박스 선택
+            int idx = p.AsIndex-1;
+            boxes[idx].UpdateBox(medals, prefab);
         }
+
+        Rpc_ShowUI();
     }
 
-    void AddMedal(PlayerRef player, GameObject prefab)
+    [Rpc(RpcSources.StateAuthority, RpcTargets.All)]
+    private void Rpc_ShowUI()
     {
-        int idx = fillSlots[player];
-        if (idx >= MaxSlots) return;
-
-        var pt = slotPoints[player.AsIndex][idx];
-        Instantiate(prefab, pt.position, Quaternion.identity);
-        fillSlots[player]++;
-    }
-    
-    public PlayerRef[] GetFinalRankingBySlots()
-    {
-        return fillSlots
-            .OrderByDescending(kv => kv.Value)
-            .Select(kv => kv.Key)
-            .ToArray();
-    }
-    
-    public void ResetSlots()
-    {
-        fillSlots.Clear();
-        foreach (var p in Runner.ActivePlayers)
-            fillSlots[p] = 0;
-       
+        gameObject.SetActive(true);
     }
 }
