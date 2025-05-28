@@ -56,9 +56,20 @@ public class ScoreBoard : NetworkBehaviour
         }
     }
 
+    public void HideScoreBoard()
+    {
+        Rpc_HideUI();
+    }
+
     [Rpc(RpcSources.StateAuthority, RpcTargets.All)]
     private void Rpc_ShowUI()
     {
         gameObject.SetActive(true);
+    }
+
+    [Rpc(RpcSources.StateAuthority, RpcTargets.All)]
+    private void Rpc_HideUI()
+    {
+        gameObject.SetActive(false);
     }
 }

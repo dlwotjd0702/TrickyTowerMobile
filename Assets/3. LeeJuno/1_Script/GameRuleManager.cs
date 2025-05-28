@@ -117,7 +117,9 @@ public class GameRuleManager : NetworkBehaviour
         GameClearManager.Instance.AllowAllBlocks();
         GameClearManager.Instance.ClearPlayers();
         GameClearManager.Instance.ClearFalse();
+        
         Debug.Log("2");
+    
         if (winnerScore >= cupTargetScore || playType == PlayType.Selection)
         {
             GameClear();
@@ -130,7 +132,6 @@ public class GameRuleManager : NetworkBehaviour
             networkManager.GameClear(winner);
         }
     }
-
     
     public void NextRound()
     {
