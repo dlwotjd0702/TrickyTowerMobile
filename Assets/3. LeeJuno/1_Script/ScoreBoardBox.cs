@@ -26,8 +26,13 @@ public class ScoreBoardBox : MonoBehaviour
         {
             if (slot.childCount == 0)
             {
-                Instantiate(medalPrefab, slot);
-                break;
+                GameObject medal = Instantiate(medalPrefab, slot);
+                RectTransform rt = medal.GetComponent<RectTransform>();
+
+                rt.anchoredPosition = Vector2.zero;
+                rt.localScale = Vector3.one;
+                rt.localRotation = Quaternion.identity;
+                return;
             }
         }
     }

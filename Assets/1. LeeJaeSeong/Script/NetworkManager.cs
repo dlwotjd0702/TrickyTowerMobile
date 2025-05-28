@@ -180,20 +180,20 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
             gameRuleManager.StartCupGame(gameType);
         }
     }
-    public void GameClear(PlayerRef winner)
+    public void GameClear()
     {
-        if (!runner.IsServer) return;
-        int idx = GetPlayerJoinIndex(winner);
-        Vector3 offset = spawnOffsets[Mathf.Clamp(idx, 0, spawnOffsets.Length - 1)];
-        var tropy = runner.Spawn(
-            prefabRef:  spawnHandler.winnertropy,
-            position:   offset,
-            rotation:   Quaternion.identity
-        );
+     //   if (!runner.IsServer) return;
+     //   int idx = GetPlayerJoinIndex(winner);
+     //   Vector3 offset = spawnOffsets[Mathf.Clamp(idx, 0, spawnOffsets.Length - 1)];
+     //   var tropy = runner.Spawn(
+     //       prefabRef:  spawnHandler.winnertropy,
+     //       position:   offset,
+     //       rotation:   Quaternion.identity
+     //   );
         StartCoroutine(delaynextround());
         /*var targetScene = SceneRef.FromIndex(2);
         await runner.LoadScene(targetScene);*/
-        StartCoroutine(DespawnAfterDelay(tropy, 4f));  // 5초 뒤
+       // StartCoroutine(DespawnAfterDelay(tropy, 4f));  // 5초 뒤
     }
 
     private IEnumerator DespawnAfterDelay(NetworkObject obj, float delay)

@@ -55,6 +55,8 @@ MonoBehaviour:
   puzzleMode: {fileID: 4713170375191320303}
   cupTargetScore: 9
   scoreBoard: {fileID: 3970072170573078783}
+  raceLine: {fileID: 0}
+  winsToVictory: 3
 --- !u!114 &4917637428693289307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,6 +75,7 @@ MonoBehaviour:
   NestedObjects:
   - {fileID: 1922434569733506445}
   - {fileID: 912400602655746614}
+  - {fileID: 5197339890228022637}
   NetworkedBehaviours:
   - {fileID: 3329999383638739876}
   ForceRemoteRenderTimeframe: 0
@@ -743,6 +746,10 @@ PrefabInstance:
       propertyPath: SortKey
       value: 906025536
       objectReference: {fileID: 0}
+    - target: {fileID: 4755125882677734663, guid: 3b152b705d65d6f4da3de128a6698d19, type: 3}
+      propertyPath: SortKey
+      value: 3317654900
+      objectReference: {fileID: 0}
     - target: {fileID: 4872675634023465932, guid: 3b152b705d65d6f4da3de128a6698d19, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -801,6 +808,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1367652529434845935, guid: 3b152b705d65d6f4da3de128a6698d19, type: 3}
   m_PrefabInstance: {fileID: 710778037733941354}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5197339890228022637 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4755125882677734663, guid: 3b152b705d65d6f4da3de128a6698d19, type: 3}
+  m_PrefabInstance: {fileID: 710778037733941354}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5350848585119064998 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4872675634023465932, guid: 3b152b705d65d6f4da3de128a6698d19, type: 3}

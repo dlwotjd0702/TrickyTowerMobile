@@ -7,23 +7,16 @@ using Fusion;
 public class RaceMode : MonoBehaviour
 {
     //결승선에 3초간 닿으면 게임종료
-    [SerializeField]
-    private float speed = 0.1f;
-
+    
     private float timer = 0f;
     private PlayerRef? currentPlayer = null;
     private bool playerTouched = false;
-   
     private int blockCount = 0;
 
 
     private void Update()
     {
         if (GameClearManager.Instance.clear) return;
-        var vector3 = transform.position;
-        vector3.y = transform.position.y - speed * Time.deltaTime;
-        transform.position = vector3;
-
         if (playerTouched == false)
             return;
 

@@ -22,26 +22,21 @@ public class ScoreBoard : NetworkBehaviour
         for (int i = 0; i < ranking.Length; i++)
         {
             int idx = ranking[i].AsIndex - 1;
+            int count
+                = i == 0 ? 3
+                : i == 1 ? 2
+                : i == 2 ? 1
+                : 0;
 
-            GameObject prefab = i switch
-            {
-                0 => goldMedal,
-                1 => silverMedal,
-                2 => bronzeMedal,
-                _ => null
-            };
-
-            int count = i switch
-            {
-                0 => 3, // 1등은 3개
-                1 => 2, // 2등은 2개
-                2 => 1, // 3등은 1개
-                _ => 0
-            };
+            MedalType type
+                = i == 0 ? MedalType.Gold
+                : i == 1 ? MedalType.Silver
+                : i == 2 ? MedalType.Bronze
+                : MedalType.None;
 
             for (int j = 0; j < count; j++)
             {
-                boxes[idx].AddMedal(prefab);
+                Rpc_AddMedal(idx, type); // 모든 클라이언트에서 실행됨
             }
         }
 
@@ -59,6 +54,20 @@ public class ScoreBoard : NetworkBehaviour
     public void HideScoreBoard()
     {
         Rpc_HideUI();
+    }
+
+    [Rpc(RpcSources.StateAuthority, RpcTargets.All)]
+    private void Rpc_AddMedal(int boxIndex, MedalType medal)
+    {
+        GameObject prefab = medal switch
+        {
+            MedalType.Gold => goldMedal,
+            MedalType.Silver => silverMedal,
+            MedalType.Bronze => bronzeMedal,
+            _ => null
+        };
+
+        boxes[boxIndex].AddMedal(prefab);
     }
 
     [Rpc(RpcSources.StateAuthority, RpcTargets.All)]

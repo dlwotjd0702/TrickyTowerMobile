@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,17 +35,22 @@ public class GameRuleManager : NetworkBehaviour
     [SerializeField]
     private ScoreBoard scoreBoard;
 
+    [SerializeField]
+    private NetworkObject raceLine;
+
     private NetworkManager networkManager;
     private int roundIndex = 0;
     private bool gameActive = true;
     private bool isInvinsible = false;
     private PlayType playType;
-    
+    private Vector3 raceLineTransform;
+
     // 몇 번 이겼는지 기록할 맵
     private Dictionary<PlayerRef, int> winCounts = new Dictionary<PlayerRef, int>();
 
 // 최종 승리 조건
-    [SerializeField] private int winsToVictory = 3;
+    [SerializeField]
+    private int winsToVictory = 3;
 
     public override void Spawned()
     {
@@ -105,21 +111,21 @@ public class GameRuleManager : NetworkBehaviour
         Debug.Log("라운드끝");
         if (Runner.IsServer == false || gameActive == false) return;
         Debug.Log("다음라운드");
-        
+
         //** 플레이어 점수UI 띄우기**
         scoreBoard.ShowScoreBoard();
         ////각자의 스코어보드 제작 및 네트워크 트랜스폼부착, 3초뒤 보드가 꺼지도록 설정
         Debug.Log("1");
-       
+
         int winnerScore = GameClearManager.Instance.GetPlayerScore(winner);
 
         GameClearManager.Instance.RemoveAllBlocks();
         GameClearManager.Instance.AllowAllBlocks();
         GameClearManager.Instance.ClearPlayers();
         GameClearManager.Instance.ClearFalse();
-        
+
         Debug.Log("2");
-    
+
         if (winnerScore >= cupTargetScore || playType == PlayType.Selection)
         {
             GameClear();
@@ -129,10 +135,10 @@ public class GameRuleManager : NetworkBehaviour
             roundIndex = (roundIndex + 1);
             if (roundIndex >= 3) roundIndex = 0;
             networkManager = FindObjectOfType<NetworkManager>();
-            networkManager.GameClear(winner);
+            networkManager.GameClear();
         }
     }
-    
+
     public void NextRound()
     {
         ActiveMode((GameType)roundIndex);
@@ -148,5 +154,6 @@ public class GameRuleManager : NetworkBehaviour
                 .Select(kv => kv.Key)
                 .ToArray();
         //** 최종 점수UI 띄우기 **
+        Debug.Log("게임종료!!!!!!");
     }
 }
