@@ -105,7 +105,7 @@ public class GameClearManager : NetworkBehaviour
 
         //모든플레이어 블럭생성막힘 추가
         StopAllSpawns();
-        
+
         //레이스모드 종료후 1,2,3,4등 판정
         IEnumerable<NetworkObject> allBlocks = GameObject.FindObjectsOfType<NetworkObject>()
             .Where(no => no.gameObject.layer == LayerMask.NameToLayer("Block"))
@@ -159,7 +159,7 @@ public class GameClearManager : NetworkBehaviour
     public void PuzzlePlayerEnd(PlayerRef player) //퍼즐 플레이어 탈락 감지 로직
     {
         if (failedPlayers.Contains(player)) return;
-        
+
         failedPlayers.Add(player);
 
         // 해당 플레이어 블럭생성중지 
@@ -212,16 +212,16 @@ public class GameClearManager : NetworkBehaviour
         if (failedPlayers.Add(player) == false) return;
         Debug.Log(player + "죽음");
 
-       
+
         // 해당 플레이어 블럭 생성막는 로직
         StopPlayer(player);
 
         int total = Runner.ActivePlayers.Count();
-        Debug.Log("토탈"+total);
-        
+        Debug.Log("토탈" + total);
+
         if (failedPlayers.Count >= total - 1)
         {
-            Debug.Log("실패한 "+failedPlayers.Count);
+            Debug.Log("실패한 " + failedPlayers.Count);
             PlayerRef winner =
                 Runner.ActivePlayers.First(p => failedPlayers.Contains(p) == false);
             SurvivalModeClear(winner);
@@ -239,7 +239,13 @@ public class GameClearManager : NetworkBehaviour
     private void AssignScore(PlayerRef[] ranking)
     {
         Debug.Log("점수정산");
+        
+        //** 여기서 메달을 주게 해볼까? **
+        //그래서 아얘 스코어 데이터가 메달도 가지고있고
+        //스코어 박스는 그걸 UI로 연결만해서 보여주는거지
+        
         lastRoundRank = ranking;
+
         for (int i = 0; i < ranking.Length; i++)
         {
             int score
@@ -247,12 +253,20 @@ public class GameClearManager : NetworkBehaviour
                 : i == 1 ? 2
                 : i == 2 ? 1
                 : 0;
+
+            MedalType medal
+                = i == 0 ? MedalType.Gold
+                : i == 1 ? MedalType.Silver
+                : i == 2 ? MedalType.Bronze
+                : MedalType.None;
+
             scoreData.AddScore(ranking[i], score);
+            scoreData.AddMedal(ranking[i], medal);
         }
 
         Debug.Log("정산끝");
         ScoreDebug();
-        
+
         RoundCleared?.Invoke(lastRoundRank[0], currentGameType);
         Debug.Log("점수 함수 끝");
     }
@@ -270,6 +284,11 @@ public class GameClearManager : NetworkBehaviour
     public PlayerRef[] GetLastRoundRanking()
     {
         return lastRoundRank;
+    }
+
+    public Dictionary<PlayerRef, List<MedalType>> GetPlayerMedals()
+    {
+        return scoreData.GetAllMedals();
     }
 
     public Dictionary<PlayerRef, int> GetAllScore()

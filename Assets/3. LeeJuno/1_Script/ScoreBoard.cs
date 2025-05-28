@@ -5,8 +5,11 @@ using UnityEngine;
 
 public class ScoreBoard : NetworkBehaviour
 {
-    [SerializeField] private ScoreBoardBox[] boxes;
-    [SerializeField] private GameObject goldMedal, silverMedal, bronzeMedal;
+    [SerializeField]
+    private ScoreBoardBox[] boxes;
+
+    [SerializeField]
+    private GameObject goldMedal, silverMedal, bronzeMedal;
 
     // 서버 권한에서 호출
     public void ShowScoreBoard()
@@ -14,28 +17,59 @@ public class ScoreBoard : NetworkBehaviour
         if (!Runner.IsServer) return;
 
         var ranking = GameClearManager.Instance.GetLastRoundRanking();
+        var allMedals = GameClearManager.Instance.GetPlayerMedals();
 
-        // 초기화
-        foreach (var b in boxes)
-            b.ResetBox();
-
-        for (int rank = 0; rank < ranking.Length; rank++)
+        for (int i = 0; i < ranking.Length; i++)
         {
-            var p = ranking[rank];
-            int medals = rank == 0 ? 3 : rank == 1 ? 2 : rank == 2 ? 1 : 0;
-            var prefab = rank == 0 ? goldMedal : rank == 1 ? silverMedal : bronzeMedal;
+            int idx = ranking[i].AsIndex - 1;
 
-            // PlayerRef.AsIndex 로 바로 박스 선택
-            int idx = p.AsIndex-1;
-            boxes[idx].UpdateBox(medals, prefab);
+            GameObject prefab = i switch
+            {
+                0 => goldMedal,
+                1 => silverMedal,
+                2 => bronzeMedal,
+                _ => null
+            };
+
+            int count = i switch
+            {
+                0 => 3, // 1등은 3개
+                1 => 2, // 2등은 2개
+                2 => 1, // 3등은 1개
+                _ => 0
+            };
+
+            for (int j = 0; j < count; j++)
+            {
+                boxes[idx].AddMedal(prefab);
+            }
         }
 
         Rpc_ShowUI();
+    }
+
+    public void ReSetBox()
+    {
+        foreach (var box in boxes)
+        {
+            box.ResetBox();
+        }
+    }
+
+    public void HideScoreBoard()
+    {
+        Rpc_HideUI();
     }
 
     [Rpc(RpcSources.StateAuthority, RpcTargets.All)]
     private void Rpc_ShowUI()
     {
         gameObject.SetActive(true);
+    }
+
+    [Rpc(RpcSources.StateAuthority, RpcTargets.All)]
+    private void Rpc_HideUI()
+    {
+        gameObject.SetActive(false);
     }
 }
