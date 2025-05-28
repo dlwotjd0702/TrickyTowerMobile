@@ -17,8 +17,6 @@ public class User
 
 public class Player : MonoBehaviour
 {
-    
-    public static Player Instance;
 
     public string nickname;
     
@@ -27,7 +25,6 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
         DontDestroyOnLoad(gameObject);
 
         user = new User();

@@ -27,7 +27,8 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
 
     private NetworkRunner runner;
     private bool isGameStarted = false;
-    GameType gameType = 0;
+    
+    public GameType gameType = 0;
 
     private void Awake()
     {
