@@ -1752,6 +1752,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1624237716}
+    - target: {fileID: 3329999383638739876, guid: 2732e9dfc2ba0354c8edc04c4b56ce27, type: 3}
+      propertyPath: raceLine
+      value: 
+      objectReference: {fileID: 545446651}
     - target: {fileID: 3412140006609109963, guid: 2732e9dfc2ba0354c8edc04c4b56ce27, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1787,11 +1791,19 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5283250000993680750, guid: 2732e9dfc2ba0354c8edc04c4b56ce27, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2732e9dfc2ba0354c8edc04c4b56ce27, type: 3}
+--- !u!114 &545446651 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6067853274817074479, guid: 2732e9dfc2ba0354c8edc04c4b56ce27, type: 3}
+  m_PrefabInstance: {fileID: 545446650}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f2d3959821d4084092583c209f0a08d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &554568236
 GameObject:
   m_ObjectHideFlags: 0

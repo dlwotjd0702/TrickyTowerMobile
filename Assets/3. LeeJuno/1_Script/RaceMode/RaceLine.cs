@@ -15,7 +15,8 @@ public class RaceLine : NetworkBehaviour
         if (!HasStateAuthority) return; // 서버에서만 이동 제어
         startPos = transform.position;
     }
-    
+
+
     public override void FixedUpdateNetwork()
     {
         if (!HasStateAuthority) return;
@@ -25,6 +26,10 @@ public class RaceLine : NetworkBehaviour
 
     public void ResetPosition()
     {
-        transform.position = startPos;
+        var networkTransform = GetComponent<NetworkTransform>();
+        if (networkTransform != null)
+            networkTransform.Teleport(new Vector3(0, 5, 0));
+        else
+            transform.position = new Vector3(0, 5, 0);
     }
 }

@@ -30,13 +30,13 @@ public class GameRuleManager : NetworkBehaviour
     private GameObject puzzleMode;
 
     [SerializeField]
+    private RaceLine raceLine;
+
+    [SerializeField]
     private int cupTargetScore = 12;
 
     [SerializeField]
     private ScoreBoard scoreBoard;
-
-    [SerializeField]
-    private NetworkObject raceLine;
 
     private NetworkManager networkManager;
     private int roundIndex = 0;
@@ -136,6 +136,7 @@ public class GameRuleManager : NetworkBehaviour
             if (roundIndex >= 3) roundIndex = 0;
             networkManager = FindObjectOfType<NetworkManager>();
             networkManager.GameClear();
+            raceLine.ResetPosition();
         }
     }
 
