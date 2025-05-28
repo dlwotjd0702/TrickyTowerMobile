@@ -5,24 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33ec4f3c-9a43-40ac-a265-51209e7b0009" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/SurviveGround.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Prefabs/SurviveGround.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Scene/3. SeoCombinateGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Scene/3. SeoCombinateGame.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/FusionDemos/Photon-Fusion-Intro-Sample-2.0.6-Stable-1034.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/Managed/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/Managed/Assembly-CSharp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/boot.config" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/boot.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/globalgamemanagers" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/globalgamemanagers" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/globalgamemanagers.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/globalgamemanagers.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/level0" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/level0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/level1" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/level1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/level2" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/level2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/resources.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/resources.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/resources.assets.resS" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/resources.assets.resS" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets0.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets0.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets0.assets.resS" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets0.assets.resS" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets1.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets1.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets2.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets2.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets2.assets.resS" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets2.assets.resS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3. LeeJuno/2_Prefabs/Bronze.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/2_Prefabs/Bronze.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MedalOnAnim.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MedalOnAnim.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MedalStarAnim1.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MedalStarAnim1.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MedalStarAnim2.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MedalStarAnim2.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MedalStarAnim3.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MedalStarAnim3.anim" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +32,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d012868c0b9943c7bc3faef3a9135f2bc0000/21/ddd08b71/SimulationBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d012868c0b9943c7bc3faef3a9135f2bc0000/b0/7028193c/NetworkRunner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d012868c0b9943c7bc3faef3a9135f2bc0000/c2/e2d71538/INetworkInput.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkBlockController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -159,7 +147,7 @@
       <workItem from="1747875907279" duration="13182000" />
       <workItem from="1747962313003" duration="17264000" />
       <workItem from="1748220447745" duration="11671000" />
-      <workItem from="1748243351022" duration="24949000" />
+      <workItem from="1748243351022" duration="28519000" />
     </task>
     <servers />
   </component>
