@@ -25,14 +25,20 @@ public class SurvivalMode : MonoBehaviour
     {
         SurvivalEvents.BlockSpawned += BlockSpawnCheck;
         SurvivalEvents.BlockDestroyed += BlockDestroyCheck;
-        GameClearManager.Instance.survivalReset += ResetDictionary;
+
+        Debug.Log("리셋");
+        blockCount.Clear();
+        hp.Clear();
+        foreach (var survival in survivalHeart)
+        {
+            survival.Reset();
+        }
     }
 
     private void OnDisable()
     {
         SurvivalEvents.BlockSpawned -= BlockSpawnCheck;
         SurvivalEvents.BlockDestroyed -= BlockDestroyCheck;
-        GameClearManager.Instance.survivalReset -= ResetDictionary;
     }
 
     private void BlockSpawnCheck(PlayerRef p)
@@ -67,12 +73,8 @@ public class SurvivalMode : MonoBehaviour
             survivalHeart[p.AsIndex - 1].SetOwner(p);
         }
 
-        if (hp[p]-- <= 1)
-        {
-            //블럭스폰이 막혀야하는데
-            GameClearManager.Instance.SurvivePlayerDie(p);
-        }
-
+        hp[p]--;
+        
         foreach (var owner in survivalHeart)
         {
             if (p == owner.Owner)
@@ -81,17 +83,13 @@ public class SurvivalMode : MonoBehaviour
             }
         }
 
-        Debug.Log("hp수" + hp[p]);
-    }
-
-    private void ResetDictionary()
-    {
-        blockCount.Clear();
-        hp.Clear();
-        foreach (var survival in survivalHeart)
+        if (hp[p] <= 1)
         {
-            survival.Reset();
+            //블럭스폰이 막혀야하는데
+            GameClearManager.Instance.SurvivePlayerDie(p);
         }
+
+        Debug.Log("hp수" + hp[p]);
     }
 
     private IEnumerator IvincibleCooldown(PlayerRef p)
