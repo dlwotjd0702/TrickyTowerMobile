@@ -40,16 +40,16 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     private void OnGUI()
     {
         
-        if (SceneManager.GetActiveScene().buildIndex == 0)
+        /*if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             if (GUI.Button(new Rect(10, 10, 200, 40), "Host"))
                 StartHost();
             if (GUI.Button(new Rect(10, 60, 200, 40), "Join"))
                 StartClient();
-        }
-        if (SceneManager.GetActiveScene().buildIndex == 1)
+        }*/
+        if (SceneManager.GetActiveScene().buildIndex == 1&&runner.IsServer)
         {
-            if (GUI.Button(new Rect(10, 110, 200, 40), "Start Game"))
+            if (GUI.Button(new Rect(100, 300, 200, 40), "Start Game"))
                 HostStartGame();
         }
         

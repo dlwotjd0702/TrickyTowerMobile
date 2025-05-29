@@ -12,44 +12,42 @@ public class FirebaseAccountManager : MonoBehaviour
 {
     public static FirebaseAccountManager Instance { get; private set; }
 
-    
-    
     // per‐email FirebaseApp/Auth/Firestore
-    private Dictionary<string, FirebaseApp>       _apps       = new Dictionary<string, FirebaseApp>();
-    private Dictionary<string, FirebaseAuth>      _auths      = new Dictionary<string, FirebaseAuth>();
-    private Dictionary<string, FirebaseFirestore> _firestores= new Dictionary<string, FirebaseFirestore>();
+    private Dictionary<string, FirebaseApp>       _apps       = new();
+    private Dictionary<string, FirebaseAuth>      _auths      = new();
+    private Dictionary<string, FirebaseFirestore> _firestores= new();
 
-    [Header("Session Settings")] 
-    public int               ttlMinutes   = 1;
-    public NetworkManager    networkManager;
-    public string            sessionName  = "";
+    [Header("Session Settings")]
+    public int            ttlMinutes     = 1;
+    public NetworkManager networkManager;
+    public string         sessionName    = "";
 
     [Header("Session List UI")]
-    public RectTransform     sessionListContent;
-    public Button            loadSessionsButton;
-    public Button            sessionButtonPrefab;
+    public RectTransform  sessionListContent;
+    public Button         loadSessionsButton;
+    public Button         sessionButtonPrefab;
 
     [Header("Login UI")]
-    public TMP_InputField   inputemail;
-    public TMP_InputField   inputpassword;
-    public Button            LoginButton;
+    public TMP_InputField inputemail;
+    public TMP_InputField inputpassword;
+    public Button         LoginButton;
 
     [Header("Signup UI")]
-    public TMP_InputField   makeemail;
-    public TMP_InputField   makepassword;
-    public TMP_InputField   makenick;
-    public Button            SigninButton;
+    public TMP_InputField makeemail;
+    public TMP_InputField makepassword;
+    public TMP_InputField makenick;
+    public Button         SigninButton;
 
     [Header("Create Session Button")]
-    public TMP_InputField   SessionName;
-    public Button            sessionButton;
+    public TMP_InputField SessionName;
+    public Button         sessionButton;
 
-    private bool isInitialized = false;
-    private string _currentUserKey = null; // email used for auth
+    private bool   isInitialized     = false;
+    private string _currentUserKey   = null; // email used for auth
+    public RoomSettingsUI roomSettingsUI;
 
     private void Awake()
     {
-        // Singleton
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -63,13 +61,11 @@ public class FirebaseAccountManager : MonoBehaviour
     {
         if (isInitialized) return;
 
-        // UI callbacks
         LoginButton.onClick.AddListener(OnLoginClicked);
         SigninButton.onClick.AddListener(OnCreateAccountClicked);
         sessionButton.onClick.AddListener(OnCreateSessionDocument);
         loadSessionsButton.onClick.AddListener(FetchValidSessions);
 
-        // Initialize default FirebaseApp
         FirebaseApp.CheckAndFixDependenciesAsync()
             .ContinueWithOnMainThread(task =>
         {
@@ -87,17 +83,12 @@ public class FirebaseAccountManager : MonoBehaviour
 
     private void OnLoginClicked()
     {
-        var email    = inputemail.text;
-        var password = inputpassword.text;
-        SignIn(email, password);
+        SignIn(inputemail.text, inputpassword.text);
     }
 
     private void OnCreateAccountClicked()
     {
-        var email    = makeemail.text;
-        var password = makepassword.text;
-        var nickname = makenick.text;
-        CreateAccount(email, password, nickname);
+        CreateAccount(makeemail.text, makepassword.text, makenick.text);
     }
 
     private void OnCreateSessionDocument()
@@ -108,13 +99,15 @@ public class FirebaseAccountManager : MonoBehaviour
             Debug.LogError("세션을 생성하려면 먼저 로그인해야 합니다.");
             return;
         }
+
+        // 네트워크매니저에 이미 설정된 gameType 읽어서 세션문서에 포함
         networkManager.sessionName = sessionName;
         var (auth, fs) = GetAuthAndFirestoreFor(_currentUserKey);
-        CreateSessionDocument(sessionName, auth, fs);
+        CreateSessionDocument(sessionName, auth, fs, roomSettingsUI.currentIndex);
+        Debug.Log(roomSettingsUI.currentIndex);
         networkManager.StartHost();
     }
 
-    // Create or fetch a FirebaseApp/Auth/Firestore triple for this key (email)
     private (FirebaseAuth auth, FirebaseFirestore fs) GetAuthAndFirestoreFor(string key)
     {
         if (!_apps.ContainsKey(key))
@@ -142,25 +135,19 @@ public class FirebaseAccountManager : MonoBehaviour
             if (task.IsFaulted || task.IsCanceled)
             {
                 Debug.LogError("회원가입 실패: " + task.Exception?.Message);
-                
-                // UIButtonManager의 reenterUI 켜기
                 var uiMgr = FindObjectOfType<UIButtonManager>();
-                if (uiMgr != null && uiMgr.reenterUI != null) 
-                    uiMgr.reenterUI.SetActive(true); 
-                uiMgr.signupUI.SetActive(true);
+                uiMgr?.reenterUI?.SetActive(true);
+                uiMgr?.signupUI?.SetActive(true);
                 return;
             }
 
             var newUser = task.Result.User;
-            Player player = FindObjectOfType<Player>();
-            player.SetUserData(newUser);
+            FindObjectOfType<Player>()?.SetUserData(newUser);
             Debug.Log($"회원가입 성공: {newUser.Email}");
             _currentUserKey = email;
 
-            // 프로필 설정
             newUser.UpdateUserProfileAsync(new UserProfile { DisplayName = nickname });
-            
-            // Firestore에 사용자 문서 생성
+
             var data = new Dictionary<string, object>
             {
                 { "email",     email },
@@ -174,50 +161,50 @@ public class FirebaseAccountManager : MonoBehaviour
                 if (t.IsFaulted) Debug.LogError("사용자 문서 생성 실패: " + t.Exception?.Message);
                 else             Debug.Log("Firestore 사용자 문서 생성 완료");
             });
-            var uiMgrSuccess = FindObjectOfType<UIButtonManager>();
-            uiMgrSuccess.successSignupUI.SetActive(true);
+
+            FindObjectOfType<UIButtonManager>()?.successSignupUI?.SetActive(true);
         });
     }
 
     private void SignIn(string email, string password)
     {
         Debug.Log("로그인 시도 중...");
-        var (auth, fs) = GetAuthAndFirestoreFor(email);
+        var (auth, _) = GetAuthAndFirestoreFor(email);
         auth.SignInWithEmailAndPasswordAsync(email, password)
             .ContinueWithOnMainThread(task =>
         {
             if (task.IsFaulted || task.IsCanceled)
             {
                 Debug.LogError("로그인 실패: " + task.Exception?.Message);
-                var LognInFaill = FindObjectOfType<UIButtonManager>();
-                LognInFaill.reenterUI.SetActive(true); 
+                FindObjectOfType<UIButtonManager>()?.reenterUI?.SetActive(true);
                 return;
             }
 
             var user = task.Result.User;
-            Player player = FindObjectOfType<Player>();
-            
-            player.SetUserData(user);
-            Debug.Log($"로그인 성공: {user.Email}");
+            var player = FindObjectOfType<Player>();
+            player?.SetUserData(user);
             player.nickname = user.DisplayName;
+            Debug.Log($"로그인 성공: {user.Email}");
             _currentUserKey = email;
-            var LognIn = FindObjectOfType<UIButtonManager>();
-            LognIn. introUI.SetActive(false);
-            LognIn. mainUI.SetActive(true);
+            var uiMgr = FindObjectOfType<UIButtonManager>();
+            uiMgr?.introUI?.SetActive(false);
+            uiMgr?.mainUI?.SetActive(true);
         });
     }
 
-    private void CreateSessionDocument(string sessionName, FirebaseAuth auth, FirebaseFirestore fs)
+    private void CreateSessionDocument(string sessionName, FirebaseAuth auth, FirebaseFirestore fs, int gameType)
     {
         var now      = Timestamp.GetCurrentTimestamp();
         var expireTs = Timestamp.FromDateTime(now.ToDateTime().AddMinutes(ttlMinutes));
 
+        // 여기에서 gameType 저장
         var data = new Dictionary<string, object>
         {
             { "host",         auth.CurrentUser.UserId },
             { "createdAt",    now },
             { "expiresAt",    expireTs },
-            { "participants", new List<string> { auth.CurrentUser.UserId } }
+            { "participants", new List<string> { auth.CurrentUser.UserId } },
+            { "gameType",     gameType }
         };
 
         fs.Collection("sessions").Document(sessionName)
@@ -226,42 +213,9 @@ public class FirebaseAccountManager : MonoBehaviour
             if (t.IsFaulted) Debug.LogError("세션 생성 실패: " + t.Exception?.Message);
             else
             {
-                Debug.Log($"세션 생성 완료: {sessionName}");
+                Debug.Log($"세션 생성 완료: {sessionName} (type={gameType})");
                 DOTween.KillAll();
-            } 
-            
-        });
-    }
-
-    public void DeleteSessionDocument(string sessionName)
-    {
-        if (string.IsNullOrEmpty(_currentUserKey)) return;
-        var (auth, fs) = GetAuthAndFirestoreFor(_currentUserKey);
-        fs.Collection("sessions").Document(sessionName)
-          .DeleteAsync().ContinueWithOnMainThread(t =>
-        {
-            if (t.IsFaulted) Debug.LogError("세션 삭제 실패: " + t.Exception?.Message);
-            else            
-            {
-                Debug.Log($"세션 삭제 완료: {sessionName}");
-
             }
-        });
-    }
-
-    public void UpdateSessionExpiration(string sessionName)
-    {
-        if (string.IsNullOrEmpty(_currentUserKey)) return;
-        var (auth, fs) = GetAuthAndFirestoreFor(_currentUserKey);
-        var now      = Timestamp.GetCurrentTimestamp();
-        var expireTs = Timestamp.FromDateTime(now.ToDateTime().AddMinutes(ttlMinutes));
-
-        fs.Collection("sessions").Document(sessionName)
-          .UpdateAsync("expiresAt", expireTs)
-          .ContinueWithOnMainThread(t =>
-        {
-            if (t.IsFaulted) Debug.LogWarning("세션 연장 실패: " + t.Exception?.Message);
-            else             Debug.Log($"세션 연장 완료: {sessionName}");
         });
     }
 
@@ -285,23 +239,24 @@ public class FirebaseAccountManager : MonoBehaviour
             {
                 string id = doc.Id;
 
-                // 1) participants 배열 읽어서 카운트
+                // 참가자 수
                 int count = 0;
                 if (doc.TryGetValue("participants", out List<string> plist))
                     count = plist.Count;
 
-                // 2) 버튼 생성 & 라벨 세팅
+                // 저장된 gameType 읽기
+                int    storedTypeInt = doc.TryGetValue("gameType", out long gi) ? (int)gi : 0;
+                GameType storedType   = (GameType)storedTypeInt;
+
+                // 버튼 생성
                 var btn = Instantiate(sessionButtonPrefab, sessionListContent);
                 var label = btn.GetComponentInChildren<TextMeshProUGUI>();
-                label.text = $"{id} ({count}명)";
+                label.text = $"{id} ({count}/4) \n Mode: {storedType}";
 
-                // 로컬 값 캡쳐
                 string sessionId = id;
-
-                // 3) 클릭 리스너: 참가자 추가 → 클라이언트 참가
                 btn.onClick.AddListener(() =>
                 {
-                    // Firestore에 내 UserId 추가
+                    // Firestore 참가자 추가
                     var (auth, firestore) = GetAuthAndFirestoreFor(_currentUserKey);
                     firestore.Collection("sessions")
                              .Document(sessionId)
@@ -314,11 +269,44 @@ public class FirebaseAccountManager : MonoBehaviour
                             Debug.Log($"[{sessionId}] 참가자 추가 완료");
                     });
 
-                    // 실제 참가 처리
+                    // 네트워크매니저에 세션명과 gameType 적용 후 클라이언트 시작
                     networkManager.sessionName = sessionId;
+                    networkManager.gameType    = storedType;
                     networkManager.StartClient();
                 });
             }
         });
+    }
+
+    public void DeleteSessionDocument(string sessionName)
+    {
+        if (string.IsNullOrEmpty(_currentUserKey)) return;
+        var (auth, fs) = GetAuthAndFirestoreFor(_currentUserKey);
+        fs.Collection("sessions").Document(sessionName)
+            .DeleteAsync().ContinueWithOnMainThread(t =>
+            {
+                if (t.IsFaulted) Debug.LogError("세션 삭제 실패: " + t.Exception?.Message);
+                else            
+                {
+                    Debug.Log($"세션 삭제 완료: {sessionName}");
+
+                }
+            });
+    }
+
+    public void UpdateSessionExpiration(string sessionName)
+    {
+        if (string.IsNullOrEmpty(_currentUserKey)) return;
+        var (auth, fs) = GetAuthAndFirestoreFor(_currentUserKey);
+        var now      = Timestamp.GetCurrentTimestamp();
+        var expireTs = Timestamp.FromDateTime(now.ToDateTime().AddMinutes(ttlMinutes));
+
+        fs.Collection("sessions").Document(sessionName)
+            .UpdateAsync("expiresAt", expireTs)
+            .ContinueWithOnMainThread(t =>
+            {
+                if (t.IsFaulted) Debug.LogWarning("세션 연장 실패: " + t.Exception?.Message);
+                else             Debug.Log($"세션 연장 완료: {sessionName}");
+            });
     }
 }

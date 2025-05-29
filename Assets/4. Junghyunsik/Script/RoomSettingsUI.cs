@@ -16,7 +16,8 @@ public class RoomSettingsUI : MonoBehaviour
     [Header("Network")]
     [SerializeField] private NetworkManager networkManager; // int gameType, sessionName
 
-    private int currentIndex = 0;
+
+    public int currentIndex = 0;
 
     private void Awake()
     {
@@ -59,6 +60,7 @@ public class RoomSettingsUI : MonoBehaviour
 
         // currentIndex를 GameType으로 캐스트해서 전달
         networkManager.gameType    = (GameType)currentIndex;
+       
         networkManager.sessionName = roomName;
 
         Debug.Log($"[RoomSettingsUI] CreateRoom name={roomName}, gameType={(GameType)currentIndex}");

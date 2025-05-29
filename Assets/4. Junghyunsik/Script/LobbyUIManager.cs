@@ -10,7 +10,6 @@ public class LobbyUIManager : MonoBehaviour
     {
         public GameObject playerIn;
         public GameObject playerWaiting;
-        public TextMeshProUGUI nameText;
     }
 
     [SerializeField] private Slot[] slots = new Slot[4];
@@ -27,12 +26,7 @@ public class LobbyUIManager : MonoBehaviour
 
         slots[index].playerIn.SetActive(isActive);
         slots[index].playerWaiting.SetActive(!isActive);
-
-        // 이름도 세팅 or 초기화
-        if (isActive)
-            slots[index].nameText.text = playerName;
-        else
-            slots[index].nameText.text = "";
+     
     }
 
     /// <summary>
@@ -45,7 +39,7 @@ public class LobbyUIManager : MonoBehaviour
         {
             slots[i].playerIn.SetActive(false);
             slots[i].playerWaiting.SetActive(true);
-            slots[i].nameText.text = "";
+           
         }
 
         // 전달된 인덱스 + 이름 정보만 활성화
@@ -57,7 +51,7 @@ public class LobbyUIManager : MonoBehaviour
 
             slots[idx].playerIn.SetActive(true);
             slots[idx].playerWaiting.SetActive(false);
-            slots[idx].nameText.text = name;
+          
         }
     }
 
@@ -70,7 +64,7 @@ public class LobbyUIManager : MonoBehaviour
         {
             slots[i].playerIn.SetActive(false);
             slots[i].playerWaiting.SetActive(true);
-            slots[i].nameText.text = "";
+        
         }
     }
 }

@@ -5,25 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33ec4f3c-9a43-40ac-a265-51209e7b0009" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0. Team settings/TeamBuildsetting/3. CombinateGameseo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0. Team settings/TeamBuildsetting/3. CombinateGameseo.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0. Team settings/TeamBuildsetting/3.CombinateGameteam.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0. Team settings/TeamBuildsetting/3.CombinateGameteam.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkInputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkInputHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/FusionDemos/Photon-Fusion-Intro-Sample-2.0.6-Stable-1034.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/Managed/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/Managed/Assembly-CSharp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/boot.config" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/boot.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/globalgamemanagers" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/globalgamemanagers" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/globalgamemanagers.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/globalgamemanagers.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/level0" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/level0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/level1" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/level1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/level2" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/level2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/resources.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/resources.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/resources.assets.resS" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/resources.assets.resS" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets0.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets0.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets0.assets.resS" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets0.assets.resS" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets1.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets1.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets2.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets2.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0. Team settings/TeamPrefab/GameMode.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0. Team settings/TeamPrefab/GameMode.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/GameMode.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/GameMode.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/OldPrefabs/GameMode.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/OldPrefabs/GameMode.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3. LeeJuno/1_Script/SurvivalMode/SurvivalMode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/1_Script/SurvivalMode/SurvivalMode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3. LeeJuno/2_Prefabs/GameModePrefabs/GameMode.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/2_Prefabs/GameModePrefabs/GameMode.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,20 +32,24 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/37cc348edc804f4cb176b63962c716e7177200/4e/bc469216/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7794eba693384128b81152f26d84f55916a00/2e/a3c8dd49/FirebaseUser.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7794eba693384128b81152f26d84f55916a00/34/911f31db/AuthResult.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b528a70be4e443e99ead74b7f8674eca10400/73/ba45fb70/AudioSource.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d012868c0b9943c7bc3faef3a9135f2bc0000/21/ddd08b71/SimulationBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d012868c0b9943c7bc3faef3a9135f2bc0000/b0/7028193c/NetworkRunner.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d012868c0b9943c7bc3faef3a9135f2bc0000/c2/e2d71538/INetworkInput.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkBlockController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkInputHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkSpawnHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/SurvivalUiManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/4. Junghyunsik/Script/ButtonHoverToggle.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Photon/Fusion/Editor/Fusion.Unity.Editor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/origin/Scripts/Block.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.7/Scripts/Runtime/TMPro_UGUI_Private.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/GraphicEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/ImageEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/RawImageEditor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/Downloads/3.Script/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="false" />
   <component name="ProjectColorInfo">{
@@ -75,7 +65,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "debugplay",
+    "git-widget-placeholder": "buildver1.0.1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
