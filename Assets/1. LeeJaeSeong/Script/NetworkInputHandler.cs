@@ -73,6 +73,7 @@ public class NetworkInputHandler : MonoBehaviour, INetworkRunnerCallbacks,IPoint
         {
             _rotateQueued = true;
             effectManager.RotateSetLandVisual();
+            Debug.Log("isRotate");
             leftRotateButton.onClick =  false;
             rightRotateButton.onClick = false;
         }
@@ -83,6 +84,7 @@ public class NetworkInputHandler : MonoBehaviour, INetworkRunnerCallbacks,IPoint
         if (leftMoveButton.onClick)
         {
             rawX2 = -1;
+            Debug.Log("isLeftMove");
             leftMoveButton.onClick = false;
         }
     }
@@ -92,6 +94,7 @@ public class NetworkInputHandler : MonoBehaviour, INetworkRunnerCallbacks,IPoint
         if (rightMoveButton.onClick)
         {
             rawX2 = 1;
+            Debug.Log("isRightMove");
             rightMoveButton.onClick = false;
         }
     }
@@ -115,6 +118,7 @@ public class NetworkInputHandler : MonoBehaviour, INetworkRunnerCallbacks,IPoint
             effectManager.IsShadow = true;
             effectManager.isRight = true;
             isRightFastMove = true;
+            Debug.Log("isRightFastMove");
             rightFastMoveButton.onClick = false;
         }
     }

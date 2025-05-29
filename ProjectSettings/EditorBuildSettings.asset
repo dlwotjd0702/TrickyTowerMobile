@@ -5,16 +5,28 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/1. LeeJaeSeong/Buildsetting/1.OutGameteam.unity
     guid: a5e1b65323e696e4bb960ae22044e510
-  - enabled: 1
+  - enabled: 0
     path: Assets/1. LeeJaeSeong/Buildsetting/2.Lobbyteam.unity
     guid: f2d7e566322ed7743bcfd6cd7eb214cb
-  - enabled: 1
+  - enabled: 0
     path: Assets/1. LeeJaeSeong/Buildsetting/3. CombinateGameseo.unity
     guid: 0be49785d1f19884c9071813743d3f59
   - enabled: 0
     path: Assets/1. LeeJaeSeong/Buildsetting/3.CombinateGameteam.unity
     guid: 6c761cf2cc2b9074da42f22ae7730bc8
+  - enabled: 1
+    path: Assets/0. Team settings/TeamBuildsetting/1.OutGameteam.unity
+    guid: 63a88e071c2055d44ac464ef7b605120
+  - enabled: 1
+    path: Assets/0. Team settings/TeamBuildsetting/2.Lobbyteam.unity
+    guid: 502f7be968b8a6f4592b16f70ede1270
+  - enabled: 0
+    path: Assets/0. Team settings/TeamBuildsetting/3. CombinateGameseo.unity
+    guid: 9c93b086bcf90814488060c513aab447
+  - enabled: 1
+    path: Assets/0. Team settings/TeamBuildsetting/3.CombinateGameteam.unity
+    guid: 9073b973335557c4eba9fda3e75aff72
   m_configObjects: {}
