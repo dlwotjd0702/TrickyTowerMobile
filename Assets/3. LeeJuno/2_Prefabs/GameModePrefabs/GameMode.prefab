@@ -53,9 +53,9 @@ MonoBehaviour:
   raceMode: {fileID: 1956761702781878917}
   survivalMode: {fileID: 6914133670354513712}
   puzzleMode: {fileID: 4713170375191320303}
+  raceLine: {fileID: 0}
   cupTargetScore: 9
   scoreBoard: {fileID: 3970072170573078783}
-  raceLine: {fileID: 0}
   winsToVictory: 3
 --- !u!114 &4917637428693289307
 MonoBehaviour:

@@ -52,8 +52,10 @@ MonoBehaviour:
   raceMode: {fileID: 0}
   survivalMode: {fileID: 0}
   puzzleMode: {fileID: 0}
+  raceLine: {fileID: 0}
   cupTargetScore: 9
   scoreBoard: {fileID: 0}
+  winsToVictory: 3
 --- !u!114 &4324710285689070113
 MonoBehaviour:
   m_ObjectHideFlags: 0
