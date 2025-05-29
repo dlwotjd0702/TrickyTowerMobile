@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33ec4f3c-9a43-40ac-a265-51209e7b0009" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/3. LeeJuno/2_Prefabs/Bronze.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/2_Prefabs/Bronze.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MedalOnAnim.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MedalOnAnim.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MedalStarAnim1.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MedalStarAnim1.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MedalStarAnim2.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MedalStarAnim2.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MedalStarAnim3.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MedalStarAnim3.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Buildsetting/1. OutGame.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Buildsetting/1. OutGame.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Buildsetting/2.Lobby.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Buildsetting/2.Lobby.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Buildsetting/3.CombinateGame.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Buildsetting/3.CombinateGame.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +48,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/ImageEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/RawImageEditor.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="false" />
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 6
@@ -59,7 +62,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Play",
+    "git-widget-placeholder": "buildver1.0.1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -78,7 +81,7 @@
       <method v="2" />
     </configuration>
     <configuration name="독립실행형 플레이어" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/qlfem/trickytower.exe" />
+      <option name="EXE_PATH" value="$USER_HOME$/Desktop/트리키타워레이스빌드/trickytower.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="C:\Users\KGA\Documents\GitHub\TrickyTower\build" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -154,6 +157,7 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="false" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityProjectDiscoverer">
     <option name="hasUnityReference" value="true" />
