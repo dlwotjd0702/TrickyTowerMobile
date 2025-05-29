@@ -5,25 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33ec4f3c-9a43-40ac-a265-51209e7b0009" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0. Team settings/TeamBuildsetting/3. CombinateGameseo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0. Team settings/TeamBuildsetting/3. CombinateGameseo.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0. Team settings/TeamBuildsetting/3.CombinateGameteam.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0. Team settings/TeamBuildsetting/3.CombinateGameteam.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkInputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkInputHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/FusionDemos/Photon-Fusion-Intro-Sample-2.0.6-Stable-1034.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/Managed/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/Managed/Assembly-CSharp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/boot.config" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/boot.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/globalgamemanagers" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/globalgamemanagers" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/globalgamemanagers.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/globalgamemanagers.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/level0" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/level0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/level1" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/level1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/level2" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/level2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/resources.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/resources.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/resources.assets.resS" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/resources.assets.resS" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets0.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets0.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets0.assets.resS" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets0.assets.resS" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets1.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets1.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets2.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets2.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +57,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "debugplay",
+    "git-widget-placeholder": "buildver1.0.1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",

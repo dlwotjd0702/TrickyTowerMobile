@@ -203,7 +203,7 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
         int idx = GetPlayerJoinIndex(winner);
         Vector3 offset = spawnOffsets[Mathf.Clamp(idx, 0, spawnOffsets.Length - 1)];
         var tropy = runner.Spawn(
-            prefabRef: spawnHandler.winnertropy,
+            prefabRef: spawnHandler.winnerTrophy,
             position: offset,
             rotation: Quaternion.identity
         );
