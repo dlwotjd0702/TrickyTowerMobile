@@ -16,18 +16,21 @@ public class SurvivalMode : MonoBehaviour
     [SerializeField]
     private float invincibleTime = 1.5f;
 
+
     private bool survivalClear;
 
     private void OnEnable()
     {
         SurvivalEvents.BlockSpawned += BlockSpawnCheck;
         SurvivalEvents.BlockDestroyed += BlockDestroyCheck;
+        GameClearManager.Instance.survivalReset += ResetDictionary;
     }
 
     private void OnDisable()
     {
         SurvivalEvents.BlockSpawned -= BlockSpawnCheck;
         SurvivalEvents.BlockDestroyed -= BlockDestroyCheck;
+        GameClearManager.Instance.survivalReset -= ResetDictionary;
     }
 
     private void BlockSpawnCheck(PlayerRef p)
@@ -41,7 +44,6 @@ public class SurvivalMode : MonoBehaviour
         {
             survivalClear = true;
             GameClearManager.Instance.SurvivalModeClear(p);
-            blockCount.Clear();
         }
 
         Debug.Log("블럭수" + blockCount[p]);
@@ -65,10 +67,15 @@ public class SurvivalMode : MonoBehaviour
         {
             //블럭스폰이 막혀야하는데
             GameClearManager.Instance.SurvivePlayerDie(p);
-            hp[p] = 3;
         }
 
         Debug.Log("hp수" + hp[p]);
+    }
+
+    private void ResetDictionary()
+    {
+        blockCount.Clear();
+        hp.Clear();
     }
 
     private IEnumerator IvincibleCooldown(PlayerRef p)

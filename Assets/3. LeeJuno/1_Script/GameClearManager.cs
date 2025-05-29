@@ -21,7 +21,7 @@ public class GameClearManager : NetworkBehaviour
     public static GameClearManager Instance;
 
     public event Action<PlayerRef, GameType> RoundCleared;
-
+    public event Action survivalReset;
     private PlayerScoreData scoreData = new PlayerScoreData();
     private HashSet<PlayerRef> failedPlayers = new HashSet<PlayerRef>();
     private PlayerRef[] lastRoundRank;
@@ -206,7 +206,7 @@ public class GameClearManager : NetworkBehaviour
 
         othersRanked.Insert(0, winner);
         PlayerRef[] ranking = othersRanked.ToArray();
-
+        survivalReset?.Invoke();
         AssignScore(ranking);
         RemoveUnplacedAllBlocks();
     }
