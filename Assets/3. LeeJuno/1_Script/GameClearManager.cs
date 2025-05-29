@@ -152,7 +152,8 @@ public class GameClearManager : NetworkBehaviour
             .OrderByDescending(entry => entry.Count)
             .Select(entry => entry.Player)
             .ToArray();
-
+        
+        failedPlayers.Clear();
         AssignScore(ranking);
     }
 
@@ -171,7 +172,6 @@ public class GameClearManager : NetworkBehaviour
         {
             PuzzleModeClear();
             RemoveUnplacedBlock(player);
-            failedPlayers.Clear();
         }
     }
 
@@ -207,6 +207,8 @@ public class GameClearManager : NetworkBehaviour
         othersRanked.Insert(0, winner);
         PlayerRef[] ranking = othersRanked.ToArray();
         survivalReset?.Invoke();
+        failedPlayers.Clear();
+        
         AssignScore(ranking);
         RemoveUnplacedAllBlocks();
     }
@@ -230,7 +232,6 @@ public class GameClearManager : NetworkBehaviour
                 Runner.ActivePlayers.First(p => failedPlayers.Contains(p) == false);
             SurvivalModeClear(winner);
             RemoveUnplacedBlock(player);
-            failedPlayers.Clear();
         }
     }
 
