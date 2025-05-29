@@ -220,63 +220,80 @@ public class FirebaseAccountManager : MonoBehaviour
     }
 
     public void FetchValidSessions()
+{
+    var fs  = FirebaseFirestore.DefaultInstance;
+    var now = Timestamp.GetCurrentTimestamp();
+
+    fs.Collection("sessions")
+      .WhereGreaterThanOrEqualTo("expiresAt", now)
+      .GetSnapshotAsync()
+      .ContinueWithOnMainThread(task =>
     {
-        var fs  = FirebaseFirestore.DefaultInstance;
-        var now = Timestamp.GetCurrentTimestamp();
-
-        fs.Collection("sessions")
-          .WhereGreaterThanOrEqualTo("expiresAt", now)
-          .GetSnapshotAsync()
-          .ContinueWithOnMainThread(task =>
+        if (task.IsFaulted)
         {
-            if (task.IsFaulted)
+            Debug.LogError("세션 목록 불러오기 실패: " + task.Exception);
+            return;
+        }
+
+        // 버튼 위치용 카운터와 간격 계산
+        int i = -1;
+        var prefabRt  = sessionButtonPrefab.GetComponent<RectTransform>();
+        float spacing = prefabRt.rect.height + 10f; // 버튼 높이 + 10px 여백
+
+        foreach (var doc in task.Result.Documents)
+        {
+            string id = doc.Id;
+
+            // 참가자 수
+            int count = 0;
+            if (doc.TryGetValue("participants", out List<string> plist))
+                count = plist.Count;
+
+            // 저장된 gameType 읽기
+            int    storedTypeInt = doc.TryGetValue("gameType", out long gi) ? (int)gi : 0;
+            GameType storedType   = (GameType)storedTypeInt;
+
+            // 버튼 생성
+            var btn = Instantiate(sessionButtonPrefab, sessionListContent);
+            btn.transform.localScale = Vector3.one;
+
+            // Y 위치만 조정 (위에서 i * spacing 만큼 내려감)
+            var rt = btn.GetComponent<RectTransform>();
+            var pos = rt.anchoredPosition;
+            pos.y = -i * spacing;
+            rt.anchoredPosition = pos;
+
+            // 텍스트 설정
+            var label = btn.GetComponentInChildren<TextMeshProUGUI>();
+            label.text = $"{id} ({count}/4)\nMode: {storedType}";
+
+            // 클릭 리스너
+            string sessionId = id;
+            GameType gameType = storedType;
+            btn.onClick.AddListener(() =>
             {
-                Debug.LogError("세션 목록 불러오기 실패: " + task.Exception);
-                return;
-            }
-
-            foreach (var doc in task.Result.Documents)
-            {
-                string id = doc.Id;
-
-                // 참가자 수
-                int count = 0;
-                if (doc.TryGetValue("participants", out List<string> plist))
-                    count = plist.Count;
-
-                // 저장된 gameType 읽기
-                int    storedTypeInt = doc.TryGetValue("gameType", out long gi) ? (int)gi : 0;
-                GameType storedType   = (GameType)storedTypeInt;
-
-                // 버튼 생성
-                var btn = Instantiate(sessionButtonPrefab, sessionListContent);
-                var label = btn.GetComponentInChildren<TextMeshProUGUI>();
-                label.text = $"{id} ({count}/4) \n Mode: {storedType}";
-
-                string sessionId = id;
-                btn.onClick.AddListener(() =>
+                var (auth, firestore) = GetAuthAndFirestoreFor(_currentUserKey);
+                firestore.Collection("sessions")
+                         .Document(sessionId)
+                         .UpdateAsync("participants", FieldValue.ArrayUnion(auth.CurrentUser.UserId))
+                         .ContinueWithOnMainThread(t2 =>
                 {
-                    // Firestore 참가자 추가
-                    var (auth, firestore) = GetAuthAndFirestoreFor(_currentUserKey);
-                    firestore.Collection("sessions")
-                             .Document(sessionId)
-                             .UpdateAsync("participants", FieldValue.ArrayUnion(auth.CurrentUser.UserId))
-                             .ContinueWithOnMainThread(t2 =>
-                    {
-                        if (t2.IsFaulted)
-                            Debug.LogError("참가자 추가 실패: " + t2.Exception);
-                        else
-                            Debug.Log($"[{sessionId}] 참가자 추가 완료");
-                    });
-
-                    // 네트워크매니저에 세션명과 gameType 적용 후 클라이언트 시작
-                    networkManager.sessionName = sessionId;
-                    networkManager.gameType    = storedType;
-                    networkManager.StartClient();
+                    if (t2.IsFaulted)
+                        Debug.LogError("참가자 추가 실패: " + t2.Exception);
+                    else
+                        Debug.Log($"[{sessionId}] 참가자 추가 완료");
                 });
-            }
-        });
-    }
+
+                networkManager.sessionName = sessionId;
+                networkManager.gameType    = gameType;
+                networkManager.StartClient();
+            });
+
+            i++; // 다음 버튼을 위해 인덱스 증가
+        }
+    });
+}
+
 
     public void DeleteSessionDocument(string sessionName)
     {

@@ -16,18 +16,21 @@ public class SurvivalMode : MonoBehaviour
     [SerializeField]
     private float invincibleTime = 1.5f;
 
+
     private bool survivalClear;
 
     private void OnEnable()
     {
         SurvivalEvents.BlockSpawned += BlockSpawnCheck;
         SurvivalEvents.BlockDestroyed += BlockDestroyCheck;
+        GameClearManager.Instance.survivalReset += ResetDictionary;
     }
 
     private void OnDisable()
     {
         SurvivalEvents.BlockSpawned -= BlockSpawnCheck;
         SurvivalEvents.BlockDestroyed -= BlockDestroyCheck;
+        GameClearManager.Instance.survivalReset -= ResetDictionary;
     }
 
     private void BlockSpawnCheck(PlayerRef p)
@@ -57,7 +60,7 @@ public class SurvivalMode : MonoBehaviour
         StartCoroutine(IvincibleCooldown(p));
 
         if (hp.ContainsKey(p) == false)
-            
+
             hp[p] = 3;
 
         if (hp[p]-- <= 1)
@@ -67,6 +70,12 @@ public class SurvivalMode : MonoBehaviour
         }
 
         Debug.Log("hp수" + hp[p]);
+    }
+
+    private void ResetDictionary()
+    {
+        blockCount.Clear();
+        hp.Clear();
     }
 
     private IEnumerator IvincibleCooldown(PlayerRef p)

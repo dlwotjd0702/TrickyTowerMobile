@@ -6,9 +6,14 @@ using UnityEngine;
 
 public static class SurvivalEvents
 {
- public static event Action<PlayerRef> BlockSpawned;
- public static event Action<PlayerRef> BlockDestroyed;
- 
- public static void Spawned(PlayerRef p) => BlockSpawned?.Invoke(p);
- public static void Destroyed(PlayerRef p) => BlockDestroyed?.Invoke(p);
+    public static event Action<PlayerRef> BlockSpawned;
+    public static event Action<PlayerRef> BlockDestroyed;
+
+    public static void Spawned(PlayerRef p) => BlockSpawned?.Invoke(p);
+
+    public static void Destroyed(PlayerRef p)
+    {
+        Debug.Log(p.AsIndex);
+        BlockDestroyed?.Invoke(p);
+    }
 }
