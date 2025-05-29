@@ -67,7 +67,7 @@ public class GameRuleManager : NetworkBehaviour
     public void StartCupGame(GameType type)
     {
         playType = PlayType.Cup;
-        GameClearManager.Instance.ResetScore();
+        if (gameActive == false) GameClearManager.Instance.ResetScore();
         //scoreBoard.ResetSlotsLocal();
 
         gameActive = true;
@@ -118,6 +118,10 @@ public class GameRuleManager : NetworkBehaviour
         Debug.Log("1");
 
         int winnerScore = GameClearManager.Instance.GetPlayerScore(winner);
+        var allScores =
+            GameClearManager.Instance.GetAllScore();
+
+        Debug.Log(winnerScore + "승자점수");
 
         GameClearManager.Instance.RemoveAllBlocks();
         GameClearManager.Instance.AllowAllBlocks();
@@ -125,8 +129,18 @@ public class GameRuleManager : NetworkBehaviour
         GameClearManager.Instance.ClearFalse();
 
         Debug.Log("2");
+        PlayerRef finalWinner = PlayerRef.None;
 
-        if (winnerScore >= cupTargetScore || playType == PlayType.Selection)
+        foreach (var pair in allScores)
+        {
+            if (pair.Value >= cupTargetScore)
+            {
+                finalWinner = pair.Key;
+                break;
+            }
+        }
+
+        if (finalWinner != PlayerRef.None || playType == PlayType.Selection)
         {
             GameClear();
         }
@@ -149,12 +163,49 @@ public class GameRuleManager : NetworkBehaviour
     {
         gameActive = false;
 
-        var finalScore =
-            GameClearManager.Instance.GetAllScore()
-                .OrderByDescending(kv => kv.Value)
-                .Select(kv => kv.Key)
-                .ToArray();
-        //** 최종 점수UI 띄우기 **
-        Debug.Log("게임종료!!!!!!");
+        var allScores = GameClearManager.Instance.GetAllScore();
+        var allMedals = GameClearManager.Instance.GetPlayerMedals();
+
+        // 점수 내림차순 정렬
+        var finalScore = allScores
+            .OrderByDescending(kv => kv.Value)
+            .ToArray();
+
+        int topScore = finalScore[0].Value;
+
+        // 동점자 목록 추출
+        var tiedPlayers = finalScore
+            .Where(kv => kv.Value == topScore)
+            .Select(kv => kv.Key)
+            .ToList();
+
+        PlayerRef winner;
+
+        if (tiedPlayers.Count == 1)
+        {
+            winner = tiedPlayers[0];
+        }
+        else
+        {
+            // 금메달 비교
+            int maxGold = -1;
+            winner = PlayerRef.None;
+
+            foreach (var player in tiedPlayers)
+            {
+                int goldCount = allMedals.TryGetValue(player, out var medals)
+                    ? medals.Count(m => m == MedalType.Gold)
+                    : 0;
+
+                if (goldCount > maxGold)
+                {
+                    maxGold = goldCount;
+                    winner = player;
+                }
+            }
+        }
+
+        Debug.Log("게임종료!! 승자: " + winner);
+        networkManager.Winner(winner);
     }
 }

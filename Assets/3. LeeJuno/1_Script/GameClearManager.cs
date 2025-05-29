@@ -239,13 +239,11 @@ public class GameClearManager : NetworkBehaviour
     private void AssignScore(PlayerRef[] ranking)
     {
         Debug.Log("점수정산");
-        
+
         //** 여기서 메달을 주게 해볼까? **
         //그래서 아얘 스코어 데이터가 메달도 가지고있고
         //스코어 박스는 그걸 UI로 연결만해서 보여주는거지
         
-        lastRoundRank = ranking;
-
         for (int i = 0; i < ranking.Length; i++)
         {
             int score
@@ -263,6 +261,8 @@ public class GameClearManager : NetworkBehaviour
             scoreData.AddScore(ranking[i], score);
             scoreData.AddMedal(ranking[i], medal);
         }
+
+        lastRoundRank = ranking;
 
         Debug.Log("정산끝");
         ScoreDebug();

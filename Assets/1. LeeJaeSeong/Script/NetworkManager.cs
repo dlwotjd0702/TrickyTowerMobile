@@ -197,6 +197,18 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
        // StartCoroutine(DespawnAfterDelay(tropy, 4f));  // 5초 뒤
     }
 
+    public void Winner(PlayerRef winner)
+    {
+        if (!runner.IsServer) return;
+        int idx = GetPlayerJoinIndex(winner);
+        Vector3 offset = spawnOffsets[Mathf.Clamp(idx, 0, spawnOffsets.Length - 1)];
+        var tropy = runner.Spawn(
+            prefabRef: spawnHandler.winnertropy,
+            position: offset,
+            rotation: Quaternion.identity
+        );
+    }
+
     private IEnumerator DespawnAfterDelay(NetworkObject obj, float delay)
     {
         yield return new WaitForSeconds(delay);
