@@ -162,18 +162,50 @@ public class GameRuleManager : NetworkBehaviour
     private void GameClear()
     {
         gameActive = false;
-        
-        var finalScore =
-            GameClearManager.Instance.GetAllScore()
-                .OrderByDescending(kv => kv.Value)
-                .Select(kv => kv.Key)
-                .ToArray();
 
-        var winner = finalScore[0];
-        
-        
-        Debug.Log("게임종료!!");
-        //** 최종 점수UI 띄우기 **
+        var allScores = GameClearManager.Instance.GetAllScore();
+        var allMedals = GameClearManager.Instance.GetPlayerMedals();
+
+        // 점수 내림차순 정렬
+        var finalScore = allScores
+            .OrderByDescending(kv => kv.Value)
+            .ToArray();
+
+        int topScore = finalScore[0].Value;
+
+        // 동점자 목록 추출
+        var tiedPlayers = finalScore
+            .Where(kv => kv.Value == topScore)
+            .Select(kv => kv.Key)
+            .ToList();
+
+        PlayerRef winner;
+
+        if (tiedPlayers.Count == 1)
+        {
+            winner = tiedPlayers[0];
+        }
+        else
+        {
+            // 금메달 비교
+            int maxGold = -1;
+            winner = PlayerRef.None;
+
+            foreach (var player in tiedPlayers)
+            {
+                int goldCount = allMedals.TryGetValue(player, out var medals)
+                    ? medals.Count(m => m == MedalType.Gold)
+                    : 0;
+
+                if (goldCount > maxGold)
+                {
+                    maxGold = goldCount;
+                    winner = player;
+                }
+            }
+        }
+
+        Debug.Log("게임종료!! 승자: " + winner);
         networkManager.Winner(winner);
     }
 }
