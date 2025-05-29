@@ -49,7 +49,7 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
         }*/
         if (SceneManager.GetActiveScene().buildIndex == 1&&runner.IsServer)
         {
-            if (GUI.Button(new Rect(100, 300, 200, 40), "Start Game"))
+            if (GUI.Button(new Rect(90, 300, 200, 40), "Start Game"))
                 HostStartGame();
         }
         

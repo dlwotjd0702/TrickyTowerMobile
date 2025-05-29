@@ -4276,7 +4276,7 @@ MonoBehaviour:
   soundManager: {fileID: 1892439669}
   ingameUiManager: {fileID: 1600843330}
   winnerTrophy:
-    RawGuidValue: 00000000000000000000000000000000
+    RawGuidValue: 1f76f82753f20fa4f8c8f0e3e2ae54ee
 --- !u!114 &1094062847
 MonoBehaviour:
   m_ObjectHideFlags: 0
