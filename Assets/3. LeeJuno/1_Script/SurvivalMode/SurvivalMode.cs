@@ -41,6 +41,7 @@ public class SurvivalMode : MonoBehaviour
         {
             survivalClear = true;
             GameClearManager.Instance.SurvivalModeClear(p);
+            blockCount.Clear();
         }
 
         Debug.Log("블럭수" + blockCount[p]);
@@ -57,13 +58,14 @@ public class SurvivalMode : MonoBehaviour
         StartCoroutine(IvincibleCooldown(p));
 
         if (hp.ContainsKey(p) == false)
-            
+
             hp[p] = 3;
 
         if (hp[p]-- <= 1)
         {
             //블럭스폰이 막혀야하는데
             GameClearManager.Instance.SurvivePlayerDie(p);
+            hp[p] = 3;
         }
 
         Debug.Log("hp수" + hp[p]);

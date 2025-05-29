@@ -189,19 +189,23 @@ public class GameClearManager : NetworkBehaviour
             .Where(no => no.gameObject.layer == LayerMask.NameToLayer("Block"))
             .Where(no => no.TryGetComponent<NetworkBlockController>(out var controller) && controller.IsPlaced);
 
-        Debug.Log("1");
+
         var blockCounts = allBlocks
+            .Where(no => no.InputAuthority != winner)
             .GroupBy(no => no.InputAuthority)
             .Select(group => new
             {
-                Player = group.Key, Count = group.Count()
+                Player = group.Key,
+                Count = group.Count()
             });
-        Debug.Log("2");
-        PlayerRef[] ranking = blockCounts
+
+        var othersRanked = blockCounts
             .OrderByDescending(entry => entry.Count)
             .Select(entry => entry.Player)
-            .ToArray();
-        Debug.Log("3");
+            .ToList();
+
+        othersRanked.Insert(0, winner);
+        PlayerRef[] ranking = othersRanked.ToArray();
 
         AssignScore(ranking);
         RemoveUnplacedAllBlocks();
@@ -226,6 +230,7 @@ public class GameClearManager : NetworkBehaviour
                 Runner.ActivePlayers.First(p => failedPlayers.Contains(p) == false);
             SurvivalModeClear(winner);
             RemoveUnplacedBlock(player);
+            failedPlayers.Clear();
         }
     }
 
@@ -243,7 +248,7 @@ public class GameClearManager : NetworkBehaviour
         //** 여기서 메달을 주게 해볼까? **
         //그래서 아얘 스코어 데이터가 메달도 가지고있고
         //스코어 박스는 그걸 UI로 연결만해서 보여주는거지
-        
+
         for (int i = 0; i < ranking.Length; i++)
         {
             int score
