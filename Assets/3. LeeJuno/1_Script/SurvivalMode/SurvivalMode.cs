@@ -16,6 +16,8 @@ public class SurvivalMode : MonoBehaviour
     [SerializeField]
     private float invincibleTime = 1.5f;
 
+    [SerializeField]
+    private SurvivalHeart[] survivalHeart;
 
     private bool survivalClear;
 
@@ -60,13 +62,23 @@ public class SurvivalMode : MonoBehaviour
         StartCoroutine(IvincibleCooldown(p));
 
         if (hp.ContainsKey(p) == false)
-
+        {
             hp[p] = 3;
+            survivalHeart[p.AsIndex - 1].SetOwner(p);
+        }
 
         if (hp[p]-- <= 1)
         {
             //블럭스폰이 막혀야하는데
             GameClearManager.Instance.SurvivePlayerDie(p);
+        }
+
+        foreach (var owner in survivalHeart)
+        {
+            if (p == owner.Owner)
+            {
+                owner.HeartUpdate(hp[p]);
+            }
         }
 
         Debug.Log("hp수" + hp[p]);
@@ -76,6 +88,10 @@ public class SurvivalMode : MonoBehaviour
     {
         blockCount.Clear();
         hp.Clear();
+        foreach (var survival in survivalHeart)
+        {
+            survival.Reset();
+        }
     }
 
     private IEnumerator IvincibleCooldown(PlayerRef p)
