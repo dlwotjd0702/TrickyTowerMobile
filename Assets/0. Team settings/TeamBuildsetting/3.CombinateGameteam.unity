@@ -1374,9 +1374,6 @@ MonoBehaviour:
   - {fileID: 994385010}
   - {fileID: 1853751425}
   - {fileID: 2012748344}
-  PlayerNumber: 3
-  newIndex: 0
-  preIndex: 0
 --- !u!114 &491159732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2158,9 +2155,6 @@ MonoBehaviour:
   - {fileID: 1960971616}
   - {fileID: 741456943}
   - {fileID: 1413770530}
-  PlayerNumber: 1
-  newIndex: 0
-  preIndex: 0
 --- !u!114 &584560214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2670,6 +2664,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 678720517}
+  - component: {fileID: 678720518}
   m_Layer: 0
   m_Name: IngameUiManager
   m_TagString: Untagged
@@ -2697,6 +2692,27 @@ Transform:
   - {fileID: 584560212}
   m_Father: {fileID: 892966433}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &678720518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678720516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d5e8905d070e3d49b95d87bf16712c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  networkSpawnHandler: {fileID: 1094062846}
+  NextBlockImage:
+  - {fileID: 1913085695}
+  - {fileID: 621032192}
+  - {fileID: 556217729}
+  - {fileID: 238991615}
+  - {fileID: 1971546518}
+  - {fileID: 490941571}
+  - {fileID: 622936833}
 --- !u!1 &681934809
 GameObject:
   m_ObjectHideFlags: 0
@@ -4035,9 +4051,6 @@ MonoBehaviour:
   - {fileID: 2006824792}
   - {fileID: 193463213}
   - {fileID: 1184759036}
-  PlayerNumber: 4
-  newIndex: 0
-  preIndex: 0
 --- !u!114 &1020504891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4335,7 +4348,7 @@ MonoBehaviour:
   effectManager: {fileID: 2104402099}
   soundManager: {fileID: 1892439669}
   ingameUiManager: {fileID: 1600843330}
-  winnertropy:
+  winnerTrophy:
     RawGuidValue: 00000000000000000000000000000000
 --- !u!114 &1094062847
 MonoBehaviour:
@@ -6377,9 +6390,6 @@ MonoBehaviour:
   - {fileID: 1971546518}
   - {fileID: 490941571}
   - {fileID: 622936833}
-  PlayerNumber: 1
-  newIndex: 0
-  preIndex: 0
 --- !u!1 &1624033748
 GameObject:
   m_ObjectHideFlags: 0
@@ -7297,9 +7307,6 @@ MonoBehaviour:
   - {fileID: 1053674878}
   - {fileID: 1456938881}
   - {fileID: 1120756855}
-  PlayerNumber: 2
-  newIndex: 0
-  preIndex: 0
 --- !u!114 &1802787319
 MonoBehaviour:
   m_ObjectHideFlags: 0
