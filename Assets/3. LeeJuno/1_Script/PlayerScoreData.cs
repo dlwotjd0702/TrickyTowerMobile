@@ -40,8 +40,10 @@ public class PlayerScoreData
     {
         // 깊은 복사하여 반환
         var result = new Dictionary<PlayerRef, List<MedalType>>();
+        
         foreach (var kv in playerMedals)
             result[kv.Key] = new List<MedalType>(kv.Value);
+        
         return result;
     }
 

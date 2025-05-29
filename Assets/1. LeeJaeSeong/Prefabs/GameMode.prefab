@@ -174,7 +174,7 @@ MonoBehaviour:
   - {fileID: 8141041193998462959}
   goldMedal: {fileID: 144086278356479210, guid: 00a38f14210c10e439589a1cf78d2b76, type: 3}
   silverMedal: {fileID: 8877192558940011381, guid: 192314141b61f674a987da1018eec4a6, type: 3}
-  bronzeMedal: {fileID: 6118383829429677323, guid: e16ec03b38635d44a9a54a6725ac5915, type: 3}
+  bronzeMedal: {fileID: 6118383829429677323, guid: 88ba028f72137fc4b89840ac4c37cebf, type: 3}
 --- !u!1 &606665222815474024
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,9 +453,9 @@ MonoBehaviour:
   raceMode: {fileID: 1956761702781878917}
   survivalMode: {fileID: 6914133670354513712}
   puzzleMode: {fileID: 4713170375191320303}
+  raceLine: {fileID: 6067853274817074479}
   cupTargetScore: 9
   scoreBoard: {fileID: 8261823529643215941}
-  raceLine: {fileID: 4155696582531844400, guid: d52381aaf382265459dccc6c91ea3997, type: 3}
   winsToVictory: 3
 --- !u!114 &4917637428693289307
 MonoBehaviour:

@@ -118,6 +118,9 @@ public class GameRuleManager : NetworkBehaviour
         Debug.Log("1");
 
         int winnerScore = GameClearManager.Instance.GetPlayerScore(winner);
+        var allScores =
+            GameClearManager.Instance.GetAllScore();
+
         Debug.Log(winnerScore + "승자점수");
 
         GameClearManager.Instance.RemoveAllBlocks();
@@ -126,8 +129,18 @@ public class GameRuleManager : NetworkBehaviour
         GameClearManager.Instance.ClearFalse();
 
         Debug.Log("2");
+        PlayerRef finalWinner = PlayerRef.None;
 
-        if (winnerScore >= cupTargetScore || playType == PlayType.Selection)
+        foreach (var pair in allScores)
+        {
+            if (pair.Value >= cupTargetScore)
+            {
+                finalWinner = pair.Key;
+                break;
+            }
+        }
+
+        if (finalWinner != PlayerRef.None || playType == PlayType.Selection)
         {
             GameClear();
         }
@@ -149,13 +162,18 @@ public class GameRuleManager : NetworkBehaviour
     private void GameClear()
     {
         gameActive = false;
-
+        
         var finalScore =
             GameClearManager.Instance.GetAllScore()
                 .OrderByDescending(kv => kv.Value)
                 .Select(kv => kv.Key)
                 .ToArray();
+
+        var winner = finalScore[0];
+        
+        
+        Debug.Log("게임종료!!");
         //** 최종 점수UI 띄우기 **
-        Debug.Log("게임종료!!!!!!");
+        networkManager.Winner(winner);
     }
 }
