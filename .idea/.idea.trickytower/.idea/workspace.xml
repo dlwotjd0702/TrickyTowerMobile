@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33ec4f3c-9a43-40ac-a265-51209e7b0009" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/0. Team settings/TeamPrefab/GameMode.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0. Team settings/TeamPrefab/GameMode.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/GameMode.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/GameMode.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/OldPrefabs/GameMode.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Prefabs/OldPrefabs/GameMode.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3. LeeJuno/1_Script/SurvivalMode/SurvivalMode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/1_Script/SurvivalMode/SurvivalMode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3. LeeJuno/2_Prefabs/GameModePrefabs/GameMode.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. LeeJuno/2_Prefabs/GameModePrefabs/GameMode.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/FirebaseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/FirebaseManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
