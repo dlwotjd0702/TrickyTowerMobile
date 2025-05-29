@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Fusion;
@@ -41,6 +42,13 @@ public class ScoreBoard : NetworkBehaviour
         }
 
         Rpc_ShowUI();
+        StartCoroutine(delaynextround());
+    }
+    private IEnumerator delaynextround()
+    {
+        yield return new WaitForSeconds(3f);
+        Rpc_HideUI();
+        
     }
 
     public void ReSetBox()
@@ -51,11 +59,7 @@ public class ScoreBoard : NetworkBehaviour
         }
     }
 
-    public void HideScoreBoard()
-    {
-        Rpc_HideUI();
-    }
-
+ 
     [Rpc(RpcSources.StateAuthority, RpcTargets.All)]
     private void Rpc_AddMedal(int boxIndex, MedalType medal)
     {

@@ -67,7 +67,7 @@ public class GameRuleManager : NetworkBehaviour
     public void StartCupGame(GameType type)
     {
         playType = PlayType.Cup;
-        GameClearManager.Instance.ResetScore();
+        if (gameActive == false) GameClearManager.Instance.ResetScore();
         //scoreBoard.ResetSlotsLocal();
 
         gameActive = true;
@@ -118,6 +118,7 @@ public class GameRuleManager : NetworkBehaviour
         Debug.Log("1");
 
         int winnerScore = GameClearManager.Instance.GetPlayerScore(winner);
+        Debug.Log(winnerScore + "승자점수");
 
         GameClearManager.Instance.RemoveAllBlocks();
         GameClearManager.Instance.AllowAllBlocks();
