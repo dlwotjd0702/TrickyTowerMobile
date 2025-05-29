@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/3. LeeJuno/0_Scene/Buildsetting/1.OutGameteam.unity
-    guid: f8fe9a9d8bd121c45be907dc5162e0b9
+    path: Assets/0. Team settings/TeamBuildsetting/1.OutGameteam.unity
+    guid: 1d351ee71e0ad784bb048a7b643a619c
   - enabled: 1
-    path: Assets/3. LeeJuno/0_Scene/Buildsetting/2.Lobbyteam.unity
-    guid: e77cab8fd02724844a51ef74faf8e1d7
+    path: Assets/0. Team settings/TeamBuildsetting/2.Lobbyteam.unity
+    guid: 8eb4c5c6eb1644e40a615889cc507dab
   - enabled: 1
-    path: Assets/3. LeeJuno/0_Scene/Buildsetting/3.CombinateGameteam.unity
-    guid: fadeea85ddf97bd4d83c918f5d899605
+    path: Assets/0. Team settings/TeamBuildsetting/3.CombinateGameteam.unity
+    guid: b4ed47a480531e84baa3c0b5074740df
   m_configObjects: {}

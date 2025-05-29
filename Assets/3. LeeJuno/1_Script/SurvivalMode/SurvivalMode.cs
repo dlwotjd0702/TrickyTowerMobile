@@ -73,20 +73,18 @@ public class SurvivalMode : MonoBehaviour
             survivalHeart[p.AsIndex - 1].SetOwner(p);
         }
 
-        hp[p]--;
-        
+        if (hp[p]-- <= 1)
+        {
+            //블럭스폰이 막혀야하는데
+            GameClearManager.Instance.SurvivePlayerDie(p);
+        }
+
         foreach (var owner in survivalHeart)
         {
             if (p == owner.Owner)
             {
                 owner.HeartUpdate(hp[p]);
             }
-        }
-
-        if (hp[p] <= 1)
-        {
-            //블럭스폰이 막혀야하는데
-            GameClearManager.Instance.SurvivePlayerDie(p);
         }
 
         Debug.Log("hp수" + hp[p]);
