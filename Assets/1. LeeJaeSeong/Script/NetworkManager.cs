@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using DG.Tweening;
 using Fusion;
 using Fusion.Sockets;
 using Fusion.Addons.Physics;
@@ -207,17 +208,15 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
             position: offset,
             rotation: Quaternion.identity
         );
+        StartCoroutine(DespawnAfterDelay());
     }
 
-    private IEnumerator DespawnAfterDelay(NetworkObject obj, float delay)
+    private IEnumerator DespawnAfterDelay()
     {
-        yield return new WaitForSeconds(delay);
-
-        // Runner가 살아있고 obj도 유효하면 네트워크에서 제거
-        if (runner != null && obj != null && obj.IsValid)
-        {
-            runner.Despawn(obj);
-        }
+        yield return new WaitForSeconds(5f);
+        isGameStarted = false;
+        var targetScene = SceneRef.FromIndex(1);
+        runner.LoadScene(targetScene);
     }
 
     /*private void StartGame()
@@ -306,6 +305,7 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
         }
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
+            DOTween.KillAll();
             StartCoroutine(InitAfterSpawnHandler());
         }
         

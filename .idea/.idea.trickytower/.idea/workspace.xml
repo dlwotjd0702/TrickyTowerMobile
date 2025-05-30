@@ -5,7 +5,121 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33ec4f3c-9a43-40ac-a265-51209e7b0009" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Resourse/free-icon-trophy-4073150.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/2. SeoYoungGwang/Resourse/free-icon-trophy-4073150.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupBackGroundAnim.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupBackGroundAnim.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupEffectAnim.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupEffectAnim.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupLifhtAnim.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupLifhtAnim.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupLifhtAnim2.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupLifhtAnim2.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupLifhtAnim3.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupLifhtAnim3.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupLifhtAnim4.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupLifhtAnim4.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupLifhtAnim5.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupLifhtAnim5.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupLifhtAnim6.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupLifhtAnim6.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupLifhtAnim7.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupLifhtAnim7.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupLifhtAnim8.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupLifhtAnim8.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupTinkle.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupTinkle.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupTinkle1.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupTinkle1.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupTinkle2.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupTinkle2.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupTinkle3.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupTinkle3.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupTinkle4.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupTinkle4.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupTinkle5.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupTinkle5.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupTinkle6.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupTinkle6.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupTinkle7.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CupTinkle7.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TrophyAnim.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TrophyAnim.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TrophyBackLightEffectAnim.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TrophyBackLightEffectAnim.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TrophyBackLightEffectAnim2.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TrophyBackLightEffectAnim2.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_castEffectSunrays (1).controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_castEffectSunrays (1).controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_castEffectSunrays.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_castEffectSunrays.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_cupSuperLarge.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_cupSuperLarge.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_mainMenuSun01 (1) 1.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_mainMenuSun01 (1) 1.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_mainMenuSun01 (1).controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_mainMenuSun01 (1).controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_mainMenuSun01.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_mainMenuSun01.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_mainMenuSun02.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_mainMenuSun02.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_mainMenuSun03.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_mainMenuSun03.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_mainMenuSun04 (1).controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_mainMenuSun04 (1).controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_mainMenuSun04.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_mainMenuSun04.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_mainMenuSun05.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_mainMenuSun05.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_star (1) 1.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_star (1) 1.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_star (1).controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_star (1).controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_star (2) 1.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_star (2) 1.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_star (2).controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_star (2).controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_star (3) 1.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_star (3) 1.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_star (3).controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_star (3).controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_star (4).controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_star (4).controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_star.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_star.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_starOutline (1) 1.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_starOutline (1) 1.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_starOutline (1).controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_starOutline (1).controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_starOutline (2) 1.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_starOutline (2) 1.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_starOutline (2).controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_starOutline (2).controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_starOutline 1.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_starOutline 1.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_starOutline.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/gph_starOutline.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/winner.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/winner.controller.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.trickytower/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0. Team settings/TeamBuildsetting/2.Lobbyteam.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0. Team settings/TeamBuildsetting/2.Lobbyteam.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/0. Team settings/TeamBuildsetting/3.CombinateGameteam.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0. Team settings/TeamBuildsetting/3.CombinateGameteam.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0. Team settings/TeamPrefab/winner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0. Team settings/TeamPrefab/winner.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. LeeJaeSeong/Script/NetworkManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Photon/FusionDemos/Photon-Fusion-Intro-Sample-2.0.6-Stable-1034.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/Managed/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/Managed/Assembly-CSharp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/boot.config" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/boot.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/globalgamemanagers" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/globalgamemanagers" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/globalgamemanagers.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/globalgamemanagers.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/level0" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/level0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/level1" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/level1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/level2" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/level2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/resources.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/resources.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/resources.assets.resS" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/resources.assets.resS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets0.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets0.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets1.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets1.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets2.assets" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets2.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets2.assets.resS" beforeDir="false" afterPath="$PROJECT_DIR$/qlfem/trickytower_Data/sharedassets2.assets.resS" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,19 +167,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;ruleupdat&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "ruleupdat",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Unity 에디터에 연결.Unity 에디터에 연결">
     <configuration name="유닛 테스트(배치 모드)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.62f1\Editor\Unity.exe" />
@@ -76,7 +190,7 @@
       <method v="2" />
     </configuration>
     <configuration name="독립실행형 플레이어" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$USER_HOME$/Desktop/트리키타워 최종/trickytower.exe" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/qlfem/trickytower.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="C:\Users\KGA\Documents\GitHub\TrickyTower\build" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -146,7 +260,7 @@
       <workItem from="1747962313003" duration="17264000" />
       <workItem from="1748220447745" duration="11671000" />
       <workItem from="1748243351022" duration="28519000" />
-      <workItem from="1748479324363" duration="1588000" />
+      <workItem from="1748479324363" duration="3570000" />
     </task>
     <servers />
   </component>
