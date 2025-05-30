@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id">
+  <string name="gcm_defaultSenderId" translatable="false">35525550026</string>
+  <string name="google_storage_bucket" translatable="false">trickytower.firebasestorage.app</string>
+  <string name="project_id" translatable="false">trickytower</string>
+  <string name="google_api_key" translatable="false">AIzaSyCwR0-Sp-nhhJC9JRQKjBYsufYitMA45Os</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCwR0-Sp-nhhJC9JRQKjBYsufYitMA45Os</string>
+  <string name="google_app_id" translatable="false">1:35525550026:android:3dd8422bae11bd0363b933</string>
+</resources>

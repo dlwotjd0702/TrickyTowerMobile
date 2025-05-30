@@ -67,4 +67,9 @@ public class LobbyUIManager : MonoBehaviour
         
         }
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

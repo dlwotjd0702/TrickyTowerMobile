@@ -18,7 +18,7 @@ public class CameraManager : MonoBehaviour
         if (mainCam == null) return;
 
         mainCam.enabled = true;
-        mainCam.rect = new Rect(0f, 0f, 1f, 2f / 3f); // ⬇️ 아래 2/3 영역
+       // mainCam.rect = new Rect(0f, 0f, 1f, 2f / 3f); // ⬇️ 아래 2/3 영역
         mainCam.transform.position = new Vector3(spawnPoint.x, fixedY, fixedZ);
     }
 
@@ -30,7 +30,7 @@ public class CameraManager : MonoBehaviour
         if (index < 0 || index >= miniCams.Length) return;
         Camera cam = miniCams[index];
         cam.enabled = true;
-        cam.rect = new Rect(index * (1f / 3f), 2f / 3f, 1f / 3f, 1f / 3f); // ⬆️ 위 1/3을 3등분
+        //cam.rect = new Rect(index * (1f / 3f), 2f / 3f, 1f / 3f, 1f / 3f); // ⬆️ 위 1/3을 3등분
         cam.transform.position = new Vector3(spawnPoint.x, fixedY, fixedZ);
 
     }

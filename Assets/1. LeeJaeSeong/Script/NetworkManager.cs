@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using DG.Tweening;
 using Fusion;
 using Fusion.Sockets;
 using Fusion.Addons.Physics;
@@ -20,13 +21,13 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     private LobbyUIManager lobbyUIManager;
     private float heartbeatInterval = 10f;
     private Coroutine heartbeatRoutine;
-
     [Header("네트워크 설정")]
     [SerializeField] public string sessionName;
     public Vector3[] spawnOffsets = new Vector3[4];
 
     private NetworkRunner runner;
     private bool isGameStarted = false;
+    [SerializeField] private GameObject startButton;
     
     public GameType gameType = 0;
 
@@ -49,11 +50,13 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
         }*/
         if (SceneManager.GetActiveScene().buildIndex == 1&&runner.IsServer)
         {
-            if (GUI.Button(new Rect(90, 300, 200, 40), "Start Game"))
+            if (GUI.Button(new Rect(240, 1100, 600, 160), "Start Game"))
                 HostStartGame();
         }
         
     }
+
+    
 
     public async void StartHost()
     {
@@ -195,6 +198,7 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
         /*var targetScene = SceneRef.FromIndex(2);
         await runner.LoadScene(targetScene);*/
        // StartCoroutine(DespawnAfterDelay(tropy, 4f));  // 5초 뒤
+       
     }
 
     public void Winner(PlayerRef winner)
@@ -207,17 +211,15 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
             position: offset,
             rotation: Quaternion.identity
         );
+        StartCoroutine(DespawnAfterDelay());
     }
 
-    private IEnumerator DespawnAfterDelay(NetworkObject obj, float delay)
+    private IEnumerator DespawnAfterDelay()
     {
-        yield return new WaitForSeconds(delay);
-
-        // Runner가 살아있고 obj도 유효하면 네트워크에서 제거
-        if (runner != null && obj != null && obj.IsValid)
-        {
-            runner.Despawn(obj);
-        }
+        yield return new WaitForSeconds(5f);
+        isGameStarted = false;
+        var targetScene = SceneRef.FromIndex(1);
+        runner.LoadScene(targetScene);
     }
 
     /*private void StartGame()
@@ -303,9 +305,15 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
                 int idx = GetPlayerJoinIndex(p);
                 lobbyUIManager.ToggleSlot(idx,true);
             }
+            if (runner.IsServer)
+            {
+                Canvas canvas = FindObjectOfType<Canvas>();
+                Instantiate(startButton, canvas.transform);
+            }
         }
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
+            DOTween.KillAll();
             StartCoroutine(InitAfterSpawnHandler());
         }
         
@@ -322,14 +330,12 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
         cameraManager     = FindObjectOfType<CameraManager>();
         inputHandler   = FindObjectOfType<NetworkInputHandler>();
         gameRuleManager   = FindObjectOfType<GameRuleManager>();
-  
+        
 
         runner.AddCallbacks(spawnHandler);
         runner.AddCallbacks(inputHandler);
    
-        
-        //gameRuleManager.StartCupGame(GameType.Race);
-
+  
         // 모든 플레이어에 대해 처리
         foreach (var player in runner.ActivePlayers)
         {
@@ -338,9 +344,15 @@ public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
             Vector3 offset = spawnOffsets[Mathf.Clamp(idx, 0, spawnOffsets.Length - 1)];
 
             if (player == runner.LocalPlayer)
+            {
                 cameraManager.SetupMainCam(offset);
+             
+            }
             else
+            {
                 cameraManager.SetupMiniCam(offset, GetMiniCamIndexForPlayer(player));
+               
+            }
             // 3) 블록 스폰
             if (runner.IsServer)
             {
